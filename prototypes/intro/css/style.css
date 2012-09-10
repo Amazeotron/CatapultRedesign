@@ -1,0 +1,19 @@
+
+body {
+	margin: 0;
+	padding: 0;
+	background: url(../img/bgtile.png) top left repeat;
+}
+
+.wrap {
+	width: 880px;
+	margin: 0 auto;
+}
+
+.main-title {
+  font-family: "franklin-gothic-ext-comp-urw",sans-serif;
+}
+
+.secondary-title {
+	font-family: "freight-text-pro",sans-serif;
+}
