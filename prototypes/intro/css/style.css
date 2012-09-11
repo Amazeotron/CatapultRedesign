@@ -6,7 +6,7 @@ body {
 }
 
 .wrap {
-	width: 880px;
+	width: 900px;
 	margin: 0 auto;
 }
 
@@ -15,5 +15,17 @@ body {
 }
 
 .secondary-title {
-	font-family: "freight-text-pro",sans-serif;
+	font-family: "freight-text-pro",serif;
+}
+
+.intro-desc {
+	color: #545353;
+	font-family: "freight-text-pro",serif;
+	font-size: 1.1em;
+}
+
+.divider {
+	width: 900px;
+	height: 3px;
+	background: url(../img/divider.png) top left no-repeat;
 }
