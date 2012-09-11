@@ -99,7 +99,7 @@ textarea {
 
 
 body {
-	background: url(../img/bgtile.png) top left repeat;
+	
 }
 
 .header {
@@ -151,12 +151,6 @@ body {
 	font-family: "freight-text-pro",serif;
 }
 
-.intro-desc {
-	color: #545353;
-	font-family: "freight-text-pro",serif;
-	font-size: 1.1em;
-}
-
 .divider {
 	width: 900px;
 	height: 3px;
@@ -172,12 +166,28 @@ body {
     background: #CCC;
 }
 
+
+/* --------------------------------
+    Intro Section
+-------------------------------- */
+
+.intro {
+    background: url(../img/bgtile.png) top left repeat;
+}
+
+.intro-desc {
+    color: #545353;
+    font-family: "freight-text-pro",serif;
+    font-size: 1.1em;
+}
+
+
 /* --------------------------------
     Key Offerings Section
 -------------------------------- */
 
 .keyofferings {
-
+    background: url(../img/bgtile.png) top left repeat;
 }
     .keyofferings h1 {
         font-weight: normal;
@@ -206,7 +216,13 @@ body {
                     box-shadow: inset 0px 5px 5px 0px rgba(0, 0, 0, 0.2);
         }
 
+/* --------------------------------
+    Case Studies Section
+-------------------------------- */
 
+.casestudies {
+    background: url(../img/case-studies-bgtile.png) top left repeat;
+}
 
 
 
