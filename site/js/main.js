@@ -10,4 +10,10 @@ $(document).ready(function() {
 	$("#anza .casestudy-images").css({
 		"background-image": 'url(img/casestudies/handcart/IMG_0065.jpg)'
 	});
+
+	$(".team-member").hover(function() {
+		$(this).find(".team-member-details").addClass("hover");
+	}, function() {
+		$(this).find(".team-member-details").removeClass("hover");
+	})
 });
