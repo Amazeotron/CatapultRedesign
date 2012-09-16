@@ -1,0 +1,103 @@
+/* --------------------------------
+    Team Section
+-------------------------------- */
+
+.team {
+    background: url(../img/bgtile.png) top left repeat;
+    
+    h1 {
+        color: #514f52;
+        font-weight: normal;
+        font-size: 3em;
+        margin-top: 0;
+        padding: 1em 0 0 0;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+
+    .team-members {
+        overflow: hidden;
+        padding: 0;
+
+        li {
+            display: block;
+            float: left;
+            width: 178px;
+        }
+        li img {
+            border: 2px solid;
+            width: 175px;
+        }
+        li.primary img {
+            border-color: $orange;
+        }
+        li.secondary img {
+            border-color: $pink;
+        }
+        li.tertiary img {
+            border-color: $teal;
+        }
+        li h3,
+        li h4,
+        li h5 {
+            margin: 0;
+            padding: 0;
+            font-family: $sansFont;
+            text-transform: uppercase;
+            font-size: 1em;
+            font-weight: normal;
+            letter-spacing: 1.5px;
+            color: rgba(255,255,255,0.8);
+            line-height: 1;
+            text-shadow: -1px -1px 0px rgba(0,0,0,0.3);
+            filter: dropshadow(color=#666666, offx=1, offy=1);
+        }
+        li h3 {
+            padding-bottom: 0.6em;
+            font-size: 1em;
+            color: rgba(255,255,255,1);
+        }
+        .team-member {
+            overflow: hidden;
+            position: relative;
+            margin: 0 62px 15px 0;
+        }
+        .team-member.col-last {
+            margin-right: 0;
+        }
+        .team-member-details {
+            position: absolute;
+            top: 140px;
+            left: 0;
+            padding: 12px 10px 0 10px;
+            height: 179px;
+            -webkit-transition: all 0.5s ease-in-out;
+
+            p {
+                color: #fff;
+                line-height: 1.1em;
+
+                a {
+                    color: #fff;
+                    text-decoration: underline;
+                }
+                a:after {
+                    content: " »";
+                }
+            }
+        }
+        .team-member-details.hover {
+            top: 0;
+        }
+    }
+    
+    .primary .team-member-details {
+        background: rgba($orange, 0.85);
+    }
+    .secondary .team-member-details {
+        background: rgba($pink, 0.85);
+    }
+    .tertiary .team-member-details {
+        background: rgba($teal, 0.85);
+    }
+}

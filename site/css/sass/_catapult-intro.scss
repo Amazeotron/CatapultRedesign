@@ -1,0 +1,36 @@
+/* --------------------------------
+    Intro Section
+-------------------------------- */
+
+.intro {
+    
+    .center-tag {
+        background: url(../img/center-tag-top.png) top center no-repeat;
+        width: 158px;
+        height: 35px;
+        margin: 0 auto;
+    }
+    .caption {
+        overflow: hidden;
+
+        .intro-desc {
+            color: #545353;
+            float: left;
+            width: 786px;
+            padding: 0 30px 0 0;
+        }
+        .what-we-do {
+            display: block;
+            background: url(../img/what-we-do.png) top left no-repeat;
+            width: 84px;
+            height: 114px;
+            float: left;
+            text-indent: -10000px;
+        }
+    }
+        
+    .divider {
+        padding-top: 50px;
+        background-position: bottom;
+    }
+}

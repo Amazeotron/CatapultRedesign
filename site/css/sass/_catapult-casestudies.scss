@@ -1,0 +1,91 @@
+/* --------------------------------
+    Case Studies Section
+-------------------------------- */
+
+.casestudies {
+    padding: 0 0 30px 0;
+    background: url(../img/shadow-top.png) top left repeat-x, 
+                url(../img/case-studies-bgtile.png) top left repeat;
+    -webkit-box-shadow: inset 0px 20px 120px 0px rgba(0, 0, 0, 0.4);
+            box-shadow: inset 0px 20px 120px 0px rgba(0, 0, 0, 0.4);
+}
+    .casestudies h1 {
+        font-family: "franklin-gothic-ext-comp-urw",sans-serif;
+        font-size: 4em;
+        color: #fff;
+        text-align: center;
+        margin: 0;
+        padding-top: 1em;
+    }
+
+    .casestudies-desc {
+        color: #fff;
+    }
+
+    .casestudies .casestudy {
+        position: relative;
+        padding: 20px 0 0 0;
+    }
+    .casestudies .casestudy p {
+        color: #515052;
+    }
+    .casestudy .casestudy-images {
+        background-size: contain;
+        width: 100%;
+        min-height: 1000px;
+        position: absolute;
+        background-position: top left;
+        background-repeat: no-repeat;
+    }
+    .casestudy .casestudy-content {
+        background: rgba(249,247,246, 0.9);
+        padding: 20px;
+        margin: 30px 0 0 340px;
+        width: 373px;
+        position: relative;
+        -webkit-box-shadow: 0px 3px 12px 3px rgba(0, 0, 0, 0.2);
+                box-shadow: 0px 3px 12px 3px rgba(0, 0, 0, 0.2);
+    }
+    .casestudy .casestudy-content .paddles {
+        width: 100%;
+        position: absolute;
+        display: block;
+        padding: 0;
+        margin: 0;
+    }
+    .casestudy .casestudy-content .paddles .paddle {
+        position: absolute;
+        display: block;
+        top:180px;
+        list-style-type: none;
+    }
+    .paddles .paddle a {
+        display: block;
+        text-indent: -10000px;
+        width: 52px;
+        height: 58px;
+        background: #e78d1f;
+        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U3OGQxZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwJSIgc3RvcC1jb2xvcj0iI2YyYWQ0YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjkwJSIgc3RvcC1jb2xvcj0iI2YyYWQ0YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNzhkMWYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+        background: -moz-linear-gradient(left, #e78d1f 0%, #f2ad4b 10%, #f2ad4b 90%, #e78d1f 100%);
+        background: -webkit-gradient(linear, left top, right top, color-stop(0%,#e78d1f), color-stop(10%,#f2ad4b), color-stop(90%,#f2ad4b), color-stop(100%,#e78d1f));
+        background: -webkit-linear-gradient(left, #e78d1f 0%,#f2ad4b 10%,#f2ad4b 90%,#e78d1f 100%);
+        background: -o-linear-gradient(left, #e78d1f 0%,#f2ad4b 10%,#f2ad4b 90%,#e78d1f 100%);
+        background: -ms-linear-gradient(left, #e78d1f 0%,#f2ad4b 10%,#f2ad4b 90%,#e78d1f 100%);
+        background: linear-gradient(to right, #e78d1f 0%,#f2ad4b 10%,#f2ad4b 90%,#e78d1f 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e78d1f', endColorstr='#e78d1f',GradientType=1 );
+    }
+    .casestudy .casestudy-content .paddles .paddle.prev {
+        left: -72px; /* 52px (width of paddle) + 20px (padding on .casestudy-content) */
+    }
+    .casestudy .casestudy-content .paddles .paddle.next {
+        right: -32px;
+    }
+
+    .casestudy-content h1 {
+        font-family: "franklin-gothic-ext-comp-urw",sans-serif;
+        font-size: 2em;
+        color: #f89728;
+    }
+    .casestudy-content .casestudy-content-header {
+
+    }
