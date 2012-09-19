@@ -23,22 +23,29 @@
     <script type="text/javascript" src="js/libs/preloadjs-0.2.0.min.js"></script>
     <script type="text/javascript" src="js/libs/jquery-1.8.0.min.js"></script>
     <script type="text/javascript" src="js/intro.js"></script>
+    <script type="text/javascript" src="js/casestudies.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 	</head>
 	<body>
 		<!--[if lt IE 7]>
       <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
     <![endif]-->
-    <div class="social"></div>
+    <div class="floater social">
+    	<ul>
+    		<li class="social-item"><a href="#" class="social-button twitter"><span>FOLLOW US</span></a></li>
+    		<li class="social-item"><a href="#" class="social-button facebook"><span>LIKE US</span></a></li>
+    		<li class="social-item"><a href="#" class="social-button rss"><span>RSS FEED</span></a></li>
+    	</ul>
+    </div><!-- end floater -->
     <header class="header">
 			<object class="logo" data="img/catapult-logo.svg" type="image/svg+xml"></object>
 			<nav class="mainnav">
 				<ul>
-					<li class="mainnav-item">SECTION</li>
-					<li class="mainnav-item">SECTION</li>
-					<li class="mainnav-item">SECTION</li>
-					<li class="mainnav-item">SECTION</li>
-					<li class="mainnav-item">SECTION</li>
+					<li class="mainnav-item">PROJECTS</li>
+					<li class="mainnav-item">TEAM</li>
+					<li class="mainnav-item">CONTACT</li>
+					<li class="mainnav-item">DONTATE</li>
+					<li class="mainnav-item">BLOG</li>
 				</ul>
 			</nav>
 			<div class="header-divider"></div>
@@ -49,7 +56,7 @@
 			<div class="row">
 				<canvas id="intro" width="900" height="500"></canvas>
 				<div class="caption">
-					<p class="body-copy intro-desc">At Catapult, our hands-on teams work with your company on x, y, and z. Our Not-for-profit is dedicated to facilitating... and educational programs...where companies can meet, learn, work, and share. We invest in ... so other people may thrive. Something else goes here for a nice line break.</p>
+					<p class="intro-desc">At Catapult, our hands-on teams work with your company on x, y, and z. Our Not-for-profit is dedicated to facilitating... and educational programs...where companies can meet, learn, work, and share. We invest in ... so other people may thrive. Something else goes here for a nice line break.</p>
 					<a href="#" class="what-we-do">What we do</a>
 				</div>
 				
@@ -71,34 +78,15 @@
 			</div><!-- end row -->
 		</section><!-- end keyofferings -->
 
-		<section class="casestudies">
+		<section class="casestudies drawer">
 			<div class="center-tag"></div>
 			<div class="row">
 				<div class="row-header">
-					<h1>ENGINEERING</h1>
-					<p class="body-copy casestudies-desc">At Catapult, our hands-on teams work with your company on x, y, and z. Our Not-for-profit is dedicated to facilitating... and educational programs...where companies can meet, learn, work, and share. We invest in ... so other people may thrive. Something else goes here for a nice line break.</p>
+					<h1>CASE STUDY: ENGINEERING</h1>
+					<p class="casestudies-desc">At Catapult, our hands-on teams work with your company on x, y, and z. Our Not-for-profit is dedicated to facilitating... and educational programs...where companies can meet, learn, work, and share. We invest in ... so other people may thrive. Something else goes here for a nice line break.</p>
 				</div>
-				<article class="casestudy row" id="anza">
-					<div class="casestudy-images"></div><!-- this is where images get loaded (via js) -->
-					<div class="casestudy-content">
-						<ul class="paddles">
-							<li class="paddle prev"><a href="#">Prev</a></li>
-							<li class="paddle next"><a href="#">Next</a></li>
-						</ul>
-						<img src="img/casestudies/handcart/caption.jpg" alt="ANZA Hand Carts" class="casestudy-content-header" />
-						<h1>RE-IMAGINING THE WHEEL WITH ANZA TECHNOLOGIES</h1>
-						<div class="casestudy-body">
-							<p>In resource-strapped Tanzania, farmers and their families spend an average of 5 hours a day carrying heavy loads of water, firewood, and food to their homes or market.</p> 
-							<p>Anza Technologies was working to create an affordable yet durable handcart for rural communities. They had some ideas - including wheels made of inflated 2 liter bottles - but needed a scalable solution suited for a rugged environment.</p>
-							<p>Over the course of 7 months, Catapult stepped in to provide user research, competitive analysis, design, prototyping, CAD development, and user testing.</p>
-							<p>Beginning with a competitive analysis of the handcart market, the Catapult team found there was a distinct gap between carts sold in stores with an upwards cost of $100 USD, and homemade carts which resembled wooden sleighs.</p>
-							<p>The team began designing a handcart better suited to our customers’ needs. Three designs were developed that would pack flat, ship easily, and retain their durability. These prototypes were sent to Tanzania along with Noel and Tyler. Working with the Matala community the field prototypes were tested, revised, reviewed and improved.</p>
-							<p>The result was a $20 USD hand cart capable of carrying 300lb over long, rugged paths, and maintained within the local community.
-							Related Posts</p>
-						</div>
-					</div><!-- end row -->
-			</div>
-			</article><!-- end case study -->
+				<div id="casestudies-container"></div>
+			</div><!-- end row -->
 		</section><!-- end case studies -->
 
 		<section class="team" id="team">
@@ -271,16 +259,107 @@
 		
 		<section class="locations">
 			<div class="center-tag"></div>
-			<div class="row">
-				<h1>CATAPULT PROJECTS</h1>
-				<div class="locations-map">
-					<img src="img/locations/map.png" alt="Where in the corld is Catapult?" />
-				</div>
-			</div><!-- end row -->
+			<h1>CATAPULT PROJECTS</h1>
+			<div class="locations-markers"></div>
 		</section><!-- end locations -->
 
-		<section class="contact row">
-			<h1><span class="emphasized level-one">FOLLOW</span>, <span class="emphasized level-two">LIKE</span> &amp; <span class="emphasized level-three">CONTACT</span> Us.</h1>
+		<section class="contact">
+			<div class="row">
+				<h1><span class="emphasized level-one">FOLLOW</span>, <span class="emphasized level-two">LIKE</span> &amp; <span class="emphasized level-three">CONTACT</span> Us.</h1>
+				<div class="divider"></div>
+				<div class="columns">
+					<div class="column left two">
+						<div class="contact-section street">
+							<h3>972 MISSION ST, 5TH FLOOR</h3>
+							<h4>SAN FRANCISCO, CA 94103</h4>
+						</div>
+						<div class="contact-section openhouse">
+							<h3>OPEN STUDIOS</h3>
+							<h4>4-6PM EVERY 1ST AND 3RD WEDNESDAY</h4>
+							<p>Have a question about Catapult, want to see our projects in person, or interested in working with us? Join us for open studios!</p>
+						</div>
+					</div><!-- end column -->
+					<div class="column right two">
+						<div class="map">
+							<img src="https://maps.googleapis.com/maps/api/staticmap?center=972+Mission+Street,+San+Francisco,+CA&zoom=17&size=600x300&sensor=false" alt="">
+						</div>
+					</div><!-- end column -->
+				</div>
+				<div class="divider"></div>
+				<div class="columns">
+					<div class="column three">
+						<div class="contact-section twitter"><h3>&#64;CATAPULT_DESIGN</h3></div>
+						<div class="contact-section email"><h3>INFO&#64;CATAPULTDESIGN.ORG</h3></div>
+					</div>
+					<div class="column three">
+						<div class="contact-section facebook"><h3>/CATAPULT-DESIGN</h3></div>
+						<div class="contact-section youtube"><h3>/CATAPULTDESIGN</h3></div>
+					</div>
+					<div class="column three">
+						<div class="contact-section rss"><h3>SUBSCRIBE TO BLOG</h3></div>
+					</div>
+				</div>
+			</div>
 		</section><!-- end contact -->
+
+		<section class="labs drawer">
+			<div class="center-tag"></div>
+			<div class="row">
+				<h1>UPCOMING CATAPULT LABS</h1>
+				<p>At Catapult, our hands-on teams work with your company on x, y, and z. Our Not-for-profit is dedicated to facilitating... and educational programs...where companies can meet, learn, work, and share. We invest in ... so other people may thrive. Something else goes here for a nice line break.</p>
+			</div>
+		</section><!-- end labs -->
+		
+		<section class="donate">
+			<div class="row">
+				<h1><span class="emphasized level-one">SUPPORT</span> Catapult</h1>
+				
+				<div class="divider"></div>
+				
+				<h3>Catapult Design is a 501(c)(3) non-profit and all donations are tax-deductible.</h3>
+				
+				<h4>Your donation supports</h4> 
+				<p>Materials and prototype budget for our project work, tools (from wrenches to software) our designers need to get the job done, travel costs associated with assessment and implementation, and our designers who are committed to using their skills to make a difference. If you have questions regarding how your donation will be used, please contact us as info@catapultdesign.org.</p>
+
+				<h4>Corporate matching</h4>
+				<p>Catapult is currently registered with corporate matching programs at:  Google, Microsoft, Applied Materials, and the Gordon and Betty Moore Foundation.</p>
+
+				<h4>To donate by check</h4>
+				<p>Write out your donation to “Catapult Design” and mail to Catapult Design, 972 Mission St. Suite 500, San Francisco, CA 94103.</p>
+
+				<h4>To donate online</h4>
+				<p>We accept secure online donations through both Google Checkout and Paypal. As a Google Grants recipient we pay no transaction fees on donations made through Google Checkout. Recurring donations are only available through PayPal.</p>
+
+				<div class="divider"></div>
+
+				<ul>
+					<li><a href="#" class="toggle orange">ONCE</a></li>
+					<li><a href="#" class="toggle orange">WEEKLY</a></li>
+					<li><a href="#" class="toggle orange">MONTHLY</a></li>
+				</ul>
+
+				<div class="divider"></div>
+
+				<ul>
+					<li><a href="#" class="toggle orange">$25</a></li>
+					<li><a href="#" class="toggle orange">$50</a></li>
+					<li><a href="#" class="toggle orange">$100</a></li>
+					<li><a href="#" class="toggle orange">$250</a></li>
+					<li><a href="#" class="toggle orange">$500</a></li>
+					<li><a href="#" class="toggle orange">OTHER</a></li>
+				</ul>
+
+				<div class="divider"></div>
+
+				<ul>
+					<li><a href="#" class="toggle orange half">CONTINUE WITH GOOGLE WALLET</a></li>
+					<li><a href="#" class="toggle orange half">CONTINUE WITH PAYPAL</a></li>
+				</ul>
+			</div><!-- end row -->
+		</section><!-- end donate -->
+
+		<section class="donate-forms">
+			<div class="center-tag"></div>
+		</section>
 	</body>
 </html>

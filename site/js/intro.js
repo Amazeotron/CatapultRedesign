@@ -220,7 +220,7 @@ var intro = {
 		label.textAlign = "center";
 		label.lineHeight = 50;
 
-		dot.graphics.beginRadialGradientFill(["#6eaeab", "#52817f"], [0,1], 0,0,radius*0.5, 0,0,radius)
+		dot.graphics.beginRadialGradientFill(["rgb(143,192,190)", "rgb(108,173,170)"], [0,1], 0,0,radius*0.25, 0,0,radius)
 		.drawCircle(0, 0, radius);
 		container.addChild(dot);
 		container.addChild(label);

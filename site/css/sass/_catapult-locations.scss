@@ -3,11 +3,44 @@
 -------------------------------- */
 
 .locations {
+	background: url(../img/shadow-top.png) top left repeat-x, url(../img/locations/map.png) top left no-repeat;
+	background-size: auto, cover;
+	position: relative;
 
-}
-.locations h1 {
+	h1 {
+		margin: 0 auto;
     font-family: $sansFont;
     text-transform: uppercase;
     color: #fff;
     letter-spacing: 3px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
+    filter: dropshadow(color=#000000, offx=1, offy=1);
+	}
+
+	.locations-markers {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		.marker {
+			background: url(../img/locations/marker.png) top left no-repeat;
+			padding: 5px 0 0 28px;
+			height: 36px;
+			position: absolute;
+			z-index: 10;
+			width: 130px;
+
+			h2 {
+				font-family: $sansFont;
+				color: #fff;
+				font-size: 0.9em;
+				text-transform: uppercase;
+				padding: 0;
+				margin: 0;
+				line-height: 0.9em;
+			}
+		}
+	}
+
+	
 }

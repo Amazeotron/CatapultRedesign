@@ -1,0 +1,100 @@
+/* --------------------------------
+    Contact and Social Section
+-------------------------------- */
+
+.contact {
+
+	h1 {
+		margin-top: 0;
+		padding-top: 1em;
+	}
+
+	.columns {
+		overflow: hidden;
+		width: 100%;
+		padding: 30px 0;
+
+		.column {
+			float: left;
+
+			&.two {
+				width: 50%;
+			}
+			&.three {
+				width: 33%;
+			}
+			&.four {
+				width: 25%;
+			}
+			&.right {
+				float: right;
+			}
+		}
+	}
+
+	.contact-section {
+		padding: 0 0 20px 40px;
+		background: url(../img/contact/icons.png) top left no-repeat;
+		height: 14px;
+		margin-bottom: 3em;
+
+		&.twitter {
+			background-position-y: 0px;
+		}
+		&.youtube {
+			background-position-y: -33pxpx;
+		}
+		&.email {
+			background-position-y: -66px;
+		}
+		&.rss {
+			background-position-y: -99px;
+		}
+		&.facebook {
+			background-position-y: -132px;
+		}
+		&.openhouse {
+			background-position-y: -165px;
+		}
+		&.street {
+			background-position-y: -198px;
+		}
+
+		h3, h4 {
+			font-family: $sansFont;
+			text-transform: uppercase;
+			line-height: 1em;
+			font-weight: normal;
+			margin: 0;
+			padding: 0;
+		}
+
+		h3 {
+			font-size: 1.8em;
+		}
+
+		h4 {
+			font-size: 1.3em;
+		}
+
+		p {
+
+		}
+	}
+
+	.map {
+		width: 100%;
+    position: relative;
+
+    &::before {
+    	content: "";
+    	position: absolute;
+    	top: 0;
+    	right: 0;
+    	bottom: 0;
+    	left: 0;
+    	-webkit-box-shadow: inset 8px 8px 15px 0px rgba(0, 0, 0, 0.3);
+              box-shadow: inset 8px 8px 15px 0px rgba(0, 0, 0, 0.3);
+    }
+	}
+}
