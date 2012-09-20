@@ -24,19 +24,6 @@ $(document).ready(function() {
 	];
 	casestudies.init(studies);
 
-
-	$(".team-member").hover(function() {
-		$(this).find(".team-member-details").addClass("hover");
-	}, function() {
-		$(this).find(".team-member-details").removeClass("hover");
-	});
-
-	$(".social .social-button").hover(function() {
-		$(this).find("span").addClass("hover");
-	}, function() {
-		$(this).find("span").removeClass("hover");
-	});
-
 	// Make the locations map
 	var locationData = [
 		{
@@ -131,47 +118,14 @@ $(document).ready(function() {
 		}
 	];
 
-	function layoutLocations(locations) {
-		var container = $(".locations-markers");
+	locations.init(locationData);
+	team.init();
 
-		$(locations).each(function(index, item) {
-			// calculate the xPos based on the window width
-			var ratio = $(window).width() / 1024,
-			xPos = item.xPos * ratio, 
-			yPos = item.yPos * ratio;
-			var marker = $('<div class="marker">' + 
-				'<h2>' + item.name + '<br/>' + 
-			 	item.location + '</h2>' + 
-			 	'</div>');
-			marker.css({
-				"left": xPos,
-				"top": yPos
-			});
-			container.append(marker);
-		});
-	}
-
-	layoutLocations(locationData);
-
-	function repositionLocations(locations) {
-		var ratio = $(".locations").width() / 1024;
-		$(".locations-markers").children().each(function(index, item) {
-			var obj = locations[index],
-			xPos = obj.xPos * ratio,
-			yPos = obj.yPos * ratio;
-			$(item).css({
-				"left": xPos, 
-				"top": yPos
-			});
-		});
-	}
-
-	// Adjust for size change for locations map
-	$(window).resize(function() {
-		$(".locations").height($(window).width() * 0.32421875);
-		repositionLocations(locationData);
+	$(".social .social-button").hover(function() {
+		$(this).find("span").addClass("hover");
+	}, function() {
+		$(this).find("span").removeClass("hover");
 	});
-	$(window).trigger('resize');
 	
 	
 });

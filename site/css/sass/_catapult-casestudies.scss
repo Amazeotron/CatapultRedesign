@@ -28,53 +28,67 @@
             background-position: top left;
             background-repeat: no-repeat;
         }
-        .casestudy-content {
+        #casestudy-content {
             background: rgba(249,247,246, 0.9);
             padding: 20px;
             margin: 30px 0 0 340px;
             width: 373px;
+            height: 860px;
+            overflow: hidden;
             position: relative;
             -webkit-box-shadow: 0px 3px 12px 3px rgba(0, 0, 0, 0.2);
                     box-shadow: 0px 3px 12px 3px rgba(0, 0, 0, 0.2);
+
+            #casestudy-content-sub {
+                position: relative;
+            }
 
             p {
                 font-size: 1em;
             }
 
-            .paddles {
-                width: 100%;
-                position: absolute;
-                display: block;
-                padding: 0;
-                margin: 0;
-            }
-            .paddles .paddle {
-                position: absolute;
-                display: block;
-                top:180px;
-                list-style-type: none;
-            }
-            .paddles .paddle.prev {
-                left: -72px; /* 52px (width of paddle) + 20px (padding on .casestudy-content) */
-            }
-            .paddles .paddle.next {
-                right: -32px;
-            }
             h1 {
                 font-family: "franklin-gothic-ext-comp-urw",sans-serif;
                 font-size: 2em;
                 color: #f89728;
             }
+
+            .casestudy-content-single {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+            }
         }
-    }
-    
-    .paddles .paddle a {
-        display: block;
-        text-indent: -10000px;
-        width: 52px;
-        height: 58px;
-        background: $orange;
-        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U3OGQxZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwJSIgc3RvcC1jb2xvcj0iI2YyYWQ0YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjkwJSIgc3RvcC1jb2xvcj0iI2YyYWQ0YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNzhkMWYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-        @include gradient($orange);
+        .paddles {
+            position: absolute;
+            display: block;
+            padding: 0;
+            margin: 0;
+            top: 0;
+            left: 0;
+
+            .paddle {
+                position: absolute;
+                display: block;
+                top:180px;
+                list-style-type: none;
+
+                a {
+                    display: block;
+                    text-indent: -10000px;
+                    width: 52px;
+                    height: 58px;
+                    background: $orange;
+                    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U3OGQxZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwJSIgc3RvcC1jb2xvcj0iI2YyYWQ0YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjkwJSIgc3RvcC1jb2xvcj0iI2YyYWQ0YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNzhkMWYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+                    @include gradient($orange);
+                }
+            }
+            .paddle.prev {
+                left: 288px;
+            }
+            .paddle.next {
+                left: 753px;
+            }
+        }
     }
 }

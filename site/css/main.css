@@ -882,57 +882,65 @@ section {
       position: absolute;
       background-position: top left;
       background-repeat: no-repeat; }
-    .casestudies .casestudy .casestudy-content {
+    .casestudies .casestudy #casestudy-content {
       background: rgba(249, 247, 246, 0.9);
       padding: 20px;
       margin: 30px 0 0 340px;
       width: 373px;
+      height: 860px;
+      overflow: hidden;
       position: relative;
       -webkit-box-shadow: 0px 3px 12px 3px rgba(0, 0, 0, 0.2);
       box-shadow: 0px 3px 12px 3px rgba(0, 0, 0, 0.2); }
-      .casestudies .casestudy .casestudy-content p {
+      .casestudies .casestudy #casestudy-content #casestudy-content-sub {
+        position: relative; }
+      .casestudies .casestudy #casestudy-content p {
         font-size: 1em; }
-      .casestudies .casestudy .casestudy-content .paddles {
-        width: 100%;
+      .casestudies .casestudy #casestudy-content h1 {
+        font-family: "franklin-gothic-ext-comp-urw",sans-serif;
+        font-size: 2em;
+        color: #f89728; }
+      .casestudies .casestudy #casestudy-content .casestudy-content-single {
         position: absolute;
-        display: block;
-        padding: 0;
-        margin: 0; }
-      .casestudies .casestudy .casestudy-content .paddles .paddle {
+        top: 20px;
+        left: 20px; }
+    .casestudies .casestudy .paddles {
+      position: absolute;
+      display: block;
+      padding: 0;
+      margin: 0;
+      top: 0;
+      left: 0; }
+      .casestudies .casestudy .paddles .paddle {
         position: absolute;
         display: block;
         top: 180px;
         list-style-type: none; }
-      .casestudies .casestudy .casestudy-content .paddles .paddle.prev {
-        left: -72px;
-        /* 52px (width of paddle) + 20px (padding on .casestudy-content) */ }
-      .casestudies .casestudy .casestudy-content .paddles .paddle.next {
-        right: -32px; }
-      .casestudies .casestudy .casestudy-content h1 {
-        font-family: "franklin-gothic-ext-comp-urw",sans-serif;
-        font-size: 2em;
-        color: #f89728; }
-  .casestudies .paddles .paddle a {
-    display: block;
-    text-indent: -10000px;
-    width: 52px;
-    height: 58px;
-    background: #f2ad4b;
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U3OGQxZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwJSIgc3RvcC1jb2xvcj0iI2YyYWQ0YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjkwJSIgc3RvcC1jb2xvcj0iI2YyYWQ0YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNzhkMWYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background: -moz-linear-gradient(left, #ef971b 0%, #f2ad4b 10%, #f2ad4b 90%, #ef971b 100%);
-    /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #ef971b), color-stop(10%, #f2ad4b), color-stop(90%, #f2ad4b), color-stop(100%, #ef971b));
-    /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(left, #ef971b 0%, #f2ad4b 10%, #f2ad4b 90%, #ef971b 100%);
-    /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(left, #ef971b 0%, #f2ad4b 10%, #f2ad4b 90%, #ef971b 100%);
-    /* Opera 11.10+ */
-    background: -ms-linear-gradient(left, #ef971b 0%, #f2ad4b 10%, #f2ad4b 90%, #ef971b 100%);
-    /* IE10+ */
-    background: linear-gradient(to right, #ef971b 0%, #f2ad4b 10%, #f2ad4b 90%, #ef971b 100%);
-    /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color', endColorstr='$color',GradientType=1 );
-    /* IE6-8 */ }
+        .casestudies .casestudy .paddles .paddle a {
+          display: block;
+          text-indent: -10000px;
+          width: 52px;
+          height: 58px;
+          background: #f2ad4b;
+          background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U3OGQxZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwJSIgc3RvcC1jb2xvcj0iI2YyYWQ0YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjkwJSIgc3RvcC1jb2xvcj0iI2YyYWQ0YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNzhkMWYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+          background: -moz-linear-gradient(left, #ef971b 0%, #f2ad4b 10%, #f2ad4b 90%, #ef971b 100%);
+          /* FF3.6+ */
+          background: -webkit-gradient(linear, left top, right top, color-stop(0%, #ef971b), color-stop(10%, #f2ad4b), color-stop(90%, #f2ad4b), color-stop(100%, #ef971b));
+          /* Chrome,Safari4+ */
+          background: -webkit-linear-gradient(left, #ef971b 0%, #f2ad4b 10%, #f2ad4b 90%, #ef971b 100%);
+          /* Chrome10+,Safari5.1+ */
+          background: -o-linear-gradient(left, #ef971b 0%, #f2ad4b 10%, #f2ad4b 90%, #ef971b 100%);
+          /* Opera 11.10+ */
+          background: -ms-linear-gradient(left, #ef971b 0%, #f2ad4b 10%, #f2ad4b 90%, #ef971b 100%);
+          /* IE10+ */
+          background: linear-gradient(to right, #ef971b 0%, #f2ad4b 10%, #f2ad4b 90%, #ef971b 100%);
+          /* W3C */
+          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color', endColorstr='$color',GradientType=1 );
+          /* IE6-8 */ }
+      .casestudies .casestudy .paddles .paddle.prev {
+        left: 288px; }
+      .casestudies .casestudy .paddles .paddle.next {
+        left: 753px; }
 
 /* --------------------------------
     Team Section

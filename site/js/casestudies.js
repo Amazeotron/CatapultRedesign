@@ -10,28 +10,9 @@ var casestudies = {
 	init: function(data) {
 		this._data = data;
 		this.showCaseStudy(this._activeIndex);
-	}, 
 
-	showCaseStudy: function(index) {
-		var study = this._data[index],
-		container = $("#casestudies-container"),
-		self = this,
-		html = '<article class="casestudy row" id="' + study.id + '">' +
-		'<div class="casestudy-images"></div>' +
-		'<div class="casestudy-content">' +
-		'<ul class="paddles">' +
-		'<li class="paddle prev"><a href="#" id="casestudy-paddle-prev">Prev</a></li>' +
-		'<li class="paddle next"><a href="#" id="casestudy-paddle-next">Next</a></li>' +
-		'</ul>' +
-		'<img src="' + study.headerImg + '" alt="' + study.title + '" class="casestudy-content-header" />' +
-		'<h1>' + study.title + '</h1>' +
-		'<div class="casestudy-body">' + study.body + '</div>' +
-		'</div>' +
-		'</article>';
+		var self = this;
 
-		container.empty();
-		container.append(html);
-		$("#"+study.id + " .casestudy-images").css({"background-image":"url(" + study.mainImg + ")"});
 		$("#casestudy-paddle-prev").click(function(event) {
 			event.preventDefault();
 			self.showCaseStudy(self.getPrevIndex());
@@ -42,6 +23,29 @@ var casestudies = {
 			self.showCaseStudy(self.getNextIndex());
 			return false;
 		});
+	}, 
+
+	showCaseStudy: function(index) {
+		var study = this._data[index],
+		container = $("#casestudy-content-sub");
+		html = '<div class="casestudy-content-single" id="' + study.id + '">' +
+						'<img src="' + study.headerImg + '" alt="' + study.title + '" class="casestudy-content-header" />' +
+						'<h1>' + study.title + '</h1>' +
+						'<p class="casestudy-body">' + study.body + '</p>' +
+						'</div>';
+
+		// container.empty();
+		container.append(html);
+
+		var offset = index*300+20;
+		
+		$("#"+study.id).css({left:offset});
+		$(".casestudy-images").css({"background-image":"url(" + study.mainImg + ")"});
+
+		// animate the container
+		container.animate({
+			left: -offset
+		}, 500);
 	}, 
 
 	getNextIndex: function() {
