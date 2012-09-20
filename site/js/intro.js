@@ -138,12 +138,12 @@ var intro = {
 		this._titleContainer = new Container();
 		this._stage.addChild(this._titleContainer);
 
-		var title1 = new Text("We", "42px freight-text-pro", "rgba(100,100,100,1)");
+		var title1 = new Text("We", "42px freight-text-pro", "rgb(200,200,200)");
 		title1.x = 130;
 		title1.y = 50;
 		this._titleContainer.addChild(title1);
 
-		var title2 = new Text("to help people thrive.", "42px freight-text-pro", "rgba(100,100,100,1)");
+		var title2 = new Text("to help people thrive.", "42px freight-text-pro", "rgb(200,200,200)");
 		title2.x = 340;
 		title2.y = title1.y;
 		this._titleContainer.addChild(title2);

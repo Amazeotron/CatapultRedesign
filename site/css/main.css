@@ -511,11 +511,12 @@ textarea {
     Common Elements
 -------------------------------- */
 body {
-  background: url(../img/bgtile.png) top left repeat; }
+  background: url(../img/bgtile.jpg) top left repeat; }
 
 h1, h2, h3, h4, h5, p {
   font-family: "freight-text-pro", serif;
-  color: #514f52; }
+  color: #c8c8c8;
+  font-size: 1em; }
 
 h1 {
   font-size: 3em;
@@ -699,7 +700,6 @@ section {
 .intro .caption {
   overflow: hidden; }
   .intro .caption .intro-desc {
-    color: #545353;
     float: left;
     width: 786px;
     padding: 0 30px 0 0; }
@@ -972,79 +972,76 @@ section {
 /* --------------------------------
     Team Section
 -------------------------------- */
-.team {
-  background: url(../img/bgtile.png) top left repeat; }
-  .team h1 {
-    color: #514f52;
+.team h1 {
+  font-weight: normal;
+  font-size: 3em;
+  margin-top: 0;
+  padding: 1em 0 0 0;
+  text-align: center;
+  letter-spacing: 1px; }
+.team .team-members {
+  overflow: hidden;
+  padding: 0; }
+  .team .team-members li {
+    display: block;
+    float: left;
+    width: 178px; }
+  .team .team-members li img {
+    border: 2px solid;
+    width: 175px; }
+  .team .team-members li.primary img {
+    border-color: #f2ad4b; }
+  .team .team-members li.secondary img {
+    border-color: #ec5062; }
+  .team .team-members li.tertiary img {
+    border-color: #84b6b4; }
+  .team .team-members li h3,
+  .team .team-members li h4,
+  .team .team-members li h5 {
+    margin: 0;
+    padding: 0;
+    font-family: "franklin-gothic-ext-comp-urw", sans-serif;
+    text-transform: uppercase;
+    font-size: 1em;
     font-weight: normal;
-    font-size: 3em;
-    margin-top: 0;
-    padding: 1em 0 0 0;
-    text-align: center;
-    letter-spacing: 1px; }
-  .team .team-members {
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1;
+    text-shadow: -1px -1px 0px rgba(0, 0, 0, 0.3);
+    filter: dropshadow(color=#666666, offx=1, offy=1); }
+  .team .team-members li h3 {
+    padding-bottom: 0.6em;
+    font-size: 1em;
+    color: white; }
+  .team .team-members .team-member {
     overflow: hidden;
-    padding: 0; }
-    .team .team-members li {
-      display: block;
-      float: left;
-      width: 178px; }
-    .team .team-members li img {
-      border: 2px solid;
-      width: 175px; }
-    .team .team-members li.primary img {
-      border-color: #f2ad4b; }
-    .team .team-members li.secondary img {
-      border-color: #ec5062; }
-    .team .team-members li.tertiary img {
-      border-color: #84b6b4; }
-    .team .team-members li h3,
-    .team .team-members li h4,
-    .team .team-members li h5 {
-      margin: 0;
-      padding: 0;
-      font-family: "franklin-gothic-ext-comp-urw", sans-serif;
-      text-transform: uppercase;
-      font-size: 1em;
-      font-weight: normal;
-      letter-spacing: 1.5px;
-      color: rgba(255, 255, 255, 0.8);
-      line-height: 1;
-      text-shadow: -1px -1px 0px rgba(0, 0, 0, 0.3);
-      filter: dropshadow(color=#666666, offx=1, offy=1); }
-    .team .team-members li h3 {
-      padding-bottom: 0.6em;
-      font-size: 1em;
-      color: white; }
-    .team .team-members .team-member {
-      overflow: hidden;
-      position: relative;
-      margin: 0 62px 15px 0; }
-    .team .team-members .team-member.col-last {
-      margin-right: 0; }
-    .team .team-members .team-member-details {
-      position: absolute;
-      top: 140px;
-      left: 0;
-      padding: 12px 10px 0 10px;
-      height: 179px;
-      -webkit-transition: all 0.5s ease-in-out; }
-      .team .team-members .team-member-details p {
+    position: relative;
+    margin: 0 62px 15px 0; }
+  .team .team-members .team-member.col-last {
+    margin-right: 0; }
+  .team .team-members .team-member-details {
+    position: absolute;
+    top: 140px;
+    left: 0;
+    padding: 12px 10px 0 10px;
+    height: 179px;
+    -webkit-transition: all 0.5s ease-in-out; }
+    .team .team-members .team-member-details p {
+      color: #fff;
+      line-height: 1.1em; }
+      .team .team-members .team-member-details p a {
         color: #fff;
-        line-height: 1.1em; }
-        .team .team-members .team-member-details p a {
-          color: #fff;
-          text-decoration: underline; }
-        .team .team-members .team-member-details p a:after {
-          content: " »"; }
-    .team .team-members .team-member-details.hover {
-      top: 0; }
-  .team .primary .team-member-details {
-    background: rgba(242, 173, 75, 0.85); }
-  .team .secondary .team-member-details {
-    background: rgba(236, 80, 98, 0.85); }
-  .team .tertiary .team-member-details {
-    background: rgba(132, 182, 180, 0.85); }
+        text-decoration: underline; }
+      .team .team-members .team-member-details p a:after {
+        content: " »"; }
+  .team .team-members .team-member-details.hover {
+    top: 0; }
+.team .primary .team-member-details {
+  background: rgba(242, 173, 75, 0.85); }
+.team .secondary .team-member-details {
+  background: rgba(236, 80, 98, 0.85); }
+.team .tertiary .team-member-details {
+  background: rgba(132, 182, 180, 0.85); }
 
 /* --------------------------------
     Location Map Section

@@ -3,12 +3,13 @@
 -------------------------------- */
 
 body {
-    background: url(../img/bgtile.png) top left repeat;
+    background: url(../img/bgtile.jpg) top left repeat;
 }
 
 h1, h2, h3, h4, h5, p {
     font-family: $serifFont;
-    color: #514f52;
+    color: rgb(200,200,200);
+    font-size: 1em;
 }
 h1 {
     font-size: 3em;
