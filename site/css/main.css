@@ -563,7 +563,6 @@ section {
 
 .drawer {
   padding: 0 0 30px 0;
-  background: url(../img/shadow-top.png) top left repeat-x, url(../img/case-studies-bgtile.png) top left repeat;
   -webkit-box-shadow: inset 0px 20px 120px 0px rgba(0, 0, 0, 0.4);
   box-shadow: inset 0px 20px 120px 0px rgba(0, 0, 0, 0.4); }
   .drawer p {
@@ -737,7 +736,7 @@ section {
     .keyofferings .keyofferings-list-item a {
       text-decoration: none;
       display: block;
-      padding: 10px 0 6px 0;
+      padding: 12px 0 8px 0;
       width: 405px;
       background: #c83232;
       text-align: center;
@@ -747,7 +746,7 @@ section {
       letter-spacing: 1px;
       -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.4);
       box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.4); }
-      .keyofferings .keyofferings-list-item a:hover, .keyofferings .keyofferings-list-item a:active {
+      .keyofferings .keyofferings-list-item a:hover, .keyofferings .keyofferings-list-item a:active, .keyofferings .keyofferings-list-item a.active {
         -webkit-box-shadow: inset 0px 5px 5px 0px rgba(0, 0, 0, 0.2);
         box-shadow: inset 0px 5px 5px 0px rgba(0, 0, 0, 0.2); }
     .keyofferings .keyofferings-list-item a.engineering {
@@ -787,20 +786,20 @@ section {
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color', endColorstr='$color',GradientType=1 );
       /* IE6-8 */ }
     .keyofferings .keyofferings-list-item a.innovation {
-      background: #f2660d;
+      background: #f2ca0d;
       /* Old browsers */
       background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2RjYjAwNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwJSIgc3RvcC1jb2xvcj0iI2YyY2EwZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjkwJSIgc3RvcC1jb2xvcj0iI2YyY2EwZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkY2IwMDciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-      background: -moz-linear-gradient(left, #c2520a 0%, #f2660d 10%, #f2660d 90%, #c2520a 100%);
+      background: -moz-linear-gradient(left, #c2a20a 0%, #f2ca0d 10%, #f2ca0d 90%, #c2a20a 100%);
       /* FF3.6+ */
-      background: -webkit-gradient(linear, left top, right top, color-stop(0%, #c2520a), color-stop(10%, #f2660d), color-stop(90%, #f2660d), color-stop(100%, #c2520a));
+      background: -webkit-gradient(linear, left top, right top, color-stop(0%, #c2a20a), color-stop(10%, #f2ca0d), color-stop(90%, #f2ca0d), color-stop(100%, #c2a20a));
       /* Chrome,Safari4+ */
-      background: -webkit-linear-gradient(left, #c2520a 0%, #f2660d 10%, #f2660d 90%, #c2520a 100%);
+      background: -webkit-linear-gradient(left, #c2a20a 0%, #f2ca0d 10%, #f2ca0d 90%, #c2a20a 100%);
       /* Chrome10+,Safari5.1+ */
-      background: -o-linear-gradient(left, #c2520a 0%, #f2660d 10%, #f2660d 90%, #c2520a 100%);
+      background: -o-linear-gradient(left, #c2a20a 0%, #f2ca0d 10%, #f2ca0d 90%, #c2a20a 100%);
       /* Opera 11.10+ */
-      background: -ms-linear-gradient(left, #c2520a 0%, #f2660d 10%, #f2660d 90%, #c2520a 100%);
+      background: -ms-linear-gradient(left, #c2a20a 0%, #f2ca0d 10%, #f2ca0d 90%, #c2a20a 100%);
       /* IE10+ */
-      background: linear-gradient(to right, #c2520a 0%, #f2660d 10%, #f2660d 90%, #c2520a 100%);
+      background: linear-gradient(to right, #c2a20a 0%, #f2ca0d 10%, #f2ca0d 90%, #c2a20a 100%);
       /* W3C */
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color', endColorstr='$color',GradientType=1 );
       /* IE6-8 */ }
@@ -864,6 +863,18 @@ section {
 -------------------------------- */
 .casestudies {
   min-height: 1200px; }
+  .casestudies.education {
+    background: url(../img/shadow-top.png) top left repeat-x, url(../img/casestudies/bgtile-education.png) top left repeat; }
+  .casestudies.engineering {
+    background: url(../img/shadow-top.png) top left repeat-x, url(../img/casestudies/bgtile-engineering.png) top left repeat; }
+  .casestudies.ideation {
+    background: url(../img/shadow-top.png) top left repeat-x, url(../img/casestudies/bgtile-ideation.png) top left repeat; }
+  .casestudies.innovation {
+    background: url(../img/shadow-top.png) top left repeat-x, url(../img/casestudies/bgtile-innovation.png) top left repeat; }
+  .casestudies.insights {
+    background: url(../img/shadow-top.png) top left repeat-x, url(../img/casestudies/bgtile-insights.png) top left repeat; }
+  .casestudies.systhink {
+    background: url(../img/shadow-top.png) top left repeat-x, url(../img/casestudies/bgtile-systhink.png) top left repeat; }
   .casestudies h1 {
     font-family: "franklin-gothic-ext-comp-urw",sans-serif;
     font-size: 4em;
@@ -876,12 +887,19 @@ section {
     .casestudies .casestudy p {
       color: #515052; }
     .casestudies .casestudy .casestudy-images {
-      background-size: contain;
       width: 100%;
-      min-height: 1000px;
-      position: absolute;
-      background-position: top left;
-      background-repeat: no-repeat; }
+      height: 675px;
+      position: relative;
+      overflow: hidden; }
+      .casestudies .casestudy .casestudy-images #casestudy-images-sub {
+        position: relative;
+        -webkit-transform: translate3d(0, 0, 0);
+        -webkit-transition: all 0.5s ease-in-out; }
+        .casestudies .casestudy .casestudy-images #casestudy-images-sub img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%; }
     .casestudies .casestudy #casestudy-content {
       background: rgba(249, 247, 246, 0.9);
       padding: 20px;
@@ -889,11 +907,13 @@ section {
       width: 373px;
       height: 860px;
       overflow: hidden;
-      position: relative;
+      position: absolute;
+      top: 15px;
       -webkit-box-shadow: 0px 3px 12px 3px rgba(0, 0, 0, 0.2);
       box-shadow: 0px 3px 12px 3px rgba(0, 0, 0, 0.2); }
       .casestudies .casestudy #casestudy-content #casestudy-content-sub {
-        position: relative; }
+        position: relative;
+        -webkit-transition: all 0.5s ease-in-out; }
       .casestudies .casestudy #casestudy-content p {
         font-size: 1em; }
       .casestudies .casestudy #casestudy-content h1 {
@@ -902,7 +922,7 @@ section {
         color: #f89728; }
       .casestudies .casestudy #casestudy-content .casestudy-content-single {
         position: absolute;
-        top: 20px;
+        top: 0;
         left: 20px; }
     .casestudies .casestudy .paddles {
       position: absolute;
@@ -918,7 +938,6 @@ section {
         list-style-type: none; }
         .casestudies .casestudy .paddles .paddle a {
           display: block;
-          text-indent: -10000px;
           width: 52px;
           height: 58px;
           background: #f2ad4b;
@@ -937,10 +956,18 @@ section {
           /* W3C */
           filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color', endColorstr='$color',GradientType=1 );
           /* IE6-8 */ }
-      .casestudies .casestudy .paddles .paddle.prev {
-        left: 288px; }
-      .casestudies .casestudy .paddles .paddle.next {
-        left: 753px; }
+          .casestudies .casestudy .paddles .paddle a img {
+            margin: 12px; }
+        .casestudies .casestudy .paddles .paddle.prev {
+          left: 288px;
+          -webkit-box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.5); }
+        .casestudies .casestudy .paddles .paddle.next {
+          left: 753px;
+          -webkit-box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.5); }
+          .casestudies .casestudy .paddles .paddle.next a img {
+            margin-left: 18px; }
 
 /* --------------------------------
     Team Section
