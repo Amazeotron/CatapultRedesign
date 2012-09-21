@@ -33,7 +33,16 @@ var casestudies = {
 			$(".casestudies").removeClass("engineering ideation innovation education insights systhink");
 			$(".casestudies").addClass($(this).attr("class"));
 		});
-	}, 
+
+		// preload all images.
+		// Create compatible array
+		var imgData = [];
+		for (var i = 0, len = this._data.length; i < len; i++) {
+			imgData[i] = {imgURL:this._data[i].mainImg};
+		}
+		var preload = new ImagePreloader();
+		preload.init(imgData, function() {});
+	},
 
 	showCaseStudy: function(index, firstTime) {
 		var study = this._data[index],
