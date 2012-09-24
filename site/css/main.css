@@ -511,7 +511,7 @@ textarea {
     Common Elements
 -------------------------------- */
 body {
-  background: url(../img/bgtile.jpg) top left repeat; }
+  background: url(../img/homepage/bg/bgtile.jpg) top left repeat; }
 
 h1, h2, h3, h4, h5, p {
   font-family: "freight-text-pro", serif;
@@ -527,7 +527,7 @@ h1 {
     text-transform: uppercase; }
 
 section {
-  background: url(../img/shadow-top.png) top left repeat-x; }
+  background: url(../img/homepage/shadow-top.png) top left repeat-x; }
 
 .level-one {
   color: #f2ad4b; }
@@ -546,7 +546,7 @@ section {
   padding: 0 30px; }
 
 .center-tag {
-  background: url(../img/center-tag.png) top center no-repeat;
+  background: url(../img/homepage/bg/center-tag.png) top center no-repeat;
   width: 319px;
   height: 55px;
   margin: 0 auto; }
@@ -560,7 +560,7 @@ section {
 .divider {
   width: 900px;
   height: 3px;
-  background: url(../img/divider.png) top left no-repeat; }
+  background: url(../img/homepage/divider.png) top left no-repeat; }
 
 .drawer {
   padding: 0 0 30px 0;
@@ -569,6 +569,55 @@ section {
   .drawer p {
     color: rgba(255, 255, 255, 0.8);
     font-size: 1.1em; }
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 999;
+  top: 0;
+  left: 0; }
+  .overlay .overlay-inner {
+    margin: 60px auto;
+    width: 700px;
+    padding: 60px 30px 30px 30px;
+    background: white;
+    position: relative;
+    overflow: hidden;
+    -webkit-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.5); }
+    .overlay .overlay-inner .close {
+      display: block;
+      position: absolute;
+      z-index: 10;
+      top: 20px;
+      right: 20px;
+      width: 36px;
+      height: 37px;
+      background: url(../img/homepage/overlay-close-button.png) top left no-repeat; }
+    .overlay .overlay-inner .name {
+      color: #f2ad4b;
+      font-family: "franklin-gothic-ext-comp-urw", sans-serif;
+      font-size: 2em;
+      text-align: left;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin: 0;
+      padding: 0; }
+    .overlay .overlay-inner .title,
+    .overlay .overlay-inner .company,
+    .overlay .overlay-inner .twitter {
+      color: #f2ad4b;
+      margin: 0;
+      padding: 0; }
+    .overlay .overlay-inner .body {
+      color: #545353;
+      margin: 0.5em 0 0 0; }
+    .overlay .overlay-inner .headshot {
+      float: right;
+      margin: 10px;
+      border: 1px solid #f2ad4b; }
 
 .floater {
   position: fixed;
@@ -649,7 +698,7 @@ section {
     Main Header Section
 -------------------------------- */
 .header {
-  background: url(../img/navbar-bg.png) top left repeat-x;
+  background: url(../img/homepage/navbar-bg.png) top left repeat-x;
   background-size: contain;
   width: 100%;
   overflow: hidden;
@@ -658,11 +707,11 @@ section {
   .header .logo {
     padding: 10px 0 7px 50px; }
   .header .header-divider {
-    background: url(../img/header-detail.png) top left no-repeat #e38e15;
+    background: url(../img/homepage/header-detail.png) top left no-repeat #e38e15;
     width: 100%;
     height: 2px; }
   .header .header-bottom {
-    background: url(../img/shadow-top.png) top left repeat;
+    background: url(../img/homepage/shadow-top.png) top left repeat;
     width: 100%;
     height: 15px;
     position: relative;
@@ -674,7 +723,7 @@ section {
 .mainnav {
   overflow: hidden;
   float: right;
-  background: url(../img/divider-vert.png) top right no-repeat;
+  background: url(../img/homepage/divider-vert.png) top right no-repeat;
   min-height: 79px; }
   .mainnav .mainnav-item {
     float: left;
@@ -693,7 +742,7 @@ section {
     Intro Section
 -------------------------------- */
 .intro .center-tag {
-  background: url(../img/center-tag-top.png) top center no-repeat;
+  background: url(../img/homepage/bg/center-tag-top.png) top center no-repeat;
   width: 158px;
   height: 35px;
   margin: 0 auto; }
@@ -705,7 +754,7 @@ section {
     padding: 0 30px 0 0; }
   .intro .caption .what-we-do {
     display: block;
-    background: url(../img/what-we-do.png) top left no-repeat;
+    background: url(../img/homepage/what-we-do.png) top left no-repeat;
     width: 84px;
     height: 114px;
     float: left;
@@ -862,25 +911,36 @@ section {
     Case Studies Section
 -------------------------------- */
 .casestudies {
-  min-height: 1200px; }
+  min-height: 1200px;
+  position: relative; }
   .casestudies.education {
-    background: url(../img/shadow-top.png) top left repeat-x, url(../img/casestudies/bgtile-education.png) top left repeat; }
+    background: url(../img/homepage/shadow-top.png) top left repeat-x, url(../img/homepage/casestudies/bgtile-education.png) top left repeat; }
   .casestudies.engineering {
-    background: url(../img/shadow-top.png) top left repeat-x, url(../img/casestudies/bgtile-engineering.png) top left repeat; }
+    background: url(../img/homepage/shadow-top.png) top left repeat-x, url(../img/homepage/casestudies/bgtile-engineering.png) top left repeat; }
   .casestudies.ideation {
-    background: url(../img/shadow-top.png) top left repeat-x, url(../img/casestudies/bgtile-ideation.png) top left repeat; }
+    background: url(../img/homepage/shadow-top.png) top left repeat-x, url(../img/homepage/casestudies/bgtile-ideation.png) top left repeat; }
   .casestudies.innovation {
-    background: url(../img/shadow-top.png) top left repeat-x, url(../img/casestudies/bgtile-innovation.png) top left repeat; }
+    background: url(../img/homepage/shadow-top.png) top left repeat-x, url(../img/homepage/casestudies/bgtile-innovation.png) top left repeat; }
   .casestudies.insights {
-    background: url(../img/shadow-top.png) top left repeat-x, url(../img/casestudies/bgtile-insights.png) top left repeat; }
+    background: url(../img/homepage/shadow-top.png) top left repeat-x, url(../img/homepage/casestudies/bgtile-insights.png) top left repeat; }
   .casestudies.systhink {
-    background: url(../img/shadow-top.png) top left repeat-x, url(../img/casestudies/bgtile-systhink.png) top left repeat; }
+    background: url(../img/homepage/shadow-top.png) top left repeat-x, url(../img/homepage/casestudies/bgtile-systhink.png) top left repeat; }
   .casestudies h1 {
     font-family: "franklin-gothic-ext-comp-urw",sans-serif;
     font-size: 4em;
     color: #fff;
     text-align: center;
     margin: 0; }
+  .casestudies #casestudies-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-position: top left;
+    background-repeat: repeat;
+    opacity: 0;
+    width: 100%;
+    height: 100%; }
   .casestudies .casestudy {
     position: relative;
     padding: 20px 0 0 0; }
@@ -1047,7 +1107,7 @@ section {
     Location Map Section
 -------------------------------- */
 .locations {
-  background: url(../img/shadow-top.png) top left repeat-x, url(../img/locations/map.png) top left no-repeat;
+  background: url(../img/homepage/shadow-top.png) top left repeat-x, url(../img/homepage/locations/map.png) top left no-repeat;
   background-size: auto, cover;
   position: relative; }
   .locations h1 {
@@ -1063,7 +1123,7 @@ section {
     top: 0;
     left: 0; }
     .locations .locations-markers .marker {
-      background: url(../img/locations/marker.png) top left no-repeat;
+      background: url(../img/homepage/locations/marker.png) top left no-repeat;
       padding: 5px 0 0 28px;
       height: 36px;
       position: absolute;
@@ -1100,7 +1160,7 @@ section {
       float: right; }
 .contact .contact-section {
   padding: 0 0 20px 40px;
-  background: url(../img/contact/icons.png) top left no-repeat;
+  background: url(../img/homepage/contact/icons.png) top left no-repeat;
   height: 14px;
   margin-bottom: 3em; }
   .contact .contact-section.twitter {
@@ -1203,7 +1263,7 @@ section {
     width: 360px; }
 
 .donate-forms {
-  background: url(../img/shadow-top.png) top left repeat-x, url(../img/bgtile-grey.png) top left repeat;
+  background: url(../img/homepage/shadow-top.png) top left repeat-x, url(../img/homepage/bg/bgtile-grey.png) top left repeat;
   -webkit-box-shadow: inset 0px 20px 120px 0px rgba(0, 0, 0, 0.4);
   box-shadow: inset 0px 20px 120px 0px rgba(0, 0, 0, 0.4); }
 

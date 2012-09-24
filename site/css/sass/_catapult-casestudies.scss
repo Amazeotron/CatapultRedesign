@@ -4,30 +4,31 @@
 
 .casestudies {
     min-height: 1200px;
+    position: relative;
 
     &.education {
-        background: url(../img/shadow-top.png) top left repeat-x, 
-                url(../img/casestudies/bgtile-education.png) top left repeat;
+        background: url(../img/homepage/shadow-top.png) top left repeat-x, 
+                url(../img/homepage/casestudies/bgtile-education.png) top left repeat;
     }
     &.engineering {
-        background: url(../img/shadow-top.png) top left repeat-x, 
-                url(../img/casestudies/bgtile-engineering.png) top left repeat;
+        background: url(../img/homepage/shadow-top.png) top left repeat-x, 
+                url(../img/homepage/casestudies/bgtile-engineering.png) top left repeat;
     }
     &.ideation {
-        background: url(../img/shadow-top.png) top left repeat-x, 
-                url(../img/casestudies/bgtile-ideation.png) top left repeat;
+        background: url(../img/homepage/shadow-top.png) top left repeat-x, 
+                url(../img/homepage/casestudies/bgtile-ideation.png) top left repeat;
     }
     &.innovation {
-        background: url(../img/shadow-top.png) top left repeat-x, 
-                url(../img/casestudies/bgtile-innovation.png) top left repeat;
+        background: url(../img/homepage/shadow-top.png) top left repeat-x, 
+                url(../img/homepage/casestudies/bgtile-innovation.png) top left repeat;
     }
     &.insights {
-        background: url(../img/shadow-top.png) top left repeat-x, 
-                url(../img/casestudies/bgtile-insights.png) top left repeat;
+        background: url(../img/homepage/shadow-top.png) top left repeat-x, 
+                url(../img/homepage/casestudies/bgtile-insights.png) top left repeat;
     }
     &.systhink {
-        background: url(../img/shadow-top.png) top left repeat-x, 
-                url(../img/casestudies/bgtile-systhink.png) top left repeat;
+        background: url(../img/homepage/shadow-top.png) top left repeat-x, 
+                url(../img/homepage/casestudies/bgtile-systhink.png) top left repeat;
     }
 
     h1 {
@@ -36,6 +37,18 @@
         color: #fff;
         text-align: center;
         margin: 0;
+    }
+
+    #casestudies-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background-position: top left;
+        background-repeat: repeat;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
     }
     
     .casestudy {

@@ -27,7 +27,7 @@ var intro = {
 
 		this._projectManifest = [
 			{
-				src:"img/intro/handcart.jpg", 
+				src:"img/homepage/intro/handcart.jpg", 
 				id:"handcart", 
 				verb: "ENGINEER",
 				skills:[
@@ -41,7 +41,7 @@ var intro = {
 				dotPosition:{x:106, y:246}
 			}, 
 			{
-				src:"img/intro/ihangane.jpg", 
+				src:"img/homepage/intro/ihangane.jpg", 
 				id:"ihangane", 
 				verb:"INNOVATE",
 				skills:[
@@ -55,7 +55,7 @@ var intro = {
 				dotPosition:{x:202, y:317}
 			}, 
 			{
-				src:"img/intro/peacecorps.jpg", 
+				src:"img/homepage/intro/peacecorps.jpg", 
 				id:"peacecorps", 
 				verb:"ANALYZE",
 				skills: [
@@ -69,7 +69,7 @@ var intro = {
 				dotPosition:{x:298, y:371}
 			}, 
 			{
-				src:"img/intro/simpa.jpg", 
+				src:"img/homepage/intro/simpa.jpg", 
 				id:"simpa",
 				verb:"IDEATE",
 				skills: [
@@ -83,7 +83,7 @@ var intro = {
 				dotPosition:{x:361, y:245}
 			}, 
 			{
-				src:"img/intro/wello.jpg", 
+				src:"img/homepage/intro/wello.jpg", 
 				id:"wello", 
 				verb:"EDUCATE",
 				skills:[
@@ -97,7 +97,7 @@ var intro = {
 				dotPosition:{x:502, y:370}
 			}, 
 			{
-				src:"img/intro/worldbank.jpg", 
+				src:"img/homepage/intro/worldbank.jpg", 
 				id:"worldbank", 
 				verb:"DESIGN",
 				skills:[

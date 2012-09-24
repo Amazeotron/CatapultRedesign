@@ -2,7 +2,7 @@
     Main Header Section
 -------------------------------- */
 .header {
-	background: url(../img/navbar-bg.png) top left repeat-x;
+	background: url(../img/homepage/navbar-bg.png) top left repeat-x;
     background-size: contain;
 	width: 100%;
     overflow: hidden;
@@ -13,12 +13,12 @@
         padding: 10px 0 7px 50px;
     }
     .header-divider {
-        background: url(../img/header-detail.png) top left no-repeat #e38e15;
+        background: url(../img/homepage/header-detail.png) top left no-repeat #e38e15;
         width: 100%;
         height: 2px;
     }
     .header-bottom {
-        background: url(../img/shadow-top.png) top left repeat;
+        background: url(../img/homepage/shadow-top.png) top left repeat;
         width: 100%;
         height: 15px;
         position: relative;
@@ -32,7 +32,7 @@
 .mainnav {
     overflow: hidden;
     float: right;
-    background: url(../img/divider-vert.png) top right no-repeat;
+    background: url(../img/homepage/divider-vert.png) top right no-repeat;
     min-height:79px;
     
     .mainnav-item {

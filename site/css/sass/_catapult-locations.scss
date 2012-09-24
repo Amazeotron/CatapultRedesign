@@ -3,7 +3,7 @@
 -------------------------------- */
 
 .locations {
-	background: url(../img/shadow-top.png) top left repeat-x, url(../img/locations/map.png) top left no-repeat;
+	background: url(../img/homepage/shadow-top.png) top left repeat-x, url(../img/homepage/locations/map.png) top left no-repeat;
 	background-size: auto, cover;
 	position: relative;
 
@@ -23,7 +23,7 @@
 		left: 0;
 
 		.marker {
-			background: url(../img/locations/marker.png) top left no-repeat;
+			background: url(../img/homepage/locations/marker.png) top left no-repeat;
 			padding: 5px 0 0 28px;
 			height: 36px;
 			position: absolute;

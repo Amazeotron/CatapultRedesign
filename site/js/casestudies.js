@@ -4,13 +4,16 @@ var casestudies = {
 	_data: null,
 	_activeIndex: 0,
 	_lastIndex: 0,
+	_numItems: 0,
+	_container: null,
 
 	/*
 	* Kick off the Case Studies. Pass in data array that represents the case studies.
 	*/
 	init: function(data) {
 		this._data = data;
-		this.showCaseStudy(this._activeIndex, true);
+		this._numItems = this._data.length;
+		this._container = $(".casestudies");		
 
 		var self = this;
 
@@ -28,10 +31,7 @@ var casestudies = {
 		//Key Offerings buttons
 		$(".keyofferings-list-item a").click(function(event) {
 			event.preventDefault();
-			$(".keyofferings-list-item a").removeClass("active");
-			$(this).addClass("active");
-			$(".casestudies").removeClass("engineering ideation innovation education insights systhink");
-			$(".casestudies").addClass($(this).attr("class"));
+			self.showCaseStudy($(this).parent().index(), false);
 		});
 
 		// preload all images.
@@ -41,42 +41,66 @@ var casestudies = {
 			imgData[i] = {imgURL:this._data[i].mainImg};
 		}
 		var preload = new ImagePreloader();
-		preload.init(imgData, function() {});
+		preload.init(imgData, function() { self.contentLoaded(); });
+
+		// Show the first one
+		this.showCaseStudy(this._activeIndex, true);
+	},
+
+	contentLoaded: function() {
+		// Draw out all the content
+		var container = $("#casestudy-content-sub"),
+		imgContainer = $("#casestudy-images-sub");
+
+		for (var i = 0; i < this._numItems; i++) {
+			var study = this._data[i],
+			template = this.getCaseStudyTemplate(study);
+			container.append(template);
+			$("#casestudy-content-"+study.id).css({left:this.getContentOffset(i)});
+			imgContainer.append('<img src="' + study.mainImg + '" id="casestudy-image-' + study.id + '" />');
+			$("#casestudy-image-"+study.id).css({left:this.getImageOffset(i)});
+		}
 	},
 
 	showCaseStudy: function(index, firstTime) {
 		var study = this._data[index],
 		container = $("#casestudy-content-sub"),
 		imgContainer = $("#casestudy-images-sub"),
-		html = '<div class="casestudy-content-single" id="' + study.id + '">' +
-						'<img src="' + study.headerImg + '" alt="' + study.title + '" class="casestudy-content-header" />' +
-						'<h1>' + study.title + '</h1>' +
-						'<p class="casestudy-body">' + study.body + '</p>' +
-						'</div>',
-		self = this;
+		category = study.category;
 
-		var bodyOffset = index*393+20, 
-		imgId = 'IMG-'+study.id,
-		imgOffset = index*900;
-		
-		// animate the container
-		container.append(html);
-		$("#"+study.id).css({left:bodyOffset});
-		container.css({left:-bodyOffset});
+		container.css({left:-this.getContentOffset(index)});
+		imgContainer.css({left:-this.getImageOffset(index)});
 
-		// Animate the large image
-		imgContainer.append('<img src="' + study.mainImg + '" id="' + imgId + '" />');
-		$("#"+imgId).css({left:imgOffset});
-		imgContainer.css({left:-imgOffset});
+		// Highlight proper category button
+		$(".keyofferings-list-item a").removeClass("active");
+		var what = $("#"+category);
+		// Add the active class to the proper anchor
+		what.find("a").addClass("active");
 
-		// Remove old content after delay
-		if (firstTime === false) {
-			setTimeout(function() {
-				var lastId = "#"+self._data[self._lastIndex].id;
-				$(lastId).remove();
-			}, 500);
-		}
-	}, 
+		// Do background switch
+		$("#casestudies-bg").css({"background-image": "none", "opacity":0})
+												.css({"background-image": "url(img/homepage/casestudies/bgtile-" + category + ".png)"})
+												.delay(400)
+												.animate({ opacity: 1 }, 500);
+	},
+
+	getCaseStudyTemplate: function(studyData) {
+		var template = 
+			'<div class="casestudy-content-single" id="casestudy-content-' + studyData.id + '">' +
+			'<img src="' + studyData.headerImg + '" alt="' + studyData.title + '" class="casestudy-content-header" />' +
+			'<h1>' + studyData.title + '</h1>' +
+			'<p class="casestudy-body">' + studyData.body + '</p>' +
+			'</div>';
+			return template;
+	},
+
+	getContentOffset: function(index) {
+		return index*393+20;
+	},
+
+	getImageOffset: function(index) {
+		return index*900;
+	},
 
 	getNextIndex: function() {
 		this._lastIndex = this._activeIndex;
