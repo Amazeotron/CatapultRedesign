@@ -38,7 +38,7 @@ var casestudies = {
 		// Create compatible array
 		var imgData = [];
 		for (var i = 0, len = this._data.length; i < len; i++) {
-			imgData[i] = {imgURL:this._data[i].mainImg};
+			imgData[i] = {imgURL:this._data[i].main_image_path};
 		}
 		var preload = new ImagePreloader();
 		preload.init(imgData, function() { self.contentLoaded(); });
@@ -56,9 +56,9 @@ var casestudies = {
 			var study = this._data[i],
 			template = this.getCaseStudyTemplate(study);
 			container.append(template);
-			$("#casestudy-content-"+study.id).css({left:this.getContentOffset(i)});
-			imgContainer.append('<img src="' + study.mainImg + '" id="casestudy-image-' + study.id + '" />');
-			$("#casestudy-image-"+study.id).css({left:this.getImageOffset(i)});
+			$("#casestudy-content-"+study.client_name).css({left:this.getContentOffset(i)});
+			imgContainer.append('<img src="' + study.main_image_path + '" id="casestudy-image-' + study.client_name + '" />');
+			$("#casestudy-image-"+study.client_name).css({left:this.getImageOffset(i)});
 		}
 	},
 
@@ -86,8 +86,8 @@ var casestudies = {
 
 	getCaseStudyTemplate: function(studyData) {
 		var template = 
-			'<div class="casestudy-content-single" id="casestudy-content-' + studyData.id + '">' +
-			'<img src="' + studyData.headerImg + '" alt="' + studyData.title + '" class="casestudy-content-header" />' +
+			'<div class="casestudy-content-single" id="casestudy-content-' + studyData.client_name + '">' +
+			'<img src="' + studyData.header_image_path + '" alt="' + studyData.title + '" class="casestudy-content-header" />' +
 			'<h1>' + studyData.title + '</h1>' +
 			'<p class="casestudy-body">' + studyData.body + '</p>' +
 			'</div>';
