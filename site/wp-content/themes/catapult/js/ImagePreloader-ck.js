@@ -1,0 +1,1 @@
+function ImagePreloader(){var e=null,t=0,n=0,r=null,i=function(n,i){e=n,t=e.length,r=i;for(var o=0;o<t;o++){var u=e[o],a=new Image;a.src=u.imgURL;a.onload=function(e){s(e)}}},s=function(e){n++;n>=t&&r()};return{init:i}};

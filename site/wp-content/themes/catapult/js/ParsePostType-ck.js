@@ -1,0 +1,1 @@
+function ParsePostType(){var e=null,t=null,n=function(t,n){e=n;var i=this;$.getJSON(t,function(e,t,n){r(e)}).error(function(e){console.log("ParsePostType error parsing URL:");console.log(e)})},r=function(n){console.log("ParsePostType data loaded.");t=n;e(t.posts)},i=function(){return t.posts};return{init:n,getPosts:i}};

@@ -1,0 +1,1 @@
+<span class="post-meta">By <?php the_author() ?> | <?php the_time('F jS, Y') | <?php comments_popup_link('No Comments', '1 Comment', '% Comments', 'comments-link', ''); ?></span>

@@ -1,0 +1,120 @@
+/* --------------------------------
+    SASS Variables
+-------------------------------- */
+
+$darkOrange: rgb(227, 142, 21);
+$orange: rgb(242, 173, 75);
+$pink: rgb(236, 80, 98);
+$teal: rgb(132, 182, 180);
+$yellow: rgb(242, 202, 13);
+$grey: rgb(121, 123, 122);
+$purple: rgb(168, 123, 139);
+$greyFont: rgb(61, 59, 62);
+$darkGreyFont: rgb(41, 39, 42);
+$lightGreyFont: rgb(227, 220, 216);
+$serifFont: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+//"freight-text-pro",serif;
+$sansFont: "franklin-gothic-ext-comp-urw",sans-serif;
+
+@mixin edgeGradient($color, $darkenAmount) {
+    background-image: -moz-linear-gradient(left, darken($color, $darkenAmount) 0%, $color 10%, $color 90%, darken($color, $darkenAmount) 100%); /* FF3.6+ */
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0%,darken($color, $darkenAmount)), color-stop(10%,$color), color-stop(90%,$color), color-stop(100%,darken($color, $darkenAmount))); /* Chrome,Safari4+ */
+    background-image: -webkit-linear-gradient(left,  darken($color, $darkenAmount) 0%,$color 10%,$color 90%,darken($color, $darkenAmount) 100%); /* Chrome10+,Safari5.1+ */
+    background-image: -o-linear-gradient(left, darken($color, $darkenAmount) 0%,$color 10%,$color 90%,darken($color, $darkenAmount) 100%); /* Opera 11.10+ */
+    background-image: -ms-linear-gradient(left, darken($color, $darkenAmount) 0%,$color 10%,$color 90%,darken($color, $darkenAmount) 100%); /* IE10+ */
+    background-image: linear-gradient(to right, darken($color, $darkenAmount) 0%,$color 10%,$color 90%,darken($color, $darkenAmount) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color', endColorstr='$color',GradientType=1 ); /* IE6-8 */
+}
+
+@mixin greyGradient() {
+    background: rgb(210,212,216);
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2QyZDRkOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwJSIgc3RvcC1jb2xvcj0iI2VjZWFlOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijg1JSIgc3RvcC1jb2xvcj0iI2VjZWFlOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjkyJSIgc3RvcC1jb2xvcj0iI2QyZDRkOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjkzJSIgc3RvcC1jb2xvcj0iI2Y0YTkzZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijk0JSIgc3RvcC1jb2xvcj0iI2YyYjM1OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmMmIzNTkiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZjJiMzU5IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+    background: -moz-linear-gradient(top,  rgba(210,212,216,1) 0%, rgba(236,234,233,1) 10%, rgba(236,234,233,1) 85%, rgba(210,212,216,1) 92%, rgba(244,169,61,1) 93%, rgba(242,179,89,1) 94%, rgba(242,179,89,1) 100%, rgba(242,179,89,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(210,212,216,1)), color-stop(10%,rgba(236,234,233,1)), color-stop(85%,rgba(236,234,233,1)), color-stop(92%,rgba(210,212,216,1)), color-stop(93%,rgba(244,169,61,1)), color-stop(94%,rgba(242,179,89,1)), color-stop(100%,rgba(242,179,89,1)), color-stop(100%,rgba(242,179,89,1)));
+    background: -webkit-linear-gradient(top,  rgba(210,212,216,1) 0%,rgba(236,234,233,1) 10%,rgba(236,234,233,1) 85%,rgba(210,212,216,1) 92%,rgba(244,169,61,1) 93%,rgba(242,179,89,1) 94%,rgba(242,179,89,1) 100%,rgba(242,179,89,1) 100%);
+    background: -o-linear-gradient(top,  rgba(210,212,216,1) 0%,rgba(236,234,233,1) 10%,rgba(236,234,233,1) 85%,rgba(210,212,216,1) 92%,rgba(244,169,61,1) 93%,rgba(242,179,89,1) 94%,rgba(242,179,89,1) 100%,rgba(242,179,89,1) 100%);
+    background: -ms-linear-gradient(top,  rgba(210,212,216,1) 0%,rgba(236,234,233,1) 10%,rgba(236,234,233,1) 85%,rgba(210,212,216,1) 92%,rgba(244,169,61,1) 93%,rgba(242,179,89,1) 94%,rgba(242,179,89,1) 100%,rgba(242,179,89,1) 100%);
+    background: linear-gradient(to bottom,  rgba(210,212,216,1) 0%,rgba(236,234,233,1) 10%,rgba(236,234,233,1) 85%,rgba(210,212,216,1) 92%,rgba(244,169,61,1) 93%,rgba(242,179,89,1) 94%,rgba(242,179,89,1) 100%,rgba(242,179,89,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2d4d8', endColorstr='#f2b359',GradientType=0 );
+}
+
+@mixin searchButton() {
+    background-image: url(images/forms/search-arrow.png), -moz-linear-gradient(left, darken($orange, 10%) 0%, $orange 10%, $orange 90%, darken($orange, 10%) 100%); /* FF3.6+ */
+    background-image: url(images/forms/search-arrow.png), -webkit-gradient(linear, left top, right top, color-stop(0%,darken($orange, 10%)), color-stop(10%,$orange), color-stop(90%,$orange), color-stop(100%,darken($orange, 10%))); /* Chrome,Safari4+ */
+    background-image: url(images/forms/search-arrow.png), -webkit-linear-gradient(left, darken($orange, 10%) 0%,$orange 10%,$orange 90%,darken($orange, 10%) 100%); /* Chrome10+,Safari5.1+ */
+    background-image: url(images/forms/search-arrow.png), -o-linear-gradient(left, darken($orange, 10%) 0%,$orange 10%,$orange 90%,darken($orange, 10%) 100%); /* Opera 11.10+ */
+    background-image: url(images/forms/search-arrow.png), -ms-linear-gradient(left, darken($orange, 10%) 0%,$orange 10%,$orange 90%,darken($orange, 10%) 100%); /* IE10+ */
+    background-image: url(images/forms/search-arrow.png), linear-gradient(to right, darken($orange, 10%) 0%,$orange 10%,$orange 90%,darken($orange, 10%) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$orange', endColorstr='$orange',GradientType=1 ); /* IE6-8 */
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-indent: -10000px;
+    width: 27px;
+    height: 32px;
+    @include borderShadow(1px, 2px, 3px, 0px, 0.5);
+}
+
+@mixin shadow {
+    -webkit-box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.1);
+            box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.1);
+}
+
+@mixin borderShadow($xPos, $yPos, $blur, $spread, $alpha) {
+    -webkit-box-shadow: $xPos $yPos $blur $spread rgba(0, 0, 0, $alpha);
+       -moz-box-shadow: $xPos $yPos $blur $spread rgba(0, 0, 0, $alpha);
+            box-shadow: $xPos $yPos $blur $spread rgba(0, 0, 0, $alpha);
+}
+
+@mixin textShine {
+    text-shadow: -1px -1px 0px rgba(255,255,255,0.5);
+    filter: dropshadow(color=#fff, offx=1, offy=1);
+}
+
+@mixin textShadow($xPos, $yPos, $blur, $color) {
+    text-shadow: $xPos $yPos $blur $color;
+    filter: dropshadow(color=$color, offx=$xPos, offy=$yPos);
+}
+
+@mixin innerShadow($xPos, $yPos, $blur, $spread, $alpha) {
+    -webkit-box-shadow: inset $xPos $yPos $blur $spread rgba(0, 0, 0, $alpha);
+       -moz-box-shadow: inset $xPos $yPos $blur $spread rgba(0, 0, 0, $alpha);
+            box-shadow: inset $xPos $yPos $blur $spread rgba(0, 0, 0, $alpha);
+}
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	   -moz-border-radius: $radius;
+	        border-radius: $radius;
+}
+
+@mixin transition($duration) {
+    -webkit-transition: all $duration ease-in-out;
+       -moz-transition: all $duration ease-in-out;
+         -o-transition: all $duration ease-in-out;
+            transition: all $duration ease-in-out;
+}
+
+@mixin greyFilter($amount) {
+    -webkit-filter: grayscale(100%) brightness($amount) blur(3px);
+       -moz-filter: grayscale(100%) brightness($amount) blur(3px);
+        -ms-filter: grayscale(100%) brightness($amount) blur(3px);
+         -o-filter: grayscale(100%) brightness($amount) blur(3px);
+            filter: grayscale(100%) brightness($amount) blur(3px);
+}
+
+@mixin blur($amount) {
+    -webkit-filter: blur($amount);
+       -moz-filter: blur($amount);
+        -ms-filter: blur($amount);
+         -o-filter: blur($amount);
+            filter: blur($amount);
+}
+
+@mixin noSelect() {
+    -webkit-touch-callout: none;
+      -webkit-user-select: none;
+       -khtml-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+}

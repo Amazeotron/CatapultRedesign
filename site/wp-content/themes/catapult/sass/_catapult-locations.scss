@@ -1,0 +1,68 @@
+/* --------------------------------
+    Location Map Section
+-------------------------------- */
+
+#locations-center-tag {
+	background: none; // Remove the background on this center tag because there is a Canvas element handling the drawing.
+}
+
+.locations {
+	@include transition(0.5s);
+	background: url(../img/homepage/shadow-top.png) top left repeat-x, url(../img/homepage/locations/map.png) top left no-repeat;
+	background-size: auto, cover;
+	position: relative;
+		
+	&.hide {
+		height: 0px;
+	}
+	&.show {
+		height: auto;
+	}
+	
+	h1 {
+		margin: 0 auto;
+    color: #fff;
+    letter-spacing: 3px;
+    @include textShadow(2px, 2px, 5px, rgba(0,0,0,0.9));
+    
+    &.show {
+    	display: block;
+    }
+    
+    &.hide {
+    	display: none;
+    }
+	}
+
+	.locations-markers {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		.marker {
+			background: url(../img/homepage/locations/marker.png) top left no-repeat;
+			padding: 5px 0 0 28px;
+			height: 36px;
+			position: absolute;
+			z-index: 10;
+			width: 130px;
+			
+			&.show {
+				-webkit-animation: show 0.3s ease-out;
+			}
+			
+			&.hide {
+				-webkit-animation: hide 0.3s ease-out;
+			}
+
+			h2 {
+				color: #fff;
+				font-size: 1.1em;
+				padding: 0;
+				margin: 0;
+			}
+		}
+	}
+
+	
+}

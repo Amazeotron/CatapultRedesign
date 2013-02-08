@@ -1,0 +1,21 @@
+.labs {
+	.labs__content {
+		&.show {
+			display: block;
+		}
+		
+		&.hide {
+			display: none;
+		}
+	}
+	
+	.labs__group {
+		height: 196px;
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+	
+	.labs__group__lab {
+		
+	}
+}

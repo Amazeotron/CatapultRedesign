@@ -1,0 +1,20 @@
+.partners {
+	
+	.partners__content {
+		&.show {
+			display: block;
+		}
+		
+		&.hide {
+			display: none;
+		}
+	}
+	
+	.partners-list {
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+		}
+	}
+}

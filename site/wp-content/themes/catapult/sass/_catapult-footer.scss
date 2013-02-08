@@ -1,0 +1,21 @@
+footer {
+	margin: 0 0 2em 0;	
+	padding: 40px 0 0 0;
+	
+	.three-col {
+		display: inline-block;
+		width: 30%;
+		margin: 0 4% 0 0;
+		padding: 10px 0 0 0;
+		border-top: 1px solid gray;
+		vertical-align: top;
+		
+		&:last-of-type {
+			margin: 0;
+		};
+	}
+	
+	.contact-button {
+		margin-bottom: 0.2em;
+	}
+}

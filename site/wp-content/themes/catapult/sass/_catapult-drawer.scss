@@ -1,0 +1,60 @@
+.drawer {
+	@include transition(0.5s);
+	background-repeat: repeat-x, repeat;
+	position: relative;
+	padding: 0 0 30px 0;
+	@include innerShadow(0px, 70px, 120px, 0px, 0.4);
+	
+	&.labs {
+		background-image: url(../img/homepage/shadow-top.png), url(../img/homepage/casestudies/bgtile-insights.png);
+	}
+	
+	&.partners {
+		background-image: url(../img/homepage/shadow-top.png), url(../img/homepage/casestudies/bgtile-systems-thinking.png);
+	}
+	
+	&.hide {
+		height: 0px;
+		padding: 0;
+	}
+	&.show {
+		height: auto;
+	}
+	
+	.close {
+		width: 36px;
+		height: 37px;
+		background: url(../img/homepage/overlay-close-button.png) top left no-repeat;
+		display: block;
+		position: absolute;
+		top: 20px;
+		right: 20px;
+	}
+	
+	h1 {
+		font-size: 4em;
+		margin: 0;
+		padding: 0;
+		color: #fff;
+		
+		&.show {
+    	display: block;
+    }
+    
+    &.hide {
+    	display: none;
+    }
+	}
+	
+	p {
+		color: rgba(255,255,255,0.80);
+    font-size: 1.1em;
+		
+		&.hide {
+			display: none;
+		}
+		&.show {
+			display: block;
+		}
+	}
+}
