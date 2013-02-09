@@ -1,12 +1,21 @@
 .partners {
 	
+	&.drawer {
+		
+		&.peek {
+			height: 37px;
+		}
+	}
+	
 	.partners__content {
+		
 		&.show {
 			display: block;
+			height: auto;
 		}
-		
 		&.hide {
 			display: none;
+			height: 0px;
 		}
 	}
 	

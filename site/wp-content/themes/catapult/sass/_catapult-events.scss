@@ -1,5 +1,13 @@
-.labs {
-	.labs__content {
+.events {
+	
+	&.drawer {
+		
+		&.peek {
+			height: 37px;
+		}
+	}
+	
+	.events__content {
 		&.show {
 			display: block;
 		}
@@ -9,13 +17,13 @@
 		}
 	}
 	
-	.labs__group {
+	.events__group {
 		height: 196px;
 		overflow-x: hidden;
 		overflow-y: auto;
 	}
 	
-	.labs__group__lab {
+	.events__group__lab {
 		
 	}
 }

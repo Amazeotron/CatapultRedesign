@@ -6,8 +6,6 @@ $(document).ready(function() {
 	
 	cataCommon.init();
 	
-	console.log("Window height: " + $(window).height());
-	
 	// If there's a hash, intercept it so we can do our own scrolling
 	function checkHash() {
 		var hash = window.location.hash;
@@ -87,22 +85,9 @@ $(document).ready(function() {
 	
 	intro.init(cataCommon.getRootURL() + "wp-content/themes/catapult/", function() {
 		// intro is done, so show Key Offerings buttons
-		$(".keyofferings-list__item").each(function(index) {
-			var self = $(this);
-			setTimeout(function() {
-				self.removeClass("hide").addClass("show");
-			}, (index * 150));
-			
-		})
+		keyofferings.init();	
 	});
 	
-	// Key Offerings buttons
-	$(".keyofferings-list-item a").click(function(event) {
-		event.preventDefault();
-		var section = $(this).parent().attr("id");
-		var index = $(this).attr("data-index");
-		return false;
-	});
 	
 	// get case studies
 	$.getJSON(cataCommon.getRootURL() + '?json=get_recent_posts&dev=1&post_type=casestudy&custom_fields=category,category_description,client,main_image,header_image,display_order&meta_key=display_order&order_by=meta_value&order=ASC', function(data, textStatus, jqXHR) {
@@ -123,12 +108,6 @@ $(document).ready(function() {
 		locations.init(data.locations);
 	});
 	
-	$("#locations-center-tag").click(function(event) {
-		event.preventDefault();
-		($("#locations").hasClass("hide")) ? locations.open() : locations.destroy();
-		return false;
-	});
-	
 
 	// Make the team section
 	$.getJSON(cataCommon.getRootURL() + "wp-content/themes/catapult/js/team-json.js", function(data, textStatus, jqXHR) {
@@ -141,68 +120,13 @@ $(document).ready(function() {
 		console.log(error);
 	});
 	
-	// Labs Section
-	$("#labs-center-tag, #labs .close").click(function(event) {
-		event.preventDefault();
-		var labsDiv = $("#labs");
-		if (labsDiv.hasClass("hide")) {
-			// show
-			labsDiv.removeClass("hide").addClass("show");
-			labsDiv.height(400);
-		} else {
-			// hide
-			labsDiv.removeClass("show").addClass("hide");
-			labsDiv.height(0);
-			$("#js-labs-content").removeClass("show").addClass("hide");
-		}
-		return false;
-	});
-	
-	$("#labs").on("webkitTransitionEnd transitionend", function(event) {
-		var labsContent = $("#js-labs-content"),
-				labsDiv = $("#labs");
-		// It it's in the open state, show the content
-		if (labsDiv.hasClass("show")) {
-			labsContent.removeClass("hide").addClass("show");
-		}
-	});
-	
+	// Events section
+	labs.init();
 	
 	// Partners Section
-	$("#partners-center-tag, #partners .close").click(function(event) {
-		event.preventDefault();
-		var partnersDiv = $("#partners");
-		if (partnersDiv.hasClass("hide")) {
-			// show
-			partnersDiv.removeClass("hide").addClass("show");
-			partnersDiv.height(740);
-		} else {
-			// hide
-			partnersDiv.removeClass("show").addClass("hide");
-			partnersDiv.height(0);
-			$("#js-partners-content").removeClass("show").addClass("hide");
-		}
-		return false;
-	});
+	partners.init();
 	
-	$("#partners").on("webkitTransitionEnd transitionend", function(event) {
-		var partnersContent = $("#js-partners-content"),
-				partnersDiv = $("#partners");
-		if (partnersDiv.hasClass("show")) {
-			partnersContent.removeClass("hide").addClass("show");
-		}
-	});
-	
-	
-	// Only show the donation form once someone's selected a dollar amount
-	$("#donation-amount").change(function(event) {
-		var selected = $(this).find("option:selected"),
-				form = $("#donation-form-body, #donation-form-submit");
-		if (selected[0].value === "Choose Amount") {
-			form.fadeOut();
-			return;
-		}
-		form.fadeIn();
-	});
+	// Donations section
+	donations.init();
 	
 });

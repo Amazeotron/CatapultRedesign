@@ -7,31 +7,36 @@
 }
 
 .locations {
-	@include transition(0.5s);
-	background: url(../img/homepage/shadow-top.png) top left repeat-x, url(../img/homepage/locations/map.png) top left no-repeat;
-	background-size: auto, cover;
+	background: url(../img/homepage/locations/map.png) top left no-repeat;
+	background-size: cover;
 	position: relative;
+	
+	// Slightly different shadow than a normal drawer
+	&.drawer {
+		@include innerShadow(0px, 5px, 5px, 0px, 0.7);
 		
-	&.hide {
-		height: 0px;
-	}
-	&.show {
-		height: auto;
+		&.peek {
+			height: 37px;
+		}
 	}
 	
-	h1 {
-		margin: 0 auto;
-    color: #fff;
-    letter-spacing: 3px;
-    @include textShadow(2px, 2px, 5px, rgba(0,0,0,0.9));
-    
-    &.show {
-    	display: block;
-    }
-    
-    &.hide {
-    	display: none;
-    }
+	.locations__content {
+		margin-top: -55px;
+		
+		&.hide {
+			display: none;
+		}
+		&.show {
+			display: block;
+		}
+		
+		.locations__content__title {
+			margin: 0 auto;
+			padding-top: 55px;
+	    color: #fff;
+	    letter-spacing: 3px;
+	    @include textShadow(2px, 2px, 5px, rgba(0,0,0,0.9));
+		}
 	}
 
 	.locations-markers {
@@ -40,6 +45,8 @@
 		left: 0;
 
 		.marker {
+			display: block;
+			text-decoration: none;
 			background: url(../img/homepage/locations/marker.png) top left no-repeat;
 			padding: 5px 0 0 28px;
 			height: 36px;
@@ -56,10 +63,19 @@
 			}
 
 			h2 {
+				@include transition(0.3s);
 				color: #fff;
-				font-size: 1.1em;
+				font-size: 1em;
 				padding: 0;
 				margin: 0;
+				
+				&.hide {
+					opacity: 0;
+				}
+				
+				&.show {
+					opacity: 1;
+				}
 			}
 		}
 	}

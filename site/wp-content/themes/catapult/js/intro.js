@@ -396,18 +396,18 @@ var intro = {
 				self._callback();
 			});
 			
-			var txt = "Engineering for those who need it most.".toUpperCase(),
-				copyLine = new Text(txt, "60px " + self.SANS_FONT, "rgb(255,255,255)");
-				copyLine.textAlign = "center";
-				copyLine.x = self._stage.canvas.width * 0.5;
-				copyLine.y = 250;
-				copyLine.width = self._stage.canvas.width;
-				copyLine.height = 50;
-				copyLine.alpha = 0;
-				self._stage.addChild(copyLine);
-				Tween.get(copyLine)
-				.wait(2550)
-				.to({alpha:1},1500,Ease.CubicOut)
+			var txt = "Engineering for those who need it most.",
+					copyLine = new Text(txt, "50px " + self.SERIF_FONT, "rgb(255,255,255)");
+			copyLine.textAlign = "center";
+			copyLine.x = self._stage.canvas.width * 0.5;
+			copyLine.y = 250;
+			copyLine.width = self._stage.canvas.width;
+			copyLine.height = 50;
+			copyLine.alpha = 0;
+			self._stage.addChild(copyLine);
+			Tween.get(copyLine)
+			.wait(2550)
+			.to({alpha:1},1500,Ease.CubicOut)
 		}
 		preload.loadManifest([
 			{

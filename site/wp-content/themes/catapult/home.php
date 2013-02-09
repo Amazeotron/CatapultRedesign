@@ -17,13 +17,64 @@
 		<section class="keyofferings" id="keyofferings">
 			<div class="row">
 				<ul class="keyofferings-list">
-					<li class="keyofferings-list__item hide" id="engineering"><a href="#" class="engineering" id="keyoffering-engineering-button" data-index="0">ENGINEERING</a></li>
-					<li class="keyofferings-list__item hide" id="ideation"><a href="#" class="ideation" id="keyoffering-ideation-button" data-index="1">IDEATION</a></li>
-					<li class="keyofferings-list__item hide" id="innovation"><a href="#" class="innovation" id="keyoffering-innovation-button" data-index="2">TECHNOLOGY INNOVATION</a></li>
-					<li class="keyofferings-list__item hide" id="education"><a href="#" class="education" id="keyoffering-education-button" data-index="3">EDUCATION</a></li>
-					<li class="keyofferings-list__item hide" id="insights"><a href="#" class="insights" id="keyoffering-insights-button" data-index="4">INSIGHTS</a></li>
-					<li class="keyofferings-list__item hide" id="systems-thinking"><a href="#" class="systems-thinking" id="keyoffering-systems-button" data-index="5">SYSTEMS THINKING</a></li>
+					<li class="keyofferings-list__item hide" id="keyofferings-list-engineering"><a href="#" class="engineering" id="keyofferings-button-engineering" data-index="0">ENGINEERING</a></li>
+					<li class="keyofferings-list__item hide" id="keyofferings-list-ideation"><a href="#" class="ideation" id="keyofferings-button-ideation" data-index="1">IDEATION</a></li>
+					<li class="keyofferings-list__item hide" id="keyofferings-list-innovation"><a href="#" class="innovation" id="keyofferings-button-innovation" data-index="2">TECHNOLOGY INNOVATION</a></li>
+					<li class="keyofferings-list__item hide" id="keyofferings-list-education"><a href="#" class="education" id="keyofferings-button-education" data-index="3">EDUCATION</a></li>
+					<li class="keyofferings-list__item hide" id="keyofferings-list-insights"><a href="#" class="insights" id="keyofferings-button-insights" data-index="4">INSIGHTS</a></li>
+					<li class="keyofferings-list__item hide" id="keyofferings-list-systems_thinking"><a href="#" class="systems-thinking" id="keyofferings-button-systems_thinking" data-index="5">SYSTEMS THINKING</a></li>
 				</ul>
+				<div class="keyofferings__offerings">
+					
+					<div class="keyofferings__offerings__item hide clearfix" id="keyofferings-item-engineering">
+						<figure class="keyofferings__offerings__item__figure">
+							<img src="<?php bloginfo('template_url'); ?>/img/homepage/intro/handcart.jpg" alt="">
+							<p class="caption">Anza Hand Cart</p>
+						</figure>
+						<p>Pie sugar plum danish muffin cookie jujubes cookie fruitcake. Powder marshmallow jelly. Chupa chups gingerbread gummies chocolate dessert oat cake cookie sweet roll candy.</p>
+					</div>
+					
+					<div class="keyofferings__offerings__item hide clearfix" id="keyofferings-item-ideation">
+						<figure class="keyofferings__offerings__item__figure">
+							<img src="<?php bloginfo('template_url'); ?>/img/homepage/intro/wello.jpg" alt="">
+							<p class="caption">Wello Water Wheel</p>
+						</figure>
+						<p>Lemon drops sugar plum muffin. Tart pie bear claw lollipop biscuit lemon drops pudding topping halvah. Ice cream fruitcake danish sugar plum candy. Apple pie pastry jelly gingerbread carrot cake cotton candy apple pie.</p>
+					</div>
+					
+					<div class="keyofferings__offerings__item hide clearfix" id="keyofferings-item-innovation">
+						<figure class="keyofferings__offerings__item__figure">
+							<img src="<?php bloginfo('template_url'); ?>/img/homepage/intro/worldbank.jpg" alt="">
+							<p class="caption">World Bank clean energy fabrication</p>
+						</figure>
+						<p>Tootsie roll jelly-o carrot cake chocolate cake. Tiramisu chocolate bar gummi bears cotton candy lemon drops cupcake. Biscuit sugar plum bear claw. Lemon drops powder jelly-o candy jelly-o.</p>
+					</div>
+					
+					<div class="keyofferings__offerings__item hide clearfix" id="keyofferings-item-education">
+						<figure class="keyofferings__offerings__item__figure">
+							<img src="<?php bloginfo('template_url'); ?>/img/homepage/intro/peacecorps.jpg" alt="">
+							<p class="caption">Peace Corps education session</p>
+						</figure>
+						<p>Jelly beans sweet applicake carrot cake. Cookie applicake lemon drops marshmallow powder jujubes. Macaroon sweet roll dragée bear claw.</p>
+					</div>
+					
+					<div class="keyofferings__offerings__item hide clearfix" id="keyofferings-item-insights">
+						<figure class="keyofferings__offerings__item__figure">
+							<img src="<?php bloginfo('template_url'); ?>/img/homepage/intro/simpa.jpg" alt="">
+							<p class="caption">Simpa Networks module</p>
+						</figure>
+						<p>Danish jelly beans marshmallow caramels. Wafer tiramisu pudding gummies sesame snaps muffin cupcake topping. Tootsie roll macaroon soufflé chupa chups gingerbread.</p>
+					</div>
+					<div class="keyofferings__offerings__item hide clearfix" id="keyofferings-item-systems_thinking">
+						<figure class="keyofferings__offerings__item__figure">
+							<img src="<?php bloginfo('template_url'); ?>/img/homepage/intro/ihangane.jpg" alt="">
+							<p class="caption">Ihangane solar panel installation</p>
+						</figure>
+						<p>Jelly halvah chocolate lollipop. Candy canes cheesecake ice cream faworki pastry. Caramels marzipan cupcake halvah. Bonbon sugar plum apple pie cupcake.</p>
+					</div>
+					
+				</div>
+					
 			</div><!-- end row -->
 		</section><!-- end keyofferings -->
 
@@ -49,13 +100,16 @@
 			</div><!-- end casestudies-container -->
 		</section><!-- end case studies -->
 		
-		<section class="locations hide" id="locations">
+		<section class="locations drawer peek" id="locations">
 			<a href="#" class="center-tag header-title fancy on-dark-bg" id="locations-center-tag">
 				<canvas class="center-tag__canvas" id="centerTagLocationsMap" width="319" height="55"></canvas>
 				<span class="center-tag__title">SEE WHERE WE'VE WORKED</span>
 			</a>
-			<h1 class="hide header-title">Catapult Projects</h1>
-			<div class="locations-markers"></div>
+			<div id="js-locations-content" class="locations__content hide">
+				<h1 class="locations__content__title header-title">Catapult Projects</h1>
+				<div class="locations-markers"></div>
+				<a href="#" class="close ir">Close</a>
+			</div>
 		</section><!-- end locations -->
 		
 		<section class="team" id="team">
@@ -65,7 +119,7 @@
 			</div><!-- end team row -->
 		</section><!-- end team -->
 		
-		<section class="partners drawer hide" id="partners">
+		<section class="partners drawer peek" id="partners">
 			<a href="#" class="center-tag header-title fancy on-dark-bg" id="partners-center-tag"><span class="center-tag__title">MEET OUR PARTNERS</span></a>
 			<div id="js-partners-content" class="partners__content hide">
 				<div class="row">
@@ -116,22 +170,22 @@
 			</div>
 		</section><!-- end contact -->
 		
-		<section class="labs drawer hide" id="labs">
-			<a href="#" class="center-tag header-title fancy on-dark-bg" id="labs-center-tag"><span class="center-tag__title">Attend a Catapult Lab Session</span></a>
-			<div id="js-labs-content" class="labs__content hide">
+		<section class="events drawer peek" id="events">
+			<a href="#" class="center-tag header-title fancy on-dark-bg" id="events-center-tag"><span class="center-tag__title">Attend a Catapult Event</span></a>
+			<div id="js-events-content" class="events__content hide">
 				<div class="row">
 					<h1 class="header-title">Upcoming Catapult Events</h1>
 					<p>At Catapult, our hands-on teams work with your company on x, y, and z. Our Not-for-profit is dedicated to facilitating... and educational programs...where companies can meet, learn, work, and share. We invest in ... so other people may thrive. Something else goes here for a nice line break.</p>
 					<hr />
 					<?php
 					include_once "NewsParser.php";
-					$labJSON = NewsParser::loadJSON(NewsParser::getRootURL() . "/?json=get_recent_posts&dev=1&post_type=lab&custom_fields=header_image");
-					$labPosts = NewsParser::commonize($labJSON["posts"], "post"); ?>
-					<div class="labs__group">
-					<? foreach ($labPosts as $labPost) : ?>
-						<div class="labs__group__lab">
-						<h3 class="labs__group__lab-title header-title"><? echo $labPost->title; ?></h3>
-						<p class="labs__group__lab-body"><? echo $labPost->excerpt; ?> <a href="<? echo $labPost->link; ?>" title="">More details &raquo;</a></p>
+					$eventJSON = NewsParser::loadJSON(NewsParser::getRootURL() . "/?json=get_recent_posts&dev=1&post_type=event&custom_fields=header_image");
+					$eventPosts = NewsParser::commonize($eventJSON["posts"], "post"); ?>
+					<div class="events__group">
+					<? foreach ($eventPosts as $eventPost) : ?>
+						<div class="events__group__event">
+						<h3 class="events__group__event-title header-title"><? echo $eventPost->title; ?></h3>
+						<p class="events__group__event-body"><? echo $eventPost->excerpt; ?> <a href="<? echo $eventPost->link; ?>" title="">More details &raquo;</a></p>
 						</div>
 					<? endforeach; ?>
 					</div>
@@ -139,7 +193,7 @@
 				<a href="#" class="close ir">Close</a>	
 			</div>
 			
-		</section><!-- end labs -->
+		</section><!-- end events -->
 		
 		<section class="donate" id="donate">
 			<div class="row">

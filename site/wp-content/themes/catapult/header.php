@@ -55,11 +55,17 @@
     <script src="<?php bloginfo('template_url'); ?>/js/libs/filters/AlphaMaskFilter.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/js/CenterTag.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/js/ImagePreloader.js"></script>
-    <script src="<?php bloginfo('template_url'); ?>/js/home.js"></script>
+    
     <script src="<?php bloginfo('template_url'); ?>/js/intro.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/js/keyofferings.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/js/casestudies.js"></script>
-    <script src="<?php bloginfo('template_url'); ?>/js/team.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/js/locations.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/js/team.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/js/partners.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/js/events.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/js/donations.js"></script>
+    
+    <script src="<?php bloginfo('template_url'); ?>/js/home.js"></script>
     <?php } else { ?>
     <script src="<?php bloginfo('template_url'); ?>/js/blog.js"></script>
     <?php } ?>

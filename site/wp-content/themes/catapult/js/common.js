@@ -8,7 +8,7 @@ var cataCommon = {
 	
 	getRootURL: function() {
 		if (window.location.href.indexOf(":8888") != -1) {
-			return window.location.href; // testing
+			return "http://localhost:8888/wordpress/"; // testing
 		} else {
 			return "http://catapultdesign.org/dev/"; // development
 		// return "http://catapultdesign.org/"; // live
