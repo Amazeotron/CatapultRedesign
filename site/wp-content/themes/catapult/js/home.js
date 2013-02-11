@@ -5,6 +5,7 @@
 $(document).ready(function() {
 	
 	cataCommon.init();
+	keyofferings.init();
 	
 	// If there's a hash, intercept it so we can do our own scrolling
 	function checkHash() {
@@ -84,8 +85,7 @@ $(document).ready(function() {
 	}, 1000);
 	
 	intro.init(cataCommon.getRootURL() + "wp-content/themes/catapult/", function() {
-		// intro is done, so show Key Offerings buttons
-		keyofferings.init();	
+		// intro is done
 	});
 	
 	

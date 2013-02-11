@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
-	<section class="intro">
+	<section class="intro" id="intro">
 			<div class="row">
-				<canvas id="intro" width="900" height="500">
+				<canvas id="intro__canvas" width="900px" height="500px">
 					<p>Catapult Design is a non-profit design firm providing engineering and implementation support to the thousands of organizations in need of technologies or products. The net benefit of our activities is nothing less than a fundamental improvement in the lives of those who need it most.</p>
 				</canvas>
 				<!-- <div class="caption">
@@ -17,16 +17,16 @@
 		<section class="keyofferings" id="keyofferings">
 			<div class="row">
 				<ul class="keyofferings-list">
-					<li class="keyofferings-list__item hide" id="keyofferings-list-engineering"><a href="#" class="engineering" id="keyofferings-button-engineering" data-index="0">ENGINEERING</a></li>
-					<li class="keyofferings-list__item hide" id="keyofferings-list-ideation"><a href="#" class="ideation" id="keyofferings-button-ideation" data-index="1">IDEATION</a></li>
-					<li class="keyofferings-list__item hide" id="keyofferings-list-innovation"><a href="#" class="innovation" id="keyofferings-button-innovation" data-index="2">TECHNOLOGY INNOVATION</a></li>
-					<li class="keyofferings-list__item hide" id="keyofferings-list-education"><a href="#" class="education" id="keyofferings-button-education" data-index="3">EDUCATION</a></li>
-					<li class="keyofferings-list__item hide" id="keyofferings-list-insights"><a href="#" class="insights" id="keyofferings-button-insights" data-index="4">INSIGHTS</a></li>
-					<li class="keyofferings-list__item hide" id="keyofferings-list-systems_thinking"><a href="#" class="systems-thinking" id="keyofferings-button-systems_thinking" data-index="5">SYSTEMS THINKING</a></li>
+					<li class="keyofferings-list__item" id="keyofferings-list-engineering"><a href="#" class="engineering" id="keyofferings-button-engineering" data-index="0">ENGINEERING</a></li>
+					<li class="keyofferings-list__item" id="keyofferings-list-ideation"><a href="#" class="ideation" id="keyofferings-button-ideation" data-index="1">IDEATION</a></li>
+					<li class="keyofferings-list__item" id="keyofferings-list-innovation"><a href="#" class="innovation" id="keyofferings-button-innovation" data-index="2">TECHNOLOGY INNOVATION</a></li>
+					<li class="keyofferings-list__item" id="keyofferings-list-education"><a href="#" class="education" id="keyofferings-button-education" data-index="3">EDUCATION</a></li>
+					<li class="keyofferings-list__item" id="keyofferings-list-insights"><a href="#" class="insights" id="keyofferings-button-insights" data-index="4">INSIGHTS</a></li>
+					<li class="keyofferings-list__item" id="keyofferings-list-systems_thinking"><a href="#" class="systems-thinking" id="keyofferings-button-systems_thinking" data-index="5">SYSTEMS THINKING</a></li>
 				</ul>
 				<div class="keyofferings__offerings">
 					
-					<div class="keyofferings__offerings__item hide clearfix" id="keyofferings-item-engineering">
+					<div class="keyofferings__offerings__item clearfix" id="keyofferings-item-engineering">
 						<figure class="keyofferings__offerings__item__figure">
 							<img src="<?php bloginfo('template_url'); ?>/img/homepage/intro/handcart.jpg" alt="">
 							<p class="caption">Anza Hand Cart</p>
@@ -231,8 +231,8 @@
 						</select>
 					</div><!-- end form-item -->
 					
-					<div class="cols" id="donation-form-body">
-						<div class="credit-card-info two-col clearfix">
+					<div class="col-wrap" id="donation-form-body">
+						<div class="credit-card-info two-col padded margin-right clearfix">
 							<h3>Credit Card Info</h3>
 							<div class="form-item">
 								<label for="full-name">Name as appears on card:</label>
@@ -270,7 +270,7 @@
 							</div>
 						</div><!-- end credit-card-info -->
 						
-						<div class="billing-info two-col right clearfix">
+						<div class="billing-info two-col padded margin-left clearfix">
 							<h3>Billing Info</h3>
 							
 							<div class="form-item">

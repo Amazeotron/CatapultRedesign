@@ -17,50 +17,68 @@
     .team-members {
         overflow: hidden;
         padding: 0;
-
-        li {
+        
+        
+        .team-member {
             display: block;
             float: left;
             width: 178px;
-        }
-        li img {
-            border: 2px solid;
-            width: 175px;
-        }
-        li.primary img {
-            border-color: $orange;
-        }
-        li.secondary img {
-            border-color: $pink;
-        }
-        li.tertiary img {
-            border-color: $teal;
-        }
-        li h3,
-        li h4,
-        li h5 {
-            margin: 0;
-            padding: 0;
-            font-weight: normal;
-            color: rgba(255,255,255,0.9);
-            line-height: 1.2em;
-            @include textShadow(1px, 1px, 0px, rgba(0,0,0,0.5));
-        }
-        li h3 {
-            font-size: 1.6em;
-            padding-bottom: 0.5em;
-            color: rgba(255,255,255,1);
-        }
-        li h4 {
-            font-size: 1.1em;
-        }
-        li h5 {
-            font-size: 1.0em;
-        }
-        .team-member {
             overflow: hidden;
             position: relative;
             margin: 0 62px 15px 0;
+            
+            img {
+                border: 2px solid;
+                width: 98%;
+                height: auto;
+            }
+            
+            &.primary img {
+                border-color: $orange;
+            }
+            &.secondary img {
+                border-color: $pink;
+            }
+            &.tertiary img {
+                border-color: $teal;
+            }
+            
+            h3, h4, h5 {
+                margin: 0;
+                padding: 0;
+                font-weight: normal;
+                color: rgba(255,255,255,0.9);
+                line-height: 1.2em;
+                @include textShadow(1px, 1px, 0px, rgba(0,0,0,0.5));
+            }
+            h3 {
+                font-size: 1.6em;
+                padding-bottom: 0.5em;
+                color: rgba(255,255,255,1);
+            }
+            @media only screen and (max-width : 422px) {    
+                h3 {
+                    font-size: 1.1em;
+                }
+            }
+            h4 {
+                font-size: 1.1em;
+            }
+            h5 {
+                font-size: 1.0em;
+            }
+        }
+        @media only screen and (max-width : 955px) {    
+            .team-member {
+                margin-right: 20px;
+            }
+        }
+        // Two up
+        @media only screen and (max-width : 422px) {    
+            .team-member {
+                margin-right: 5%;
+                width: 45%;
+            }
         }
         .team-member.col-last {
             margin-right: 0;
@@ -90,6 +108,12 @@
         }
         .team-member-details.hover {
             top: 0;
+        }
+        @media only screen and (max-width : 422px) {    
+            .team-member-details, 
+            .team-member-details.hover {
+                top: 105px;
+            }
         }
     }
     

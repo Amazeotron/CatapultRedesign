@@ -11,6 +11,10 @@
 	background-size: cover;
 	position: relative;
 	
+	@media only screen and (max-width : 720px) {
+		display: none;
+	}
+	
 	// Slightly different shadow than a normal drawer
 	&.drawer {
 		@include innerShadow(0px, 5px, 5px, 0px, 0.7);
@@ -22,6 +26,7 @@
 	
 	.locations__content {
 		margin-top: -55px;
+		position: relative;
 		
 		&.hide {
 			display: none;
@@ -46,13 +51,15 @@
 
 		.marker {
 			display: block;
-			text-decoration: none;
 			background: url(../img/homepage/locations/marker.png) top left no-repeat;
-			padding: 5px 0 0 28px;
+			width: 30px;
 			height: 36px;
 			position: absolute;
 			z-index: 10;
-			width: 130px;
+			
+			h2 {
+				display: none; // hide it because it gets moved to the callout
+			}
 			
 			&.show {
 				-webkit-animation: show 0.3s ease-out;
@@ -60,22 +67,6 @@
 			
 			&.hide {
 				-webkit-animation: hide 0.3s ease-out;
-			}
-
-			h2 {
-				@include transition(0.3s);
-				color: #fff;
-				font-size: 1em;
-				padding: 0;
-				margin: 0;
-				
-				&.hide {
-					opacity: 0;
-				}
-				
-				&.show {
-					opacity: 1;
-				}
 			}
 		}
 	}

@@ -28,9 +28,9 @@ var intro = {
 	init: function(rootURL, callback) {
 		this._rootURL = rootURL;
 		this._callback = callback;
-		this._canvas = document.querySelector("#intro");
+		this._canvas = document.querySelector("#intro__canvas");
 		this._stage = new Stage(this._canvas);
-
+		
 		this._projectManifest = [
 			{
 				src:rootURL + "/img/homepage/intro/handcart.jpg", 
@@ -143,6 +143,11 @@ var intro = {
 		Ticker.setFPS(60);
 		Ticker.useRAF = true;
 		Ticker.addListener(this,false);
+		
+		$(window).resize(function(event) {
+			$("#intro__canvas").width("100%");
+		});
+		$("#intro__canvas").width("100%");
 	},
 
 	createTitle: function() {
@@ -256,6 +261,7 @@ var intro = {
 	},
 
 	tick: function() {
+		
 		// Here's where the action happens
 		if (!this._isLoaded) {
 			this._stage.update();
@@ -327,17 +333,14 @@ var intro = {
 	}, 
 	
 	done: function() {
-		
+		var self = this;
 		// Remove title
 		Tween.get(this._titleContainer,{loop:false})
 		.to({alpha:0},250,Ease.cubicOut);
 		
 		// Remove image
 		Tween.get(this._projectImagesContainer, {loop:false})
-		.to({alpha:0,scaleX:0,scaleY:0},250,Ease.cubicOut)
-		.call(function() {
-			Ticker.removeListener(this,false);
-		});
+		.to({alpha:0,scaleX:0,scaleY:0},250,Ease.cubicOut);
 		
 		// Remove all dots
 		for (var i = 0, len = this._dotsContainer.getNumChildren(); i < len; i++) {
@@ -380,21 +383,18 @@ var intro = {
 		};
 		preload.onComplete = function(event) {
 			Tween.get(logoContainer, {loop:false})
-			.to({alpha:1},300,Ease.cubicOut);
+				.to({alpha:1},300,Ease.cubicOut);
 			Tween.get(logoContainer, {loop:false})
-			.to({rotation:360, scaleX:1, scaleY:1},1500,Ease.cubicOut)
-			.call(function() {
-				logoContainer.rotation = 0;
-			});
+				.to({rotation:360, scaleX:1, scaleY:1},1500,Ease.cubicOut)
+				.call(function() {
+					logoContainer.rotation = 0;
+				});
 			Tween.get(logoFull, {loop:false})
-			.wait(1300)
-			.to({alpha:0},250,Ease.cubicOut);
+				.wait(1300)
+				.to({alpha:0},250,Ease.cubicOut);
 			Tween.get(letters)
-			.wait(1550)
-			.to({alpha:1},1500,Ease.CubicOut)
-			.call(function() {
-				self._callback();
-			});
+				.wait(1550)
+				.to({alpha:1},1500,Ease.CubicOut);
 			
 			var txt = "Engineering for those who need it most.",
 					copyLine = new Text(txt, "50px " + self.SERIF_FONT, "rgb(255,255,255)");
@@ -406,8 +406,12 @@ var intro = {
 			copyLine.alpha = 0;
 			self._stage.addChild(copyLine);
 			Tween.get(copyLine)
-			.wait(2550)
-			.to({alpha:1},1500,Ease.CubicOut)
+				.wait(2550)
+				.to({alpha:1},1500,Ease.CubicOut)
+				.call(function() {
+					Ticker.removeListener(self,false);
+					self._callback();
+				});
 		}
 		preload.loadManifest([
 			{

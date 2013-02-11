@@ -3,12 +3,13 @@ var keyofferings = {
 	init: function() {
 		var self = this;
 		
-		$(".keyofferings-list__item").each(function(index) {
-			var self = $(this);
-			setTimeout(function() {
-				self.removeClass("hide").addClass("show");
-			}, (index * 150));
-		});
+		// Stagger-show key offerings buttons
+		// $(".keyofferings-list__item").each(function(index) {
+		// 	var self = $(this);
+		// 	setTimeout(function() {
+		// 		self.removeClass("hide").addClass("show");
+		// 	}, (index * 150));
+		// });
 		
 		// Key Offerings buttons
 		$(".keyofferings-list__item a").click(function(event) {

@@ -2,11 +2,13 @@ var locations = {
 
 	_locationData: null,
 	_locationsDiv: null, 
+	_markers: null,
 	_isOpen: false,
 
 	init: function(locationData) {
 		this._locationData = locationData;
 		this._locationsDiv = $("#locations");
+		this._markers = $(".locations-markers");
 		var self = this;
 		
 		$(window).resize(function() {
@@ -39,7 +41,6 @@ var locations = {
 			}
 		});
 		
-		
 	},
 	
 	open: function() {
@@ -59,7 +60,7 @@ var locations = {
 	
 	destroy: function() {
 		this._isOpen = false;
-		$(".locations-markers").empty();
+		this._markers.empty();
 		this._locationsDiv
 			.height(57) // peek
 			.removeClass("show hide peek")
@@ -72,14 +73,14 @@ var locations = {
 	}, 
 
 	_layoutLocations: function(locations) {
-		var container = $(".locations-markers");
+		var self = this;
 
 		$(locations).each(function(index, item) {
 			// calculate the xPos based on the window width
 			var ratio = $(window).width() / 1024,
 			xPos = item.xPos * ratio, 
 			yPos = item.yPos * ratio;
-			var marker = $('<a href="#" class="marker">' + 
+			var marker = $('<a href="#" class="marker" data-index="' + index + '">' + 
 				'<h2 class="header-title hide">' + item.name + '<br/>' + 
 			 	item.location + '</h2>' + 
 			 	'</a>');
@@ -88,7 +89,7 @@ var locations = {
 				"top": yPos
 			});
 			marker.addClass("show");
-			container.append(marker);
+			self._markers.append(marker);
 		});
 		
 		// Handle clicking on the markers
@@ -97,8 +98,35 @@ var locations = {
 			event.preventDefault();
 			
 			// Show the marker title.
-			$(".marker").find("h2").removeClass("show").addClass("hide");
-			$(this).find("h2").removeClass("show hide").addClass("show");
+			//$(".marker").find("h2").removeClass("show").addClass("hide");
+			//$(this).find("h2").removeClass("show hide").addClass("show");
+			
+			// Create the callout
+			var xPos = $(this).css("left").split("px")[0] - 16,
+					yPos = $(this).css("top").split("px")[0] - 75,
+					content = $(this).html();
+			
+			// If there's already a callout, don't reuse the existing one
+			var callout = $("#js-callout");
+			if (callout.length > 0) { // Callout already exists, so just update it
+				callout.find("h2").remove();
+				callout
+					.removeAttr("style")
+					.removeClass("hide").addClass("show")
+					.css({ "left":xPos, "top":yPos })
+					.append(content);
+			} else {
+				callout = self._getCallout(xPos + "px", yPos + "px", content);
+				self._locationsDiv.append(callout);
+				$("#js-callout-close").on("click", function(event) {
+					event.preventDefault();
+					callout.removeClass("show").addClass("hide");
+					return false;
+				});
+			}
+			
+			// Set the width of the callout based on the h2
+			callout.width(callout.find("h2").width() + 20);
 			
 			return false;
 		});
@@ -115,5 +143,13 @@ var locations = {
 				"top": yPos
 			});
 		});
+	}, 
+	
+	_getCallout: function(xPos, yPos, content) {
+		var callout = $('<div id="js-callout" class="callout"><a href="#" class="callout__close" id="js-callout-close">X</a></div>');
+		callout
+			.css({"left":xPos, "top":yPos})
+			.append(content);
+		return callout;
 	}
 }

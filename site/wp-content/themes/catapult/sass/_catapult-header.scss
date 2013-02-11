@@ -12,6 +12,12 @@
     @include borderShadow(0px, 2px, 5px, 0px, 0.5);
     @include greyGradient();
     
+    // iPhone
+    @media only screen 
+        and (max-width : 720px) {
+        display: none;
+    }
+    
     &.show {
         top: 82px;
     }
@@ -46,9 +52,17 @@
     .news {
         padding: 0 40px;
         margin: 0 auto;
-        width: 900px;
         height: 100%;
         overflow: hidden;
+        @media only screen 
+        and (min-width : 975px) {
+            width: 900px;
+        }
+        @media only screen 
+        and (max-width : 974px) {
+            overflow-y: auto;
+            height: 315px;
+        }
         
         &.hide {
             display: none;
@@ -110,6 +124,7 @@
             }
         }
         
+        
         .news-primary, .news-secondary {
             overflow: auto;
             overflow-y: hidden;
@@ -123,6 +138,24 @@
         }
         .news-secondary {
             width: 40%;
+        }
+        
+        // Under 975px wide, stack elements
+        @media only screen 
+        and (max-width : 974px) {
+            .news-primary, .news-secondary {
+                overflow-y: hidden;
+                display: block;
+                position: relative;
+                width: 100%;
+            }
+            .news-primary {
+                
+            }
+            .news-secondary {
+                margin: 0 auto;
+                text-align: center;
+            }
         }
     }
     
@@ -179,6 +212,26 @@ html.no-svg
     .logo {
         display: inline-block;
         padding: 10px 0 18px 50px;
+        // iPhone
+        @media only screen
+            and (max-width : 720px) {
+            padding-left: 10px;
+        }
+        .logo--full {
+            @media only screen
+            and (max-width : 720px) {
+                display: none;
+            }
+        }
+        .logo--partial {
+            width: 30px;
+            height: 30px;
+            @media only screen
+            and (min-width : 720px) {
+                display: none;
+            }
+        }
+        
     }
     .header-divider {
         background: url(../img/homepage/header-detail.png) top left no-repeat #e38e15;
@@ -201,20 +254,36 @@ html.no-svg
     overflow: hidden;
     float: right;
     background: url(../img/homepage/divider-vert.png) top right no-repeat;
-    min-height:79px;
-    padding: 5px 0 0 0;
+    padding: 29px 0 0 0;
+    @media only screen 
+        and (max-width : 720px) {
+        padding-top: 16px;
+    }
     
     ul {
         overflow: hidden;
+        padding: 0;
+        margin: 0;
     }
     
     .mainnav-item {
         float: left;
         padding: 0 35px 0 0;
         vertical-align: top;
+        // iPhone
+        @media only screen 
+            and (max-width : 720px) {
+            padding-right: 10px;
+        }
         
         .mainnav-item-link {
             font-size: 1.6em;
+            // iPhone
+            @media only screen 
+                and (max-width : 720px) {
+                font-size: 1em;
+                color: darken($orange, 30%);
+            }
             
             &:hover,
             &.active {
@@ -227,5 +296,10 @@ html.no-svg
         padding-left: 35px;
         padding-right: 28px;
         border-left: 1px solid darken($orange, 10%);
+        @media only screen 
+                and (max-width : 720px) {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
     }
 }

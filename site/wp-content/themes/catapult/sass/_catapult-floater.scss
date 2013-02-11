@@ -27,8 +27,8 @@
   	list-style-type: none;
   	background-position: top left;
   	background-repeat: no-repeat;
-  	-webkit-transition: all 0.5s ease-in-out;
   	border-radius: 15px;
+    @include transition(0.5s);
     @include borderShadow(0px, 0px, 10px, 0px, 0.5);
 
 		span {
@@ -44,8 +44,8 @@
   		padding-bottom: 4px;
   		border-radius: 15px;
   		text-indent: 140px;
-  		-webkit-transition: all 0.5s ease-in-out;
   		color: darken($orange, 20%);
+      @include transition(0.5s);
       @include textShadow(1px, 1px, 0px, rgba(255,255,255,0.3));
   		font-size: 1.8em;
   		letter-spacing: 2px;
@@ -77,5 +77,11 @@
   }
 }
 
-
-
+@media only screen 
+    and (max-width : 1024px) {
+    
+    .social {
+      display: none;
+    }
+    
+}

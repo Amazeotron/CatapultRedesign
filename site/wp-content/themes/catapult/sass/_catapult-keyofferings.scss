@@ -4,8 +4,8 @@
 
 .keyofferings {
     // margin: 0 0 -25px 0;
+    // margin-top: -130px;
     padding: 0 0 100px 0;
-    margin-top: -130px;
     background: none;
     height: 391px; // This is because the Key Offerings are hidden by default
 
@@ -37,8 +37,10 @@
                 margin: 0 20px 0 0;
                 padding: 6px;
                 float: left;
+                width: 30%;
                 
                 img {
+                    width: 100%;
                     border-right: 1px solid rgba(255,255,255,0.5);
                     border-bottom: 1px solid rgba(255,255,255,0.5);
                     border-left: 1px solid rgba(0,0,0,0.4);
@@ -62,13 +64,14 @@
 .keyofferings-list {
     overflow: hidden;
     margin: 0 auto 40px auto;
-    padding: 5px;
+    padding: 0;
     -webkit-perspective: 500;
-    -moz-perspective: 500;
+       -moz-perspective: 500;
     
     .keyofferings-list__item {
         float: left;
-        margin: 0 8px 0 0;
+        margin: 0 8px 10px 0;
+        
         display: block;
         -webkit-transition: all 0.5s cubic-bezier(.29,.94,.6,1.53); // ease-back
         -webkit-transform-origin: 0px 0px;
@@ -109,6 +112,17 @@
             text-decoration: none;
             display: block;
             padding: 8px 20px 8px;
+            @media only screen 
+                and (max-width : 951px) {
+                padding-left: 0px;
+                padding-right: 0px;
+                width: 186px;
+            }
+            @media only screen and (max-width: 427px) {
+                width: 140px;
+                font-size: 1.2em;
+            }
+            
             // width: 405px;
             background: rgb(200,50,50);
             text-align: center;

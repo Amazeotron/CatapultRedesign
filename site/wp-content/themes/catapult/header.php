@@ -16,7 +16,7 @@
 		<title>Catapult Design - Intro Canvas Prototype</title>
 		<meta charset="<?php bloginfo('charset'); ?>">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta name="description" content="">
 			
 		<?php if (is_search()) { ?>
@@ -83,7 +83,8 @@
     </div><!-- end floater -->
     <header class="header">
 			<a href="<?php echo home_url('/'); ?>" class="logo">
-				<img class="logo-img" src="<?php bloginfo('template_url'); ?>/img/catapult-logo.svg" width="192" height="54" alt="Catapult Design" />
+				<img class="logo--full" src="<?php bloginfo('template_url'); ?>/img/catapult-logo.svg" alt="Catapult Design" />
+				<img class="logo--partial" src="<?php bloginfo('template_url'); ?>/img/cog-partial.png" alt="Catapult Design" />
 			</a>
 			<nav class="mainnav">
 				<ul>

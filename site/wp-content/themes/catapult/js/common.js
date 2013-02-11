@@ -8,7 +8,7 @@ var cataCommon = {
 	
 	getRootURL: function() {
 		if (window.location.href.indexOf(":8888") != -1) {
-			return "http://localhost:8888/wordpress/"; // testing
+			return "http://llmac:8888/wordpress/"; // testing
 		} else {
 			return "http://catapultdesign.org/dev/"; // development
 		// return "http://catapultdesign.org/"; // live
@@ -34,11 +34,11 @@ var cataCommon = {
 	handleNav: function(target) {
 		// Scroll positions for the sections
 		var scrollPositions = [	
-				{section: "#keyofferings", offset:653}, 
-				{section: "#projects", offset:1100}, 
-				{section: "#team", 		offset:2293},
-				{section: "#contact", 	offset:3294},
-				{section: "#donate", 	offset:3986}
+				{section: "#keyofferings", 	offset:653}, 
+				{section: "#projects", 			offset:1100}, 
+				{section: "#team",					offset:2293},
+				{section: "#contact", 			offset:3294},
+				{section: "#donate", 				offset:3986}
 			],
 				scrollTop = 0;
 		
