@@ -3,92 +3,92 @@
 		{
 			"name":"Catpult Design", 
 			"location": "San Francisco",
-			"xPos": 35,
-			"yPos": 48
+			"xPos": 65,
+			"yPos": 117
 		},
 		{
 			"name":"Cata-Camp", 
 			"location": "New Mexico",
-			"xPos": 53,
-			"yPos": 79
+			"xPos": 85,
+			"yPos": 131
 		},
 		{
 			"name":"Wind Turbine", 
 			"location": "Guatemala",
-			"xPos": 135,
-			"yPos": 157
+			"xPos": 133,
+			"yPos": 194
 		},
 		{
 			"name":"Peace Corps Training", 
 			"location": "Costa Rica",
-			"xPos": 143,
-			"yPos": 182
+			"xPos": 152,
+			"yPos": 212
 		},
 		{
 			"name":"Solar Clinic", 
 			"location": "Rwanda",
 			"xPos": 509,
-			"yPos": 218
+			"yPos": 254
 		},
 		{
 			"name":"Second Life Ball", 
 			"location": "Rwanda",
-			"xPos": 526,
-			"yPos": 193
+			"xPos": 502,
+			"yPos": 256
 		},
 		{
 			"name":"LED Lantern", 
 			"location": "Tanzania",
-			"xPos": 552,
-			"yPos": 266
+			"xPos": 515,
+			"yPos": 270
 		},
 		{
 			"name":"Hand Cart", 
 			"location": "Tanzania",
-			"xPos": 564,
-			"yPos": 241
+			"xPos": 528,
+			"yPos": 270
 		},
 		{
 			"name":"Rainwater Harvesting", 
 			"location": "Kenya",
-			"xPos": 587,
-			"yPos": 216
+			"xPos": 534,
+			"yPos": 250
 		},
 		{
 			"name":"Clean Delivery Kit", 
 			"location": "India",
-			"xPos": 687,
-			"yPos": 108
+			"xPos": 657,
+			"yPos": 202
 		},
 		{
 			"name":"Methodology Kit", 
 			"location": "India",
-			"xPos": 715,
-			"yPos": 155
+			"xPos": 655,
+			"yPos": 170
 		},
 		{
 			"name":"Wello Barrel", 
 			"location": "India",
-			"xPos": 725,
+			"xPos": 670,
 			"yPos": 182
 		},
 		{
 			"name":"BioLite", 
 			"location": "India",
-			"xPos": 729,
-			"yPos": 134
+			"xPos": 643,
+			"yPos": 179
 		},
 		{
 			"name":"Mosquito Net", 
 			"location": "Southeast Asia",
-			"xPos": 808,
-			"yPos": 188
+			"xPos": 749,
+			"yPos": 206
 		},
 		{
 			"name":"Clean Energy Adoption", 
 			"location": "Indonesia",
-			"xPos": 857,
-			"yPos": 227
+			"xPos": 772,
+			"yPos": 246
 		}
 	]
 }

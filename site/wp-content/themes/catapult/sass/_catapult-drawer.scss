@@ -1,9 +1,12 @@
 .drawer {
-	@include transition(0.3s);
 	background-repeat: repeat-x, repeat;
 	position: relative;
-	padding: 0 0 30px 0;
+	padding: 0;
 	@include innerShadow(0px, 70px, 120px, 0px, 0.4);
+    
+    @media only screen and (max-width : 479px) {
+        display: none;
+    }
 	
 	&.events {
 		background-image: url(../img/homepage/shadow-top.png), url(../img/homepage/casestudies/bgtile-insights.png);
@@ -11,14 +14,6 @@
 	
 	&.partners {
 		background-image: url(../img/homepage/shadow-top.png), url(../img/homepage/casestudies/bgtile-systems-thinking.png);
-	}
-	
-	&.hide {
-		height: 0px;
-		padding: 0;
-	}
-	&.show {
-		height: auto;
 	}
 	
 	.close {
@@ -36,25 +31,59 @@
 		margin: 0;
 		padding: 0;
 		color: #fff;
-		
-		&.show {
-    	display: block;
-    }
-    
-    &.hide {
-    	display: none;
-    }
 	}
 	
 	p {
 		color: rgba(255,255,255,0.80);
     font-size: 1.1em;
-		
-		&.hide {
-			display: none;
-		}
-		&.show {
-			display: block;
-		}
 	}
+}
+
+.center-tag-wrap {
+    position: relative;
+    width: 280px;
+    margin: 0 auto;
+}
+.center-tag {
+    position: absolute;
+    // bottom: -74px;
+    // left: 43%;
+    display: block;
+    text-align: center;
+    background: url(../img/homepage/bg/drawer-tag-sprite.png) top center no-repeat;
+    width: 280px;
+    height: 74px;
+    overflow: hidden;
+    margin: 0 auto;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    
+    &.open {
+    	background-position: 0px -74px;
+    	
+    	.center-tag__title {
+    		display: none;
+    	}
+    }
+    &.closed {
+    	background-position: 0px 0px;
+    	.center-tag__title {
+    		display: inline;
+    	}
+    }
+    
+    .center-tag__title {
+        position: absolute;
+        top: 8px;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+    }
+    
+    .center-tag__canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
 }

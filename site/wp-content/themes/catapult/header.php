@@ -13,7 +13,7 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
 	<head>
-		<title>Catapult Design - Intro Canvas Prototype</title>
+		<title>Catapult Design</title>
 		<meta charset="<?php bloginfo('charset'); ?>">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -53,6 +53,7 @@
     <script src="<?php bloginfo('template_url'); ?>/js/libs/preloadjs-0.2.0.min.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/js/libs/filters/Filter.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/js/libs/filters/AlphaMaskFilter.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/js/libs/swipe.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/js/CenterTag.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/js/ImagePreloader.js"></script>
     
@@ -103,7 +104,7 @@
 				<div class="news-secondary">
 					<h2 class="news-title header-title">Our Approach and Philosophy</h2>
 					<div class="news-video">
-						<iframe width="355" height="200" src="http://www.youtube.com/embed/sNqi2WRm5eQ?rel=0" frameborder="0" allowfullscreen></iframe>
+						<iframe width="100%" height="70%" src="http://www.youtube.com/embed/sNqi2WRm5eQ?rel=0" frameborder="0" allowfullscreen></iframe>
 					</div>
 				</div><!-- end news-secondary -->
 				<div class="news-primary">
@@ -125,5 +126,7 @@
 					
 				</div><!-- end news-primary -->
 			</div><!-- end news -->
-			<a class="center-tag header-title fancy" id="header-center-tag" href="#"><span class="center-tag__title">CURRENTLY</span></a>
+			<div class="center-tag-wrap">
+				<a class="center-tag header-title fancy" id="header-center-tag" href="#"><span class="center-tag__title">CURRENTLY</span></a>
+			</div>
 		</section><!-- end header-drawer -->

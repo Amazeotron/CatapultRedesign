@@ -12,9 +12,12 @@
     @include borderShadow(0px, 2px, 5px, 0px, 0.5);
     @include greyGradient();
     
+    @media only screen and (max-width: 1024px) and (min-width:721px) {
+        position: absolute;
+    }
+    
     // iPhone
-    @media only screen 
-        and (max-width : 720px) {
+    @media only screen and (max-width : 720px) {
         display: none;
     }
     
@@ -30,17 +33,21 @@
         top: -243px;
     }
     
+    .center-tag-wrap, 
+    .center-tag {
+        width: 158px;
+    }
+    
     .center-tag {
         position: absolute;
-        top: 332px;
-        left: 46.1%;
+        top: -5px;
         background: url(../img/homepage/bg/center-tag-top.png) top center no-repeat;
-        width: 158px;
         height: 47px;
         z-index: 1000;
         
         span {
             overflow: visible;
+            top: 0;
         }
     }
     
@@ -51,17 +58,13 @@
     
     .news {
         padding: 0 40px;
-        margin: 0 auto;
+        margin: 0 5%;
+        width: 90%;
         height: 100%;
         overflow: hidden;
-        @media only screen 
-        and (min-width : 975px) {
-            width: 900px;
-        }
-        @media only screen 
-        and (max-width : 974px) {
+        
+        @media only screen and (max-width: 974px) {
             overflow-y: auto;
-            height: 315px;
         }
         
         &.hide {
@@ -140,23 +143,6 @@
             width: 40%;
         }
         
-        // Under 975px wide, stack elements
-        @media only screen 
-        and (max-width : 974px) {
-            .news-primary, .news-secondary {
-                overflow-y: hidden;
-                display: block;
-                position: relative;
-                width: 100%;
-            }
-            .news-primary {
-                
-            }
-            .news-secondary {
-                margin: 0 auto;
-                text-align: center;
-            }
-        }
     }
     
     ul {
@@ -209,6 +195,10 @@ html.no-svg
     position: fixed;
     z-index: 999;
     
+    @media only screen and (max-width: 1024px) {
+        position: absolute;
+    }
+    
     .logo {
         display: inline-block;
         padding: 10px 0 18px 50px;
@@ -218,16 +208,14 @@ html.no-svg
             padding-left: 10px;
         }
         .logo--full {
-            @media only screen
-            and (max-width : 720px) {
+            @media only screen and (max-width: 720px) {
                 display: none;
             }
         }
         .logo--partial {
             width: 30px;
             height: 30px;
-            @media only screen
-            and (min-width : 720px) {
+            @media only screen and (min-width: 720px) {
                 display: none;
             }
         }
@@ -255,8 +243,7 @@ html.no-svg
     float: right;
     background: url(../img/homepage/divider-vert.png) top right no-repeat;
     padding: 29px 0 0 0;
-    @media only screen 
-        and (max-width : 720px) {
+    @media only screen and (max-width: 720px) {
         padding-top: 16px;
     }
     
@@ -270,15 +257,14 @@ html.no-svg
         float: left;
         padding: 0 35px 0 0;
         vertical-align: top;
-        // iPhone
-        @media only screen 
-            and (max-width : 720px) {
+        
+        @media only screen and (max-width: 720px) {
             padding-right: 10px;
         }
         
         .mainnav-item-link {
             font-size: 1.6em;
-            // iPhone
+            
             @media only screen 
                 and (max-width : 720px) {
                 font-size: 1em;
@@ -296,10 +282,9 @@ html.no-svg
         padding-left: 35px;
         padding-right: 28px;
         border-left: 1px solid darken($orange, 10%);
-        @media only screen 
-                and (max-width : 720px) {
-                padding-left: 10px;
-                padding-right: 10px;
-            }
+        @media only screen and (max-width: 720px) {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
     }
 }

@@ -17,7 +17,7 @@
 
 		.column {
 			float: left;
-
+			
 			&.two {
 				width: 50%;
 			}
@@ -29,6 +29,16 @@
 			}
 			&.right {
 				float: right;
+			}
+			
+			@media only screen and (max-width: 610px) {
+				&.two, &.three, &.four, &.right {
+					width: 100%;
+				}
+			}
+			
+			@media only screen and (max-width: 610px) {
+				float: none;
 			}
 		}
 	}

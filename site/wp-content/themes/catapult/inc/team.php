@@ -28,7 +28,7 @@
 						</div>
 					</li>
 
-					<li class="team-member primary col-last">
+					<li class="team-member primary">
 						<img src="<?php bloginfo('template_url'); ?>/img/homepage/team/karin.jpg" />
 						<div class="team-member-details">
 							<h3 class="header-title">Karin Carter</h3>
@@ -68,7 +68,7 @@
 						</div>
 					</li>
 
-					<li class="team-member secondary col-last">
+					<li class="team-member secondary">
 						<img src="<?php bloginfo('template_url'); ?>/img/homepage/team/catherine.jpg" />
 						<div class="team-member-details">
 							<h3 class="header-title">Catherine Lovazzano</h3>
@@ -108,7 +108,7 @@
 						</div>
 					</li>
 
-					<li class="team-member tertiary col-last">
+					<li class="team-member tertiary">
 						<img src="<?php bloginfo('template_url'); ?>/img/homepage/team/evan.jpg" />
 						<div class="team-member-details">
 							<h3 class="header-title">Evan Thomas</h3>
@@ -148,7 +148,7 @@
 						</div>
 					</li>
 
-					<li class="team-member tertiary col-last">
+					<li class="team-member tertiary">
 						<img src="<?php bloginfo('template_url'); ?>/img/homepage/team/joseph.jpg" />
 						<div class="team-member-details">
 							<h3 class="header-title">Joseph Beah</h3>

@@ -1,4 +1,6 @@
-
+/*
+* This object depends on the Swipe lib. Make sure it's loaded before using.
+*/
 var casestudies = {
 
 	_data: null,
@@ -9,6 +11,8 @@ var casestudies = {
 	_prevPaddle: $("#casestudy-paddle-prev"), 
 	_nextPaddle: $("#casestudy-paddle-next"), 
 	_rootURL: "",
+	_swipe: null, 
+	_imgSwipe: null, 
 
 	/*
 	* Kick off the Case Studies. Pass in data array that represents the case studies.
@@ -26,19 +30,22 @@ var casestudies = {
 		
 		paddlePrev.click(function(event) {
 			event.preventDefault();
-			// if the paddle is disabled, do nothing
+			
 			if ($(this).hasClass("disabled")) return;
-			var index = self.getPrevIndex();
-			var cat = self.getCategory(self._data[index]);
-			self.showCaseStudy(cat, false);
+			
+			self._swipe.prev();
+			self._imgSwipe.prev();
+			
 			return false;
 		});
 		paddleNext.click(function(event) {
 			event.preventDefault();
+			
 			if ($(this).hasClass("disabled")) return;
-			var index = self.getNextIndex();
-			var cat = self.getCategory(self._data[index]);
-			self.showCaseStudy(cat, false);
+			
+			self._swipe.next();
+			self._imgSwipe.next();
+			
 			return false;
 		});
 
@@ -47,16 +54,10 @@ var casestudies = {
 		var imgData = [];
 		for (var i = 0, len = this._numItems; i < len; i++) {
 			//imgData[i] = {imgURL:this._data[i].main_image_path};
-			imgData[i] = {imgURL:this._data[i].attachments[0].url};
+			imgData[i] = {imgURL:this._data[i].attachments[0].images.full.url};
 		}
 		var preload = new ImagePreloader();
 		preload.init(imgData, function() { self.contentLoaded(); });
-
-		// Show the first one
-		var index = 0;
-		self.updateIndexTo(index);
-		var cat = self.getCategory(self._data[index]);
-		this.showCaseStudy(cat, true);
 	},
 
 	contentLoaded: function() {
@@ -70,9 +71,27 @@ var casestudies = {
 			clientName = this.getClientName(study),
 			largeImageURL = this.getLargeImageURL(study);
 			container.append(template);
-			$("#casestudy-content-"+clientName).css({left:this.getContentOffset(i)});
-			imgContainer.append('<img src="' + largeImageURL + '" id="casestudy-image-' + clientName + '" />');
-			$("#casestudy-image-"+clientName).css({left:this.getImageOffset(i)});
+			// $("#casestudy-content-"+clientName).css({left:this.getContentOffset(i)});
+			imgContainer.append('<li><img src="' + largeImageURL + '" id="casestudy-image-' + clientName + '" /></li>');
+			// $("#casestudy-image-"+clientName).css({left:this.getImageOffset(i)});
+		}
+		
+		this._swipe = new Swipe($("#casestudy-content")[0], { callback: this.swipeDone, callbackScope: this });
+		this._imgSwipe = new Swipe($("#casestudy-images")[0], { canDrag:false });
+	},
+	
+	swipeDone: function(event, index, content, scope) {
+		// If the indices don't match, move the images
+		
+		console.log("swipe index: " + index);
+		console.log("imgswipe index: " + scope._imgSwipe.getPos());
+		
+		if (index == scope._imgSwipe.getPos()) return;
+		
+		if (scope._swipe.getPos() < scope._imgSwipe.getPos()) {
+			scope._imgSwipe.prev();
+		} else {
+			scope._imgSwipe.next();
 		}
 	},
 	
@@ -136,9 +155,9 @@ var casestudies = {
 				imgContainer = $("#casestudy-images-sub"),
 				category = this.getCategory(study), 
 				categoryDescription = this.getCategoryDescription(study);
-
-		container.css({left:-this.getContentOffset(index)});
-		imgContainer.css({left:-this.getImageOffset(index)});
+		
+		container.css({left:"-" + this.getContentOffset(index)});
+		imgContainer.css({left:"-" + this.getImageOffset(index)});
 
 		// Highlight proper category button
 		$(".keyofferings-list-item a").removeClass("active");
@@ -147,16 +166,16 @@ var casestudies = {
 		what.find("a").addClass("active");
 
 		// Do background switch
-		var bgURL = "url(" + this._rootURL + "img/homepage/casestudies/bgtile-" + category + ".png)";
-		console.log("Switching background: " + bgURL);
-		$("#casestudies-bg").css({"background-image": "none", "opacity":0})
-												.css({"background-image": bgURL})
-												.delay(400)
-												.animate({ opacity: 1 }, 500);
+		// var bgURL = "url(" + this._rootURL + "img/homepage/casestudies/bgtile-" + category + ".png)";
+		// console.log("Switching background: " + bgURL);
+		// $("#casestudies-bg").css({"background-image": "none", "opacity":0})
+		// 										.css({"background-image": bgURL})
+		// 										.delay(400)
+		// 										.animate({ opacity: 1 }, 500);
 												
 		// Switch out the Case Study: title and description
 		// Replace any dashes with spaces, because this is the display name
-		$("#js-casestudies-header").text("CASE STUDY: " + category.replace(/-/gi, " ").toUpperCase());
+		// $("#js-casestudies-header").text("CASE STUDY: " + category.replace(/-/gi, " ").toUpperCase());
 		$("#js-casestudies-desc").text(categoryDescription);
 		
 		// Update the center tag
@@ -168,8 +187,7 @@ var casestudies = {
 		var nextPaddle = $("#casestudy-paddle-next");
 		prevPaddle.removeClass("disabled");
 		nextPaddle.removeClass("disabled");
-		console.log("this._activeIndex: " + this._activeIndex);
-		console.log("this._numItems: " + this._numItems);
+		
 		if (this._activeIndex >= this._numItems-1) {
 			// disable next paddle
 			nextPaddle.addClass("disabled");
@@ -181,16 +199,17 @@ var casestudies = {
 
 	getCaseStudyTemplate: function(studyData) {
 		var template = 
-			'<div class="casestudy-content-single" id="casestudy-content-' + this.getClientName(studyData) + '">' +
+			'<li class="casestudy-content-single" id="casestudy-content-' + this.getClientName(studyData) + '">' +
 			'<img src="' + this.getSmallImageURL(studyData) + '" alt="' + studyData.title + '" class="casestudy-content-header" />' +
-			'<h1>' + studyData.title + '</h1>' +
+			'<h1 class="header-title">' + studyData.title + '</h1>' +
 			'<p class="casestudy-body">' + studyData.content + '</p>' +
-			'</div>';
+			'</li>';
 			return template;
 	},
 
 	getContentOffset: function(index) {
-		return index*393+20;
+		//return index*393+20;
+		return (index * 100) + "%";
 	},
 
 	getImageOffset: function(index) {

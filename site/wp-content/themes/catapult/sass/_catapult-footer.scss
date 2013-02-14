@@ -1,18 +1,23 @@
 footer {
 	margin: 0 0 2em 0;	
 	padding: 40px 0 0 0;
+	overflow: hidden;
+	
+	
+	
 	
 	.three-col {
-		display: inline-block;
-		width: 30%;
-		margin: 0 4% 0 0;
+		float: left;
+		width: 33%;
+		margin: 0;
 		padding: 10px 0 0 0;
 		border-top: 1px solid gray;
 		vertical-align: top;
 		
-		&:last-of-type {
-			margin: 0;
-		};
+		@media only screen and (max-width: 654px) {
+			width: 100%;
+			float: none;
+		}
 	}
 	
 	.contact-button {

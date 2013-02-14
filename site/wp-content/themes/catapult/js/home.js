@@ -69,9 +69,9 @@ $(document).ready(function() {
 		}
 	});
 	
-	CenterTag.init("centerTagLocationsMap", cataCommon.getRootURL(), function() {
-		console.log("Center Tag is Ready!");
-	});
+	// CenterTag.init("centerTagLocationsMap", cataCommon.getRootURL(), function() {
+	// 	console.log("Center Tag is Ready!");
+	// });
 	
 	// Open News, but only if we're on the homepage, and only if we're at the top of the page
 	setTimeout(function() {

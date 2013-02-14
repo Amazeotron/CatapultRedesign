@@ -3,12 +3,11 @@
 -------------------------------- */
 
 #locations-center-tag {
-	background: none; // Remove the background on this center tag because there is a Canvas element handling the drawing.
+	// background: none; // Remove the background on this center tag because there is a Canvas element handling the drawing.
 }
 
 .locations {
-	background: url(../img/homepage/locations/map.png) top left no-repeat;
-	background-size: cover;
+	
 	position: relative;
 	
 	@media only screen and (max-width : 720px) {
@@ -18,22 +17,17 @@
 	// Slightly different shadow than a normal drawer
 	&.drawer {
 		@include innerShadow(0px, 5px, 5px, 0px, 0.7);
-		
-		&.peek {
-			height: 37px;
-		}
 	}
 	
 	.locations__content {
-		margin-top: -55px;
+		@include transition(0.5s);
+		background: url(../img/homepage/locations/world.svg) top left no-repeat;
+		background-size: 100% auto;
 		position: relative;
+		overflow: hidden;
+		-webkit-perspective: 1000;
+    -webkit-backface-visibility: hidden;
 		
-		&.hide {
-			display: none;
-		}
-		&.show {
-			display: block;
-		}
 		
 		.locations__content__title {
 			margin: 0 auto;

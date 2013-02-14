@@ -1,20 +1,17 @@
 .events {
 	
-	&.drawer {
-		
-		&.peek {
-			height: 37px;
-		}
+	position: relative;
+	
+	@media only screen and (max-width : 720px) {
+		display: none;
 	}
 	
 	.events__content {
-		&.show {
-			display: block;
-		}
-		
-		&.hide {
-			display: none;
-		}
+		@include transition(0.5s);
+		position: relative;
+		overflow: hidden;
+		-webkit-perspective: 1000;
+    -webkit-backface-visibility: hidden;
 	}
 	
 	.events__group {

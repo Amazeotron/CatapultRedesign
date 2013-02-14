@@ -17,15 +17,17 @@
     .team-members {
         overflow: hidden;
         padding: 0;
-        
+        margin: 0 auto;
+        width: 100%;
         
         .team-member {
             display: block;
             float: left;
-            width: 178px;
+            // width: 178px;
+            width: 23%;
             overflow: hidden;
             position: relative;
-            margin: 0 62px 15px 0;
+            margin: 1%;
             
             img {
                 border: 2px solid;
@@ -55,43 +57,38 @@
                 font-size: 1.6em;
                 padding-bottom: 0.5em;
                 color: rgba(255,255,255,1);
-            }
-            @media only screen and (max-width : 422px) {    
-                h3 {
+                
+                @media only screen and (max-width: 913px) {
                     font-size: 1.1em;
                 }
             }
+            
             h4 {
                 font-size: 1.1em;
             }
             h5 {
                 font-size: 1.0em;
             }
-        }
-        @media only screen and (max-width : 955px) {    
-            .team-member {
-                margin-right: 20px;
+            
+            @media only screen and (max-width: 422px) {
+                margin: 2%;
+                width: 46%;
             }
         }
-        // Two up
-        @media only screen and (max-width : 422px) {    
-            .team-member {
-                margin-right: 5%;
-                width: 45%;
-            }
-        }
-        .team-member.col-last {
-            margin-right: 0;
-        }
+        
         .team-member-details {
             position: absolute;
-            top: 140px;
+            top: 84%;
             left: 0;
             padding: 6px 10px 0 10px;
-            height: 179px;
+            height: 100%;
             @include transition(0.2s);
             @include noSelect();
             cursor: pointer;
+            
+            @media only screen and (min-width: 914px) {
+                top: 80%;
+            }
 
             p {
                 color: #fff;
@@ -106,9 +103,7 @@
                 }
             }
         }
-        .team-member-details.hover {
-            top: 0;
-        }
+        
         @media only screen and (max-width : 422px) {    
             .team-member-details, 
             .team-member-details.hover {
@@ -126,4 +121,7 @@
     .tertiary .team-member-details {
         background: rgba($teal, 0.95);
     }
+}
+html.no-touch .team-member-details.hover {
+    top: 0;
 }

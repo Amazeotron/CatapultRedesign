@@ -1,22 +1,17 @@
 .partners {
 	
-	&.drawer {
-		
-		&.peek {
-			height: 37px;
-		}
+	position: relative;
+	
+	@media only screen and (max-width : 720px) {
+		display: none;
 	}
 	
 	.partners__content {
-		
-		&.show {
-			display: block;
-			height: auto;
-		}
-		&.hide {
-			display: none;
-			height: 0px;
-		}
+		@include transition(0.5s);
+		position: relative;
+		overflow: hidden;
+		-webkit-perspective: 1000;
+    -webkit-backface-visibility: hidden;
 	}
 	
 	.partners-list {
