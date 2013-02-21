@@ -20,7 +20,7 @@ var locations = {
 			}
 		});
 		
-		$("#locations-center-tag, #locations .close").click(function(event) {
+		$("#locations-center-tag, #locations .close-button").click(function(event) {
 			event.preventDefault();
 			(self._isOpen) ? self.close() : self.open();
 			return false;
@@ -55,13 +55,13 @@ var locations = {
 	open: function() {
 		this._isOpen = true;
 		this._content.css({height:this._getHeight("open")+"px"});
-		$("#locations .close").show();
+		$("#locations .close-button").show();
 	}, 
 	
 	close: function() {
 		this._isOpen = false;
 		this._content.css({height:this._getHeight("closed")+"px"});
-		$("#locations .close").hide();
+		$("#locations .close-button").hide();
 	}, 
 	
 	showLocations: function() {
@@ -78,7 +78,7 @@ var locations = {
 		if (state == "open") {
 			return $("body").width() * this._getRatio();
 		} else if (state == "closed") {
-			return 50;
+			return 2;
 		}
 		return 0;
 	}, 

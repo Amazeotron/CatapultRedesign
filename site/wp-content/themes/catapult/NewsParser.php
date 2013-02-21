@@ -36,7 +36,7 @@ class NewsParser
 		include_once "NewsItem.php";
 		
 		$newsItems = array();
-		foreach ($arr as $post) {
+		foreach ($arr as &$post) {
 			// Check for location
 			$location = "";
 			if (isset($post["custom_fields"]["location"])) {

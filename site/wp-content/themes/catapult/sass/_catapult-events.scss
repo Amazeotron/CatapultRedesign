@@ -1,19 +1,5 @@
 .events {
 	
-	position: relative;
-	
-	@media only screen and (max-width : 720px) {
-		display: none;
-	}
-	
-	.events__content {
-		@include transition(0.5s);
-		position: relative;
-		overflow: hidden;
-		-webkit-perspective: 1000;
-    -webkit-backface-visibility: hidden;
-	}
-	
 	.events__group {
 		height: 196px;
 		overflow-x: hidden;

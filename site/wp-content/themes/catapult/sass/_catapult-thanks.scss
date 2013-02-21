@@ -1,0 +1,64 @@
+
+.donors {
+	
+	.donors__list {
+		list-style-type: none;
+		overflow: hidden;
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		
+		.donors__list__item {
+			float: left;
+			padding: 1%;
+		}
+	}
+}
+
+.overlay-content {
+	p {
+		color: black;
+	}
+}
+
+.overlay,
+.overlay span {
+	color: $darkGreyFont;
+}
+
+.overlay {
+	@include transition(0.3s);
+	&.show {
+		display: block;
+	}
+	&.hide {
+		display: none;
+	}
+}
+
+
+.overlay__form {
+	width: 100%;
+	
+	.overlay__form__item {
+		width: 100%;
+		display: block;
+		padding: 5px 0;
+	}
+	
+	.overlay__form__input {
+		margin: 0 10px;
+	}
+	
+	.hide {
+		display: none;
+	}
+	.show {
+		display: block;
+	}
+	
+	textarea {
+		width: 520px;
+		height: 150px;
+	}
+}

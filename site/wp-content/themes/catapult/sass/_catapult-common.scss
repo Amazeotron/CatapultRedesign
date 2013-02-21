@@ -5,6 +5,8 @@
 body {
     background: url(../img/homepage/bg/bgtile.jpg) top left repeat #666;
     font-size: 15px;
+    font-family: $serifFont;
+    color: $lightGreyFont;
 }
 
 h1, h2, h3, h4, h5, p, label, input, input[type="submit"], textarea, li {
@@ -12,8 +14,31 @@ h1, h2, h3, h4, h5, p, label, input, input[type="submit"], textarea, li {
     color: $lightGreyFont;
     font-size: 1em;
 }
+input[type="text"], input[type="tel"], input[type="email"], input[type="number"], select {
+    outline: none;
+    padding: 6px 0 5px 5px;
+    font-family: $serifFont;
+    font-size: 0.8em;
+    color: black;
+    
+    &.parsley-error {
+        background: rgba(248,139,139,1.0);
+        color: white;
+    }
+}
 input, input[type="submit"], textarea {
     color: $darkGreyFont;
+}
+input[type="submit"] {
+    -webkit-appearance: none;
+    @include edgeGradient($orange, 10%);
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    font-family: $sansFont;
+    font-size: 2em;
+    letter-spacing: 2px;
+    font-weight: normal;
 }
 h1 {
     font-size: 3em;
@@ -35,6 +60,42 @@ h5 {
 
 a {
     color: $orange;
+}
+
+.clicky-button {
+    overflow: visible;
+    position: relative;
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px 10px;
+    @include edgeGradient($orange, 10%);
+    text-align: center;
+    font-family: $sansFont;
+    font-size: 1.6em;
+    color: $lightGreyFont;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    @include textShadow(-1px, -1px, 0px, rgba(0,0,0,0.5));
+    @include borderShadow(0px, 3px, 3px, 0px, 0.4);
+    
+    &:hover, 
+    &.active {
+        @include innerShadow(0px, 4px, 5px, 0px, 0.5);
+    }
+    
+    &:active {
+        @include textShadow(-1px, -1px, 3px, rgba(0,0,0,0.5));
+        @include innerShadow(1px, 1px, 8px, 2px, 0.6);
+    }
+    
+    &.disabled {
+        @include edgeGradient(rgba(150,150,150,0.5), 10%);
+    }
+    &:hover.disabled,
+    &:active.disabled {
+        @include innerShadow(0, 0, 0, 0, 0.0);
+        @include textShadow(0, 0, 0, 0.0);
+    }
 }
 
 a.fancy {
@@ -61,6 +122,10 @@ a.fancy {
     font-weight: normal;
 }
 
+.page-top {
+    padding-top: 128px;
+}
+
 section, footer {
     background: url(../img/homepage/shadow-top.png) top left repeat-x;
 }
@@ -72,6 +137,13 @@ section:first-of-type {
 section {
     padding-top: 30px;
 }
+
+// .show {
+//     display: block;
+// }
+// .hide {
+//     display: none;
+// }
 
 // ::-webkit-scrollbar {
 //     width: 8px;
@@ -109,8 +181,7 @@ section {
     width: 900px;
     margin: 0 auto;
 }
-@media only screen 
-    and (max-width : 1024px) {
+@media only screen and (max-width: 1024px) {
     
     .row {
         width: 94%;
@@ -127,9 +198,16 @@ section {
     width: 100%;
 }
 
+.one-col {
+    float: left;
+    width: 100%;
+}
+
 .two-col {
     float: left;
     width: 50%;
+    margin-left: 0;
+    margin-right: 0;
     
     &.padded {
         width: 45%;
@@ -137,10 +215,12 @@ section {
     
     &.margin-left {
         margin-left: 5%;
+        width: 45%;
     }
     
     &.margin-right {
         margin-right: 5%;
+        width: 45%;
     }
     
     &.align-center {
@@ -272,6 +352,18 @@ section {
     100% { opacity: 0; }
 }
 
+.close-button {
+    display: block;
+    position: absolute;
+    z-index: 10;
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 37px;
+    background: url(../img/homepage/overlay-close-button.png) top left no-repeat;
+}
+        
+
 .overlay {
     width: 100%;
     height: 100%;
@@ -303,23 +395,13 @@ section {
             height: 700px;
         }
         @media only screen and (max-width : 442px) {
-            height: 320px;
+            height: 360px;
         }
         
         &.show {
             -webkit-animation: shrink 0.4s ease-out;
         }
         
-        .close {
-            display: block;
-            position: absolute;
-            z-index: 10;
-            top: 20px;
-            right: 20px;
-            width: 36px;
-            height: 37px;
-            background: url(../img/homepage/overlay-close-button.png) top left no-repeat;
-        }
         .overlay-name {
             color: $orange;
             font-size: 4em;
@@ -327,6 +409,15 @@ section {
             letter-spacing: 2px;
             margin: 0 0 20px 0;
             padding: 0;
+            
+            @media only screen and (max-width: 442px) {
+                font-size: 2em;
+            }
+        }
+        .overlay-title {
+            @media only screen and (max-width: 442px) {
+                font-size: 1.2em;
+            }
         }
         .overlay-title,
         .overlay-company,
@@ -344,6 +435,8 @@ section {
             float: right;
             margin: 10px;
             border: 1px solid $orange;
+            width: 40%;
+            max-width: 162px;
         }
     }
 }
@@ -436,4 +529,23 @@ section {
     color:#fff;
     font-size:20px;
     text-align:center;
+}
+
+
+
+/*
+--------- PARSLEY ERRORS ----------
+*/
+
+.parsley-error-list {
+    margin: 5px 0 0 0;
+    padding: 0;
+    
+    li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-size: 0.7em;
+        color: white;
+    }
 }

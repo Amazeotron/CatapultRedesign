@@ -5,7 +5,7 @@ var team = {
 	_rootURL: "", 
 
 	init: function(teamData, rootURL) {
-		console.log("Loaded team.js");
+		
 		this._rootURL = rootURL;
 		this._teamData = teamData;
 		this._dataLength = this._teamData.length;
@@ -30,18 +30,12 @@ var team = {
 			$(".overlay-inner").addClass("show").parent().addClass("show");
 			return false;
 		});
-
-		$(document).on("click", "#overlay-close-button, .overlay", function(event) {
-			event.preventDefault();
-			$(".overlay").remove();
-			return false;
-		});
 	},
 
 	getOverlayTemplate: function(teamMember) {
 		var template = '<section class="overlay" id="team-overlay">' +
 		'<div class="overlay-inner">' +
-		'<a href="#" class="close" id="overlay-close-button"></a>' +
+		'<a href="#" class="close-button" id="overlay-close-button"></a>' +
 		'<h1 class="overlay-name header-title">' + teamMember.name + '</h1>' +
 		'<h2 class="overlay-title">' + teamMember.title + ', ' + teamMember.company + '</h2>' +
 		'<h3 class="overlay-twitter">' + teamMember.twitter + '</h3>' +

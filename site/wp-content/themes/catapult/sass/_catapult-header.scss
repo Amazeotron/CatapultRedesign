@@ -12,6 +12,10 @@
     @include borderShadow(0px, 2px, 5px, 0px, 0.5);
     @include greyGradient();
     
+    &.compact {
+        top: -350px;
+    }
+    
     @media only screen and (max-width: 1024px) and (min-width:721px) {
         position: absolute;
     }
@@ -33,33 +37,15 @@
         top: -243px;
     }
     
-    .center-tag-wrap, 
-    .center-tag {
-        width: 158px;
-    }
-    
-    .center-tag {
-        position: absolute;
-        top: -5px;
-        background: url(../img/homepage/bg/center-tag-top.png) top center no-repeat;
-        height: 47px;
-        z-index: 1000;
-        
-        span {
-            overflow: visible;
-            top: 0;
-        }
-    }
-    
     h2, h3 {
         padding: 0;
         margin: 0;
     }
     
     .news {
-        padding: 0 40px;
-        margin: 0 5%;
-        width: 90%;
+        padding: 0 2%;
+        margin: 0 2%;
+        width: 92%;
         height: 100%;
         overflow: hidden;
         
@@ -195,13 +181,18 @@ html.no-svg
     position: fixed;
     z-index: 999;
     
+    &.compact {
+        @include borderShadow(0px, 5px, 5px, 0px, 0.3);
+    }
+    
     @media only screen and (max-width: 1024px) {
         position: absolute;
     }
     
     .logo {
         display: inline-block;
-        padding: 10px 0 18px 50px;
+        padding: 10px 0 7px 50px;
+        
         // iPhone
         @media only screen
             and (max-width : 720px) {
@@ -211,11 +202,23 @@ html.no-svg
             @media only screen and (max-width: 720px) {
                 display: none;
             }
+            &.show {
+                display: block;
+            }
+            &.hide {
+                display: none;
+            }
         }
         .logo--partial {
             width: 30px;
             height: 30px;
-            @media only screen and (min-width: 720px) {
+            @media only screen and (min-width: 721px) {
+                display: none;
+            }
+            &.show {
+                display: block;
+            }
+            &.hide {
                 display: none;
             }
         }
@@ -239,12 +242,18 @@ html.no-svg
     Main Nav Section
 -------------------------------- */
 .mainnav {
+    @include transition(0.3s);
     overflow: hidden;
     float: right;
     background: url(../img/homepage/divider-vert.png) top right no-repeat;
     padding: 29px 0 0 0;
+    
     @media only screen and (max-width: 720px) {
         padding-top: 16px;
+    }
+    
+    &.compact {
+        padding-top: 13px;
     }
     
     ul {

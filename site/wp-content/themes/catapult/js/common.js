@@ -4,6 +4,12 @@ var cataCommon = {
 	init: function() {
 		this.handleHeader();
 		this.handleSocial();
+		
+		$(document).on("click", "#overlay-close-button", function(event) {
+			event.preventDefault();
+			$(".overlay").remove();
+			return false;
+		});
 	}, 
 	
 	getRootURL: function() {

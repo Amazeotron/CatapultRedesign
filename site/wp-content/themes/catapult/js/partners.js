@@ -11,7 +11,7 @@ var partners = {
 		this._container = $("#partners");
 		this._content = $("#js-partners-content");
 		
-		$("#partners-center-tag, #partners .close").click(function(event) {
+		$("#partners-center-tag, #partners .close-button").click(function(event) {
 			
 			event.preventDefault();
 			
@@ -22,9 +22,9 @@ var partners = {
 		
 		$("#partners").on("webkitTransitionEnd transitionend", function(event) {
 			if (self._isOpen) {
-				self._content.css({"opacity":"1"});
+				self._content.children().not(".bottom-peek").css({"opacity":"1"});
 			} else {
-				self._content.css({"opacity":"0"});
+				self._content.children().not(".bottom-peek").css({"opacity":"0"});
 			}
 		});
 		
@@ -34,20 +34,22 @@ var partners = {
 	open: function() {
 		this._isOpen = true;
 		this._content.css({height:this._getHeight()+"px"});
-		$("#locations .close").show();
+		$("#partners .close-button").show();
 	}, 
 	
 	close: function() {
 		this._isOpen = false;
-		this._content.css({height:this._getHeight()+"px", "opacity":"0"});
-		$("#locations .close").hide();
+		this._content
+			.css({height:this._getHeight()+"px"})
+			.children().not(".bottom-peek").css({"opacity":"0"});
+		$("#partners .close-button").hide();
 	},
 	
 	_getHeight: function() {
 		if (this._isOpen) {
 			return 740;
 		} else {
-			return 50;
+			return 2;
 		}
 		return 0;
 	}

@@ -7,6 +7,7 @@
      \|______|   \|_|  \|_|   \| | \|_|   \| | \|_|    |_/          \_|
             Coded By Larry Lague, larrylague.com
 -->
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -27,49 +28,32 @@
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/uniform.default.css">
     <?php if (is_front_page()) { ?>
     	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/main.css">
-    <?php } else { ?>
-    	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/blog.css" />
+    <?php } else if (is_page('News') || is_single()) { ?>
+    	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/blog.css">
+    <?php } else if (is_page('Thanks')) { ?>
+    	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/thanks.css">
     <?php } ?>
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
     <script type="text/javascript">
     	var createjs = window; // assign the namespace to the window
     </script>
-    <script src="<?php bloginfo('template_url'); ?>/js/libs/modernizr-2.6.1.min.js"></script>
-    <script src="//use.typekit.net/ljv7wxs.js"></script>
-		<script>try{Typekit.load();}catch(e){}</script>
-		<script src="https://js.stripe.com/v1/"></script>
-		<script>
-    Stripe.setPublishableKey('pk_test_0PZC9cbjV0HiBO3lqzDrq7uK');
-		</script>
     
+    <script src="<?php bloginfo('template_url'); ?>/js/libs/modernizr-2.6.1.min.js"></script>
+    
+    <!-- Load TypeKit Fonts -->
+    <script type="text/javascript">
+		  (function() {
+		    var config = {
+		      kitId: 'ljv7wxs',
+		      scriptTimeout: 3000
+		    };
+		    var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+		  })();
+		</script>
+      
     <?php wp_head(); ?>
     
-    <script src="<?php bloginfo('template_url'); ?>/js/common.js"></script>
-    
-    <?php if (is_front_page()) { ?>
-    <script src="<?php bloginfo('template_url'); ?>/js/libs/easeljs-0.5.0.min.js"></script>
-    <script src="<?php bloginfo('template_url'); ?>/js/libs/tweenjs-0.3.0.min.js"></script>
-    <script src="<?php bloginfo('template_url'); ?>/js/libs/preloadjs-0.2.0.min.js"></script>
-    <script src="<?php bloginfo('template_url'); ?>/js/libs/filters/Filter.js"></script>
-    <script src="<?php bloginfo('template_url'); ?>/js/libs/filters/AlphaMaskFilter.js"></script>
-    <script src="<?php bloginfo('template_url'); ?>/js/libs/swipe.js"></script>
-    <script src="<?php bloginfo('template_url'); ?>/js/CenterTag.js"></script>
-    <script src="<?php bloginfo('template_url'); ?>/js/ImagePreloader.js"></script>
-    
-    <script src="<?php bloginfo('template_url'); ?>/js/intro.js"></script>
-    <script src="<?php bloginfo('template_url'); ?>/js/keyofferings.js"></script>
-    <script src="<?php bloginfo('template_url'); ?>/js/casestudies.js"></script>
-    <script src="<?php bloginfo('template_url'); ?>/js/locations.js"></script>
-    <script src="<?php bloginfo('template_url'); ?>/js/team.js"></script>
-    <script src="<?php bloginfo('template_url'); ?>/js/partners.js"></script>
-    <script src="<?php bloginfo('template_url'); ?>/js/events.js"></script>
-    <script src="<?php bloginfo('template_url'); ?>/js/donations.js"></script>
-    
-    <script src="<?php bloginfo('template_url'); ?>/js/home.js"></script>
-    <?php } else { ?>
-    <script src="<?php bloginfo('template_url'); ?>/js/blog.js"></script>
-    <?php } ?>
 	</head>
 	<body <?php body_class(); ?>>
 		<!--[if lt IE 7]>
@@ -127,6 +111,6 @@
 				</div><!-- end news-primary -->
 			</div><!-- end news -->
 			<div class="center-tag-wrap">
-				<a class="center-tag header-title fancy" id="header-center-tag" href="#"><span class="center-tag__title">CURRENTLY</span></a>
+				<a class="center-tag center-tag--primary header-title fancy" id="header-center-tag" href="#"><span class="center-tag__title">CURRENTLY</span></a>
 			</div>
 		</section><!-- end header-drawer -->

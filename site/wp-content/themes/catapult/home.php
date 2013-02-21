@@ -1,6 +1,11 @@
+<?php
+
+	// TODO -- If this page is loaded with an error from the form submission, we need to show the form with errors
+
+?>
 <?php get_header(); ?>
 
-	<section class="intro" id="intro">
+	<section class="intro page-top" id="intro">
 			<div class="row">
 				<canvas id="intro__canvas" width="900px" height="500px">
 					<p>Catapult Design is a non-profit design firm providing engineering and implementation support to the thousands of organizations in need of technologies or products. The net benefit of our activities is nothing less than a fundamental improvement in the lives of those who need it most.</p>
@@ -17,12 +22,12 @@
 		<section class="keyofferings" id="keyofferings">
 			<div class="row">
 				<ul class="keyofferings-list">
-					<li class="keyofferings-list__item" id="keyofferings-list-engineering"><a href="#" class="engineering" id="keyofferings-button-engineering" data-index="0">ENGINEERING</a></li>
-					<li class="keyofferings-list__item" id="keyofferings-list-ideation"><a href="#" class="ideation" id="keyofferings-button-ideation" data-index="1">IDEATION</a></li>
-					<li class="keyofferings-list__item" id="keyofferings-list-innovation"><a href="#" class="innovation" id="keyofferings-button-innovation" data-index="2">TECHNOLOGY INNOVATION</a></li>
-					<li class="keyofferings-list__item" id="keyofferings-list-education"><a href="#" class="education" id="keyofferings-button-education" data-index="3">EDUCATION</a></li>
-					<li class="keyofferings-list__item" id="keyofferings-list-insights"><a href="#" class="insights" id="keyofferings-button-insights" data-index="4">INSIGHTS</a></li>
-					<li class="keyofferings-list__item" id="keyofferings-list-systems_thinking"><a href="#" class="systems-thinking" id="keyofferings-button-systems_thinking" data-index="5">SYSTEMS THINKING</a></li>
+					<li class="keyofferings-list__item" id="keyofferings-list-engineering"><a href="#" class="clicky-button engineering" id="keyofferings-button-engineering" data-index="0">ENGINEERING</a></li>
+					<li class="keyofferings-list__item" id="keyofferings-list-ideation"><a href="#" class="clicky-button ideation" id="keyofferings-button-ideation" data-index="1">IDEATION</a></li>
+					<li class="keyofferings-list__item" id="keyofferings-list-innovation"><a href="#" class="clicky-button innovation" id="keyofferings-button-innovation" data-index="2">TECHNOLOGY INNOVATION</a></li>
+					<li class="keyofferings-list__item" id="keyofferings-list-education"><a href="#" class="clicky-button education" id="keyofferings-button-education" data-index="3">EDUCATION</a></li>
+					<li class="keyofferings-list__item" id="keyofferings-list-insights"><a href="#" class="clicky-button insights" id="keyofferings-button-insights" data-index="4">INSIGHTS</a></li>
+					<li class="keyofferings-list__item" id="keyofferings-list-systems_thinking"><a href="#" class="clicky-button systems-thinking" id="keyofferings-button-systems_thinking" data-index="5">SYSTEMS THINKING</a></li>
 				</ul>
 				<div class="keyofferings__offerings">
 					
@@ -100,13 +105,14 @@
 		</section><!-- end case studies -->
 		
 		<section class="locations drawer" id="locations">
-			<div id="js-locations-content" class="locations__content">
-				<h1 class="locations__content__title header-title">Catapult Projects</h1>
+			<div id="js-locations-content" class="drawer__content">
+				<h1 class="drawer__content__title header-title">Catapult Projects</h1>
 				<div class="locations-markers"></div>
-				<a href="#" class="close ir">Close</a>
+				<a href="#" class="close-button ir">Close</a>
+				<div class="bottom-peek"></div>
 			</div>
 			<div class="center-tag-wrap">
-				<a href="#" class="center-tag closed header-title fancy on-dark-bg" id="locations-center-tag">
+				<a href="#" class="center-tag center-tag--secondary closed header-title fancy on-dark-bg" id="locations-center-tag">
 					<!-- <canvas class="center-tag__canvas" id="centerTagLocationsMap" width="319" height="55"></canvas> -->
 					<span class="center-tag__title">SEE WHERE WE'VE WORKED</span>
 				</a>
@@ -122,16 +128,17 @@
 		</section><!-- end team -->
 		
 		<section class="partners drawer" id="partners">
-			<div id="js-partners-content" class="partners__content">
+			<div id="js-partners-content" class="drawer__content">
 				<div class="row">
-					<h1 class="header-title">Thank you to our 2011 donors.</h1>
+					<h1 class="drawer__content__title header-title">Thank you to our 2011 donors.</h1>
 					<p>Everyone on this list has made a contribution to make our services accessible to organizations worldwide. Find out how you can donate below.</p>
 					<?php include("inc/partners.php"); ?>
 				</div><!-- end row -->
-				<a href="#" class="close ir">Close</a>
+				<a href="#" class="close-button ir">Close</a>
+				<div class="bottom-peek"></div>
 			</div><!-- end js-partners-content -->
 			<div class="center-tag-wrap">
-				<a href="#" class="center-tag header-title fancy on-dark-bg" id="partners-center-tag"><span class="center-tag__title">MEET OUR PARTNERS</span></a>
+				<a href="#" class="center-tag center-tag--secondary header-title fancy on-dark-bg" id="partners-center-tag"><span class="center-tag__title">MEET OUR PARTNERS</span></a>
 			</div>
 		</section><!-- end partners -->
 		
@@ -175,9 +182,9 @@
 		</section><!-- end contact -->
 		
 		<section class="events drawer" id="events">
-			<div id="js-events-content" class="events__content">
+			<div id="js-events-content" class="drawer__content">
 				<div class="row">
-					<h1 class="header-title">Upcoming Catapult Events</h1>
+					<h1 class="drawer__content__title header-title">Upcoming Catapult Events</h1>
 					<p>At Catapult, our hands-on teams work with your company on x, y, and z. Our Not-for-profit is dedicated to facilitating... and educational programs...where companies can meet, learn, work, and share. We invest in ... so other people may thrive. Something else goes here for a nice line break.</p>
 					<hr />
 					<?php
@@ -193,10 +200,11 @@
 					<? endforeach; ?>
 					</div>
 				</div>
-				<a href="#" class="close ir">Close</a>	
+				<a href="#" class="close-button ir">Close</a>	
+				<div class="bottom-peek"></div>
 			</div>
 			<div class="center-tag-wrap">
-				<a href="#" class="center-tag header-title fancy on-dark-bg" id="events-center-tag"><span class="center-tag__title">Attend a Catapult Event</span></a>
+				<a href="#" class="center-tag center-tag--secondary header-title fancy on-dark-bg" id="events-center-tag"><span class="center-tag__title">Attend a Catapult Event</span></a>
 			</div>
 			
 		</section><!-- end events -->
@@ -213,7 +221,7 @@
 				<p>Materials and prototype budget for our project work, tools (from wrenches to software) our designers need to get the job done, travel costs associated with assessment and implementation, and our designers who are committed to using their skills to make a difference. If you have questions regarding how your donation will be used, please contact us as info@catapultdesign.org.</p>
 
 				<h4 class="header-title">Corporate matching</h4>
-				<p>Catapult is currently registered with corporate matching programs at:  Google, Microsoft, Applied Materials, and the Gordon and Betty Moore Foundation.</p>
+				<p>Catapult is currently registered with corporate matching programs at: Google, Microsoft, Applied Materials, and the Gordon and Betty Moore Foundation.</p>
 
 				<h4 class="header-title">To donate by check</h4>
 				<p>Write out your donation to “Catapult Design” and mail to Catapult Design, 972 Mission St. Suite 500, San Francisco, CA 94103.</p>
@@ -224,109 +232,85 @@
 				<!-- <div class="divider"></div> -->
 				
 				<!-- Select $$ amount -->
-				<form id="donation-form" action="#" method="POST" accept-charset="utf-8">
-					<div class="form-item">
-						<select id="donation-amount" name="donation-amount" single>
-							<option value="Choose Amount">Choose Amount</option>
-							<option value="$25">$25</option>
-							<option value="$50">$50</option>
-							<option value="$75">$75</option>
-							<option value="$100">$100</option>
-							<option value="$250">$250</option>
-							<option value="$500">$500</option>
-						</select>
-					</div><!-- end form-item -->
+				<form id="donation-amount-form" class="donation-amount" action="#" method="POST" accept-charset="utf-8">
+					<div class="form-item donation-amount__elements">
+						<div class="two-col donation-amount__item"><span class="donation-amount__prefix">$</span><input type="text" id="donation-amount" class="donation-amount__amount" name="donation-amount" placeholder="enter amount"></div>
+						<div class="two-col right donation-amount__item"><input class="clicky-button donation-amount__submit" type="submit" name="donation-amount-submit" value="DONATE"></div>
+					</div>
+				</form>
+				
+				<form id="donation-form" action="<?php bloginfo('url'); ?>/thanks/" method="POST" accept-charset="utf-8">
+					
+					<input type="hidden" id="donation-amount-hidden" name="donation-amount">
 					
 					<div class="col-wrap" id="donation-form-body">
-						<div class="credit-card-info two-col padded margin-right clearfix">
+						<div id="js-donation-credit-card-info" class="credit-card-info two-col padded margin-right clearfix">
 							<h3>Credit Card Info</h3>
 							<div class="form-item">
-								<label for="full-name">Name as appears on card:</label>
-								<input id="card-full-name" type="text" name="full-name" value="" placeholder="full name">
+								<label for="full-name">Name as appears on card: *</label>
+								<input id="card-full-name" type="text" name="full-name" value="" data-required="true" data-trigger="change" data-notblank="true">
 							</div>
 							
 							<div class="form-item">
-								<label for="card-type">Card Type:</label>
-								<select id="card-type" name="card-type" single>
-									<option value="card type">card type</option>
-									<option value="Visa">Visa</option>
-									<option value="MasterCard">MasterCard</option>
-								</select>
-							</div>
-							
-							<div class="form-item">
-								<div class="two-col card-number">
-									<label for="card-number">Card number:</label>
-									<input id="card-number" type="text" value="" placeholder="card number" autocomplete="off">
+								<div class="two-col margin-right card-number">
+									<label for="card-number">Card number: *</label>
+									<input id="card-number" type="tel" value="" autocomplete="off" data-required="true" data-trigger="change" data-notblank="true">
 								</div>
 								<div class="two-col card-cvv right">
-									<label for="card-cvv">CVV code:</label>
-									<input id="card-cvv" type="text" value="" placeholder="cvv" autocomplete="off">
+									<label for="card-cvv">CVV code: *</label>
+									<input id="card-cvv" type="tel" value="" autocomplete="off" data-required="true" data-trigger="change" data-rangelength="[3,4]">
 								</div>
 							</div>
 							
 							<div class="form-item">
-								<label for="expiration">Expiration Date:</label>
-								<select id="card-expiration-month" single>
+								<label for="expiration">Expiration Date: *</label>
+								<select id="card-expiration-month" single data-required="true" data-trigger="change" data-notblank="true">
 									<?php include("inc/months.php"); ?>
 								</select>
-								<select id="card-expiration-year" single>
+								<select id="card-expiration-year" single data-required="true" data-trigger="change" data-notblank="true">
 									<?php include("inc/years.php"); ?>
 								</select>
 							</div>
 						</div><!-- end credit-card-info -->
 						
-						<div class="billing-info two-col padded margin-left clearfix">
+						<div id="js-donation-billing-info" class="billing-info two-col padded margin-left clearfix">
 							<h3>Billing Info</h3>
 							
 							<div class="form-item">
-								<label for="street">Street:</label>
-								<input id="billing-street" type="text" name="billing-street" value="" placeholder="Street address">
+								<label for="street">Street: *</label>
+								<input id="billing-street" type="text" name="billing-street" value="" data-required="true" data-notblank="true">
 							</div>
 							<div class="form-item">
-								<div class="two-col city">
-									<label for="city">City:</label>
-									<input id="billing-city" type="text" name="billing-city" value="" placeholder="City">
+								<div class="two-col margin-right city">
+									<label for="city">City: *</label>
+									<input id="billing-city" type="text" name="billing-city" value="" data-required="true" data-notblank="true">
 								</div>
 								<div class="two-col state right">
-									<label for="state">State:</label>
-									<select id="billing-state" name="State"> 
+									<label for="state">State: *</label>
+									<select id="billing-state" name="billing-state" data-required="true"> 
 										<?php include("inc/us_states.php"); ?>
 									</select>
 								</div>
 							</div>
 							<div class="form-item">
-								<label for="zip">Zip code:</label>
-								<input id="billing-zipcode" type="text" name="billing-zipcode" value="" placeholder="Zip code">
+								<label for="zip">Zip code: *</label>
+								<input id="billing-zipcode" type="tel" name="billing-zipcode" value="" data-required="true" data-maxlength="5" data-notblank="true">
 							</div>
 							<div class="form-item">
-								<div class="two-col telephone">
+								<div class="two-col margin-right telephone">
 									<label for="street">Telephone number:</label>
-									<input id="billing-telephone" type="text" name="billing-telephone" value="" placeholder="Telephone number">
+									<input id="billing-telephone" type="tel" name="billing-telephone" value="" data-required="false" data-notblank="true">
 								</div>
 								<div class="two-col email right">
-									<label for="street">E-mail address:</label>
-									<input id="billing-email" type="text" name="billing-email" value="" placeholder="Email">
+									<label for="street">E-mail address: *</label>
+									<input id="billing-email" type="email" name="billing-email" value="" data-required="true" data-type="email">
 								</div>
 							</div>
 						</div><!-- end billing-info -->
 					</div><!-- end cols -->
 						
-					<input id="donation-form-submit" class="submit" type="submit" name="commit" value="Submit">
+					<input id="donation-form-submit" class="clicky-button" type="submit" name="donation-form-submit" value="Submit">
 				</form>
-				<!-- Once a form item is selected, we can show the form -->
-				
-				<script type="text/javascript"> 
-				function validateAmount(amount){
-					if(amount.value.match( /^[0-9]+(\.([0-9]+))?$/)){
-						return true;
-					}else{
-						alert('You must enter a valid donation.');
-						amount.focus();
-						return false;
-					}
-				}
-				</script>
 
 			</div><!-- end row -->
 		</section><!-- end donate -->

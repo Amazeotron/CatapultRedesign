@@ -1,19 +1,5 @@
 .partners {
 	
-	position: relative;
-	
-	@media only screen and (max-width : 720px) {
-		display: none;
-	}
-	
-	.partners__content {
-		@include transition(0.5s);
-		position: relative;
-		overflow: hidden;
-		-webkit-perspective: 1000;
-    -webkit-backface-visibility: hidden;
-	}
-	
 	.partners-list {
 		ul {
 			margin: 0;

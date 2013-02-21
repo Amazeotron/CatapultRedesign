@@ -4,6 +4,9 @@
 */
 $(document).ready(function() {
 	
+	var _shouldShowBigLogo = true, 
+			_self = this;
+	
 	cataCommon.init();
 	keyofferings.init();
 	
@@ -37,6 +40,45 @@ $(document).ready(function() {
 	
 	checkHash();
 	handleMainNav();
+	
+	// When the page scrolls past 100 px vertically, change the nav to mini version
+	$(window).scroll(function(event) {
+		
+		var scrollPos = $(this).scrollTop();
+		
+		if (scrollPos > 100) {
+			$(".logo .logo--full").removeClass("show").addClass("hide");
+			$(".logo .logo--partial").removeClass("hide").addClass("show");
+			$(".mainnav, .header").addClass("compact");
+			$("#header-drawer").removeClass("show peek hide").addClass("compact");
+		} else {	
+			if (_shouldShowBigLogo) {
+				$(".logo .logo--full").removeClass("hide").addClass("show");
+				$(".logo .logo--partial").removeClass("show").addClass("hide");
+			}
+			
+			$(".mainnav, .header").removeClass("compact");
+			$("#header-drawer").removeClass("show peek hide compact").addClass("hide");
+		}
+		
+	});
+	
+	// Check for which logo is showing 
+	enquire.register("screen and (max-width: 720px)", {
+		
+		match: function() {
+			_shouldShowBigLogo = false;
+			$(".logo .logo--full").removeClass("show").addClass("hide");
+			$(".logo .logo--partial").removeClass("hide").addClass("show");
+		}, 
+		
+		unmatch: function() {
+			_shouldShowBigLogo = true;
+			$(".logo .logo--full").removeClass("hide").addClass("show");
+			$(".logo .logo--partial").removeClass("show").addClass("hide");
+		}
+		
+	});
 	
 	// Change the nav on scroll
 	$(window).scroll(function(event) {
@@ -74,14 +116,17 @@ $(document).ready(function() {
 	// });
 	
 	// Open News, but only if we're on the homepage, and only if we're at the top of the page
+	
 	setTimeout(function() {
-		if (Number($("body").scrollTop()) < 100) {
-			cataCommon.peekNews();
-		}
+		var isTop = (Number($("body").scrollTop()) < 100);
 		
-		setTimeout(function() {
-			cataCommon.hideNews();
-		}, 1500);
+		if (isTop) {
+			cataCommon.peekNews();
+			
+			setTimeout(function() {
+				cataCommon.hideNews();
+			}, 1500);
+		}
 	}, 1000);
 	
 	intro.init(cataCommon.getRootURL() + "wp-content/themes/catapult/", function() {
@@ -92,10 +137,9 @@ $(document).ready(function() {
 	// get case studies
 	$.getJSON(cataCommon.getRootURL() + '?json=get_recent_posts&dev=1&post_type=casestudy&custom_fields=category,category_description,client,main_image,header_image,display_order&meta_key=display_order&order_by=meta_value&order=ASC', function(data, textStatus, jqXHR) {
 		casestudies.init(cataCommon.getRootURL() + "wp-content/themes/catapult/", data.posts);
-		console.log(data.posts);
 	})
 	.success(function() {
-		console.log("Success loading the Case Studies");
+		console.log("Successfully loaded the case studies.");
 	})
 	.error(function(error) {
 		console.log("Failed loading the Case Studies");
@@ -113,7 +157,7 @@ $(document).ready(function() {
 	$.getJSON(cataCommon.getRootURL() + "wp-content/themes/catapult/js/team-json.js", function(data, textStatus, jqXHR) {
 		team.init(data.teamData, cataCommon.getRootURL());
 	}).success(function() {
-		console.log("Successfully loaded the team data");
+		console.log("Successfully loaded the team data.");
 	})
 	.error(function(error) {
 		console.log("There was an error loading the team json:");

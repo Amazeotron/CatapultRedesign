@@ -11,7 +11,7 @@
 ?>
 <?php get_header(); ?>
 	
-	<div id="page-wrap">
+	<div id="page-wrap" class="page-top">
 		<section id="main-section">
 			<div id="posts">
 				

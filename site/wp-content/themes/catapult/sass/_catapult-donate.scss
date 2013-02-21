@@ -29,15 +29,35 @@
 	p:last-of-type {
 		padding-bottom: 1em; 
 	}
-
-	ul {
-		overflow: hidden;
-		li {
-			list-style-type: none;
-			float: left;
-			margin: 0 10px 10px 0;
-		}
-	}
+  
+  .donation-amount {
+    
+    .donation-amount__elements {
+      
+      .donation-amount__item {
+        padding: 0 0 5px 0;
+      }
+      
+      .donation-amount__prefix {
+        width: 5%;
+        font-size: 2em;
+      }
+      
+      .donation-amount__amount {
+        width: 85%;
+        margin: 0 0 0 5%;
+        font-size: 1.1em;
+        font-family: $serifFont;
+        padding: 17px 0 17px 5%;
+      }
+      
+      .donation-amount__submit {
+        width: auto;
+      }
+      
+    }
+    
+  }
 
 	.toggle {
 		display: block;
@@ -70,13 +90,14 @@
       display: block;
       padding: 5px 0 5px 0;
     }
-    input[type="text"] {
-      outline: none;
-      border: none;
-      padding: 4px 0 5px 8px;
-      font-family: sans-serif;
-      font-size: 0.8em;
-      color: black;
+    
+    input {
+      width: 100%;
+      box-sizing: content-box;
+    }
+    
+    input[type="text"], input[type="tel"], input[type="number"], input[type="email"] {
+      
     }
     #uniform-card-expiration-year span {
       width: 70px;
@@ -95,38 +116,33 @@
 		}
 		
   	#card-full-name {
-  		width: 300px;
+  		// width: 300px;
   	}
   	#card-number {
-  		width: 212px;
+  		// width: 212px;
   	}
   	#card-cvv {
-  		width: 66px;
+  		// width: 66px;
   	}
   	#billing-street {
-  		width: 314px;
+  		// width: 314px;
   	}
   	#billing-city {
-  		width: 150px;
+  		// width: 150px;
   	}
   	#billing-zipcode {
-  		width: 100px;
+  		// width: 100px;
   	}
   	#billing-telephone {
-  		width: 132px;
+  		// width: 132px;
   	}
   	#billing-email {
-  		width: 160px;
+  		// width: 160px;
   	}
   	
   	input[type="submit"] {
   		display: none;
-  		-webkit-appearance: none;
-  		background: #F0661F;
-  		border: none;
-  		color: white;
-  		padding: 8px 20px;
-  		margin: 35px 0 0 0;
+      margin: 35px 0 0 0;
   	}
   }
   

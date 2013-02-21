@@ -65,7 +65,7 @@
 		},
 		{
 			"index": 7,
-			"name": "Catherine Howard Lovazzano",
+			"name": "Catherine Lovazzano",
 			"title": "Senior Manager, Consumer Trends and Foresight",
 			"company": "Chrysler LLC",
 			"twitter": "",

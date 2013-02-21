@@ -108,10 +108,10 @@
             @include borderShadow(0px, 3px, 12px, 3px, 0.2);
             
             @media only screen and (max-width : 929px) {
-                position: rela tive;
+                position: relative;
                 top: auto;
-                margin: 0 5%;
-                width: 90%;
+                margin: 0;
+                width: 100%;
                 padding: 0;
             }
 
@@ -156,6 +156,10 @@
             top: 0;
             left: 0;
             width: 100%;
+            
+            @media only screen and (max-width : 929px) {
+                z-index: 2;
+            }
 
             a.paddle {
                 position: absolute;
@@ -169,7 +173,7 @@
                 @include transition(0.3s);
                 
                 @media only screen and (max-width : 929px) {
-                    top: 170px;
+                    top: 40px;
                 }
                 
                 &.prev:hover img {
@@ -206,7 +210,7 @@
                     @include borderShadow(-2px, 3px, 5px, 0px, 0.5);
                     
                     @media only screen and (max-width : 929px) {
-                        left: -8px;
+                        left: -10px;
                     }
                 }
                 &.next {
@@ -216,7 +220,7 @@
                         margin-left: 18px;
                     }
                     @media only screen and (max-width : 929px) {
-                        left: 95%;
+                        left: 88%;
                     }
                 }
             }

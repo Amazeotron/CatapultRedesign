@@ -1,4 +1,5 @@
 .drawer {
+    position: relative;
 	background-repeat: repeat-x, repeat;
 	position: relative;
 	padding: 0;
@@ -16,16 +17,6 @@
 		background-image: url(../img/homepage/shadow-top.png), url(../img/homepage/casestudies/bgtile-systems-thinking.png);
 	}
 	
-	.close {
-		width: 36px;
-		height: 37px;
-		background: url(../img/homepage/overlay-close-button.png) top left no-repeat;
-		display: block;
-		position: absolute;
-		top: 20px;
-		right: 20px;
-	}
-	
 	h1 {
 		font-size: 4em;
 		margin: 0;
@@ -37,6 +28,31 @@
 		color: rgba(255,255,255,0.80);
     font-size: 1.1em;
 	}
+    
+    .drawer__content {
+        @include transition(0.5s);
+        position: relative;
+        overflow: hidden;
+        -webkit-perspective: 1000;
+        -webkit-backface-visibility: hidden;
+        padding-top: 30px;
+        
+        .drawer__content__title {
+            margin: 0 auto;
+            color: #fff;
+            letter-spacing: 3px;
+            @include textShadow(2px, 2px, 5px, rgba(0,0,0,0.9));
+        }
+    }
+}
+
+.bottom-peek {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    background: rgba(0,0,0,0.1);
+    border-top: 1px solid rgba(255,255,255,0.3);
 }
 
 .center-tag-wrap {
@@ -46,27 +62,32 @@
 }
 .center-tag {
     position: absolute;
-    // bottom: -74px;
-    // left: 43%;
     display: block;
     text-align: center;
     background: url(../img/homepage/bg/drawer-tag-sprite.png) top center no-repeat;
-    width: 280px;
-    height: 74px;
+    width: 288px;
+    height: 80px;
     overflow: hidden;
     margin: 0 auto;
     font-size: 1.2em;
     letter-spacing: 2px;
     
+    &.center-tag--primary {
+        background-position-x: 0px;
+    }
+    &.center-tag--secondary {
+        background-position-x: -288px;
+    }
+    
     &.open {
-    	background-position: 0px -74px;
+    	background-position-y: -80px;
     	
     	.center-tag__title {
     		display: none;
     	}
     }
     &.closed {
-    	background-position: 0px 0px;
+    	background-position-y: 0px;
     	.center-tag__title {
     		display: inline;
     	}
