@@ -15,28 +15,6 @@
 	}
 }
 
-.overlay-content {
-	p {
-		color: black;
-	}
-}
-
-.overlay,
-.overlay span {
-	color: $darkGreyFont;
-}
-
-.overlay {
-	@include transition(0.3s);
-	&.show {
-		display: block;
-	}
-	&.hide {
-		display: none;
-	}
-}
-
-
 .overlay__form {
 	width: 100%;
 	

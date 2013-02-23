@@ -1,94 +1,115 @@
 <?php
-
+	
+	$error = 'false';
+	$error_message = 'No error';
+	
 	// TODO -- If this page is loaded with an error from the form submission, we need to show the form with errors
-
+	// get the credit card details submitted by the form
+	// If we're on this page and there's a token, it means the person came here from the donation form
+	if (isset($_POST['stripeToken'])) {
+		$token = $_POST['stripeToken'];
+		
+		// Capture parts of the form that we will insert into WP if the person decides to add a quote
+		$_SESSION['fullName'] = $_POST['full-name'];
+		$_SESSION['email'] = $_POST['billing-email'];
+		$_SESSION['street'] = $_POST['billing-street'];
+		$_SESSION['city'] = $_POST['billing-city'];
+		$_SESSION['state'] = $_POST['billing-state'];
+		$_SESSION['zip'] = $_POST['billing-zipcode'];
+		$_SESSION['phone'] = $_POST['billing-telephone'];
+		
+		// session_write_close();
+		
+		// create the charge on Stripe's servers - this will charge the user's card
+		
+		include_once ABSPATH . "wp-content/themes/catapult/stripe-php/lib/Stripe.php";
+		// set your secret key: remember to change this to your live secret key in production
+		// see your keys here https://manage.stripe.com/account
+		Stripe::setApiKey("sk_test_qEFmlubevcYzBN6nIgq0FNyb");
+		
+		try {	
+			$charge = Stripe_Charge::create(array(
+				"amount" => intval($_POST['donation-amount']) * 100, // amount in cents
+				"currency" => "usd",
+				"card" => $token,
+				"description" => $_POST['billing-email'])
+			);
+		} catch (Stripe_CardError $e) {
+			// Since it's a decline, Stripe_CardError will be caught
+			// $body = $e->getJsonBody();
+			// $err  = $body['error'];
+			// var_dump($e);
+			$error_message = "Your credit card was declined.";
+			$error = 'true';
+		} catch (Stripe_InvalidRequestError $e) {
+			// Invalid parameters were supplied to Stripe's API
+			// var_dump($e);
+			$error_message = "There was a problem on our side.";
+			$error = 'true';
+		} catch (Stripe_AuthenticationError $e) {
+			// Authentication with Stripe's API failed
+			// (maybe you changed API keys recently)
+			// var_dump($e);
+			$error_message = "There was a problem on our side.";
+			$error = 'true';
+		} catch (Stripe_ApiConnectionError $e) {
+			// Network communication with Stripe failed
+			// var_dump($e);
+			$error_message = "There was a problem connecting to the server.";
+			$error = 'true';
+		} catch (Stripe_Error $e) {
+			// Display a very generic error to the user, and maybe send
+			// yourself an email
+			// var_dump($e);
+			$error_message = "There was an unknown problem.";
+			$error = 'true';
+		} catch (Exception $e) {
+			// Something else happened, completely unrelated to Stripe
+			// var_dump($e);
+			$error_message = "There was an unknown problem.";
+			$error = 'true';
+		}
+		
+		// If there are no errors, show the thank you page
+		if ($error == 'false') {
+			header("Location: " . home_url('/thanks/'));
+		}
+	}
+	
+	
 ?>
 <?php get_header(); ?>
-
+	<script>
+		var formError = "<?php echo $error; ?>";
+		var formErrorMessage = "<?php echo $error_message; ?>";
+	</script>
+	
+	<section class="overlay hide" id="overlay">
+		<div class="overlay-inner">
+			<a href="#" class="close-button" id="overlay-close-button"></a>
+			<div class="overlay-content">
+				
+			</div>
+		</div>
+	</section>
+	
 	<section class="intro page-top" id="intro">
 			<div class="row">
 				<canvas id="intro__canvas" width="900px" height="500px">
 					<p>Catapult Design is a non-profit design firm providing engineering and implementation support to the thousands of organizations in need of technologies or products. The net benefit of our activities is nothing less than a fundamental improvement in the lives of those who need it most.</p>
 				</canvas>
-				<!-- <div class="caption">
-					<p class="intro-desc">Catapult Design is a non-profit design firm providing engineering and implementation support to the thousands of organizations in need of technologies or products. The net benefit of our activities is nothing less than a fundamental improvement in the lives of those who need it most.</p>
-					<a href="#keyofferings" class="what-we-do" id="what-we-do">What we do</a>
-				</div> -->
-				
-				<!-- <div class="divider"></div> -->
 			</div><!-- end row -->
 		</section><!-- end intro -->
 		
 		<section class="keyofferings" id="keyofferings">
-			<div class="row">
-				<ul class="keyofferings-list">
-					<li class="keyofferings-list__item" id="keyofferings-list-engineering"><a href="#" class="clicky-button engineering" id="keyofferings-button-engineering" data-index="0">ENGINEERING</a></li>
-					<li class="keyofferings-list__item" id="keyofferings-list-ideation"><a href="#" class="clicky-button ideation" id="keyofferings-button-ideation" data-index="1">IDEATION</a></li>
-					<li class="keyofferings-list__item" id="keyofferings-list-innovation"><a href="#" class="clicky-button innovation" id="keyofferings-button-innovation" data-index="2">TECHNOLOGY INNOVATION</a></li>
-					<li class="keyofferings-list__item" id="keyofferings-list-education"><a href="#" class="clicky-button education" id="keyofferings-button-education" data-index="3">EDUCATION</a></li>
-					<li class="keyofferings-list__item" id="keyofferings-list-insights"><a href="#" class="clicky-button insights" id="keyofferings-button-insights" data-index="4">INSIGHTS</a></li>
-					<li class="keyofferings-list__item" id="keyofferings-list-systems_thinking"><a href="#" class="clicky-button systems-thinking" id="keyofferings-button-systems_thinking" data-index="5">SYSTEMS THINKING</a></li>
-				</ul>
-				<div class="keyofferings__offerings">
-					
-					<div class="keyofferings__offerings__item clearfix" id="keyofferings-item-engineering">
-						<figure class="keyofferings__offerings__item__figure">
-							<img src="<?php bloginfo('template_url'); ?>/img/homepage/intro/handcart.jpg" alt="">
-							<p class="caption">Anza Hand Cart</p>
-						</figure>
-						<p>Pie sugar plum danish muffin cookie jujubes cookie fruitcake. Powder marshmallow jelly. Chupa chups gingerbread gummies chocolate dessert oat cake cookie sweet roll candy.</p>
-					</div>
-					
-					<div class="keyofferings__offerings__item hide clearfix" id="keyofferings-item-ideation">
-						<figure class="keyofferings__offerings__item__figure">
-							<img src="<?php bloginfo('template_url'); ?>/img/homepage/intro/wello.jpg" alt="">
-							<p class="caption">Wello Water Wheel</p>
-						</figure>
-						<p>Lemon drops sugar plum muffin. Tart pie bear claw lollipop biscuit lemon drops pudding topping halvah. Ice cream fruitcake danish sugar plum candy. Apple pie pastry jelly gingerbread carrot cake cotton candy apple pie.</p>
-					</div>
-					
-					<div class="keyofferings__offerings__item hide clearfix" id="keyofferings-item-innovation">
-						<figure class="keyofferings__offerings__item__figure">
-							<img src="<?php bloginfo('template_url'); ?>/img/homepage/intro/worldbank.jpg" alt="">
-							<p class="caption">World Bank clean energy fabrication</p>
-						</figure>
-						<p>Tootsie roll jelly-o carrot cake chocolate cake. Tiramisu chocolate bar gummi bears cotton candy lemon drops cupcake. Biscuit sugar plum bear claw. Lemon drops powder jelly-o candy jelly-o.</p>
-					</div>
-					
-					<div class="keyofferings__offerings__item hide clearfix" id="keyofferings-item-education">
-						<figure class="keyofferings__offerings__item__figure">
-							<img src="<?php bloginfo('template_url'); ?>/img/homepage/intro/peacecorps.jpg" alt="">
-							<p class="caption">Peace Corps education session</p>
-						</figure>
-						<p>Jelly beans sweet applicake carrot cake. Cookie applicake lemon drops marshmallow powder jujubes. Macaroon sweet roll dragée bear claw.</p>
-					</div>
-					
-					<div class="keyofferings__offerings__item hide clearfix" id="keyofferings-item-insights">
-						<figure class="keyofferings__offerings__item__figure">
-							<img src="<?php bloginfo('template_url'); ?>/img/homepage/intro/simpa.jpg" alt="">
-							<p class="caption">Simpa Networks module</p>
-						</figure>
-						<p>Danish jelly beans marshmallow caramels. Wafer tiramisu pudding gummies sesame snaps muffin cupcake topping. Tootsie roll macaroon soufflé chupa chups gingerbread.</p>
-					</div>
-					<div class="keyofferings__offerings__item hide clearfix" id="keyofferings-item-systems_thinking">
-						<figure class="keyofferings__offerings__item__figure">
-							<img src="<?php bloginfo('template_url'); ?>/img/homepage/intro/ihangane.jpg" alt="">
-							<p class="caption">Ihangane solar panel installation</p>
-						</figure>
-						<p>Jelly halvah chocolate lollipop. Candy canes cheesecake ice cream faworki pastry. Caramels marzipan cupcake halvah. Bonbon sugar plum apple pie cupcake.</p>
-					</div>
-					
-				</div>
-					
-			</div><!-- end row -->
+			<?php include(ABSPATH . "wp-content/themes/catapult/inc/keyofferings.php"); ?>
 		</section><!-- end keyofferings -->
 
 		<section class="casestudies" id="casestudies">
 			<div id="casestudies-bg"></div>
 			<div class="row">
 				<div class="row-header">
-					<h1 id="js-casestudies-header" class="header-title">Case Studies</h1>
-					<p class="casestudies-desc" id="js-casestudies-desc">At Catapult, our hands-on teams work with your company on x, y, and z. Our Not-for-profit is dedicated to facilitating... and educational programs...where companies can meet, learn, work, and share. We invest in ... so other people may thrive. Something else goes here for a nice line break.</p>
+					<h1 id="js-casestudies-header" class="header-title title-shadow">Case Studies</h1>
 				</div>
 			</div>
 				
@@ -97,8 +118,8 @@
 					<div id="casestudy-images" class="casestudy-images"><ul id="casestudy-images-sub"></ul></div>
 					<div id="casestudy-content" class="swipe"><ul id="casestudy-content-sub"></ul></div>
 					<div class="paddles">
-						<a class="paddle prev" href="#" id="casestudy-paddle-prev"><img src="<?php bloginfo('template_url'); ?>/img/homepage/casestudies/arrow-left.png" /></a>
-						<a class="paddle next" href="#" id="casestudy-paddle-next"><img src="<?php bloginfo('template_url'); ?>/img/homepage/casestudies/arrow-right.png" /></a>
+						<a class="paddle prev" href="#" tabindex="13" id="casestudy-paddle-prev"><img src="<?php bloginfo('template_url'); ?>/img/homepage/casestudies/arrow-left.png" /></a>
+						<a class="paddle next" href="#" tabindex="14" id="casestudy-paddle-next"><img src="<?php bloginfo('template_url'); ?>/img/homepage/casestudies/arrow-right.png" /></a>
 					</div>
 				</article>
 			</div><!-- end casestudies-container -->
@@ -106,9 +127,9 @@
 		
 		<section class="locations drawer" id="locations">
 			<div id="js-locations-content" class="drawer__content">
-				<h1 class="drawer__content__title header-title">Catapult Projects</h1>
+				<h1 class="drawer__content__title header-title title-shadow">Catapult Projects</h1>
 				<div class="locations-markers"></div>
-				<a href="#" class="close-button ir">Close</a>
+				<a href="#" class="close-button ir" tabindex="15">Close</a>
 				<div class="bottom-peek"></div>
 			</div>
 			<div class="center-tag-wrap">
@@ -123,22 +144,23 @@
 		<section class="team" id="team">
 			<div class="row">
 				<h1>Meet the Catapult <span class="header-title level-one">Team</span>, <span class="header-title level-two">Board</span> &amp; <span class="header-title level-three">Advisors</span>.</h1>
-				<?php include("inc/team.php"); ?>
+				<?php include(ABSPATH . "wp-content/themes/catapult/inc/team.php"); ?>
 			</div><!-- end team row -->
 		</section><!-- end team -->
 		
 		<section class="partners drawer" id="partners">
 			<div id="js-partners-content" class="drawer__content">
 				<div class="row">
-					<h1 class="drawer__content__title header-title">Thank you to our 2011 donors.</h1>
-					<p>Everyone on this list has made a contribution to make our services accessible to organizations worldwide. Find out how you can donate below.</p>
-					<?php include("inc/partners.php"); ?>
+					<h1 class="title-shadow">our <span class="header-title orange">PARTNERS</span> &amp; <span class="header-title green">SPONSORS</span></h1>
+					<p><span class="header-title">We&apos;re constantly working to build our network</span> to offer the best service possible to our clients. We invite organizations in this field to partner with us on funding, design, and distribution.</p>
+					<?php include(ABSPATH . "wp-content/themes/catapult/inc/partners.php"); ?>
+					<p>If you&apos;re a company, individual, or service-provider interested in partnering with or sponsoring Catapult&apos;s work, please <a href="#contact">contact us</a>.</p>
 				</div><!-- end row -->
 				<a href="#" class="close-button ir">Close</a>
 				<div class="bottom-peek"></div>
 			</div><!-- end js-partners-content -->
 			<div class="center-tag-wrap">
-				<a href="#" class="center-tag center-tag--secondary header-title fancy on-dark-bg" id="partners-center-tag"><span class="center-tag__title">MEET OUR PARTNERS</span></a>
+				<a href="#" class="center-tag center-tag--secondary header-title fancy on-dark-bg" id="partners-center-tag" tabindex="32"><span class="center-tag__title">MEET OUR PARTNERS</span></a>
 			</div>
 		</section><!-- end partners -->
 		
@@ -146,36 +168,42 @@
 			<div class="row">
 				<h1><span class="header-title level-one">FOLLOW</span>, <span class="header-title level-two">LIKE</span> &amp; <span class="header-title level-three">CONTACT</span> Us.</h1>
 				<div class="divider"></div>
-				<div class="columns">
-					<div class="column left two">
-						<div class="contact-button contact-button--street contact-section">
-							<h3 class="header-title contact-button__title">972 Mission St, 5TH FLOOR</h3>
-							<h4 class="header-title contact-button__subtitle">San Francisco, CA 94103</h4>
+				<div class="col-wrap">
+					<div class="two-col margin-right">
+						
+						<div class="contact-section">
+							<a href="https://maps.google.com/maps?q=972+Mission+Street,+San+Francisco,+CA&hl=en&sll=37.7577,-122.4376&sspn=0.330606,0.468636&oq=972+mission+&t=v&hnear=972+Mission+St,+San+Francisco,+California+94103&z=17" class="contact-button contact-button--street header-title">
+								<span>972 Mission St, 5TH FLOOR</span>
+							</a>
+							<p class="contact__subtitle">San Francisco, CA 94103</p>
 						</div>
-						<div class="contact-button contact-button--openhouse contact-section">
-							<h3 class="header-title contact-button__title">Open Studio</h3>
-							<h4 class="header-title contact-button__subtitle">4-6PM Every 1st and 3rd Wednesday</h4>
+						
+						<div class="contact-section">
+						<a href="<?php home_url('/events'); ?>" class="contact-button contact-button--openhouse header-title">
+								<span>Open Studio</span>
+							</a>
+							<p class="contact__subtitle">4-6PM Every 1st and 3rd Wednesday</p>
 						</div>
+						
 						<p>Have a question about Catapult, want to see our projects in person, or interested in working with us? Join us for open studio!</p>
 					</div><!-- end column -->
-					<div class="column right two">
+					<div class="two-col margin-left">
 						<div class="map">
 							<img src="https://maps.googleapis.com/maps/api/staticmap?center=972+Mission+Street,+San+Francisco,+CA&zoom=17&size=600x300&sensor=false" alt="">
 						</div>
 					</div><!-- end column -->
 				</div>
-				<div class="divider"></div>
-				<div class="columns">
-					<div class="column three">
-						<a href="https://twitter.com/Catapult_Design" class="contact-button contact-button--twitter"><h3 class="header-title contact-button__title">&#64;CATAPULT_DESIGN</h3></a>
-						<a href="mailto:info@catapultdesign.org" class="contact-button contact-button--email"><h3 class="header-title contact-button__title">INFO&#64;CATAPULTDESIGN.ORG</h3></a>
+				
+				<div class="col-wrap contact__buttons">
+					<div class="two-col margin-right">
+						<a href="mailto:info@catapultdesign.org" class="contact-button contact-button--email header-title" tabindex="33">INFO&#64;CATAPULTDESIGN.ORG</a>
+						<a href="https://twitter.com/Catapult_Design" class="contact-button contact-button--twitter header-title" tabindex="34">&#64;CATAPULT_DESIGN</a>
+						<a href="https://www.facebook.com/CatapultDesign" class="contact-button contact-button--facebook header-title" tabindex="35">/CATAPULT-DESIGN</a>
 					</div>
-					<div class="column three">
-						<a href="https://www.facebook.com/CatapultDesign" class="contact-button contact-button--facebook"><h3 class="header-title contact-button__title">/CATAPULT-DESIGN</h3></a>
-						<a href="http://www.youtube.com/user/CatapultDesign" class="contact-button contact-button--youtube"><h3 class="header-title contact-button__title">/CATAPULTDESIGN</h3></a>
-					</div>
-					<div class="column three">
-						<a href="http://catapultdesign.org/blog/rss" class="contact-button contact-button--rss"><h3 class="header-title contact-button__title">SUBSCRIBE TO BLOG</h3></a>
+					<div class="two-col margin-left">
+						<a href="http://oi.vresp.com/?fid=9fcbd66d02" class="contact-button contact-button--newsletter header-title" tabindex="36">SUBSCRIBE TO NEWSLETTER</a>
+						<a href="http://www.youtube.com/user/CatapultDesign" class="contact-button contact-button--youtube header-title" tabindex="37">/CATAPULTDESIGN</a>
+						<a href="/media" class="contact-button contact-button--faq header-title" tabindex="38">FAQ &amp; PRESSKIT</a>
 					</div>
 				</div>
 			</div>
@@ -184,11 +212,10 @@
 		<section class="events drawer" id="events">
 			<div id="js-events-content" class="drawer__content">
 				<div class="row">
-					<h1 class="drawer__content__title header-title">Upcoming Catapult Events</h1>
-					<p>At Catapult, our hands-on teams work with your company on x, y, and z. Our Not-for-profit is dedicated to facilitating... and educational programs...where companies can meet, learn, work, and share. We invest in ... so other people may thrive. Something else goes here for a nice line break.</p>
-					<hr />
+					<h1 class="drawer__content__title header-title title-shadow">Upcoming Events</h1>
+					
 					<?php
-					include_once "NewsParser.php";
+					include_once(ABSPATH . "wp-content/themes/catapult/inc/NewsParser.php");
 					$eventJSON = NewsParser::loadJSON(NewsParser::getRootURL() . "/?json=get_recent_posts&dev=1&post_type=event&custom_fields=header_image");
 					$eventPosts = NewsParser::commonize($eventJSON["posts"], "post"); ?>
 					<div class="events__group">
@@ -204,7 +231,7 @@
 				<div class="bottom-peek"></div>
 			</div>
 			<div class="center-tag-wrap">
-				<a href="#" class="center-tag center-tag--secondary header-title fancy on-dark-bg" id="events-center-tag"><span class="center-tag__title">Attend a Catapult Event</span></a>
+				<a href="#" class="center-tag center-tag--secondary header-title fancy on-dark-bg" id="events-center-tag" tabindex="39"><span class="center-tag__title">Attend a Catapult Event</span></a>
 			</div>
 			
 		</section><!-- end events -->
@@ -228,89 +255,8 @@
 
 				<h4 class="header-title">To donate online</h4>
 				<p>We accept secure online donations through both Google Checkout and Paypal. Recurring donations are only available through PayPal.</p>
-
-				<!-- <div class="divider"></div> -->
 				
-				<!-- Select $$ amount -->
-				<form id="donation-amount-form" class="donation-amount" action="#" method="POST" accept-charset="utf-8">
-					<div class="form-item donation-amount__elements">
-						<div class="two-col donation-amount__item"><span class="donation-amount__prefix">$</span><input type="text" id="donation-amount" class="donation-amount__amount" name="donation-amount" placeholder="enter amount"></div>
-						<div class="two-col right donation-amount__item"><input class="clicky-button donation-amount__submit" type="submit" name="donation-amount-submit" value="DONATE"></div>
-					</div>
-				</form>
-				
-				<form id="donation-form" action="<?php bloginfo('url'); ?>/thanks/" method="POST" accept-charset="utf-8">
-					
-					<input type="hidden" id="donation-amount-hidden" name="donation-amount">
-					
-					<div class="col-wrap" id="donation-form-body">
-						<div id="js-donation-credit-card-info" class="credit-card-info two-col padded margin-right clearfix">
-							<h3>Credit Card Info</h3>
-							<div class="form-item">
-								<label for="full-name">Name as appears on card: *</label>
-								<input id="card-full-name" type="text" name="full-name" value="" data-required="true" data-trigger="change" data-notblank="true">
-							</div>
-							
-							<div class="form-item">
-								<div class="two-col margin-right card-number">
-									<label for="card-number">Card number: *</label>
-									<input id="card-number" type="tel" value="" autocomplete="off" data-required="true" data-trigger="change" data-notblank="true">
-								</div>
-								<div class="two-col card-cvv right">
-									<label for="card-cvv">CVV code: *</label>
-									<input id="card-cvv" type="tel" value="" autocomplete="off" data-required="true" data-trigger="change" data-rangelength="[3,4]">
-								</div>
-							</div>
-							
-							<div class="form-item">
-								<label for="expiration">Expiration Date: *</label>
-								<select id="card-expiration-month" single data-required="true" data-trigger="change" data-notblank="true">
-									<?php include("inc/months.php"); ?>
-								</select>
-								<select id="card-expiration-year" single data-required="true" data-trigger="change" data-notblank="true">
-									<?php include("inc/years.php"); ?>
-								</select>
-							</div>
-						</div><!-- end credit-card-info -->
-						
-						<div id="js-donation-billing-info" class="billing-info two-col padded margin-left clearfix">
-							<h3>Billing Info</h3>
-							
-							<div class="form-item">
-								<label for="street">Street: *</label>
-								<input id="billing-street" type="text" name="billing-street" value="" data-required="true" data-notblank="true">
-							</div>
-							<div class="form-item">
-								<div class="two-col margin-right city">
-									<label for="city">City: *</label>
-									<input id="billing-city" type="text" name="billing-city" value="" data-required="true" data-notblank="true">
-								</div>
-								<div class="two-col state right">
-									<label for="state">State: *</label>
-									<select id="billing-state" name="billing-state" data-required="true"> 
-										<?php include("inc/us_states.php"); ?>
-									</select>
-								</div>
-							</div>
-							<div class="form-item">
-								<label for="zip">Zip code: *</label>
-								<input id="billing-zipcode" type="tel" name="billing-zipcode" value="" data-required="true" data-maxlength="5" data-notblank="true">
-							</div>
-							<div class="form-item">
-								<div class="two-col margin-right telephone">
-									<label for="street">Telephone number:</label>
-									<input id="billing-telephone" type="tel" name="billing-telephone" value="" data-required="false" data-notblank="true">
-								</div>
-								<div class="two-col email right">
-									<label for="street">E-mail address: *</label>
-									<input id="billing-email" type="email" name="billing-email" value="" data-required="true" data-type="email">
-								</div>
-							</div>
-						</div><!-- end billing-info -->
-					</div><!-- end cols -->
-						
-					<input id="donation-form-submit" class="clicky-button" type="submit" name="donation-form-submit" value="Submit">
-				</form>
+				<?php include(ABSPATH . "wp-content/themes/catapult/inc//donation_form.php"); ?>
 
 			</div><!-- end row -->
 		</section><!-- end donate -->

@@ -16,67 +16,6 @@
 	require ABSPATH . "wp-admin/includes/file.php";
 	require ABSPATH . "wp-admin/includes/media.php";
 	
-	include_once ABSPATH . "wp-content/themes/catapult/stripe-php/lib/Stripe.php";
-	
-	// set your secret key: remember to change this to your live secret key in production
-	// see your keys here https://manage.stripe.com/account
-	Stripe::setApiKey("sk_test_qEFmlubevcYzBN6nIgq0FNyb");
-
-	// get the credit card details submitted by the form
-	// If we're on this page and there's a token, it means the person came here from the donation form
-	if (isset($_POST['stripeToken'])) {
-		$token = $_POST['stripeToken'];
-		
-		// Capture parts of the form that we will insert into WP if the person decides to add a quote
-		$_SESSION['fullName'] = $_POST['full-name'];
-		$_SESSION['email'] = $_POST['billing-email'];
-		$_SESSION['street'] = $_POST['billing-street'];
-		$_SESSION['city'] = $_POST['billing-city'];
-		$_SESSION['state'] = $_POST['billing-state'];
-		$_SESSION['zip'] = $_POST['billing-zipcode'];
-		$_SESSION['phone'] = $_POST['billing-telephone'];
-		
-		// session_write_close();
-		
-		// create the charge on Stripe's servers - this will charge the user's card
-		$error = false;
-		try {
-			$charge = Stripe_Charge::create(array(
-				"amount" => intval($_POST['donation-amount']) * 100, // amount in cents
-				"currency" => "usd",
-				"card" => $token,
-				"description" => $_POST['billing-email'])
-			);
-		} catch(Stripe_CardError $e) {
-			// Since it's a decline, Stripe_CardError will be caught
-			// $body = $e->getJsonBody();
-			// $err  = $body['error'];
-			$error = true;
-		} catch (Stripe_InvalidRequestError $e) {
-			// Invalid parameters were supplied to Stripe's API
-			$error = true;
-		} catch (Stripe_AuthenticationError $e) {
-			// Authentication with Stripe's API failed
-			// (maybe you changed API keys recently)
-			$error = true;
-		} catch (Stripe_ApiConnectionError $e) {
-			// Network communication with Stripe failed
-			$error = true;
-		} catch (Stripe_Error $e) {
-			// Display a very generic error to the user, and maybe send
-			// yourself an email
-			$error = true;
-		} catch (Exception $e) {
-			// Something else happened, completely unrelated to Stripe
-			$error = true;
-		}
-		
-		// If there are any errors, go back to the donation form
-		if ($error) {
-			header("Location: " . home_url('/#donate'));
-		}
-	}
-	
 	// If we're on this page and there's a quote, it means the person came here from adding a quote
 	if (isset($_POST['quote'])) {
 		
@@ -132,11 +71,12 @@
 	}
 
 ?>
-<script>
-	var $_POST = <?php echo json_encode($_POST); ?>;
-</script>
 <?php get_header(); ?>
-
+	
+	<script>
+		var $_SESSION = <?php echo json_encode($_SESSION); ?>;
+	</script>
+	
 	<section class="overlay hide" id="thanks-overlay">
 		<div class="overlay-inner">
 			<a href="#" class="close-button" id="overlay-close-button"></a>

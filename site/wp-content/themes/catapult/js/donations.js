@@ -1,6 +1,7 @@
 var donations = {
 	
 	_donationForm: null,
+	_formBody: null, 
 	_amountForm:null, 
 	_creditCardInfo: null, 
 	_billingInfo: null,
@@ -11,6 +12,7 @@ var donations = {
 		var self = this;
 		
 		this._donationForm = $("#donation-form");
+		this._formBody = $("#donation-form-body");
 		this._amountForm = $("#donation-amount-form");
 		this._creditCardInfo = $("#js-donation-credit-card-info");
 		this._billingInfo = $("#js-donation-billing-info");
@@ -44,26 +46,68 @@ var donations = {
 			email.val('ha@ha.com');
 		}
 		
-		// Only show the donation form once someone's selected a dollar amount
-		$("#donation-amount-form").submit(function(event) {
+		// If there is a form error, immediately show the form and show an error message.
+		if (formError === "true") {
+			console.log("There is a form error... " + formError);
 			
-			event.preventDefault();
+			this._formBody.removeClass("hide").addClass("show");
+			$("html, body").animate({scrollTop:4750}, 500);
+			// Show overlay
+			$(".overlay")
+				.removeClass("hide").addClass("show")
+				.find(".overlay-content").empty()
+				.html('<h1 class="header-title overlay-title">Whoops!</h1>' + 
+							'<p class="overlay-body">' + formErrorMessage + '</p>' + 
+							'<p class="overlay-body">Please check the form fields, and try again. Your card was not charged.</p>');
 			
-			var amount = $(this).find("#donation-amount"),
-					form = $("#donation-form-body, #donation-form-submit");
+		} else {
 			
-			if (amount[0].value === "") {
-				form.fadeOut();
-				return;
+			console.log("There was NOT a form error: " + formError);
+			
+		}
+		
+		// Only show the donation form if there's an amountgreater than $1
+		this._amountForm.parsley({
+			listeners: {
+				onFormSubmit: function(isFormValid, event, ParsleyForm) {
+					event.preventDefault();
+					
+					if (isFormValid === true) {
+						$("#donation-amount-submit").hide();
+						self._formBody.removeClass("hide").addClass("show");
+					}
+					
+					return false;
+				}
 			}
-			
-			form.fadeIn();
 		});
+		// this._amountForm.submit(function(event) {
+			
+		// 	event.preventDefault();
+			
+		// 	var amount = $(this).find("#donation-amount"),
+		// 			form = $("#donation-form-body");
+					
+		// 	// if the amount is empty, don't do anything
+		// 	if (amount.val() === "") {
+		// 		return;
+		// 	}
+			
+		// 	if (amount.val())
+			
+		// 	// Hide the amount submit button since we don't need it anymore
+		// 	$("#donation-amount-submit").hide();
+			
+		// 	if (amount[0].value === "") {
+		// 		form.removeClass("show").addClass("hide");
+		// 		return;
+		// 	}
+			
+		// 	form.removeClass("hide").addClass("show");
+		// });
 		
 		// Listen to the submit of the main form
-		// TODO -- Make sure Parsley has validated the form first!
-		
-		$("#donation-form").parsley({
+		this._donationForm.parsley({
 			listeners: {
 				onFormSubmit: function(isFormValid, event, ParsleyForm) {
 					
@@ -114,13 +158,18 @@ var donations = {
 		
 	}, 
 	
+	/*
+	This is where the form gets submitted, if there isn't an error creating the Stripe token.
+	It creates a hidden input on the form called stripeToken that contains the Stripe Token, 
+	and then submits the form.
+	*/
 	stripeResponseHandler: function(status, response) {
 		console.log("Stripe has returned!");
 		console.log(status);
 		console.log(response);
 		
 		if (response.error) {
-			alert("There was an error submitting the form to Stripe.");
+			console.log("There was an error submitting the form to Stripe.");
 		} else {
 			console.log("Submitting Stripe form...");
 			var token = response.id;

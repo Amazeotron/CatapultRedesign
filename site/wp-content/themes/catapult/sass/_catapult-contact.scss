@@ -10,37 +10,16 @@
 		padding-top: 1em;
 	}
 
-	.columns {
-		overflow: hidden;
-		width: 100%;
-		padding: 30px 0;
-
-		.column {
-			float: left;
-			
-			&.two {
-				width: 50%;
-			}
-			&.three {
-				width: 33%;
-			}
-			&.four {
-				width: 25%;
-			}
-			&.right {
-				float: right;
-			}
-			
-			@media only screen and (max-width: 610px) {
-				&.two, &.three, &.four, &.right {
-					width: 100%;
-				}
-			}
-			
-			@media only screen and (max-width: 610px) {
-				float: none;
-			}
+	.contact__buttons {
+		padding-top: 30px;
+		
+		.contact-button {
+			margin-bottom: 1em;
 		}
+	}
+	
+	.contact__subtitle {
+		padding-left: 40px;
 	}
 
 	.contact-section {		
@@ -48,7 +27,8 @@
 		
 		p {
 			margin: 0;
-			padding: 0;
+			padding-top: 0;
+			padding-bottom: 0;
 		}
 	}
 

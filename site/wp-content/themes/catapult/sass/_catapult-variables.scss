@@ -14,7 +14,7 @@ $darkGreyFont: rgb(41, 39, 42);
 $lightGreyFont: rgb(227, 220, 216);
 $serifFont: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 //"freight-text-pro",serif;
-$sansFont: "franklin-gothic-ext-comp-urw",sans-serif;
+$sansFont: "franklin-gothic-ext-comp-urw", "Arial Narrow", sans-serif;
 
 @mixin edgeGradient($color, $darkenAmount) {
     background-image: -moz-linear-gradient(left, darken($color, $darkenAmount) 0%, $color 10%, $color 90%, darken($color, $darkenAmount) 100%); /* FF3.6+ */
@@ -101,12 +101,20 @@ $sansFont: "franklin-gothic-ext-comp-urw",sans-serif;
             transition: $type $duration ease-in-out;
 }
 
-@mixin greyFilter($amount) {
-    -webkit-filter: grayscale(100%) brightness($amount) blur(3px);
-       -moz-filter: grayscale(100%) brightness($amount) blur(3px);
-        -ms-filter: grayscale(100%) brightness($amount) blur(3px);
-         -o-filter: grayscale(100%) brightness($amount) blur(3px);
-            filter: grayscale(100%) brightness($amount) blur(3px);
+@mixin greyFilter() {
+    -webkit-filter: grayscale(100%);
+       -moz-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+         -o-filter: grayscale(100%);
+            filter: grayscale(100%);
+}
+
+@mixin brightness($amount) {
+    -webkit-filter: brightness($amount);
+       -moz-filter: brightness($amount);
+        -ms-filter: brightness($amount);
+         -o-filter: brightness($amount);
+            filter: brightness($amount);
 }
 
 @mixin blur($amount) {
@@ -115,6 +123,14 @@ $sansFont: "franklin-gothic-ext-comp-urw",sans-serif;
         -ms-filter: blur($amount);
          -o-filter: blur($amount);
             filter: blur($amount);
+}
+
+@mixin blogImageEffect() {
+    -webkit-filter: grayscale(100%) brightness(-40%) contrast(50%);
+       -moz-filter: grayscale(100%) brightness(-40%) contrast(50%);
+        -ms-filter: grayscale(100%) brightness(-40%) contrast(50%);
+         -o-filter: grayscale(100%) brightness(-40%) contrast(50%);
+            filter: grayscale(100%) brightness(-40%) contrast(50%);
 }
 
 @mixin noSelect() {

@@ -8,25 +8,6 @@
 	min-width: 960px;
 	width: 960px;
 	
-	input[type="submit"] {
-		border: none;
-		@include searchButton();
-		
-		&:active {
-			@include innerShadow(1px, 2px, 2px, 0px, 0.3);
-		}
-	}
-	
-	input[type="text"], textarea {
-		border: none;
-		padding: 1px 0 1px 7px;
-		@include innerShadow(1px, 2px, 2px, 0px, 0.3);
-	}
-	
-	input[type="text"] {
-		height: 30px;
-	}
-	
 	#main-section {
 		float: left;
 		width: 67%;
@@ -97,12 +78,12 @@
 .category-item {
 	display: inline-block;
 	text-decoration: none;
-	padding: 0px 5px 1px 5px;
+	padding: 4px 7px 5px 7px;
 	margin: 0;
 	color: white;
 	font-weight: normal;
 	border-top: 1px solid rgba(0,0,0,0.2);
-	@include border-radius(2px);
+	@include border-radius(1px);
 	
 	&:hover {
 		border-top: 1px solid rgba(255,255,255,0.2);
@@ -164,13 +145,11 @@
 		width: 100%;
 		position: absolute;
 		z-index: -1;
-		@include transition(0.5s);
-		opacity: 0.3;
+		// @include transition(5s);
+		@include blogImageEffect();
 	}
 	
 	&.hover .post-image {
-		top: -20px;
-		@include blur(2px);
 	}
 	
 	.post-top {
@@ -211,9 +190,8 @@
 	
 	.post-meta {
 		display: block;
-		background: rgba(80, 81, 82, 0.8);
 		padding: 20px 0 20px 40px;
-		color: rgba(255, 255, 255, 0.7);
+		color: rgb(255, 255, 255);
 		font-family: $serifFont;
 		letter-spacing: 1px;
 		

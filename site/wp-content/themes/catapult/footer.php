@@ -7,9 +7,9 @@
 					San Francisco, CA 94103</p>
 				</div>
 				<div class="three-col">
-					<a href="mailto:info@catapultdesign.org" class="contact-button contact-button--small contact-button--email"><h3 class="header-title contact-button__title">info@catapultdesign.org</h3></a>
-					<a href="https://twitter.com/Catapult_Design" class="contact-button contact-button--small contact-button--twitter"><h3 class="header-title contact-button__title">@catapult_design</h3></a>
-					<a href="https://www.facebook.com/CatapultDesign" class="contact-button contact-button--small contact-button--facebook"><h3 class="header-title contact-button__title">facebook.com/catapult-design</h3></a>
+					<a href="mailto:info@catapultdesign.org" class="contact-button contact-button--small contact-button--email header-title" tabindex="54">info@catapultdesign.org</a>
+					<a href="https://twitter.com/Catapult_Design" class="contact-button contact-button--small contact-button--twitter header-title" tabindex="55">@catapult_design</a>
+					<a href="https://www.facebook.com/CatapultDesign" class="contact-button contact-button--small contact-button--facebook header-title" tabindex="56">facebook.com/catapult-design</a>
 				</div>
 				<div class="three-col">
 					<p>&copy; Copyright 2013 Catapult Design</p>

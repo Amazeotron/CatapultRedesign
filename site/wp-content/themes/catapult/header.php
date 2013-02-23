@@ -61,23 +61,23 @@
     <![endif]-->
     <div class="floater social">
     	<ul>
-    		<li class="social-item"><a href="https://twitter.com/Catapult_Design" class="social-button twitter"><span class="header-title">Follow Us</span></a></li>
-    		<li class="social-item"><a href="https://www.facebook.com/CatapultDesign" class="social-button facebook"><span class="header-title">Like Us</span></a></li>
-    		<li class="social-item"><a href="<?php bloginfo('template_url'); ?>/?feed=rss2" class="social-button rss"><span class="header-title">RSS Feed</span></a></li>
+    		<li class="social-item"><a href="https://twitter.com/Catapult_Design" class="social-button contact-button contact-button--twitter"><span class="header-title">Follow Us</span></a></li>
+    		<li class="social-item"><a href="https://www.facebook.com/CatapultDesign" class="social-button contact-button contact-button--facebook"><span class="header-title">Like Us</span></a></li>
+    		<li class="social-item"><a href="<?php bloginfo('template_url'); ?>/?feed=rss2" class="social-button contact-button contact-button--rss"><span class="header-title">RSS Feed</span></a></li>
     	</ul>
     </div><!-- end floater -->
     <header class="header">
-			<a href="<?php echo home_url('/'); ?>" class="logo">
+			<a href="<?php echo home_url('/'); ?>" class="logo" tabindex="1">
 				<img class="logo--full" src="<?php bloginfo('template_url'); ?>/img/catapult-logo.svg" alt="Catapult Design" />
 				<img class="logo--partial" src="<?php bloginfo('template_url'); ?>/img/cog-partial.png" alt="Catapult Design" />
 			</a>
 			<nav class="mainnav">
 				<ul>
-					<li class="mainnav-item" id="mainnav-projects"><a class="header-title fancy mainnav-item-link" href="<?php echo home_url('/#projects'); ?>">CASE STUDIES</a></li>
-					<li class="mainnav-item" id="mainnav-team"><a class="header-title fancy mainnav-item-link" href="<?php echo home_url('/#team'); ?>">TEAM</a></li>
-					<li class="mainnav-item" id="mainnav-contact"><a class="header-title fancy mainnav-item-link" href="<?php echo home_url('/#contact'); ?>">CONTACT</a></li>
-					<li class="mainnav-item" id="mainnav-donate"><a class="header-title fancy mainnav-item-link" href="<?php echo home_url('/#donate'); ?>">DONATE</a></li>
-					<li class="mainnav-item blog" id="mainnav-blog"><a class="header-title fancy mainnav-item-link" href="<?php echo home_url('/news'); ?>">NEWS</a></li>
+					<li class="mainnav-item" id="mainnav-casestudies"><a tabindex="2" class="header-title fancy mainnav-item-link" href="<?php echo home_url('/#casestudies'); ?>">CASE STUDIES</a></li>
+					<li class="mainnav-item" id="mainnav-team"><a tabindex="3" class="header-title fancy mainnav-item-link" href="<?php echo home_url('/#team'); ?>">TEAM</a></li>
+					<li class="mainnav-item" id="mainnav-contact"><a tabindex="4" class="header-title fancy mainnav-item-link" href="<?php echo home_url('/#contact'); ?>">CONTACT</a></li>
+					<li class="mainnav-item" id="mainnav-donate"><a tabindex="5" class="header-title fancy mainnav-item-link" href="<?php echo home_url('/#donate'); ?>">DONATE</a></li>
+					<li class="mainnav-item blog" id="mainnav-blog"><a tabindex="6" class="header-title fancy mainnav-item-link" href="<?php echo home_url('/news'); ?>">NEWS</a></li>
 				</ul>
 			</nav>
 			<div class="header-divider"></div>
@@ -96,7 +96,7 @@
 					<p class="news-body">Do you know who Martin Fisher is? Is Mastering the Machine your favorite book? Is your idea of vacation traveling to Malawi? You may be a perfect fit.</p>
 					
 					<?php
-					include_once "NewsParser.php";
+					include_once(ABSPATH . "wp-content/themes/catapult/inc/NewsParser.php");
 					$jobJSON = NewsParser::loadJSON(NewsParser::getRootURL() . "/?json=get_recent_posts&dev=1&post_type=job&custom_fields=header_image");
 					$jobPosts = NewsParser::commonize($jobJSON["posts"], "post"); ?>
 					<div class="news-jobs">

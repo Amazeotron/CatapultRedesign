@@ -23,17 +23,18 @@ $(document).ready(function() {
 	function handleMainNav() {
 		var self = this;
 		$(".mainnav-item:not(.blog) a, #what-we-do").click(function(event) {
+			
 			// if we're already on the homepage, just do the scrolling.
 			// Otherwise, change URLs
 			var href = $(this).attr("href");
 			if (window.location.href.indexOf("blog/") != -1) {
 				
 			} else {
-				//event.preventDefault();
+				event.preventDefault();
 				href = href.substring(href.indexOf("#"), href.length);
-				// console.log(href);
+				console.log(href);
 				cataCommon.handleNav(href);
-				//return false;
+				return false;
 			}
 		});
 	}
@@ -45,6 +46,7 @@ $(document).ready(function() {
 	$(window).scroll(function(event) {
 		
 		var scrollPos = $(this).scrollTop();
+		// console.log(scrollPos);
 		
 		if (scrollPos > 100) {
 			$(".logo .logo--full").removeClass("show").addClass("hide");
@@ -116,7 +118,6 @@ $(document).ready(function() {
 	// });
 	
 	// Open News, but only if we're on the homepage, and only if we're at the top of the page
-	
 	setTimeout(function() {
 		var isTop = (Number($("body").scrollTop()) < 100);
 		
@@ -130,9 +131,8 @@ $(document).ready(function() {
 	}, 1000);
 	
 	intro.init(cataCommon.getRootURL() + "wp-content/themes/catapult/", function() {
-		// intro is done
+		
 	});
-	
 	
 	// get case studies
 	$.getJSON(cataCommon.getRootURL() + '?json=get_recent_posts&dev=1&post_type=casestudy&custom_fields=category,category_description,client,main_image,header_image,display_order&meta_key=display_order&order_by=meta_value&order=ASC', function(data, textStatus, jqXHR) {
@@ -146,13 +146,10 @@ $(document).ready(function() {
 		console.log(error);
 	});
 	
-	// Make the locations map
 	// Locations Map
-	$.getJSON(cataCommon.getRootURL() + "wp-content/themes/catapult/js/locations-json.js", function(data, textStatus, jqXHR) {
-		locations.init(data.locations);
-	});
+	locations.init();
 	
-
+	
 	// Make the team section
 	$.getJSON(cataCommon.getRootURL() + "wp-content/themes/catapult/js/team-json.js", function(data, textStatus, jqXHR) {
 		team.init(data.teamData, cataCommon.getRootURL());
@@ -165,7 +162,7 @@ $(document).ready(function() {
 	});
 	
 	// Events section
-	labs.init();
+	events.init();
 	
 	// Partners Section
 	partners.init();

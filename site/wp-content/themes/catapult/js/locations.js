@@ -5,9 +5,10 @@ var locations = {
 	_content: null,
 	_markers: null,
 	_isOpen: false,
+	_hasLoadedLocations: false,
 
-	init: function(locationData) {
-		this._locationData = locationData;
+	init: function() {
+		
 		this._locationsDiv = $("#locations");
 		this._content = $("#js-locations-content");
 		this._markers = $(".locations-markers");
@@ -20,19 +21,26 @@ var locations = {
 			}
 		});
 		
-		$("#locations-center-tag, #locations .close-button").click(function(event) {
+		$(document).on("click", "#locations-center-tag, #locations .close-button", function(event) {
 			event.preventDefault();
 			(self._isOpen) ? self.close() : self.open();
 			return false;
 		});
 		
-		$("#locations").on("webkitTransitionEnd transitionend", function(event) {
-			if (self._isOpen) {
+		this._content.on("webkitTransitionEnd transitionend", function(event) {
+			if (self._isOpen === true) {
+				
 				$("#locations-center-tag").removeClass("closed").addClass("open");
-				self.open(); // Call this to make the _content height correct.
-				self._repositionLocations(self._locationData);
+				// self.open(); // Call this to make the _content height correct.				
+				// If locations aren't loaded, load them
+				if (self._hasLoadedLocations === false) {
+					self.loadLocations();
+				}
+				
 			} else {
+				
 				$("#locations-center-tag").removeClass("open").addClass("closed");
+				
 			}
 		});
 		
@@ -47,10 +55,19 @@ var locations = {
 			}
 		});
 		
-		self.showLocations();
 		self.close();
 		
 	},
+	
+	loadLocations: function() {
+		var self = this;
+		$.getJSON(cataCommon.getRootURL() + "wp-content/themes/catapult/js/locations-json.js", function(data, textStatus, jqXHR) {
+			self._locationData = data.locations;
+			self.showLocations();
+			self._repositionLocations(self._locationData);
+			self._hasLoadedLocations = true;
+		});
+	}, 
 	
 	open: function() {
 		this._isOpen = true;

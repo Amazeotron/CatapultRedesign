@@ -4,13 +4,16 @@
 	position: relative;
 	padding: 0;
 	@include innerShadow(0px, 70px, 120px, 0px, 0.4);
+    -webkit-transform: translate3d(0,0,0);
+         -o-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
     
     @media only screen and (max-width : 479px) {
         display: none;
     }
 	
 	&.events {
-		background-image: url(../img/homepage/shadow-top.png), url(../img/homepage/casestudies/bgtile-insights.png);
+		background-image: url(../img/homepage/shadow-top.png), url(../img/homepage/casestudies/bgtile-engineering.png);
 	}
 	
 	&.partners {
@@ -31,18 +34,14 @@
     
     .drawer__content {
         @include transition(0.5s);
+        -webkit-transform: translate3d(0,0,0);
+             -o-transform: translate3d(0,0,0);
+                transform: translate3d(0,0,0);
         position: relative;
         overflow: hidden;
         -webkit-perspective: 1000;
         -webkit-backface-visibility: hidden;
         padding-top: 30px;
-        
-        .drawer__content__title {
-            margin: 0 auto;
-            color: #fff;
-            letter-spacing: 3px;
-            @include textShadow(2px, 2px, 5px, rgba(0,0,0,0.9));
-        }
     }
 }
 

@@ -1,4 +1,4 @@
-var labs = {
+var events = {
 	
 	_container: null, 
 	_content: null,
@@ -11,7 +11,7 @@ var labs = {
 		this._container = $("#events");
 		this._content = $("#js-events-content");
 		
-		$("#events-center-tag, #events .close-button").click(function(event) {
+		$(document).on("click", "#events-center-tag, #events .close-button", function(event) {
 			
 			event.preventDefault();
 			
@@ -20,7 +20,7 @@ var labs = {
 			return false;
 		});
 		
-		$("#events").on("webkitTransitionEnd transitionend", function(event) {
+		this._content.on("webkitTransitionEnd transitionend", function(event) {
 			if (self._isOpen) {
 				self._content.children().not(".bottom-peek").css({"opacity":"1"});
 			} else {

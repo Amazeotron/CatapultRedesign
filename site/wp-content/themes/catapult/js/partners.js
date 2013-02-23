@@ -47,7 +47,7 @@ var partners = {
 	
 	_getHeight: function() {
 		if (this._isOpen) {
-			return 740;
+			return 650;
 		} else {
 			return 2;
 		}

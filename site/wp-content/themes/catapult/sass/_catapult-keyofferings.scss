@@ -3,12 +3,14 @@
 -------------------------------- */
 
 .keyofferings {
-    // margin: 0 0 -25px 0;
-    // margin-top: -130px;
-    padding: 0 0 100px 0;
+    padding: 0 0 130px 0;
     background: none;
-    height: 391px; // This is because the Key Offerings are hidden by default
-
+    @include transition(0.4s);
+    
+    &.afterintro {
+        margin-top: -100px;
+    }
+    
     h1 {
         margin-top: 0;
         padding-top: 0.5em;
@@ -23,6 +25,10 @@
             top: 0;
             left: 0;
             @include transition(0.5s);
+            
+            p {
+                font-size: 1.2em;
+            }
             
             &.hide {
                 opacity: 0;

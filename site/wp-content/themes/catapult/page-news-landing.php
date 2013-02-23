@@ -16,7 +16,7 @@
 			<div id="posts">
 				
 			<?php
-			include "NewsMash.php";
+			include(ABSPATH . "wp-content/themes/catapult/inc/NewsMash.php");
 			$news = new NewsMash();
 			$newsItems = $news->allNews;
 			?>

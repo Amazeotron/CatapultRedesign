@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, p, label, input, input[type="submit"], textarea, li {
     font-size: 1em;
 }
 input[type="text"], input[type="tel"], input[type="email"], input[type="number"], select {
-    outline: none;
+    border: none;
     padding: 6px 0 5px 5px;
     font-family: $serifFont;
     font-size: 0.8em;
@@ -39,6 +39,9 @@ input[type="submit"] {
     font-size: 2em;
     letter-spacing: 2px;
     font-weight: normal;
+}
+select{
+    height: 24px;
 }
 h1 {
     font-size: 3em;
@@ -79,11 +82,13 @@ a {
     @include borderShadow(0px, 3px, 3px, 0px, 0.4);
     
     &:hover, 
-    &.active {
+    &.active, 
+    &:focus {
         @include innerShadow(0px, 4px, 5px, 0px, 0.5);
     }
     
-    &:active {
+    &:active, 
+    &:focus {
         @include textShadow(-1px, -1px, 3px, rgba(0,0,0,0.5));
         @include innerShadow(1px, 1px, 8px, 2px, 0.6);
     }
@@ -121,6 +126,16 @@ a.fancy {
     line-height: 1em;
     font-weight: normal;
 }
+.title-shadow {
+    @include textShadow(2px, 2px, 5px, rgba(0,0,0,0.9));
+}
+
+.orange {
+    color: $orange;
+}
+.green {
+    color: $teal;
+}
 
 .page-top {
     padding-top: 128px;
@@ -137,35 +152,6 @@ section:first-of-type {
 section {
     padding-top: 30px;
 }
-
-// .show {
-//     display: block;
-// }
-// .hide {
-//     display: none;
-// }
-
-// ::-webkit-scrollbar {
-//     width: 8px;
-// }
-
-// ::-webkit-scrollbar:horizontal {
-//     height: 8px;
-// }
- 
-// ::-webkit-scrollbar-track {
-//     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-//     border-radius: 2px;
-// }
- 
-// ::-webkit-scrollbar-thumb {
-//     border-radius: 2px;
-//     background: rgba(255,255,255,0.3);
-//     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
-// }
-// ::-webkit-scrollbar-thumb:window-inactive {
-//     background: rgba(255,255,255,0.3);
-// }
 
 .level-one {
     color: $orange;
@@ -257,68 +243,97 @@ section {
 .contact-button {
     display: block;
     background: url(../img/homepage/contact/icons.png) top left no-repeat;
-    margin: 0 0 1em 0;
+    margin: 0;
     padding: 2px 0 0 40px;
     height: 32px;
     text-decoration: none;
+    color: rgb(224,218,216);
+    font-size: 1.8em;
+    
+    &:hover, 
+    &:focus,
+    &:hover .contact-button__title,
+    &:focus .contact-button__title {
+        outline: none;
+        color: $orange;
+    }
     
     @media only screen and (max-width: 862px) {
         padding-top: 5px;
         height: 29px;
+        font-size: 1.4em;
     }
     @media only screen and (max-width: 693px) {
         padding-top: 7px;
         height: 27px;
+        font-size: 1.1em;
     }
     
     &.contact-button--small {
         font-size: 0.9em;
         padding-top: 7px;
-        height: 27px; // 14px - 5px padding
+        padding-left: 34px;
+        height: 20px; // 27px - 7px padding
+        background-size: 27px auto;
     }
     
     &.contact-button--twitter {
         background-position-y: 0px;
     }
+    &.contact-button--twitter.contact-button--small {
+        background-position-y: 0px;
+    }
     &.contact-button--youtube {
         background-position-y: -33px;
+    }
+    &.contact-button--youtube.contact-button--small {
+        background-position-y: -27px;
     }
     &.contact-button--email {
         background-position-y: -66px;
     }
+    &.contact-button--email.contact-button--small {
+        background-position-y: -54px;
+    }
     &.contact-button--rss {
         background-position-y: -99px;
+    }
+    &.contact-button--rss.contact-button--small {
+        background-position-y: -81px;
     }
     &.contact-button--facebook {
         background-position-y: -132px;
     }
+    &.contact-button--facebook.contact-button--small {
+        background-position-y: -108px;
+    }
     &.contact-button--openhouse {
         background-position-y: -165px;
+    }
+    &.contact-button--openhouse.contact-button--small {
+        background-position-y: -135px;
     }
     &.contact-button--street {
         background-position-y: -198px;
     }
-       
-    .contact-button__title {
-        color: rgb(224,218,216);
-        margin: 0;
-        padding: 0;
-        font-size: 1.8em;
-        @media only screen and (max-width: 862px) {
-            font-size: 1.4em;
-        }
-        @media only screen and (max-width: 693px) {
-            font-size: 1.1em;
-        }
+    &.contact-button--street.contact-button--small {
+        background-position-y: -162px;
     }
-
+    &.contact-button--newsletter {
+        background-position-y: -231px;
+    }
+    &.contact-button--newsletter.contact-button--small {
+        background-position-y: -189px;
+    }
+    &.contact-button--faq {
+        background-position-y: -264px;
+    }
+    &.contact-button--faq.contact-button--small {
+        background-position-y: -216px;
+    }
+    
     .contact-button__subtitle {
-        font-family: $sansFont;
-        font-size: 1.2em;
-        font-weight: normal;
-        letter-spacing: 1px;
-        margin: 0;
-        padding: 0;
+        font-size: 0.8em;
     }
 }
 
@@ -337,6 +352,7 @@ section {
     @media only screen and (max-width : 1023px) {
         width: 100%;
     }
+    padding-bottom: 20px;
 }
 
 @-webkit-keyframes shrink {
@@ -372,10 +388,16 @@ section {
     z-index: 9999;
     top: 0;
     left: 0;
+    @include transition(0.3s);
     
     &.show {
         -webkit-animation: show 0.3s ease-out;
+        display: block;
     }
+    &.hide {
+        display: none;
+    }
+    
     
     .overlay-inner {
         margin: 160px auto;
@@ -384,6 +406,7 @@ section {
         background: rgba(255,255,255,1);
         position: relative;
         overflow: hidden;
+        color: black;
         @include borderShadow(0px, 0px, 10px, 3px, 0.5);
         
         @media only screen and (max-width : 1024px) {
@@ -400,6 +423,10 @@ section {
         
         &.show {
             -webkit-animation: shrink 0.4s ease-out;
+        }
+        
+        p {
+            color: $darkGreyFont;
         }
         
         .overlay-name {

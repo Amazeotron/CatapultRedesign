@@ -40,11 +40,10 @@ var cataCommon = {
 	handleNav: function(target) {
 		// Scroll positions for the sections
 		var scrollPositions = [	
-				{section: "#keyofferings", 	offset:653}, 
-				{section: "#projects", 			offset:1100}, 
-				{section: "#team",					offset:2293},
-				{section: "#contact", 			offset:3294},
-				{section: "#donate", 				offset:3986}
+				{section: "#casestudies", 	offset:751}, 
+				{section: "#team",					offset:2116},
+				{section: "#contact", 			offset:3296},
+				{section: "#donate", 				offset:3996}
 			],
 				scrollTop = 0;
 		
@@ -53,6 +52,10 @@ var cataCommon = {
 				scrollTop = scrollPositions[i].offset;
 			}
 		};
+		
+		// Update the URL
+		window.location.hash = target;
+		
 		$("html, body").animate({scrollTop:scrollTop}, 500);
 	},
 	

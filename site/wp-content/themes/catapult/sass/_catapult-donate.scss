@@ -39,6 +39,9 @@
       }
       
       .donation-amount__prefix {
+        display: block;
+        float: left;
+        padding-top: 6px;
         width: 5%;
         font-size: 2em;
       }
@@ -46,9 +49,9 @@
       .donation-amount__amount {
         width: 85%;
         margin: 0 0 0 5%;
-        font-size: 1.1em;
+        font-size: 1.4em;
         font-family: $serifFont;
-        padding: 17px 0 17px 5%;
+        padding: 15px 0 16px 5%;
       }
       
       .donation-amount__submit {
@@ -111,8 +114,17 @@
 		margin: 20px 0 40px 0;
 		overflow: hidden;
 		
-		#donation-form-body {
-			display: none;
+    .donation-form__body {
+      @include transition(1s);
+      padding-bottom: 10px;
+      
+			&.hide {
+        height: 0;
+      }
+      &.show {
+        height: auto;
+        max-height: 1000px;
+      }
 		}
 		
   	#card-full-name {
@@ -141,7 +153,6 @@
   	}
   	
   	input[type="submit"] {
-  		display: none;
       margin: 35px 0 0 0;
   	}
   }

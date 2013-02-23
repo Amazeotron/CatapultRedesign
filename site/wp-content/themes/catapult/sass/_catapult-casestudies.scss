@@ -176,10 +176,12 @@
                     top: 40px;
                 }
                 
-                &.prev:hover img {
+                &.prev:hover img,
+                &.prev:focus img {
                     margin-left: 10px;
                 }
-                &.next:hover img {
+                &.next:hover img,
+                &.next:focus img {
                     margin-left: 20px;
                 }
                 

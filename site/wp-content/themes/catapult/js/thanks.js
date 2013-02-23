@@ -31,10 +31,11 @@ var thanks = {
 		});
 		
 		// TODO: Only show the overlay if this isn't after the add quote form submission!
-		if ($_POST.stripeToken) {
+		if ($_SESSION.fullName) {
 			this.showOverlay();
 		}
-		console.log($_POST);
+		console.log("Thank you page _SESSION vars: ");
+		console.log($_SESSION);
 	},
 	
 	showOverlay: function() {

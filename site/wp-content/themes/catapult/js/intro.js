@@ -359,7 +359,7 @@ var intro = {
 				logoContainer = new Container();
 		this._stage.addChild(logoContainer);
 		logoContainer.x = 240;
-		logoContainer.y = 150;
+		logoContainer.y = 180;
 		logoContainer.scaleX = logoContainer.scaleY = 3.0;
 		logoContainer.alpha = 0;
 		
@@ -400,7 +400,7 @@ var intro = {
 					copyLine = new Text(txt, "50px " + self.SERIF_FONT, "rgb(255,255,255)");
 			copyLine.textAlign = "center";
 			copyLine.x = self._stage.canvas.width * 0.5;
-			copyLine.y = 250;
+			copyLine.y = 280;
 			copyLine.width = self._stage.canvas.width;
 			copyLine.height = 50;
 			copyLine.alpha = 0;
