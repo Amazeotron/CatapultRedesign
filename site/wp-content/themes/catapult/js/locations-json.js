@@ -79,7 +79,7 @@
 			"yPos": 179
 		},
 		{
-			"name":"Mosquito Net", 
+			"name":"Mosquito Trap", 
 			"location": "Southeast Asia",
 			"xPos": 749,
 			"yPos": 206

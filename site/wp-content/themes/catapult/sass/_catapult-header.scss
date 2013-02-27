@@ -194,7 +194,9 @@ html.no-svg
         padding: 10px 0 7px 50px;
         
         &:focus {
-            border: 1px solid white;
+            // border: 1px solid white;
+            @include brightness(-80%);
+            outline: none;
         }
         
         // iPhone
@@ -277,7 +279,7 @@ html.no-svg
         
         .mainnav-item-link {
             font-size: 1.6em;
-            color: rgb(105,94,74);
+            color: rgb(176,95,1);
             
             @media only screen and (max-width: 720px) {
                 font-size: 1em;

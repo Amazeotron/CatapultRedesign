@@ -1857,3 +1857,41 @@ footer {
   h2,
   h3 {
     page-break-after: avoid; } }
+.accordion {
+  margin-bottom: 20px;
+  position: relative; }
+  .accordion .accordion__item {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background: none;
+    overflow: hidden;
+    height: auto;
+    position: relative;
+    padding: 0 0 20px 0; }
+    .accordion .accordion__item.opened {
+      height: 200px; }
+    .accordion .accordion__item.closed {
+      height: 20px; }
+  .accordion .accordion__link {
+    text-decoration: none;
+    font-size: 1.6em;
+    padding: 0 0 0 30px; }
+  .accordion .pointer {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    top: 5px;
+    left: 3px; }
+    .accordion .pointer.opened {
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      transform: rotate(90deg); }
+  .accordion .accordion__body {
+    padding-left: 30px;
+    overflow-y: auto;
+    height: 155px; }

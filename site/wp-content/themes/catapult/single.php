@@ -9,7 +9,7 @@
 			$headerImage = get_field('header_image');
 			$croppedImage;
 			if ($headerImage) :
-				$croppedImage = wp_get_attachment_image_src($headerImage, array(643, 183));
+				$croppedImage = wp_get_attachment_image_src($headerImage["id"], array(643, 183));
 				$croppedImage = $croppedImage[0]; ?>
 				<div class="post-border">
 				<figure class="post-figure">
@@ -34,7 +34,7 @@
 				<?php the_content(); ?>
 			</div>
 			
-			<hr>
+			<div class="divider"></div>
 			
 			<div class="post-comments">
 				<?php comments_template(); ?>

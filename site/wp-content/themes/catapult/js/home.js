@@ -32,7 +32,7 @@ $(document).ready(function() {
 			} else {
 				event.preventDefault();
 				href = href.substring(href.indexOf("#"), href.length);
-				console.log(href);
+				// console.log(href);
 				cataCommon.handleNav(href);
 				return false;
 			}
@@ -117,21 +117,15 @@ $(document).ready(function() {
 	// 	console.log("Center Tag is Ready!");
 	// });
 	
-	// Open News, but only if we're on the homepage, and only if we're at the top of the page
-	setTimeout(function() {
-		var isTop = (Number($("body").scrollTop()) < 100);
-		
-		if (isTop) {
+	intro.init(cataCommon.getRootURL() + "wp-content/themes/catapult/", function() {
+		// Open News, but only if we're on the homepage, and only if we're at the top of the page
+		if (Number($("body").scrollTop()) < 100) {
 			cataCommon.peekNews();
 			
 			setTimeout(function() {
 				cataCommon.hideNews();
 			}, 1500);
 		}
-	}, 1000);
-	
-	intro.init(cataCommon.getRootURL() + "wp-content/themes/catapult/", function() {
-		
 	});
 	
 	// get case studies

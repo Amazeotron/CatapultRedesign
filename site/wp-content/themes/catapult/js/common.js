@@ -34,7 +34,15 @@ var cataCommon = {
 	},
 	
 	isHome: function() {
-		return window.location.href == getRootURL();
+		// remove the hash
+		var loc = "";
+		if (window.location.href.indexOf("#") == -1) {
+			loc = window.location.href;
+		} else {
+			loc = window.location.href.substring(0, window.location.href.indexOf("#"));
+		}
+		console.log(loc);
+		return loc == cataCommon.getRootURL();
 	},
 	
 	handleNav: function(target) {
@@ -54,7 +62,11 @@ var cataCommon = {
 		};
 		
 		// Update the URL
-		window.location.hash = target;
+		if (cataCommon.isHome() === true) {
+			window.location.hash = target;
+		} else {
+			window.location.href = cataCommon.getRootURL() + target;
+		}
 		
 		$("html, body").animate({scrollTop:scrollTop}, 500);
 	},

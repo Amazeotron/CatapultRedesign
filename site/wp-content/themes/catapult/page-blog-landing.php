@@ -30,14 +30,14 @@
 					<?php
 					$headerImage = get_field('header_image');
 					$croppedImage;
+					
 					if (!$headerImage) {
 						$croppedImage = get_bloginfo('template_url') . "/img/blog/default-blog-image.jpg";
 					} else {
-						$croppedImage = wp_get_attachment_image_src($headerImage, array(643, 183));
-						$croppedImage = $croppedImage[0];
+						$croppedImage = wp_get_attachment_image_src($headerImage["id"], array(643, 183))[0];
 					}
 					?>
-					<img class="post-image" src="<?php echo $croppedImage ?>" alt="<?php the_title(); ?>" width="100%">
+					<img class="post-image" src="<?php echo $croppedImage; ?>" alt="<?php the_title(); ?>" width="100%">
 				</figure>
 				<header class="post-top">
 					<h1 class="post-title header-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>

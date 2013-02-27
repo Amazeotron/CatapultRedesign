@@ -26,10 +26,10 @@ class NewsParser
 	}
 	
 	/*
-	* Creates a common object for a blog post, a Tweet, or a Lab
+	* Creates a common object for a blog post, a Tweet, or a event
 	* Params:
-			$arr: Array pulled in via HTTP of posts, Tweets or Labs
-			$type: The type of news. Can be "twitter", "post" or "lab"
+			$arr: Array pulled in via HTTP of posts, Tweets or Events
+			$type: The type of news. Can be "twitter", "post" or "event"
 	* Returns an array of NewsItem objects
 	*/
 	public static function commonize($arr, $type) {

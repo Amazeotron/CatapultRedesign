@@ -1,0 +1,56 @@
+@import "normalize";
+@import "boilerplate-1";
+@import "catapult-variables";
+@import "catapult-common";
+@import "catapult-floater";
+@import "catapult-header";
+@import "catapult-drawer";
+@import "catapult-blog";
+@import "catapult-footer";
+@import "boilerplate-2";
+
+.accordion {
+	margin-bottom: 20px;
+	position: relative;
+	
+	.accordion__item {
+		@include transition(0.3s);
+		background: none;
+		overflow: hidden;
+		height: auto;
+		position: relative;
+		padding: 0 0 20px 0;
+		
+		&.opened {
+			height: 200px;
+		}
+		
+		&.closed {
+			height: 20px;
+		}
+	}
+	
+	.accordion__link {
+		text-decoration: none;
+		font-size: 1.6em;
+		padding: 0 0 0 30px;
+	}
+	
+	.pointer {
+		@include transition(0.3s);
+		position: absolute;
+		top: 5px;
+		left: 3px;
+		
+		&.opened {
+			@include rotate(90deg);
+		}
+		
+	}
+	
+	.accordion__body {
+		padding-left: 30px;
+		overflow-y: auto;
+		height: 155px;
+	}
+}

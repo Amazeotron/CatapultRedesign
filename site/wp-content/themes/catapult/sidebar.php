@@ -15,7 +15,7 @@ $catIDsSeparated = implode(",", $catIDs);
         <ul class="filters clearfix">
             <li><a class="link-secondary header-title" href="<?php echo home_url('/news'); ?>" title="View All">View All</a></li>
             <li><a class="link-secondary header-title" href="<?php echo home_url('/blog'); ?>" title="Articles">Articles</a></li>
-            <li><a class="link-secondary header-title" href="<?php echo home_url('/labs'); ?>" title="Events">Events</a></li>
+            <li><a class="link-secondary header-title" href="<?php echo home_url('/events'); ?>" title="Events">Events</a></li>
         </ul>
     </div><!-- end search-box -->
     <hr />

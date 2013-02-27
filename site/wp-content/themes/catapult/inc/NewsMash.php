@@ -31,10 +31,10 @@ class NewsMash
 			array_push($this->allNews, $value);
 		}
 		
-		// Pull in JSON feed for Learning Labs
-		$labJSONURL = NewsParser::getRootURL() . "/?json=get_recent_posts&dev=1&post_type=lab&custom_fields=location,date";
+		// Pull in JSON feed for Events
+		$labJSONURL = NewsParser::getRootURL() . "/?json=get_recent_posts&dev=1&post_type=event&custom_fields=location,date";
 		$labJSON = NewsParser::loadJSON($labJSONURL);
-		$labs = NewsParser::commonize($labJSON["posts"], "lab");
+		$labs = NewsParser::commonize($labJSON["posts"], "event");
 		foreach ($labs as $value) {
 			array_push($this->allNews, $value);
 		}

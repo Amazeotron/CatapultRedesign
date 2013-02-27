@@ -97,10 +97,10 @@
 					
 					<div id="js-add-name-section" class="hide">
 						<p>Name as you would like it to appear on catapultdesign.org:</p>
-						<input type="text" placeholder="name" name="fullName" value="<?php if (isset($_SESSION['fullName'])) { echo $_SESSION['fullName']; } ?>">
+						<input type="text" class="overlay__form__input" placeholder="name" name="fullName" value="<?php if (isset($_SESSION['fullName'])) { echo $_SESSION['fullName']; } ?>">
 						
 						<p>Would you like to include a quote as to why you gave to Catapult Design?</p>
-						<textarea placeholder="Enter your message." name="quote"></textarea>
+						<textarea class="overlay__form__input" placeholder="Enter your message." name="quote"></textarea>
 						
 						<p>Would you like to upload a photo to appear along with other donors to Catapult Design?</p>
 						<div class="overlay__form__item"><input id="js-file-upload" type="file" name="img" /></div>

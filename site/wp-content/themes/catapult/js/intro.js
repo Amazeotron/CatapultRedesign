@@ -1,6 +1,6 @@
 var intro = {
 
-	NUM_PROJECTS: 6, // (Const) How many projects there are
+	NUM_PROJECTS: 3, // (Const) How many projects to show
 	FIRE_TIME: 1, // (Const) How long to wait till next project, in seconds 400
 	SANS_FONT: "franklin-gothic-ext-comp-urw",
 	SERIF_FONT: "freight-text-pro",
@@ -8,11 +8,12 @@ var intro = {
 	// top-level vars start with an underscore
 	_canvas: null, 
 	_stage: null,
+	_numProjects: 0, // How mand projects there are, in total
 	_numTicks: 0, // How many ticks have gone by
 	_activeProject: -1, // Tracks which project is active
 	_dotOff: 0.2,
-	_dotSmall: 0.3, // Small dot size
-	_dotMedium: 0.5, 
+	_dotSmall: 0.5, // Small dot size
+	_dotMedium: 0.6, 
 	_dotLarge: 0.7, 
 	_titleField: null, 
 	_imgMask: null, 
@@ -24,6 +25,7 @@ var intro = {
 	_isLoaded: false,
 	_rootURL: "",
 	_callback: null, 
+	_sortOrder: null, // An array of NUM_PROJECT number of random ints.
 	
 	init: function(rootURL, callback) {
 		this._rootURL = rootURL;
@@ -123,6 +125,15 @@ var intro = {
 				dotPosition:{x:202, y:317}
 			}
 		];
+		
+		this._numProjects = this._projectManifest.length;
+		
+		// Choose a random set of projects to show
+		this._sortOrder = _.range(this._numProjects);
+		this._sortOrder = _.shuffle(this._sortOrder);
+		while (this._sortOrder.length > this.NUM_PROJECTS) {
+			this._sortOrder.pop();
+		}
 
 		var preload = new PreloadJS();
 		var self = this;
@@ -268,15 +279,16 @@ var intro = {
 			return;
 		}
 		
-		var done = false;
+		var done = false,
+				roundedTick = this._numTicks % (this.FIRE_TIME * 100);
 		
-		if (this._numTicks % (this.FIRE_TIME * 100) == 0 && this._activeProject < this.NUM_PROJECTS-1) {
+		if (roundedTick == 0 && this._activeProject < this.NUM_PROJECTS-1) {
 			
 			this._activeProject++;
 			
 			done = this._activeProject >= this.NUM_PROJECTS-1;
 			
-			var activeData = this._projectManifest[this._activeProject];
+			var activeData = this._projectManifest[this._sortOrder[this._activeProject]];
 
 			// Make the title
 			var self = this;

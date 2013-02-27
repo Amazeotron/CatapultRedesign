@@ -26,13 +26,21 @@
 		
 		<link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/img/favicon.ico" />
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/uniform.default.css">
-    <?php if (is_front_page()) { ?>
+    
+    <?php if (is_page('Home')) { ?>
     	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/main.css">
-    <?php } else if (is_page('News') || is_single()) { ?>
-    	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/blog.css">
+    	
     <?php } else if (is_page('Thanks')) { ?>
     	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/thanks.css">
+    
+    <?php } else if (is_page('faq-and-press-kit')) { ?>
+    	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/faq.css">
+    
+    <?php } else if (is_page() || is_single() || is_404()) { ?>
+    	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/blog.css">
+    
     <?php } ?>
+    
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
     <script type="text/javascript">
@@ -42,15 +50,8 @@
     <script src="<?php bloginfo('template_url'); ?>/js/libs/modernizr-2.6.1.min.js"></script>
     
     <!-- Load TypeKit Fonts -->
-    <script type="text/javascript">
-		  (function() {
-		    var config = {
-		      kitId: 'ljv7wxs',
-		      scriptTimeout: 3000
-		    };
-		    var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
-		  })();
-		</script>
+    <script type="text/javascript" src="//use.typekit.net/ljv7wxs.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
       
     <?php wp_head(); ?>
     

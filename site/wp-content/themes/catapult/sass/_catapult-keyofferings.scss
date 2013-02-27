@@ -75,8 +75,12 @@
     .keyofferings-list__item {
         float: left;
         margin: 0 8px 10px 0;
-        
         display: block;
+        
+        .clicky-button {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
         
         @media only screen and (max-width : 1024px) {
             // make the buttons 3-up;

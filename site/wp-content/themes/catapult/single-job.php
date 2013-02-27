@@ -12,7 +12,7 @@
 				<?php the_content(); ?>
 			</div>
 			
-			<hr>
+			<div class="divider"></div>
 			
 		</article><!-- end post -->
 	</div><!-- end posts -->

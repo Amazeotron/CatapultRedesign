@@ -141,3 +141,10 @@ $sansFont: "franklin-gothic-ext-comp-urw", "Arial Narrow", sans-serif;
           -ms-user-select: none;
               user-select: none;
 }
+
+@mixin rotate($deg) {
+    -webkit-transform: rotate($deg);
+       -moz-transform: rotate($deg);
+         -o-transform: rotate($deg);
+            transform: rotate($deg);
+}
