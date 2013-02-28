@@ -13,9 +13,9 @@
 				$croppedImage = wp_get_attachment_image_src($headerImage["id"], array(643, 183));
 				$croppedImage = $croppedImage[0]; ?>
 				<div class="post-border">
-				<figure class="post-figure">
-				<img class="post-image" src="<?php echo $croppedImage; ?>" alt="<?php the_title(); ?>" width="100%">
-				</figure>
+					<figure class="post-figure">
+						<img class="post-image" src="<?php echo $croppedImage; ?>" alt="<?php the_title(); ?>" width="100%">
+					</figure>
 				</div>
 			<? endif; ?>
 			

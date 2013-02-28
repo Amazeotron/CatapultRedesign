@@ -66,21 +66,23 @@ $(document).ready(function() {
 	});
 	
 	// Check for which logo is showing 
-	enquire.register("screen and (max-width: 720px)", {
-		
-		match: function() {
-			_shouldShowBigLogo = false;
-			$(".logo .logo--full").removeClass("show").addClass("hide");
-			$(".logo .logo--partial").removeClass("hide").addClass("show");
-		}, 
-		
-		unmatch: function() {
-			_shouldShowBigLogo = true;
-			$(".logo .logo--full").removeClass("hide").addClass("show");
-			$(".logo .logo--partial").removeClass("show").addClass("hide");
-		}
-		
-	});
+	if (typeof(enquire) != 'undefined') {
+		enquire.register("screen and (max-width: 720px)", {
+			
+			match: function() {
+				_shouldShowBigLogo = false;
+				$(".logo .logo--full").removeClass("show").addClass("hide");
+				$(".logo .logo--partial").removeClass("hide").addClass("show");
+			}, 
+			
+			unmatch: function() {
+				_shouldShowBigLogo = true;
+				$(".logo .logo--full").removeClass("hide").addClass("show");
+				$(".logo .logo--partial").removeClass("show").addClass("hide");
+			}
+			
+		});
+	}
 	
 	// Change the nav on scroll
 	$(window).scroll(function(event) {
@@ -119,7 +121,7 @@ $(document).ready(function() {
 	
 	intro.init(cataCommon.getRootURL() + "wp-content/themes/catapult/", function() {
 		// Open News, but only if we're on the homepage, and only if we're at the top of the page
-		if (Number($("body").scrollTop()) < 100) {
+		if (Number($("body").scrollTop()) < 100 && Modernizr.cssanimations) {
 			cataCommon.peekNews();
 			
 			setTimeout(function() {
@@ -129,15 +131,23 @@ $(document).ready(function() {
 	});
 	
 	// get case studies
-	$.getJSON(cataCommon.getRootURL() + '?json=get_recent_posts&dev=1&post_type=casestudy&custom_fields=category,category_description,client,main_image,header_image,display_order&meta_key=display_order&order_by=meta_value&order=ASC', function(data, textStatus, jqXHR) {
-		casestudies.init(cataCommon.getRootURL() + "wp-content/themes/catapult/", data.posts);
+	var casestudiesURL = cataCommon.getRootURL() + '?json=get_recent_posts&dev=1&post_type=casestudy&custom_fields=category,category_description,client,main_image,header_image,display_order&meta_key=display_order&order_by=meta_value&order=ASC&Duration=0&callback=';
+	console.log(casestudiesURL);
+	$.getJSON(casestudiesURL, 'jsonp', function(data, textStatus, jqXHR) {
+		console.log("Case Studies data: " + data);
+		if (data) {
+			casestudies.init(cataCommon.getRootURL() + "wp-content/themes/catapult/", data.posts);
+		} else {
+			$("#casestudies").hide();
+		}
 	})
 	.success(function() {
 		console.log("Successfully loaded the case studies.");
 	})
 	.error(function(error) {
-		console.log("Failed loading the Case Studies");
+		console.log("There was an error loading the Case Studies. Error:");
 		console.log(error);
+		$("#casestudies").hide();
 	});
 	
 	// Locations Map

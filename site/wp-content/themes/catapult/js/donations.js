@@ -136,25 +136,27 @@ var donations = {
 		
 		
 		// When the window size gets below 756 px, change the donation form layout to one column
-		enquire.register("screen and (max-width: 756x)", {
-			
-			match: function() {
-				$.each([self._creditCardInfo, self._billingInfo], function(index, value) {
-					value
-						.removeClass("two-col padded margin-right")
-						.addClass("one-col");
-				});
-			}, 
-			
-			unmatch: function() {
-				$.each([self._creditCardInfo, self._billingInfo], function(index, value) {
-					value
-						.removeClass("one-col")
-						.addClass("two-col padded margin-right");
-				});
-			}
-			
-		}).listen();
+		if (typeof(enquire) != 'undefined') {
+			enquire.register("screen and (max-width: 756x)", {
+				
+				match: function() {
+					$.each([self._creditCardInfo, self._billingInfo], function(index, value) {
+						value
+							.removeClass("two-col padded margin-right")
+							.addClass("one-col");
+					});
+				}, 
+				
+				unmatch: function() {
+					$.each([self._creditCardInfo, self._billingInfo], function(index, value) {
+						value
+							.removeClass("one-col")
+							.addClass("two-col padded margin-right");
+					});
+				}
+				
+			}).listen();
+		}
 		
 	}, 
 	

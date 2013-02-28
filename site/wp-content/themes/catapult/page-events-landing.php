@@ -20,15 +20,17 @@
 	<?php if (have_posts()) : ?>
 		<!-- there are two columns: big on the left, small on the right -->
 		<?php while (have_posts()) : the_post(); ?>
-			<article class="post-box">
 			<? 
 			$eventImage = get_field("event_image");
 			$eventImage = $eventImage["url"];
 			
 			if ($eventImage) : ?>
+			<article class="post-box">
 				<figure>
 					<img class="post-image" src="<?php echo $eventImage; ?>" alt="Image 2" width="100%">
 				</figure>
+			<? else : ?>
+			<article class="post-box with-bg">
 			<? endif; ?>
 				<header class="post-top">
 					<h1 class="post-title header-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>

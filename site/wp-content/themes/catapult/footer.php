@@ -19,7 +19,7 @@
 	<?php wp_footer(); ?>
 	
 	<script src="<?php bloginfo('template_url'); ?>/js/common.js"></script>
-  <script src="<?php bloginfo('template_url'); ?>/js/libs/enquire.js"></script>
+  <!--<script src="<?php bloginfo('template_url'); ?>/js/libs/enquire.js"></script> -->
   <script src="<?php bloginfo('template_url'); ?>/js/libs/swipe.js"></script>
   <script src="<?php bloginfo('template_url'); ?>/js/libs/underscore-min.js"></script>
   

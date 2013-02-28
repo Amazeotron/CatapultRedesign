@@ -6,9 +6,13 @@
 		<div id="page-wrap">
 			<section id="main-section">
 				<article id="post" class="post-<?php the_ID(); ?>">
+					<?php
+					$headerImage = the_field('header_image');
+					if ($headerImage) : ?>
 					<figure>
-						<img class="post-image" src="<?php the_field('header_image'); ?>" alt="Image 1">
+						<img class="post-image" src="<?php $headerImage; ?>" alt="Image 1">
 					</figure>
+				<?php endif; ?>
 					<h1 class="post-title header-title"><?php the_title(); ?></h1>
 					<?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
 					

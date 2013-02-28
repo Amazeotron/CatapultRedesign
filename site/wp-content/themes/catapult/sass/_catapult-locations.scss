@@ -14,11 +14,6 @@
 		display: none;
 	}
 	
-	// Slightly different shadow than a normal drawer
-	&.drawer {
-		@include innerShadow(0px, 5px, 5px, 0px, 0.7);
-	}
-	
 	.drawer__content {
 		background: url(../img/homepage/locations/world.svg) top left no-repeat;
 		background-size: 100% auto;

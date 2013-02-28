@@ -1,194 +1,164 @@
+<?php
+
+function getBaseURL() {
+	$url = get_bloginfo('template_url') . "/img/homepage/team/";
+	return $url;
+}
+
+function hyphenate($name) {
+	$pattern = '/ /';
+	$replace = "-";
+	return preg_replace($pattern, $replace, $name);
+}
+
+$items = array(
+   array(
+     "hierarchy" => "primary",
+     "name" => "Heather Fleming",
+     "img" => getBaseURL() . "heather.jpg",
+     "title" => "Founder and CEO", 
+     "company" => "Catapult Design",
+     "blurb" => "Heather is a designer, an engineer, and an entrepreneur motivated by social..."
+   ), 
+   array(
+     "hierarchy" => "primary",
+     "name" => "Tyler Valiquette",
+     "img" => getBaseURL() . "tyler.jpg",
+     "title" => "Founder and COO", 
+     "company" => "Catapult Design",
+     "blurb" => "Having lived, worked, and traveled extensively in Latin America in..."
+   ), 
+   array(
+     "hierarchy" => "primary",
+     "name" => "Noel Wilson",
+     "img" => getBaseURL() . "noel.jpg",
+     "title" => "Lead Designer", 
+     "company" => "Catapult Design",
+     "blurb" => "An Industrial Designer by training, Noel previously worked in rapid proto..."
+   ), 
+   array(
+     "hierarchy" => "primary",
+     "name" => "Karin Carter",
+     "img" => getBaseURL() . "karin.jpg",
+     "title" => "Design Fellow", 
+     "company" => "Catapult Design",
+     "blurb" => "Karin is a designer and educator with diverse expertise as each. As an in-house..."
+   ), 
+   array(
+     "hierarchy" => "primary",
+     "name" => "Dr. Charlie Sellers",
+     "img" => getBaseURL() . "charlie.jpg",
+     "title" => "Technology Specialist", 
+     "company" => "Catapult Design",
+     "blurb" => "Combining a background in materials and..."
+   ), 
+   array(
+     "hierarchy" => "secondary",
+     "name" => "Tom Loughlin",
+     "img" => getBaseURL() . "tom.jpg",
+     "title" => "Executive Director", 
+     "company" => "ASME",
+     "blurb" => "Thomas G. Loughlin, CAE, is the executive director of ASME (American So..."
+   ), 
+   array(
+     "hierarchy" => "secondary",
+     "name" => "Dawn Danby",
+     "img" => getBaseURL() . "dawn.jpg",
+     "title" => "Senior Sustainability Design Manager", 
+     "company" => "AutoDesk",
+     "blurb" => "Interdisciplinary designer Dawn Danby, recognized by..."
+   ), 
+   array(
+     "hierarchy" => "secondary",
+     "name" => "Catherine Lovazzano",
+     "img" => getBaseURL() . "catherine.jpg",
+     "title" => "Senior Manager, Consumer Trends", 
+     "company" => "Chrysler LLC",
+     "blurb" => "In her current position, Catherine leads a hybrid team..."
+   ), 
+   array(
+     "hierarchy" => "tertiary",
+     "name" => "Graham Hill",
+     "img" => getBaseURL() . "graham.jpg",
+     "title" => "VP Interactive Planet Green, Discovery", 
+     "company" => "Treehugger.com",
+     "blurb" => "Alternately described as serial entre..."
+   ), 
+   array(
+     "hierarchy" => "tertiary",
+     "name" => "Hristo Gyoshev",
+     "img" => getBaseURL() . "hristo.jpg",
+     "title" => "Corporate Strategy &amp; Business Management", 
+     "company" => "Yahoo!",
+     "blurb" => "Hristo Gyoshev is a strategist with..."
+   ), 
+   array(
+     "hierarchy" => "tertiary",
+     "name" => "Lauren Peters",
+     "img" => getBaseURL() . "lauren.jpg",
+     "title" => "Art Director", 
+     "company" => "Salesforce",
+     "blurb" => "Lauren Peters began her work with Catapult Design in early 2009..."
+   ), 
+   array(
+     "hierarchy" => "tertiary",
+     "name" => "Evan Thomas",
+     "img" => getBaseURL() . "evan.jpg",
+     "title" => "Asst Professor", 
+     "company" => "Portland State University",
+     "blurb" => "Evan A. Thomas, Ph.D., P.E., is an Assistant Prof..."
+   ), 
+   array(
+     "hierarchy" => "tertiary",
+     "name" => "Nathalie Collins",
+     "img" => getBaseURL() . "nathalie.jpg",
+     "title" => "Design Strategist", 
+     "company" => "Luminary Labs",
+     "blurb" => "Nathalie Collins is a designer and innovator who has worked with businesses..."
+   ), 
+   array(
+     "hierarchy" => "tertiary",
+     "name" => "Brian Lamb",
+     "img" => getBaseURL() . "brian.jpg",
+     "title" => "Principal", 
+     "company" => "Elevate Consulting",
+     "blurb" => "Brian Lamb is a visionary business and design leader at Elevate Design Cons..."
+   ), 
+   array(
+     "hierarchy" => "tertiary",
+     "name" => "Gary Zieff",
+     "img" => getBaseURL() . "gary.jpg",
+     "title" => "COO", 
+     "company" => "dissigno",
+     "blurb" => "Gary Zieff co-founded dissigno, an emerging markets project developmen..."
+   ), 
+   array(
+     "hierarchy" => "tertiary",
+     "name" => "Joseph Beah",
+     "img" => getBaseURL() . "joseph.jpg",
+     "title" => "Solutions Architect and Program Manager", 
+     "company" => "",
+     "blurb" => "Joseph is a seasoned Program Manager and Solutions Ar..."
+   )
+);
+
+?>
 <ul class="team-members">
 	
-	<li class="team-member primary">
-		<a href="#" tabindex="16">
-			<img src="<?php bloginfo('template_url'); ?>/img/homepage/team/heather.jpg" alt="Heather Fleming" />
-			<div class="team-member-details">
-				<h3 class="header-title">Heather Fleming</h3>
-				<h4>Founder and CEO</h4>
-				<h5>Catapult Design</h5>
-				<p>Heather is a designer, an engineer, and an entrepreneur motivated by social... <a href="#heather" class="more">more</a></p>
-			</div>
-		</a>
-	</li>
-	
-	<li class="team-member primary">
-		<a href="#" tabindex="17">
-			<img src="<?php bloginfo('template_url'); ?>/img/homepage/team/tyler.jpg" alt="Tyler Valiquette" />
-			<div class="team-member-details">
-				<h3 class="header-title">Tyler Valiquette</h3>
-				<h4>Founder and COO</h4>
-				<h5>Catapult Design</h5>
-				<p>Having lived, worked, and traveled extensively in Latin America in... <a href="#tyler" class="more">more</a></p>
-			</div>
-		</a>
-	</li>
-	
-	<li class="team-member primary">
-		<a href="#" tabindex="18">
-			<img src="<?php bloginfo('template_url'); ?>/img/homepage/team/noel.jpg" alt="Noel Wilson" />
-			<div class="team-member-details">
-				<h3 class="header-title">Noel Wilson</h3>
-				<h4>Lead Designer</h4>
-				<h5>Catapult Design</h5>
-				<p>An Industrial Designer by training, Noel previously worked in rapid proto... <a href="#noel" class="more">more</a></p>
-			</div>
-		</a>
-	</li>
-
-	<li class="team-member primary">
-		<a href="#" tabindex="19">
-			<img src="<?php bloginfo('template_url'); ?>/img/homepage/team/karin.jpg" alt="Karin Carter" />
-			<div class="team-member-details">
-				<h3 class="header-title">Karin Carter</h3>
-				<h4>Design Fellow</h4>
-				<h5>Catapult Design</h5>
-				<p>Karin is a designer and educator with diverse expertise as each. As an in-house... <a href="#karin" class="more">more</a></p>
-			</div>
-		</a>
-	</li>
-
-	<li class="team-member primary">
-		<a href="#" tabindex="20">
-			<img src="<?php bloginfo('template_url'); ?>/img/homepage/team/charlie.jpg" alt="Dr. Charlie Sellers" />
-			<div class="team-member-details">
-				<h3 class="header-title">Dr. Charlie Sellers</h3>
-				<h4>Technology Specialist</h4>
-				<h5>Catapult Design</h5>
-				<p>Combining a background in materials and... <a href="#charlie" class="more">more</a></p>
-			</div>
-		</a>
-	</li>
-	
-	<li class="team-member secondary">
-		<a href="#" tabindex="21">
-			<img src="<?php bloginfo('template_url'); ?>/img/homepage/team/tom.jpg" alt="Tom Loughlin" />
-			<div class="team-member-details">
-				<h3 class="header-title">Tom Loughlin</h3>
-				<h4>Executive Director</h4>
-				<h5>ASME</h5>
-				<p>Thomas G. Loughlin, CAE, is the executive director of ASME (American So... <a href="#tom" class="more">more</a></p>
-			</div>
-		</a>
-	</li>
-
-	<li class="team-member secondary">
-		<a href="#" tabindex="22">
-			<img src="<?php bloginfo('template_url'); ?>/img/homepage/team/dawn.jpg" alt="Dawn Danby" />
-			<div class="team-member-details">
-				<h3 class="header-title">Dawn Danby</h3>
-				<h4>Senior Sustainability Design Manager</h4>
-				<h5>Autodesk</h5>
-				<p>Interdisciplinary designer Dawn Danby, recognized by... <a href="#dawn" class="more">more</a></p>
-			</div>
-		</a>
-	</li>
-
-	<li class="team-member secondary">
-		<a href="#" tabindex="23">
-			<img src="<?php bloginfo('template_url'); ?>/img/homepage/team/catherine.jpg" alt="Catherine Lovazzano" />
-			<div class="team-member-details">
-				<h3 class="header-title">Catherine Lovazzano</h3>
-				<h4>Senior Manager, Consumer Trends</h4>
-				<h5>Chrysler LLC</h5>
-				<p>In her current position, Catherine leads a hybrid team... <a href="#catherine" class="more">more</a></p>
-			</div>
-		</a>
-	</li>
-	
-	<li class="team-member tertiary">
-		<a href="#" tabindex="24">
-			<img src="<?php bloginfo('template_url'); ?>/img/homepage/team/graham.jpg" alt="Graham Hill" />
-			<div class="team-member-details">
-				<h3 class="header-title">Graham Hill</h3>
-				<h4>VP Interactive Planet Green, Discovery</h4>
-				<h5>Treehugger.com</h5>
-				<p>Alternately described as serial entre... <a href="#graham" class="more">more</a></p>
-			</div>
-		</a>
-	</li>
-	
-	<li class="team-member tertiary">
-		<a href="#" tabindex="25">
-			<img src="<?php bloginfo('template_url'); ?>/img/homepage/team/hristo.jpg" alt="Hristo Gyoshev" />
-			<div class="team-member-details">
-				<h3 class="header-title">Hristo Gyoshev</h3>
-				<h4>Corporate Strategy &amp; Business Management</h4>
-				<h5>Yahoo! Inc.</h5>
-				<p>Hristo Gyoshev is a strategist with... <a href="#hristo" class="more">more</a></p>
-			</div>
-		</a>
-	</li>
-	
-	<li class="team-member tertiary">
-		<a href="#" tabindex="26">
-			<img src="<?php bloginfo('template_url'); ?>/img/homepage/team/lauren.jpg" alt="Lauren Peters" />
-			<div class="team-member-details">
-				<h3 class="header-title">Lauren Peters</h3>
-				<h4>Art Director</h4>
-				<h5>Salesforce, Inc</h5>
-				<p>Lauren Peters began her work with Catapult Design in early 2009... <a href="#lauren" class="more">more</a></p>
-			</div>
-		</a>
-	</li>
-	
-	<li class="team-member tertiary">
-		<a href="#" tabindex="27">
-			<img src="<?php bloginfo('template_url'); ?>/img/homepage/team/evan.jpg" alt="Evan Thomas" />
-			<div class="team-member-details">
-				<h3 class="header-title">Evan Thomas</h3>
-				<h4>Asst Professor</h4>
-				<h5>Portland State University</h5>
-				<p>Evan A. Thomas, Ph.D., P.E., is an Assistant Prof... <a href="#evan" class="more">more</a></p>
-			</div>
-		</a>
-	</li>
-	
-	<li class="team-member tertiary">
-		<a href="#" tabindex="28">
-			<img src="<?php bloginfo('template_url'); ?>/img/homepage/team/nathalie.jpg" alt="Nathalie Collins" />
-			<div class="team-member-details">
-				<h3 class="header-title">Nathalie Collins</h3>
-				<h4>Design Strategist</h4>
-				<h5>Luminary Labs</h5>
-				<p>Nathalie Collins is a designer and innovator who has worked with businesses... <a href="#nathalie" class="more">more</a></p>
-			</div>
-		</a>
-	</li>
-	
-	<li class="team-member tertiary">
-		<a href="#" tabindex="29">
-			<img src="<?php bloginfo('template_url'); ?>/img/homepage/team/brian.jpg" alt="Brian Lamb" />
-			<div class="team-member-details">
-				<h3 class="header-title">Brian Lamb</h3>
-				<h4>Principal</h4>
-				<h5>Elevate Consulting</h5>
-				<p>Brian Lamb is a visionary business and design leader at Elevate Design Cons... <a href="#brian" class="more">more</a></p>
-			</div>
-		</a>
-	</li>
-	
-	<li class="team-member tertiary">
-		<a href="#" tabindex="30">
-			<img src="<?php bloginfo('template_url'); ?>/img/homepage/team/gary.jpg" alt="Gary Zieff" />
-			<div class="team-member-details">
-				<h3 class="header-title">Gary Zieff</h3>
-				<h4>COO</h4>
-				<h5>dissigno</h5>
-				<p>Gary Zieff co-founded dissigno, an emerging markets project developmen... <a href="#gary" class="more">more</a></p>
-			</div>
-		</a>
-	</li>
-	
-	<li class="team-member tertiary">
-		<a href="#" tabindex="31">
-			<img src="<?php bloginfo('template_url'); ?>/img/homepage/team/joseph.jpg" alt="Joseph Beah" />
-			<div class="team-member-details">
-				<h3 class="header-title">Joseph Beah</h3>
-				<h4>Solutions Architect and Program Manager</h4>
-				<h5></h5>
-				<p>Joseph is a seasoned Program Manager and Solutions Ar... <a href="#joseph" class="more">more</a></p>
-			</div>
-		</a>
-	</li>
+	<?php $index = 16; ?>
+	<?php foreach ($items as $person) : ?>
+			
+			<li class="team-member <? echo $person['hierarchy']; ?>">
+			<a class="team-member-link" href="#<? echo hyphenate($person['name']); ?>" tabindex="<? echo $index++; ?>">
+				<img src="<?php echo $person['img']; ?>" alt="<? echo $person['name']; ?>" />
+				<div class="team-member-details">
+					<h3 class="header-title"><? echo $person['name']; ?></h3>
+					<h4><? echo $person['title']; ?></h4>
+					<h5><? echo $person['company']; ?></h5>
+					<p><? echo $person['blurb']; ?> more &raquo;</p>
+				</div>
+			</a>
+			</li>
+			
+		<?php endforeach; ?>
 </ul>

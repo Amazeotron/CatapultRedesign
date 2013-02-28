@@ -28,20 +28,7 @@ var locations = {
 		});
 		
 		this._content.on("webkitTransitionEnd transitionend", function(event) {
-			if (self._isOpen === true) {
-				
-				$("#locations-center-tag").removeClass("closed").addClass("open");
-				// self.open(); // Call this to make the _content height correct.				
-				// If locations aren't loaded, load them
-				if (self._hasLoadedLocations === false) {
-					self.loadLocations();
-				}
-				
-			} else {
-				
-				$("#locations-center-tag").removeClass("open").addClass("closed");
-				
-			}
+			self.showLocs();
 		});
 		
 		// make the background scroll when page scrolls
@@ -59,9 +46,22 @@ var locations = {
 		
 	},
 	
+	showLocs: function() {
+		if (this._isOpen === true) {
+			$("#locations-center-tag").removeClass("closed").addClass("open");
+			if (this._hasLoadedLocations === false) {
+				this.loadLocations();
+			}
+		} else {
+			
+			$("#locations-center-tag").removeClass("open").addClass("closed");
+		}
+	}, 
+	
 	loadLocations: function() {
-		var self = this;
-		$.getJSON(cataCommon.getRootURL() + "wp-content/themes/catapult/js/locations-json.js", function(data, textStatus, jqXHR) {
+		var self = this, 
+				url = cataCommon.getRootURL() + "wp-content/themes/catapult/getjson.php?json=locations-json&callback=";
+		$.getJSON(url, 'jsonp', function(data, textStatus, jqXHR) {
 			self._locationData = data.locations;
 			self.showLocations();
 			self._repositionLocations(self._locationData);
@@ -71,6 +71,11 @@ var locations = {
 	
 	open: function() {
 		this._isOpen = true;
+		
+		if (Modernizr.cssanimations === false) {
+			this.showLocs();
+		}
+		
 		this._content.css({height:this._getHeight("open")+"px"});
 		$("#locations .close-button").show();
 	}, 

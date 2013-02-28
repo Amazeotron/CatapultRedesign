@@ -7,7 +7,7 @@
     position: relative;
     padding-bottom: 60px; 
     padding-top: 60px;
-    background: url(../img/homepage/bg/bgtile-dark.jpg) top left repeat;
+    background: rgb(55,55,55);
     @include innerShadow(0, 7px, 8px, 0, 0.3);
     
     &.row {
@@ -46,13 +46,14 @@
         margin: 0;
     }
 
-    #casestudies-bg {
+    #casestudies-overlay {
         position: absolute;
         top: 0;
         left: 0;
-        z-index: -1;
+        z-index: 1;
+        background-image: url(../img/homepage/casestudies/overlay.png);
         background-position: top left;
-        background-repeat: repeat;
+        background-repeat: no-repeat;
         opacity: 0;
         width: 100%;
         height: 100%;
@@ -89,10 +90,11 @@
                 position: relative;
                 -webkit-transform: translate3d(0,0,0);
                 -webkit-transition: all 0.5s ease-in-out;
-
-                img {
-                    width: 100%;
-                }
+            }
+            
+            .casestudy-image {
+                opacity: 0.4;
+                width: 100%;
             }
         }
         #casestudy-content {
@@ -100,7 +102,7 @@
             // padding: 20px;
             padding: 0;
             margin: 30px 0 0 340px;
-            width: 373px;
+            width: 411px;
             // height: 860px;
             overflow: hidden;
             position: absolute;
@@ -116,8 +118,9 @@
             }
 
             #casestudy-content-sub {
+                background: url(../img/homepage/casestudies/casestudy-tile.png) top left repeat;
                 position: relative;
-                -webkit-transition: all 0.5s ease-in-out;
+                @include transition(0.5s);
             }
 
             p {
@@ -137,19 +140,12 @@
             }
 
             .casestudy-content-single {
-                // position: absolute;
-                // top: 0;
-                // left: 20px;
-                // width: 100%;
                 padding: 20px;
-                
-                img {
-                    width: 100%;
-                }
             }
         }
         .paddles {
             position: absolute;
+            z-index: 1;
             display: block;
             padding: 0;
             margin: 0;
@@ -208,7 +204,7 @@
                 }
                     
                 &.prev {
-                    left: 288px;
+                    left: 291px;
                     @include borderShadow(-2px, 3px, 5px, 0px, 0.5);
                     
                     @media only screen and (max-width : 929px) {
@@ -216,7 +212,7 @@
                     }
                 }
                 &.next {
-                    left: 712px;
+                    left: 748px;
                     @include borderShadow(2px, 3px, 5px, 0px, 0.5);
                     img {
                         margin-left: 18px;

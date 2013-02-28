@@ -18,11 +18,13 @@ $catIDsSeparated = implode(",", $catIDs);
             <li><a class="link-secondary header-title" href="<?php echo home_url('/events'); ?>" title="Events">Events</a></li>
         </ul>
     </div><!-- end search-box -->
-    <hr />
+    
+    <div class="divider"></div>
+    
     <ul class="tags">
         <?php
         foreach($categories as $cat) {
-            echo '<li class="tag header-title ' . $cat->category_nicename . '"><a href="' . get_category_link($cat->term_id) . '">' . $cat->category_nicename . '</a></li>';
+            echo '<li class="tag header-title"><a class="category-item ' . $cat->category_nicename . '" href="' . get_category_link($cat->term_id) . '">' . $cat->category_nicename . '</a></li>';
         }
         ?>
     </ul>

@@ -29,6 +29,11 @@
             position: relative;
             margin: 1%;
             
+            .team-member-link {
+                position: relative;
+                display: block;
+            }
+            
             a {
                 text-decoration: none;
             }
@@ -84,6 +89,7 @@
         }
         
         .team-member-details {
+            display: block;
             position: absolute;
             top: 84%;
             left: 0;

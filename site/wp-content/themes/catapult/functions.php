@@ -13,6 +13,11 @@ function init_sessions() {
 }
 add_action('init', 'init_sessions');
 
+function custom_excerpt_length( $length ) {
+	return 20;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
 // Load homepage scripts
 function do_scripts() {
 	if (!is_admin()) {

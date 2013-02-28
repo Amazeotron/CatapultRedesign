@@ -1,9 +1,9 @@
 .drawer {
     position: relative;
-	background-repeat: repeat-x, repeat;
+	background-repeat: repeat;
 	position: relative;
 	padding: 0;
-	@include innerShadow(0px, 70px, 120px, 0px, 0.4);
+	@include drawerShadow();
     -webkit-transform: translate3d(0,0,0);
          -o-transform: translate3d(0,0,0);
             transform: translate3d(0,0,0);
@@ -13,11 +13,11 @@
     }
 	
 	&.events {
-		background-image: url(../img/homepage/shadow-top.png), url(../img/homepage/casestudies/bgtile-engineering.png);
+		background-image: url(../img/homepage/casestudies/bgtile-engineering.png);
 	}
 	
 	&.partners {
-		background-image: url(../img/homepage/shadow-top.png), url(../img/homepage/casestudies/bgtile-systems-thinking.png);
+		background-image: url(../img/homepage/bgtile-partners.jpg);
 	}
 	
 	h1 {
@@ -63,38 +63,50 @@
     position: absolute;
     display: block;
     text-align: center;
-    background: url(../img/homepage/bg/drawer-tag-sprite.png) top center no-repeat;
+    background: url(../img/homepage/bg/drawer-tabs-sprite.png) top center no-repeat;
     width: 288px;
-    height: 80px;
+    height: 38px;
     overflow: hidden;
     margin: 0 auto;
     font-size: 1.2em;
     letter-spacing: 2px;
     
-    &.center-tag--primary {
-        background-position-x: 0px;
-    }
-    &.center-tag--secondary {
-        background-position-x: -288px;
+    &.center-tag--orange {
+        background-position-y: -114px;
     }
     
-    &.open {
-    	background-position-y: -80px;
+    &.center-tag--grey {
+        background-position-y: -76px;
+    }
+    
+    &.center-tag--purple {
+        background-position-y: -38px;
+    }
+    
+    // &.center-tag--primary {
+    //     background-position-x: 0px;
+    // }
+    // &.center-tag--secondary {
+    //     background-position-x: -288px;
+    // }
+    
+    // &.open {
+    // 	background-position-y: -80px;
     	
-    	.center-tag__title {
-    		display: none;
-    	}
-    }
-    &.closed {
-    	background-position-y: 0px;
-    	.center-tag__title {
-    		display: inline;
-    	}
-    }
+    // 	.center-tag__title {
+    // 		display: none;
+    // 	}
+    // }
+    // &.closed {
+    // 	background-position-y: 0px;
+    // 	.center-tag__title {
+    // 		display: inline;
+    // 	}
+    // }
     
     .center-tag__title {
         position: absolute;
-        top: 8px;
+        top: 5px;
         left: 0;
         width: 100%;
         z-index: 2;

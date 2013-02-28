@@ -114,7 +114,6 @@
 		</section><!-- end keyofferings -->
 
 		<section class="casestudies" id="casestudies">
-			<div id="casestudies-bg"></div>
 			<div class="row">
 				<div class="row-header">
 					<h1 id="js-casestudies-header" class="header-title title-shadow">Case Studies</h1>
@@ -122,8 +121,10 @@
 			</div>
 				
 			<div id="casestudies-container">
-				<article class="casestudy row" id="">
-					<div id="casestudy-images" class="casestudy-images"><ul id="casestudy-images-sub"></ul></div>
+				<article class="casestudy row">
+					<div id="casestudy-images" class="casestudy-images">
+						<ul id="casestudy-images-sub"></ul>
+					</div>
 					<div id="casestudy-content" class="swipe"><ul id="casestudy-content-sub"></ul></div>
 					<div class="paddles">
 						<a class="paddle prev" href="#" tabindex="13" id="casestudy-paddle-prev"><img src="<?php bloginfo('template_url'); ?>/img/homepage/casestudies/arrow-left.png" /></a>
@@ -141,7 +142,7 @@
 				<div class="bottom-peek"></div>
 			</div>
 			<div class="center-tag-wrap">
-				<a href="#" class="center-tag center-tag--secondary closed header-title fancy on-dark-bg" id="locations-center-tag">
+				<a href="#" class="center-tag center-tag--grey center-tag--secondary closed header-title fancy on-dark-bg" id="locations-center-tag">
 					<!-- <canvas class="center-tag__canvas" id="centerTagLocationsMap" width="319" height="55"></canvas> -->
 					<span class="center-tag__title">SEE WHERE WE'VE WORKED</span>
 				</a>
@@ -168,7 +169,7 @@
 				<div class="bottom-peek"></div>
 			</div><!-- end js-partners-content -->
 			<div class="center-tag-wrap">
-				<a href="#" class="center-tag center-tag--secondary header-title fancy on-dark-bg" id="partners-center-tag" tabindex="32"><span class="center-tag__title">MEET OUR PARTNERS</span></a>
+				<a href="#" class="center-tag center-tag--purple center-tag--secondary header-title fancy on-dark-bg" id="partners-center-tag" tabindex="32"><span class="center-tag__title">MEET OUR PARTNERS</span></a>
 			</div>
 		</section><!-- end partners -->
 		

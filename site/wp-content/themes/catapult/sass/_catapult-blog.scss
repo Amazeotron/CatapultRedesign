@@ -68,7 +68,7 @@
 -------------------- */
 .tags {
 	overflow: hidden;
-	margin: 0 0 20px 0;
+	margin: 0 0 10px 0;
 	padding: 0;
 	
 	.tag {
@@ -129,6 +129,10 @@
 	overflow: hidden;
 	margin: 20px 0 0 0;
 	position: relative;
+	
+	&.with-bg {
+		@include edgeGradient($grey, 10%);
+	}
 	
 	&:first-of-type {
 		margin-top: 0;

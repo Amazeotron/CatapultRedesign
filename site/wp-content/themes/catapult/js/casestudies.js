@@ -70,7 +70,7 @@ var casestudies = {
 			clientName = this.getClientName(study),
 			largeImageURL = this.getLargeImageURL(study);
 			container.append(template);
-			imgContainer.append('<li><img src="' + largeImageURL + '" id="casestudy-image-' + clientName + '" /></li>');
+			imgContainer.append('<li><img class="casestudy-image" src="' + largeImageURL + '" id="casestudy-image-' + clientName + '" /></li>');
 		}
 		
 		this._swipe = new Swipe($("#casestudy-content")[0], { callback: this.swipeDone, callbackScope: this });

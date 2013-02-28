@@ -36,7 +36,7 @@
     <?php } else if (is_page('faq-and-press-kit')) { ?>
     	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/faq.css">
     
-    <?php } else if (is_page() || is_single() || is_404()) { ?>
+    <?php } else if (is_page() || is_single() || is_404() || is_category() || is_search()) { ?>
     	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/blog.css">
     
     <?php } ?>
@@ -48,6 +48,13 @@
     </script>
     
     <script src="<?php bloginfo('template_url'); ?>/js/libs/modernizr-2.6.1.min.js"></script>
+    <script>
+    Modernizr.load({
+    	test: window.matchMedia,
+    	yep: "<?php bloginfo('template_url'); ?>/js/libs/enquire.js",
+    	nope: ["<?php bloginfo('template_url'); ?>/js/libs/matchMedia.js", "<?php bloginfo('template_url'); ?>/js/libs/matchMedia.addListener.js"]
+    });
+    </script>
     
     <!-- Load TypeKit Fonts -->
     <script type="text/javascript" src="//use.typekit.net/ljv7wxs.js"></script>
@@ -112,6 +119,6 @@
 				</div><!-- end news-primary -->
 			</div><!-- end news -->
 			<div class="center-tag-wrap">
-				<a class="center-tag center-tag--primary header-title fancy" id="header-center-tag" href="#"><span class="center-tag__title">CURRENTLY</span></a>
+				<a class="center-tag center-tag--primary center-tag--orange header-title fancy" id="header-center-tag" href="#"><span class="center-tag__title">CURRENTLY</span></a>
 			</div>
 		</section><!-- end header-drawer -->

@@ -22,20 +22,20 @@
 			?>
 			
 			<?php foreach ($newsItems as $newsItem) : ?>
-				<article class="post-box">
-					
 					<?php if ($newsItem->type != "twitter") :
 						$headerImage = $newsItem->header_image_id;
 						$croppedImage;
-						if ($headerImage == "") {
-							$croppedImage = get_bloginfo('template_url') . "/img/blog/default-blog-image.jpg";
-						} else {
+						if ($headerImage) : 
 							$croppedImage = wp_get_attachment_image_src($headerImage, array(643, 183));
-							$croppedImage = $croppedImage[0];
-						} ?>
+							$croppedImage = $croppedImage[0]; ?>
+						<article class="post-box">
 						<figure>
 							<img class="post-image" src="<?php echo $croppedImage ?>" alt="<?php echo $newsItem->title; ?>" width="100%">
 						</figure>
+							
+						<? else : ?>
+						<article class="post-box with-bg">	
+						<? endif; ?>
 						
 						<header class="post-top">
 							<h1 class="post-title header-title"><a href="<?php echo $newsItem->link; ?>"><?php echo $newsItem->title; ?></a></h1>
