@@ -8,7 +8,7 @@ class NewsParser
 	
 	public static function getRootURL() {
 		if ($_SERVER["SERVER_PORT"] == "8888" || $_SERVER['SERVER_NAME'] == "localhost") {
-			return "http://llmac:8888/wordpress";
+			return "http://llmac.local:8888/wordpress";
 		} else if ($_SERVER["SERVER_PORT"] == "80" || preg_match('/\/dev/', $_SERVER['REQUEST_URI']) != 0) {
 			return "http://catapultdesign.org/dev";
 		}

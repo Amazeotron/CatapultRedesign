@@ -10,9 +10,10 @@ var casestudies = {
 	_container: null,
 	_prevPaddle: $("#casestudy-paddle-prev"), 
 	_nextPaddle: $("#casestudy-paddle-next"), 
+	_imgContainer: null,
+	_contentContainer: null,
 	_rootURL: "",
 	_swipe: null, 
-	_imgSwipe: null, 
 
 	/*
 	* Kick off the Case Studies. Pass in data array that represents the case studies.
@@ -22,6 +23,8 @@ var casestudies = {
 		this._data = data;
 		this._numItems = this._data.length;
 		this._container = $(".casestudies");
+		this._imgContainer = $("#casestudy-images-sub");
+		this._contentContainer = $("#casestudy-content-sub");
 
 		var self = this
 		    paddlePrev = $("#casestudy-paddle-prev"),
@@ -34,7 +37,6 @@ var casestudies = {
 			if ($(this).hasClass("disabled")) return;
 			
 			self._swipe.prev();
-			self._imgSwipe.prev();
 			
 			return false;
 		});
@@ -44,7 +46,6 @@ var casestudies = {
 			if ($(this).hasClass("disabled")) return;
 			
 			self._swipe.next();
-			self._imgSwipe.next();
 			
 			return false;
 		});
@@ -61,32 +62,38 @@ var casestudies = {
 
 	contentLoaded: function() {
 		// Draw out all the content
-		var container = $("#casestudy-content-sub"),
-		imgContainer = $("#casestudy-images-sub");
-
 		for (var i = 0; i < this._numItems; i++) {
-			var study = this._data[i],
-			template = this.getCaseStudyTemplate(study),
-			clientName = this.getClientName(study),
-			largeImageURL = this.getLargeImageURL(study);
-			container.append(template);
-			imgContainer.append('<li><img class="casestudy-image" src="' + largeImageURL + '" id="casestudy-image-' + clientName + '" /></li>');
+			var study = this._data[i];
+			this._contentContainer.append(this.getCaseStudyTemplate(study, i));
+			this._imgContainer.append(this.getLargeImageTemplate(study, i));
 		}
 		
 		this._swipe = new Swipe($("#casestudy-content")[0], { callback: this.swipeDone, callbackScope: this });
-		this._imgSwipe = new Swipe($("#casestudy-images")[0], { canDrag:false });
 	},
 	
 	swipeDone: function(event, index, content, scope) {
+		
 		// If the indices don't match, move the images
+		// if (index == scope._imgSwipe.getPos()) return;
 		
-		if (index == scope._imgSwipe.getPos()) return;
+		// if (scope._swipe.getPos() < scope._imgSwipe.getPos()) {
+		// 	scope._imgSwipe.prev();
+		// } else {
+		// 	scope._imgSwipe.next();
+		// }
 		
-		if (scope._swipe.getPos() < scope._imgSwipe.getPos()) {
-			scope._imgSwipe.prev();
-		} else {
-			scope._imgSwipe.next();
-		}
+		// Fade in/out background images.
+		// Get the image that is fading in
+		casestudies._imgContainer.find("li img").removeClass("show").addClass("hide");
+		var activeImage = casestudies._imgContainer.find("li").map(function(__index, domElement) {
+			var _index = $(this).data("index");
+			if (_index === index) {
+				return domElement;
+			} else {
+				return null;
+			}
+		}).find("img");
+		activeImage.removeClass("hide").addClass("show");
 	}, 
 	
 	getClientName: function(study) {
@@ -124,13 +131,20 @@ var casestudies = {
 		return imgURL;
 	}, 
 
-	getCaseStudyTemplate: function(studyData) {
+	getCaseStudyTemplate: function(studyData, index) {
 		var template = 
-			'<li class="casestudy-content-single" id="casestudy-content-' + this.getClientName(studyData) + '">' +
+			'<li class="casestudy-content-single" id="casestudy-content-' + this.getClientName(studyData) + '" data-index="' + index + '">' +
+			'<figure class="casestudy-content-figure">' + 
 			'<img src="' + this.getSmallImageURL(studyData) + '" alt="' + studyData.title + '" class="casestudy-content-header" />' +
+			'</figure>' + 
 			'<h1 class="header-title">' + studyData.title + '</h1>' +
 			'<p class="casestudy-body">' + studyData.content + '</p>' +
 			'</li>';
 			return template;
+	}, 
+	
+	getLargeImageTemplate: function(studyData, index) {
+		var template = '<li data-index="' + index + '"><img class="casestudy-image ' + (index === 0 ? "show" : "hide") + '" src="' + this.getLargeImageURL(studyData) + '" id="casestudy-image-' + this.getClientName(studyData) + '" /></li>';
+		return template;
 	}
 }

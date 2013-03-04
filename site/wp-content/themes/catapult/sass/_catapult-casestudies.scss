@@ -2,11 +2,15 @@
     Case Studies Section
 -------------------------------- */
 
+$left: 35%;
+$casestudyWidth: 411px;
+@mixin break {
+    @media only screen  and (max-width: 929px) { @content; }
+}
+
 .casestudies {
-    min-height: 1200px;
     position: relative;
-    padding-bottom: 60px; 
-    padding-top: 60px;
+    padding-top: 0;
     background: rgb(55,55,55);
     @include innerShadow(0, 7px, 8px, 0, 0.3);
     
@@ -16,27 +20,27 @@
     
     &.education {
         background: url(../img/homepage/shadow-top.png) top left repeat-x, 
-                url(../img/homepage/casestudies/bgtile-education.png) top left repeat;
+                url(../img/homepage/casestudies/bgtile/bgtile-education.png) top left repeat;
     }
     &.engineering {
         background: url(../img/homepage/shadow-top.png) top left repeat-x, 
-                url(../img/homepage/casestudies/bgtile-engineering.png) top left repeat;
+                url(../img/homepage/casestudies/bgtile/bgtile-engineering.png) top left repeat;
     }
     &.ideation {
         background: url(../img/homepage/shadow-top.png) top left repeat-x, 
-                url(../img/homepage/casestudies/bgtile-ideation.png) top left repeat;
+                url(../img/homepage/casestudies/bgtile/bgtile-ideation.png) top left repeat;
     }
     &.innovation {
         background: url(../img/homepage/shadow-top.png) top left repeat-x, 
-                url(../img/homepage/casestudies/bgtile-innovation.png) top left repeat;
+                url(../img/homepage/casestudies/bgtile/bgtile-innovation.png) top left repeat;
     }
     &.insights {
         background: url(../img/homepage/shadow-top.png) top left repeat-x, 
-                url(../img/homepage/casestudies/bgtile-insights.png) top left repeat;
+                url(../img/homepage/casestudies/bgtile/bgtile-insights.png) top left repeat;
     }
     &.systems-thinking {
         background: url(../img/homepage/shadow-top.png) top left repeat-x, 
-                url(../img/homepage/casestudies/bgtile-systhink.png) top left repeat;
+                url(../img/homepage/casestudies/bgtile/bgtile-systhink.png) top left repeat;
     }
 
     h1 {
@@ -51,9 +55,6 @@
         top: 0;
         left: 0;
         z-index: 1;
-        background-image: url(../img/homepage/casestudies/overlay.png);
-        background-position: top left;
-        background-repeat: no-repeat;
         opacity: 0;
         width: 100%;
         height: 100%;
@@ -69,17 +70,17 @@
 
         .casestudy-images {
             width: 100%;
-            height: 875px; /* This is based on an image that's 900px wide. The originals are 1024 x 1018 */
+            height: 1050px;
             position: relative;
             overflow: hidden;
             
             // Hide under 1024
-            @media only screen  and (max-width: 1024px)
-                                and (min-width: 901px) {
-                width: 901px;
-                margin: 0 auto;
-            }
-            @media only screen  and (max-width: 929px) {
+            // @media only screen  and (max-width: 1024px)
+            //                     and (min-width: 901px) {
+            //     width: 901px;
+            //     margin: 0 auto;
+            // }
+            @include break {
                 display: none;
             }
 
@@ -88,30 +89,40 @@
                 padding: 0;
                 list-style: none;
                 position: relative;
-                -webkit-transform: translate3d(0,0,0);
-                -webkit-transition: all 0.5s ease-in-out;
             }
             
             .casestudy-image {
-                opacity: 0.4;
+                @include transition(0.3s);
+                opacity: 1.0;
                 width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                
+                &.show {
+                    opacity: 1;
+                }
+                &.hide {
+                    opacity: 0;
+                }
             }
         }
         #casestudy-content {
             background: rgba(249,247,246, 0.95);
-            // padding: 20px;
             padding: 0;
-            margin: 30px 0 0 340px;
-            width: 411px;
-            // height: 860px;
+            margin: 0;
+            width: $casestudyWidth;
             overflow: hidden;
             position: absolute;
-            top: 15px;
+            top: 24px;
+            left: $left;
+            
             @include borderShadow(0px, 3px, 12px, 3px, 0.2);
             
-            @media only screen and (max-width : 929px) {
+            @include break {
                 position: relative;
                 top: auto;
+                left: 0;
                 margin: 0;
                 width: 100%;
                 padding: 0;
@@ -142,6 +153,15 @@
             .casestudy-content-single {
                 padding: 20px;
             }
+            
+            .casestudy-content-figure {
+                width: 100%;
+                margin: 0 auto;
+                
+                img {
+                    width: 100%;
+                }
+            }
         }
         .paddles {
             position: absolute;
@@ -149,18 +169,20 @@
             display: block;
             padding: 0;
             margin: 0;
-            top: 0;
-            left: 0;
-            width: 100%;
+            top: 50px;
+            left: $left;
+            width: $casestudyWidth;
             
-            @media only screen and (max-width : 929px) {
+            @include break {
                 z-index: 2;
+                width: 100%;
+                left: 0;
             }
 
             a.paddle {
                 position: absolute;
                 display: block;
-                top:180px;
+                top: 0;
                 width: 52px;
                 height: 58px;
                 background: $orange;
@@ -168,8 +190,23 @@
                 @include edgeGradient($orange, 10%);
                 @include transition(0.3s);
                 
-                @media only screen and (max-width : 929px) {
-                    top: 40px;
+                &.prev {
+                    left: -50px;
+                    @include borderShadow(-2px, 3px, 5px, 0px, 0.5);
+                    
+                    @include break {
+                        left: 0px;
+                    }
+                }
+                &.next {
+                    right: -50px;
+                    @include borderShadow(2px, 3px, 5px, 0px, 0.5);
+                    img {
+                        margin-left: 18px;
+                    }
+                    @include break {
+                        right: 0px;
+                    }
                 }
                 
                 &.prev:hover img,
@@ -201,25 +238,6 @@
                 &.disabled {
                     cursor: default;
                     background: rgba(200,200,200,0.5);
-                }
-                    
-                &.prev {
-                    left: 291px;
-                    @include borderShadow(-2px, 3px, 5px, 0px, 0.5);
-                    
-                    @media only screen and (max-width : 929px) {
-                        left: -10px;
-                    }
-                }
-                &.next {
-                    left: 748px;
-                    @include borderShadow(2px, 3px, 5px, 0px, 0.5);
-                    img {
-                        margin-left: 18px;
-                    }
-                    @media only screen and (max-width : 929px) {
-                        left: 88%;
-                    }
                 }
             }
         }

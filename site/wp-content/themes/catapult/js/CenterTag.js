@@ -7,12 +7,12 @@ var CenterTag = {
 			this._canvas = document.getElementById(canvasID);
 			this._images = this._images || {};
 			var manifest = [
-				{src: rootURL + "wp-content/themes/catapult/img/homepage/casestudies/bgtile-systems-thinking.png", id: "systems-thinking"},
-				{src: rootURL + "wp-content/themes/catapult/img/homepage/casestudies/bgtile-engineering.png", id: "engineering"},
-				{src: rootURL + "wp-content/themes/catapult/img/homepage/casestudies/bgtile-ideation.png", id: "ideation"},
-				{src: rootURL + "wp-content/themes/catapult/img/homepage/casestudies/bgtile-innovation.png", id: "innovation"},
-				{src: rootURL + "wp-content/themes/catapult/img/homepage/casestudies/bgtile-education.png", id: "education"},
-				{src: rootURL + "wp-content/themes/catapult/img/homepage/casestudies/bgtile-insights.png", id: "insights"},
+				{src: rootURL + "wp-content/themes/catapult/img/homepage/casestudies/bgtile/bgtile-systems-thinking.png", id: "systems-thinking"},
+				{src: rootURL + "wp-content/themes/catapult/img/homepage/casestudies/bgtile/bgtile-engineering.png", id: "engineering"},
+				{src: rootURL + "wp-content/themes/catapult/img/homepage/casestudies/bgtile/bgtile-ideation.png", id: "ideation"},
+				{src: rootURL + "wp-content/themes/catapult/img/homepage/casestudies/bgtile/bgtile-innovation.png", id: "innovation"},
+				{src: rootURL + "wp-content/themes/catapult/img/homepage/casestudies/bgtile/bgtile-education.png", id: "education"},
+				{src: rootURL + "wp-content/themes/catapult/img/homepage/casestudies/bgtile/bgtile-insights.png", id: "insights"},
 				{src: rootURL + "wp-content/themes/catapult/img/homepage/bg/center-tag-mask.png", id: "maskImage"},
 				{src: rootURL + "wp-content/themes/catapult/img/homepage/bg/center-tag-shadow.png", id: "maskShadow"},
 			];

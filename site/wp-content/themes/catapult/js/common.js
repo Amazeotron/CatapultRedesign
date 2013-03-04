@@ -14,7 +14,7 @@ var cataCommon = {
 	
 	getRootURL: function() {
 		if (window.location.href.indexOf(":8888") != -1) {
-			return "http://llmac:8888/wordpress/"; // testing
+			return "http://llmac.local:8888/wordpress/"; // testing
 		} else {
 			return "http://catapultdesign.org/dev/"; // development
 		// return "http://catapultdesign.org/"; // live

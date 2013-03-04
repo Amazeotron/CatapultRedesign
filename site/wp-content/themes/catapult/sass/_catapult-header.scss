@@ -43,14 +43,17 @@
     }
     
     .news {
-        padding: 0 2%;
-        margin: 0 2%;
-        width: 92%;
+        padding: 0;
+        margin: 0 auto;
+        width: 900px;
         height: 100%;
         overflow: hidden;
         
         @media only screen and (max-width: 974px) {
             overflow-y: auto;
+            margin-left: 2%;
+            margin-right: 2%;
+            width: 92%;
         }
         
         &.hide {
@@ -103,13 +106,13 @@
             &.left {
                background-image: url(../img/homepage/horiz-divider-left.png);
                border-right: 1px solid rgba(255,255,255,0.1);
-               background-position-x: right;
+               background-position: right top;
             }
             
             &.right {
                 background-image: url(../img/homepage/horiz-divider-right.png);
                 border-left: 1px solid rgba(255,255,255,0.1);
-                background-position-x: left;
+                background-position: left top;
             }
         }
         
@@ -122,8 +125,8 @@
             position: relative;
         }
         .news-primary {
-            width: 59%;
-            padding-left: 1%;
+            width: 55%;
+            padding-left: 5%;
         }
         .news-secondary {
             width: 40%;

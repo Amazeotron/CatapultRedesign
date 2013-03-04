@@ -114,21 +114,16 @@
 		</section><!-- end keyofferings -->
 
 		<section class="casestudies" id="casestudies">
-			<div class="row">
-				<div class="row-header">
-					<h1 id="js-casestudies-header" class="header-title title-shadow">Case Studies</h1>
-				</div>
-			</div>
 				
 			<div id="casestudies-container">
-				<article class="casestudy row">
+				<article class="casestudy">
 					<div id="casestudy-images" class="casestudy-images">
 						<ul id="casestudy-images-sub"></ul>
 					</div>
 					<div id="casestudy-content" class="swipe"><ul id="casestudy-content-sub"></ul></div>
 					<div class="paddles">
-						<a class="paddle prev" href="#" tabindex="13" id="casestudy-paddle-prev"><img src="<?php bloginfo('template_url'); ?>/img/homepage/casestudies/arrow-left.png" /></a>
-						<a class="paddle next" href="#" tabindex="14" id="casestudy-paddle-next"><img src="<?php bloginfo('template_url'); ?>/img/homepage/casestudies/arrow-right.png" /></a>
+						<a class="paddle prev" href="#" tabindex="13" id="casestudy-paddle-prev"><img src="<?php bloginfo('template_url'); ?>/img/homepage/casestudies/arrows/arrow-left.png" /></a>
+						<a class="paddle next" href="#" tabindex="14" id="casestudy-paddle-next"><img src="<?php bloginfo('template_url'); ?>/img/homepage/casestudies/arrows/arrow-right.png" /></a>
 					</div>
 				</article>
 			</div><!-- end casestudies-container -->

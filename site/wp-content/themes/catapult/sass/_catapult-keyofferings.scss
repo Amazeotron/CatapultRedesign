@@ -28,6 +28,10 @@
             
             p {
                 font-size: 1.2em;
+                
+                @media only screen and (max-width : 746px) {
+                    font-size: 0.9em;
+                }
             }
             
             &.hide {
@@ -73,31 +77,26 @@
     padding: 0;
     
     .keyofferings-list__item {
-        float: left;
-        margin: 0 8px 10px 0;
         display: block;
+        float: left;
+        margin: 0 1% 10px 0;
+        padding-left: 0;
+        padding-right: 0;
+        width: 32.333333333%;
         
-        .clicky-button {
-            padding-left: 16px;
-            padding-right: 16px;
-        }
-        
-        @media only screen and (max-width : 1024px) {
-            // make the buttons 3-up;
-            margin-right: 1%;
-            margin-left: 0;
-            width: 32.333333333%;
-            padding-left: 0;
-            padding-right: 0;
-        }
         // The button "Technology Innovation" has gone to two lines, so wrap to 2-up
-        @media only screen and (max-width : 709px) {
+        @media only screen and (max-width : 746px) {
             // make the buttons 3-up;
             margin-right: 1%;
             margin-left: 0;
             width: 49%;
             padding-left: 0;
             padding-right: 0;
+        }
+        
+        .clicky-button {
+            padding-left: 16px;
+            padding-right: 16px;
         }
         
         &.hide {
@@ -119,10 +118,10 @@
         a {
             
             
-            @media only screen and (max-width: 468px) {
+            @media only screen and (max-width: 492px) {
                 font-size: 1.2em;
             }
-            @media only screen and (max-width: 320px) {
+            @media only screen and (max-width: 395px) {
                 font-size: 1em;
                 padding-left: 5px;
                 padding-right: 5px;

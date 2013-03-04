@@ -13,7 +13,7 @@
     }
 	
 	&.events {
-		background-image: url(../img/homepage/casestudies/bgtile-engineering.png);
+		background-image: url(../img/homepage/casestudies/bgtile/bgtile-engineering.png);
 	}
 	
 	&.partners {
@@ -72,33 +72,33 @@
     letter-spacing: 2px;
     
     &.center-tag--orange {
-        background-position-y: -114px;
+        background-position: 0 -114px;
     }
     
     &.center-tag--grey {
-        background-position-y: -76px;
+        background-position: 0 -76px;
     }
     
     &.center-tag--purple {
-        background-position-y: -38px;
+        background-position: 0 -38px;
     }
     
     // &.center-tag--primary {
-    //     background-position-x: 0px;
+    //     background-position: 0px 0;
     // }
     // &.center-tag--secondary {
-    //     background-position-x: -288px;
+    //     background-position: -288px 0;
     // }
     
     // &.open {
-    // 	background-position-y: -80px;
+    // 	background-position: 0 -80px;
     	
     // 	.center-tag__title {
     // 		display: none;
     // 	}
     // }
     // &.closed {
-    // 	background-position-y: 0px;
+    // 	background-position: 0 0px;
     // 	.center-tag__title {
     // 		display: inline;
     // 	}

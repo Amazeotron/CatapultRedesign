@@ -90,6 +90,7 @@ $sansFont: "franklin-gothic-ext-comp-urw", "Arial Narrow", sans-serif;
 }
 
 @mixin transition($duration) {
+    -webkit-transform: translate3d(0,0,0);
     -webkit-transition: all $duration ease-in-out;
        -moz-transition: all $duration ease-in-out;
          -o-transition: all $duration ease-in-out;
