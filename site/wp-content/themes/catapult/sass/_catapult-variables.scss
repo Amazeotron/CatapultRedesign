@@ -17,6 +17,7 @@ $serifFont: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 $sansFont: "franklin-gothic-ext-comp-urw", "Arial Narrow", sans-serif;
 
 @mixin edgeGradient($color, $darkenAmount) {
+    background: $color; /* Old browsers */
     background-image: -moz-linear-gradient(left, darken($color, $darkenAmount) 0%, $color 10%, $color 90%, darken($color, $darkenAmount) 100%); /* FF3.6+ */
     background-image: -webkit-gradient(linear, left top, right top, color-stop(0%,darken($color, $darkenAmount)), color-stop(10%,$color), color-stop(90%,$color), color-stop(100%,darken($color, $darkenAmount))); /* Chrome,Safari4+ */
     background-image: -webkit-linear-gradient(left,  darken($color, $darkenAmount) 0%,$color 10%,$color 90%,darken($color, $darkenAmount) 100%); /* Chrome10+,Safari5.1+ */

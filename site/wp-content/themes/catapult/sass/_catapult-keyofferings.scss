@@ -130,31 +130,25 @@
             
             
             &.engineering {
-                background: $teal; /* Old browsers */
                 @include edgeGradient($teal, 10%);
             }
             &.ideation {
-                background: $pink; /* Old browsers */
                 @include edgeGradient($pink, 10%);
             }
             &.innovation {
                 @include textShadow(1px, 1px, 0px, rgba(255,255,255,0.5));
                 color: $darkGreyFont;
-                background: $yellow; /* Old browsers */
                 @include edgeGradient($yellow, 10%);
             }
             &.education {
-                background: $grey; /* Old browsers */
                 @include edgeGradient($grey, 10%);
             }
             &.insights {
                 @include textShadow(1px, 1px, 0px, rgba(255,255,255,0.5));
                 color: $darkGreyFont;
-                background: $orange; /* Old browsers */
                 @include edgeGradient($orange, 10%);
             }
             &.systems-thinking {
-                background: $purple; /* Old browsers */
                 @include edgeGradient($purple, 10%);
             }
         }

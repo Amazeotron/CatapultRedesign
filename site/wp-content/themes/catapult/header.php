@@ -71,7 +71,7 @@
     	<ul>
     		<li class="social-item"><a href="https://twitter.com/Catapult_Design" class="social-button contact-button contact-button--twitter"><span class="header-title">Follow Us</span></a></li>
     		<li class="social-item"><a href="https://www.facebook.com/CatapultDesign" class="social-button contact-button contact-button--facebook"><span class="header-title">Like Us</span></a></li>
-    		<li class="social-item"><a href="<?php bloginfo('template_url'); ?>/?feed=rss2" class="social-button contact-button contact-button--rss"><span class="header-title">RSS Feed</span></a></li>
+    		<li class="social-item"><a href="<?php echo home_url('/'); ?>?feed=rss2" class="social-button contact-button contact-button--rss"><span class="header-title">RSS Feed</span></a></li>
     	</ul>
     </div><!-- end floater -->
     <header class="header">

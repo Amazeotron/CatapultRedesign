@@ -31,7 +31,7 @@
   		width: 32px;
   		height: 28px; /* 32px - 4px padding */
   		overflow: hidden;
-  		border-radius: 16px;
+  		border-radius: 16px 0 0 16px;
       padding-top: 4px;
   		text-indent: 140px;
   		color: darken($orange, 20%);

@@ -1,6 +1,13 @@
 /* --------------------------------
     Main Header Section
 -------------------------------- */
+
+@mixin header-break-med {
+    @media only screen and (max-width: 720px) {
+        @content;
+    }
+}
+
 #header-drawer {
     @include transition(0.5s);
     padding: 0;
@@ -21,7 +28,7 @@
     }
     
     // iPhone
-    @media only screen and (max-width : 720px) {
+    @include header-break-med {
         display: none;
     }
     
@@ -203,12 +210,11 @@ html.no-svg
         }
         
         // iPhone
-        @media only screen
-            and (max-width : 720px) {
+        @include header-break-med {
             padding-left: 10px;
         }
         .logo--full {
-            @media only screen and (max-width: 720px) {
+            @include header-break-med {
                 display: none;
             }
             &.show {
@@ -257,7 +263,7 @@ html.no-svg
     background: url(../img/homepage/divider-vert.png) top right no-repeat;
     padding: 29px 0 0 0;
     
-    @media only screen and (max-width: 720px) {
+    @include header-break-med {
         padding-top: 16px;
     }
     
@@ -276,7 +282,7 @@ html.no-svg
         padding: 0 35px 0 0;
         vertical-align: top;
         
-        @media only screen and (max-width: 720px) {
+        @include header-break-med {
             padding-right: 10px;
         }
         
@@ -284,7 +290,7 @@ html.no-svg
             font-size: 1.6em;
             color: rgb(176,95,1);
             
-            @media only screen and (max-width: 720px) {
+            @include header-break-med {
                 font-size: 1em;
                 color: darken($orange, 30%);
             }
@@ -302,7 +308,7 @@ html.no-svg
         padding-left: 35px;
         padding-right: 28px;
         border-left: 1px solid darken($orange, 10%);
-        @media only screen and (max-width: 720px) {
+        @include header-break-med {
             padding-left: 10px;
             padding-right: 10px;
         }

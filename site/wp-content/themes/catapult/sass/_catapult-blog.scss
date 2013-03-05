@@ -23,13 +23,18 @@
 	
 	#main-aside {
 		float: left;
-		width: 214px;
-		@include edgeGradient($grey, 4%);
-		padding: 40px 20px;
-		margin: 40px 0;
+		width: 254px;
+		
+		
 		
 		hr {
 			margin-bottom: 20px;
+		}
+		
+		#main-aside-inner {
+			padding: 40px 20px;
+			margin: 40px 0;
+			@include edgeGradient($grey, 4%);
 		}
 	}
 	
@@ -44,7 +49,7 @@
 }
 
 
-#main-aside, .post-box, #post {
+#main-aside-inner, .post-box, #post {
 	@include borderShadow(3px, 3px, 14px, 3px, 0.4);
 }
 
@@ -128,6 +133,7 @@
 	display: block;
 	overflow: hidden;
 	margin: 20px 0 0 0;
+	padding-right: 90px;
 	position: relative;
 	
 	&.with-bg {

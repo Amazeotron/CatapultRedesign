@@ -564,6 +564,8 @@ a {
   text-decoration: none;
   display: block;
   padding: 12px 20px 12px;
+  background: #f2ad4b;
+  /* Old browsers */
   background-image: -moz-linear-gradient(left, #ef971b 0%, #f2ad4b 10%, #f2ad4b 90%, #ef971b 100%);
   /* FF3.6+ */
   background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, #ef971b), color-stop(10%, #f2ad4b), color-stop(90%, #f2ad4b), color-stop(100%, #ef971b));
@@ -599,6 +601,8 @@ a {
     -moz-box-shadow: inset 1px 1px 8px 2px rgba(0, 0, 0, 0.6);
     box-shadow: inset 1px 1px 8px 2px rgba(0, 0, 0, 0.6); }
   .clicky-button.disabled {
+    background: rgba(150, 150, 150, 0.5);
+    /* Old browsers */
     background-image: -moz-linear-gradient(left, rgba(125, 125, 125, 0.5) 0%, rgba(150, 150, 150, 0.5) 10%, rgba(150, 150, 150, 0.5) 90%, rgba(125, 125, 125, 0.5) 100%);
     /* FF3.6+ */
     background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(125, 125, 125, 0.5)), color-stop(10%, rgba(150, 150, 150, 0.5)), color-stop(90%, rgba(150, 150, 150, 0.5)), color-stop(100%, rgba(125, 125, 125, 0.5)));
@@ -1030,13 +1034,15 @@ section {
     height: 28px;
     /* 32px - 4px padding */
     overflow: hidden;
-    border-radius: 16px;
+    border-radius: 16px 0 0 16px;
     padding-top: 4px;
     text-indent: 140px;
     color: #c97c0e;
     text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.3);
     font-size: 0.9em;
     letter-spacing: 2px;
+    background: #f2ad4b;
+    /* Old browsers */
     background-image: -moz-linear-gradient(left, #ef971b 0%, #f2ad4b 10%, #f2ad4b 90%, #ef971b 100%);
     /* FF3.6+ */
     background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, #ef971b), color-stop(10%, #f2ad4b), color-stop(90%, #f2ad4b), color-stop(100%, #ef971b));
