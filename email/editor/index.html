@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Catapult HTML Email Editor</title>
+
+<!-- Load jQuery -->
+<script type="text/javascript" src="js/libs/jquery-1.9.1.min.js"></script>
+
+<script src='//api.filepicker.io/v1/filepicker.js'></script>
+
+<!-- Load TinyMCE -->
+<script type="text/javascript" src="js/libs/tiny_mce/jquery.tinymce.js"></script>
+<script type="text/javascript">
+	$().ready(function() {
+		$('textarea.tinymce').tinymce({
+			// Location of TinyMCE script
+			script_url : 'js/libs/tiny_mce/tiny_mce.js',
+
+			// General options
+			theme : "advanced",
+			plugins : "table,fullscreen,filepicker",
+
+			// Theme options
+			theme_advanced_buttons1 : "bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,styleselect,formatselect,fontselect,fontsizeselect,|,delete_row,row_before,row_after,|,delete_col,col_before,col_after,code,|,filepicker",
+			theme_advanced_toolbar_location : "top",
+			theme_advanced_toolbar_align : "left",
+			theme_advanced_statusbar_location : "bottom",
+			theme_advanced_resizing : true,
+
+			// Example content CSS (should be your site CSS)
+			content_css : "css/content.css",
+
+			// Drop lists for link/image/media/template dialogs
+			template_external_list_url : "lists/template_list.js",
+			external_link_list_url : "lists/link_list.js",
+			external_image_list_url : "lists/image_list.js",
+			media_external_list_url : "lists/media_list.js",
+
+			// Replace values for the template plugin
+			template_replace_values : {
+				username : "Some User",
+				staffid : "991234"
+			}
+		});
+	});
+</script>
+<!-- /TinyMCE -->
+
+</head>
+<body>
+
+	<div>
+		<textarea id="elm1" name="elm1" rows="15" cols="80" style="width: 80%" class="tinymce">
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+&lt;meta name="viewport" content="width=device-width" /&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+&lt;title&gt;Catapult Design Spring 2013 Newsletter&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body bgcolor="#FFFFFF" style="margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; font-family: Helvetica, Arial, sans-serif;"&gt;
+&lt;table width="100%" height="100%" cellpadding="0" bgcolor="#FFFFFF" style="color: #888888;"&gt;
+&lt;tbody&gt;
+  &lt;tr align="center"&gt;
+    &lt;td&gt;&lt;!-- way top --&gt;
+      
+      &lt;table style="padding: 20px 0px 0px 0px;" width="600" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF"&gt;
+        &lt;tbody&gt;
+          
+          &lt;tr&gt;
+            &lt;td&gt;Having trouble viewing this email? Click &lt;a href="#" style="color: #111111"&gt;here&lt;/a&gt;.&lt;/td&gt;
+            &lt;td align="right"&gt;&lt;span&gt;share this&lt;/span&gt; &lt;a href="#"&gt;&lt;img src="https://catapultdesign.org/dev/wp-content/uploads/emails/facebook.png" alt="Connect on Facebook" title="Connect on Facebook" /&gt;&lt;/a&gt; &lt;a href="#"&gt;&lt;img src="https://catapultdesign.org/dev/wp-content/uploads/emails/twitter.png" alt="Connect on Twitter" title="Connect on Twitter" /&gt;&lt;/a&gt; &lt;a href="#"&gt;&lt;img src="https://catapultdesign.org/dev/wp-content/uploads/emails/email.png" alt="Email This" title="Email This" /&gt;&lt;/a&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+          
+          &lt;tr&gt;
+            &lt;td colspan="3"&gt;&lt;img src="https://catapultdesign.org/dev/wp-content/uploads/emails/header.jpg" width="600px" height="225px" alt="Catapult Design Spring 2013 Newsletter" /&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+          
+          &lt;tr&gt;
+            &lt;td colspan="2" style="font-family: Helvetica, Arial, sans-serif; font-size: 30px; color: #ff983a; padding: 20px 0px 30px 0px;"&gt;OUR TOP 10 MUST-READS OF 2012&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td colspan="2" style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; padding: 0px 0px 10px 0px;"&gt;DESIGN &amp; SOCIAL ENTREPRENEURSHIP PIECES&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td colspan="2" style="font-family: Georgia, serif; font-size: 14px;"&gt;&lt;p&gt;1. &lt;a href="#" style="color: #111111"&gt;Fast Company&lt;/a&gt; asks: "Do Designers Exploit The Poor While Trying To Do Good?" &lt;/p&gt;
+              &lt;p&gt;2. &lt;a href="#" style="color: #111111"&gt;Niti Bhan&lt;/a&gt; identifies what's mising while designing for the next billion. &lt;/p&gt;
+              &lt;p&gt;3. &lt;a href="#" style="color: #111111"&gt;D-Rev's Krista Donaldson&lt;/a&gt; discusses creating products for people living on less than $4 per day. &lt;/p&gt;
+              &lt;p&gt;BONUS: &lt;a href="#" style="color: #111111"&gt;Harvard Business Review&lt;/a&gt; on "The Smart Way to Make Profits While Serving the Poor"&lt;/p&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td colspan="2" style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; padding: 20px 0px 10px 0px;"&gt;TOOLS&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td colspan="2" style="font-family: Georgia, serif; font-size: 14px;"&gt;&lt;p&gt;4. &lt;a href="#" style="color: #111111"&gt;Fast Company&lt;/a&gt; asks: "Do Designers Exploit The Poor While Trying To Do Good?" &lt;/p&gt;
+              &lt;p&gt;5. &lt;a href="#" style="color: #111111"&gt;Niti Bhan&lt;/a&gt; identifies what's mising while designing for the next billion. &lt;/p&gt;
+              &lt;p&gt;6. &lt;a href="#" style="color: #111111"&gt;D-Rev's Krista Donaldson&lt;/a&gt; discusses creating products for people living on less than $4 per day. &lt;/p&gt;
+              &lt;p&gt;7. &lt;a href="#" style="color: #111111"&gt;Harvard Business Review&lt;/a&gt; on "The Smart Way to Make Profits While Serving the Poor"&lt;/p&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td colspan="2" style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; padding: 20px 0px 10px 0px;"&gt;DEVELOPMENT THOUGHT PIECES&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td colspan="2" style="font-family: Georgia, serif; font-size: 14px;"&gt;&lt;p&gt;8. &lt;a href="#" style="color: #111111"&gt;Fast Company&lt;/a&gt; asks: "Do Designers Exploit The Poor While Trying To Do Good?" &lt;/p&gt;
+              &lt;p&gt;9. &lt;a href="#" style="color: #111111"&gt;Niti Bhan&lt;/a&gt; identifies what's mising while designing for the next billion. &lt;/p&gt;
+              &lt;p&gt;10. &lt;a href="#" style="color: #111111"&gt;D-Rev's Krista Donaldson&lt;/a&gt; discusses creating products for people living on less than $4 per day.&lt;/p&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td colspan="2" style="font-size: 30px; color: #ff983a; padding: 20px 0px 30px 0px;"&gt;SECOND HEADLINE&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr align="left"&gt;
+            &lt;td colspan="2" style="padding: 0px 0px 20px 0px;"&gt;&lt;img src="https://catapultdesign.org/dev/wp-content/uploads/emails/placeholder_520x200.jpg" width="520px" height="200px" alt="Catapult Design Spring 2013 Newsletter" /&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td colspan="2" style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; padding: 0px 0px 10px 0px;"&gt;OPEN STUDIOS 4-6 PM PST EVERY 1ST AND 3RD WEDNESDAY&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td colspan="2" style="font-family: Georgia, serif; font-size: 14px; padding: 0px 0px 10px 0px;"&gt;Have a question about Catapult, want to see our projects in person, or interested in working with us? Please join us at our workspace, &lt;a href="#" style="color: #111111"&gt;Mission*Social&lt;/a&gt;, for open studios!&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td width="180" style="font-family: Georgia, serif; font-size: 14px;"&gt;&lt;img src="https://catapultdesign.org/dev/wp-content/uploads/emails/placeholder_150x150.jpg" alt="Second Image" /&gt;&lt;/td&gt;
+            &lt;td width="420" style="font-family: Georgia, serif; font-size: 14px;"&gt;&lt;span style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; padding: 0px 0px 10px 0px;"&gt;OPEN STUDIOS 4-6 PM PST EVERY 1ST AND 3RD WEDNESDAY&lt;/span&gt;
+              &lt;p style="font-family: Georgia, serif; font-size: 14px;"&gt;Have a question about Catapult, want to see our projects in person, or interested in working with us? Please join us at our workspace, &lt;a href="#" style="color: #111111"&gt;Mission*Social&lt;/a&gt;, for open studios!&lt;/p&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td colspan="2" style="padding: 10px 0px 10px 0px;"&gt;&lt;a href="#"&gt;&lt;img src="https://catapultdesign.org/dev/wp-content/uploads/emails/facebook.png" alt="Connect on Facebook" title="Connect on Facebook" /&gt;&lt;img src="https://catapultdesign.org/dev/wp-content/uploads/emails/twitter.png" alt="Connect on Twitter" title="Connect on Twitter" /&gt;&lt;img src="https://catapultdesign.org/dev/wp-content/uploads/emails/email.png" alt="Email This" title="Email This" /&gt;&lt;/a&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td colspan="2" style="color: #ff983a; padding: 5px 0 5px 0;"&gt;CATAPULT DESIGN&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td colspan="2" style="font-family: Georgia, serif; font-size: 14px;"&gt;972 Mission Street, Suite 500, San Francisco, CA 94103&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+		</textarea>
+
+	</div>
+	<script>
+	
+	$(document).ready(function() {
+		
+		var timer = setInterval(function() {
+			if (typeof tinyMCE == "undefined") return;
+			if (tinyMCE.activeEditor === null) return;
+			clearInterval(timer);
+			tinyMCE.activeEditor.execCommand('mceFullScreen');
+			filepicker.setKey('AGrpEitHTBiGZhgyouS48z');
+		}, 50);
+		
+	});
+	
+	</script>
+</body>
+</html>

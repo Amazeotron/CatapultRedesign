@@ -11,6 +11,28 @@ function hyphenate($name) {
 	return preg_replace($pattern, $replace, $name);
 }
 
+$the_query = new WP_Query(array('post_type' => 'teammember', 'posts_per_page' => '-1')); ?>
+
+<ul class="team-members">
+
+<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+  <?php $index = 16; ?>
+  <li class="team-member <? the_field('level'); ?>">
+  <a class="team-member-link" href="#<? echo hyphenate(get_the_title()); ?>" tabindex="<? echo $index++; ?>">
+    <img class="team-member-headshot" src="<?php the_field('headshot'); ?>" alt="<? the_title(); ?>" />
+    <div class="team-member-details">
+      <h3 class="header-title"><? the_title(); ?></h3>
+      <h4><? the_field('job_title'); ?></h4>
+      <h5><? the_field('company_name'); ?></h5>
+      <p><? the_field('excerpt'); ?> more &raquo;</p>
+    </div>
+  </a>
+  </li>
+<?php endwhile; ?>
+</ul>
+<?php wp_reset_postdata();
+
+/*
 $items = array(
    array(
      "hierarchy" => "primary",
@@ -141,24 +163,5 @@ $items = array(
      "blurb" => "Joseph is a seasoned Program Manager and Solutions Ar..."
    )
 );
-
+*/
 ?>
-<ul class="team-members">
-	
-	<?php $index = 16; ?>
-	<?php foreach ($items as $person) : ?>
-			
-			<li class="team-member <? echo $person['hierarchy']; ?>">
-			<a class="team-member-link" href="#<? echo hyphenate($person['name']); ?>" tabindex="<? echo $index++; ?>">
-				<img src="<?php echo $person['img']; ?>" alt="<? echo $person['name']; ?>" />
-				<div class="team-member-details">
-					<h3 class="header-title"><? echo $person['name']; ?></h3>
-					<h4><? echo $person['title']; ?></h4>
-					<h5><? echo $person['company']; ?></h5>
-					<p><? echo $person['blurb']; ?> more &raquo;</p>
-				</div>
-			</a>
-			</li>
-			
-		<?php endforeach; ?>
-</ul>

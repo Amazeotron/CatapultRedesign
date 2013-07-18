@@ -93,6 +93,7 @@
 	</script>
 	
 	<section class="overlay hide" id="overlay">
+		<div class="overlay-bg"></div>
 		<div class="overlay-inner">
 			<a href="#" class="close-button" id="overlay-close-button"></a>
 			<div class="overlay-content">
@@ -109,7 +110,7 @@
 			</div><!-- end row -->
 		</section><!-- end intro -->
 		
-		<section class="keyofferings" id="keyofferings">
+		<section class="keyofferings hide" id="keyofferings">
 			<?php include(ABSPATH . "wp-content/themes/catapult/inc/keyofferings.php"); ?>
 		</section><!-- end keyofferings -->
 
@@ -118,9 +119,15 @@
 			<div id="casestudies-container">
 				<article class="casestudy">
 					<div id="casestudy-images" class="casestudy-images">
-						<ul id="casestudy-images-sub"></ul>
+						<ul id="casestudy-images-sub">
+							<?php include(ABSPATH . "wp-content/themes/catapult/inc/casestudies-images.php"); ?>
+						</ul>
 					</div>
-					<div id="casestudy-content" class="swipe"><ul id="casestudy-content-sub"></ul></div>
+					<div id="casestudy-content" class="swipe">
+						<ul id="casestudy-content-sub">
+							<?php include(ABSPATH . "wp-content/themes/catapult/inc/casestudies.php"); ?>
+						</ul>
+					</div>
 					<div class="paddles">
 						<a class="paddle prev" href="#" tabindex="13" id="casestudy-paddle-prev"><img src="<?php bloginfo('template_url'); ?>/img/homepage/casestudies/arrows/arrow-left.png" /></a>
 						<a class="paddle next" href="#" tabindex="14" id="casestudy-paddle-next"><img src="<?php bloginfo('template_url'); ?>/img/homepage/casestudies/arrows/arrow-right.png" /></a>

@@ -134,7 +134,7 @@
 		</div>
 
 		<div>
-			<input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
+			<input name="submit" type="submit" id="submit" tabindex="5" value="Submit" class="clicky-button" />
 			<?php comment_id_fields(); ?>
 		</div>
 		

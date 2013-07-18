@@ -2,19 +2,20 @@ var cataCommon = {
 	
 	// Call this on page load, preferably on $()ready().
 	init: function() {
+    console.log("common init");
 		this.handleHeader();
 		this.handleSocial();
 		
-		$(document).on("click", "#overlay-close-button", function(event) {
+		$(document).on("click", "#overlay-close-button, .overlay-bg", function(event) {
 			event.preventDefault();
-			$(".overlay").remove();
+			$(".overlay").removeClass("show").addClass("hide");
 			return false;
 		});
 	}, 
 	
 	getRootURL: function() {
 		if (window.location.href.indexOf(":8888") != -1) {
-			return "http://llmac.local:8888/wordpress/"; // testing
+			return "http://llmac.local:8888/cata/"; // testing
 		} else {
 			return "http://catapultdesign.org/dev/"; // development
 		// return "http://catapultdesign.org/"; // live

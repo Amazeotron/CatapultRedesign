@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Capabilities Prototype</title>
+		<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: sans-serif;
+		}
+		
+		canvas {
+			border: 1px dashed rgba(0,0,0,0.5);
+			-webkit-border-radius: 10px;
+			   -moz-border-radius: 10px;
+			    -ms-border-radius: 10px;
+			        border-radius: 10px;
+		}
+		
+		#wrap {
+			width: 900px;
+			margin: 30px auto;
+		}
+		</style>
+		<script type="text/javascript" src="../js/libs/jquery-1.8.0.js"></script>
+		<script type="text/javascript" src="../js/libs/easeljs.min.js"></script>
+		<script type="text/javascript" src="../js/libs/tweenjs.min.js"></script>
+		<script type="text/javascript" src="../js/libs/preloadjs-0.1.0.min.js"></script>
+		<script type="text/javascript">
+			
+			var _stage, 
+				_icon1, 
+				_manifest = [
+					{src:"img/icons/1.png", id:"bar-chart"},
+					{src:"img/icons/2.png", id:"boat"}, 
+					{src:"img/icons/3.png", id:"calculator"}, 
+					{src:"img/icons/4.png", id:"calendar"}, 
+					{src:"img/icons/5.png", id:"chain"}, 
+					{src:"img/icons/6.png", id:"cloud"}, 
+					{src:"img/icons/7.png", id:"computer"}, 
+					{src:"img/icons/8.png", id:"configuration"}, 
+					{src:"img/icons/9.png", id:"connections"}, 
+					{src:"img/icons/10.png", id:"database"}
+				],
+				_preload,
+				_loadIndex = 0,
+				_iconsArr = [], 
+				_yPos = -20;
+			
+			$(document).ready(init);
+			
+			function init() {
+				var canvas = document.querySelector("#canvas-capabilities");
+				_stage = new Stage(canvas);
+				
+				_preload = new PreloadJS();
+				_preload.onProgress = handleProgress;
+				_preload.onComplete = handleComplete;
+				_preload.onFileLoad = handleFileLoad;
+				_preload.loadManifest(_manifest);
+				
+				Ticker.setFPS(60);
+				Ticker.addListener(window);
+			}
+			
+			function handleProgress(event) {
+				// console.log(event);
+			}
+			
+			function handleFileLoad(event) {
+				// console.log(event);
+				var container = new Container();
+				_stage.addChild(container);
+				var img = new Bitmap(event.result);
+				container.id = event.id;
+				container.x = (_loadIndex % 5) * 80 + 50;
+				container.y = _loadIndex % 5 == 0 ? _yPos += 70 : _yPos;
+				container.regX = img.image.width/2;
+				container.regY = img.image.height/2;
+				container.scaleX = container.scaleY = 0.5;
+				container.addChild(img);
+				
+				// var gr = new Graphics();
+				// gr.setStrokeStyle(3);
+				// gr.beginStroke(Graphics.getRGB(0,0,0));
+				// gr.drawCircle(container.regX,container.regY,img.image.width/2+20);
+				// var s = new Shape(gr);
+				// container.addChild(s);
+				
+				_loadIndex++;
+				_iconsArr.push(container);
+			}
+			
+			function handleComplete(event) {
+				highlight([1,3,4]);
+			}
+			
+			function highlight(indices) {
+				for (var i = 0, len = _iconsArr.length; i < len; i++) {
+					var icon = _iconsArr[i];
+					for (var k = 0, len2 = indices.length; k < len2; k++) {
+						if (indices[k] == i) {
+							Tween.get(icon)
+								.wait(1000)
+								.to({scaleX:0.75,scaleY:0.75},500,Ease.cubicOut).wait(1000)
+								.to({scaleX:0.5,scaleY:0.5},500,Ease.cubicIn);
+								break;
+						} 
+						if (k == len2-1) {
+							Tween.get(icon)
+								.wait(1000)
+								.to({alpha:0.2},500,Ease.cubicOut).wait(1000)
+								.to({alpha:1},500,Ease.cubicIn);
+								// break;
+						}
+					}
+				}
+			}
+			
+			function tick() {
+				_stage.update();
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div id="wrap">
+			<canvas id="canvas-capabilities" width="800px" height="300px"></canvas>
+		</div>
+		
+	</body>
+</html>

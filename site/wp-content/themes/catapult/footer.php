@@ -23,6 +23,9 @@
   <script src="<?php bloginfo('template_url'); ?>/js/libs/swipe.js"></script>
   <script src="<?php bloginfo('template_url'); ?>/js/libs/underscore-min.js"></script>
   
+  <script src="<?php bloginfo('template_url'); ?>/js/libs/jquery.transition.min.js"></script>
+  <script src="<?php bloginfo('template_url'); ?>/js/libs/jquery.transform3d.js"></script>
+  
   <?php if (is_page("Home")) { ?>
 	  <script src="https://js.stripe.com/v1/"></script>
 		<script> Stripe.setPublishableKey('pk_test_WYPj12umdvftkbOTR5kQL8ni'); </script>
@@ -64,6 +67,19 @@
   <?php  } ?>
 	
 	<!-- Don't forget analytics -->
+	<script type="text/javascript">
+
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-5196658-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+		  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+
+	</script>
 	
 </body>
 </html>

@@ -1,0 +1,156 @@
+/* --------------------------------
+    Case Studies Section
+-------------------------------- */
+
+.casestudies {
+    min-height: 1200px;
+    position: relative;
+
+    &.education {
+        background: url(../img/homepage/shadow-top.png) top left repeat-x, 
+                url(../img/homepage/casestudies/bgtile-education.png) top left repeat;
+    }
+    &.engineering {
+        background: url(../img/homepage/shadow-top.png) top left repeat-x, 
+                url(../img/homepage/casestudies/bgtile-engineering.png) top left repeat;
+    }
+    &.ideation {
+        background: url(../img/homepage/shadow-top.png) top left repeat-x, 
+                url(../img/homepage/casestudies/bgtile-ideation.png) top left repeat;
+    }
+    &.innovation {
+        background: url(../img/homepage/shadow-top.png) top left repeat-x, 
+                url(../img/homepage/casestudies/bgtile-innovation.png) top left repeat;
+    }
+    &.insights {
+        background: url(../img/homepage/shadow-top.png) top left repeat-x, 
+                url(../img/homepage/casestudies/bgtile-insights.png) top left repeat;
+    }
+    &.systhink {
+        background: url(../img/homepage/shadow-top.png) top left repeat-x, 
+                url(../img/homepage/casestudies/bgtile-systhink.png) top left repeat;
+    }
+
+    h1 {
+        font-family: "franklin-gothic-ext-comp-urw",sans-serif;
+        font-size: 4em;
+        color: #fff;
+        text-align: center;
+        margin: 0;
+    }
+
+    #casestudies-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background-position: top left;
+        background-repeat: repeat;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .casestudy {
+        position: relative;
+        padding: 20px 0 0 0;
+
+        p {
+            color: #515052;
+        }
+
+        .casestudy-images {
+            width: 100%;
+            height: 675px;
+            position: relative;
+            overflow: hidden;
+
+            #casestudy-images-sub {
+                position: relative;
+                -webkit-transform: translate3d(0,0,0);
+                -webkit-transition: all 0.5s ease-in-out;
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                }
+            }
+        }
+        #casestudy-content {
+            background: rgba(249,247,246, 0.9);
+            padding: 20px;
+            margin: 30px 0 0 340px;
+            width: 373px;
+            height: 860px;
+            overflow: hidden;
+            position: absolute;
+            top: 15px;
+            -webkit-box-shadow: 0px 3px 12px 3px rgba(0, 0, 0, 0.2);
+                    box-shadow: 0px 3px 12px 3px rgba(0, 0, 0, 0.2);
+
+            #casestudy-content-sub {
+                position: relative;
+                -webkit-transition: all 0.5s ease-in-out;
+            }
+
+            p {
+                font-size: 1em;
+            }
+
+            h1 {
+                font-family: "franklin-gothic-ext-comp-urw",sans-serif;
+                font-size: 2em;
+                color: #f89728;
+            }
+
+            .casestudy-content-single {
+                position: absolute;
+                top: 0;
+                left: 20px;
+            }
+        }
+        .paddles {
+            position: absolute;
+            display: block;
+            padding: 0;
+            margin: 0;
+            top: 0;
+            left: 0;
+
+            .paddle {
+                position: absolute;
+                display: block;
+                top:180px;
+                list-style-type: none;
+
+                a {
+                    display: block;
+                    width: 52px;
+                    height: 58px;
+                    background: $orange;
+                    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U3OGQxZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwJSIgc3RvcC1jb2xvcj0iI2YyYWQ0YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjkwJSIgc3RvcC1jb2xvcj0iI2YyYWQ0YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNzhkMWYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+                    @include edgeGradient($orange, 10%);
+
+                    img {
+                        margin: 12px;
+                    }
+                }
+                &.prev {
+                    left: 288px;
+                    -webkit-box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.5);
+                            box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.5);
+                }
+                &.next {
+                    left: 753px;
+                    -webkit-box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.5);
+                            box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.5);
+                    a img {
+                        margin-left: 18px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+	<head>
+		<title>MadLib Prototype - Fade</title>
+		
+		<link rel="stylesheet" href="css/common.css" type="text/css">
+		<style type="text/css">
+		
+		
+		
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<h1 class="headline">Catapult is a design firm dedicated to serving impoverished communities worldwide.</h1>
+			<h2 class="tagline">We create <span class="projectNameWrap"><span id="js-projectName" class="projectName"></span></span> to help people thrive.</h2>
+			<p class="capabilities" id="js-capabilities"></p>
+		</div>
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+  		<script>window.jQuery || document.write('<script src="../js/libs/jquery-1.8.0.js"><\/script>')</script>
+  		
+  		<script type="text/javascript">
+  			$(document).ready(function() {
+			
+			var projectNames = ["Project 1", "Project 2", "Project 3", "Project 4"];
+			var capabilities = [
+				["Capability 1", "Capability 2"], 
+				["Capability 3", "Capability 4"], 
+				["Capability 5", "Capability 6"], 
+				["Capability 7", "Capability 8"]];
+			var projectNameContainer = $("#js-projectName");
+			var capabilitiesContainer = $("#js-capabilities");
+			var tick = 0;
+			
+			
+			function doFade() {
+				projectNameContainer.css({opactiy: 0});
+				
+				var wordTimer = setInterval(update, 3000);
+				
+				function update() {
+					if (tick < projectNames.length) {
+						projectNameContainer.animate({
+							opacity: 0
+						}, 500, function() { 
+							updateNames($(this));
+							tick++; 
+						}).animate({ opacity: 1 });
+					} else {
+						clearInterval(wordTimer);
+					}
+				}
+				update();
+				
+				function updateNames() {
+					projectNameContainer.html(projectNames[tick]);
+					if (tick > 0 && tick < projectNames.length) {
+						capabilitiesContainer.append(", ");
+						console.log("appending");
+					}
+					capabilitiesContainer.append(capabilities[tick].join(", "));
+					
+				}
+			}
+			
+			doFade();
+			
+		});
+  		</script>
+	</body>
+</html>

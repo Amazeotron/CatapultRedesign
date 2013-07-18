@@ -21,7 +21,7 @@ var casestudies = {
 	init: function(rootURL, data) {
 		this._rootURL = rootURL;
 		this._data = data;
-		this._numItems = this._data.length;
+		this._numItems = (typeof data == "Array" && data != null ? this._data.length : 0);
 		this._container = $(".casestudies");
 		this._imgContainer = $("#casestudy-images-sub");
 		this._contentContainer = $("#casestudy-content-sub");
@@ -52,21 +52,25 @@ var casestudies = {
 
 		// preload all images.
 		// Create compatible array
-		var imgData = [];
-		for (var i = 0, len = this._numItems; i < len; i++) {
-			imgData[i] = {imgURL:this._data[i].attachments[0].images.full.url};
-		}
-		var preload = new ImagePreloader();
-		preload.init(imgData, function() { self.contentLoaded(); });
+		// var imgData = [];
+		// for (var i = 0, len = this._numItems; i < len; i++) {
+		// 	//imgData[i] = {imgURL:this._data[i].attachments[0].images.full.url};
+		// 	var imgurl = cataCommon.getRootURL() + 'wp-content/themes/catapult/getimageurl.php?imageID='+this._data[i].custom_fields.main_image[0];
+		// 	imgData[i] = {imgURL:imgurl};
+		// }
+		// var preload = new ImagePreloader();
+		// preload.init(imgData, function() { self.contentLoaded(); });
+		
+		self.contentLoaded();
 	},
 
 	contentLoaded: function() {
 		// Draw out all the content
-		for (var i = 0; i < this._numItems; i++) {
-			var study = this._data[i];
-			this._contentContainer.append(this.getCaseStudyTemplate(study, i));
-			this._imgContainer.append(this.getLargeImageTemplate(study, i));
-		}
+		// for (var i = 0; i < this._numItems; i++) {
+		// 	var study = this._data[i];
+		// 	this._contentContainer.append(this.getCaseStudyTemplate(study, i));
+		// 	this._imgContainer.append(this.getLargeImageTemplate(study, i));
+		// }
 		
 		this._swipe = new Swipe($("#casestudy-content")[0], { callback: this.swipeDone, callbackScope: this });
 	},
@@ -107,28 +111,29 @@ var casestudies = {
 		// match the attached image with the custom field image
 		var mainImageID = study.custom_fields.main_image[0],
 				imgURL = '';
-		for (var i = 0; i < study.attachments.length; i++) {
-			var imgId = study.attachments[i].id;
-			if (mainImageID == imgId) {
-				imgURL = study.attachments[i].images.full.url;
-			}
-		};
-		
-		return imgURL;
+		// for (var i = 0; i < study.attachments.length; i++) {
+		// 	var imgId = study.attachments[i].id;
+		// 	if (mainImageID == imgId) {
+		// 		imgURL = study.attachments[i].images.full.url;
+		// 	}
+		// };
+		// return imgURL;
+		return cataCommon.getRootURL() + 'wp-content/themes/catapult/getimageurl.php?imageID='+mainImageID;
 	}, 
 	
 	getSmallImageURL: function(study) {
 		// match the attached image with the custom field image
 		var mainImageID = study.custom_fields.header_image[0],
 				imgURL = '';
-		for (var i = 0; i < study.attachments.length; i++) {
-			var imgId = study.attachments[i].id;
-			if (mainImageID == imgId) {
-				imgURL = study.attachments[i].images.full.url;
-			}
-		};
+		// for (var i = 0; i < study.attachments.length; i++) {
+		// 	var imgId = study.attachments[i].id;
+		// 	if (mainImageID == imgId) {
+		// 		imgURL = study.attachments[i].images.full.url;
+		// 	}
+		// };
 		
-		return imgURL;
+		// return imgURL;
+		return cataCommon.getRootURL() + 'wp-content/themes/catapult/getimageurl.php?imageID='+mainImageID;
 	}, 
 
 	getCaseStudyTemplate: function(studyData, index) {

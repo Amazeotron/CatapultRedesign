@@ -1,0 +1,21 @@
+<html>
+<head>
+	<title>Canvas Tag</title>
+	<script type="text/javascript">
+    	var createjs = window; // assign the namespace to the window
+    </script>
+	<script src="easeljs-0.5.0.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="preloadjs-0.2.0.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="filters/Filter.js" type="text/javascript" charset="utf-8"></script>
+	<script src="filters/AlphaMaskFilter.js" type="text/javascript" charset="utf-8"></script>
+	<script src="CenterTag.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<canvas id="testCanvas" width="200" height="60"></canvas>
+	<script type="text/javascript">
+		CenterTag.init("testCanvas", function() {
+			CenterTag.update('systems-thinking');
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,321 @@
+/* --------------------------------
+    Common Elements
+-------------------------------- */
+
+body {
+    background: url(../img/homepage/bg/bgtile.jpg) top left repeat #666;
+}
+
+h1, h2, h3, h4, h5, p, label, input, input[type="submit"], textarea {
+    font-family: $serifFont;
+    color: $lightGreyFont;
+    font-size: 1em;
+}
+input, input[type="submit"], textarea {
+    color: $darkGreyFont;
+}
+h1 {
+    font-size: 3em;
+    text-align: center;
+    font-weight: normal;
+}
+h2 {
+    font-size: 2.5em;
+}
+h3 {
+    font-size: 1.5em;
+}
+h4 {
+    font-size: 1.2em;
+}
+h5 {
+    font-size: 1.1em;
+}
+
+a {
+    color: $orange;
+}
+
+a.fancy {
+    text-decoration: none;
+    color: $darkOrange;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    text-shadow: 1px 1px 0px rgba(255,255,255,0.3);
+    font-family: $sansFont;
+    
+    &.dark {
+        color: $darkGreyFont;
+        text-shadow: 1px 1px 0px rgba(255,255,255,0.1);
+    }
+}
+
+.emphasized {
+    font-family: $sansFont;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+section, footer {
+    background: url(../img/homepage/shadow-top.png) top left repeat-x;
+}
+
+section:first-of-type {
+    background: none;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 8px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 2px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background: $orange;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: $orange;
+}
+
+.level-one {
+    color: $orange;
+}
+.level-two {
+    color: $pink;
+}
+.level-three {
+    color: $teal;
+}
+
+.row {
+    width: 900px;
+    margin: 0 auto;
+}
+.row-header {
+    padding: 0 30px;
+}
+
+.two-col {
+    float: left;
+    width: 50%;
+    
+    &.padded {
+        width: 45%;
+    }
+    
+    &.margin-left {
+        margin-left: 5%;
+    }
+    
+    &.margin-right {
+        margin-right: 5%;
+    }
+    
+    &.align-center {
+        text-align: center;
+    }
+    &.align-left {
+       text-align: left; 
+    }
+    &.align-right {
+        text-align: right;
+    }
+}
+
+.float-left {
+    float: left;
+    
+    &.center {
+        text-align: center;
+    }
+    &.left {
+       text-align: left; 
+    }
+    &.right {
+        text-align: right;
+    }
+}
+
+.center-tag {
+    display: block;
+    text-align: center;
+    background: url(../img/homepage/bg/center-tag.png) top center no-repeat;
+    width: 319px;
+    height: 55px;
+    margin: 0 auto;
+    position: relative;
+    font-size: 1.2em;
+    
+    span {
+        position: absolute;
+        top: -10px;
+        left: 0;
+        width: 100%;
+    }
+}
+
+.contact-button {
+    display: block;
+    background: url(../img/homepage/contact/icons.png) top left no-repeat;
+    padding: 0 0 20px 40px;
+    height: 14px;
+    
+    &.small {
+        font-size: 0.9em;
+        padding-top: 5px;
+        height: 9px; // 14px - 5px padding
+    }
+        
+    h3 {
+        color: $orange;
+        font-family: $sansFont;
+        text-transform: uppercase;
+        line-height: 1em;
+        letter-spacing: 0.09em;
+        font-weight: normal;
+        margin: 0;
+        padding: 0;
+        font-size: 1.5em;
+    }
+
+    h4 {
+        font-size: 1.2em;
+        margin: 0;
+        padding: 0;
+    }
+
+    &.twitter {
+        background-position-y: 0px;
+    }
+    &.youtube {
+        background-position-y: -33pxpx;
+    }
+    &.email {
+        background-position-y: -66px;
+    }
+    &.rss {
+        background-position-y: -99px;
+    }
+    &.facebook {
+        background-position-y: -132px;
+    }
+    &.openhouse {
+        background-position-y: -165px;
+    }
+    &.street {
+        background-position-y: -198px;
+    }
+}
+
+.main-title {
+  font-family: $sansFont;
+}
+
+.secondary-title {
+    font-family: $serifFont;
+}
+
+.divider {
+    width: 900px;
+    height: 3px;
+    background: url(../img/homepage/divider.png) top left no-repeat;
+}
+
+.drawer {
+    padding: 0 0 30px 0;
+    -webkit-box-shadow: inset 0px 20px 120px 0px rgba(0, 0, 0, 0.4);
+            box-shadow: inset 0px 20px 120px 0px rgba(0, 0, 0, 0.4);
+
+    p {
+        color: rgba(255,255,255,0.80);
+        font-size: 1.1em;
+    }
+}
+
+@-webkit-keyframes shrink {
+    0% { -webkit-transform: scale(1.1); }
+    100% { -webkit-transform: scale(1.0); }
+}
+@-webkit-keyframes show {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@-webkit-keyframes hide {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(255,255,255,0.5);
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    
+    &.show {
+        -webkit-animation: show 0.3s ease-out;
+    }
+    
+    .overlay-inner {
+        margin: 160px auto;
+        width: 700px;
+        padding: 60px 30px 30px 30px;
+        background: rgba(255,255,255,1);
+        position: relative;
+        overflow: hidden;
+        -webkit-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.5);
+                box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.5);
+        
+        &.show {
+            -webkit-animation: shrink 0.4s ease-out;
+        }
+        
+        .close {
+            display: block;
+            position: absolute;
+            z-index: 10;
+            top: 20px;
+            right: 20px;
+            width: 36px;
+            height: 37px;
+            background: url(../img/homepage/overlay-close-button.png) top left no-repeat;
+        }
+        .name {
+            color: $orange;
+            font-family: $sansFont;
+            font-size: 2em;
+            text-align: left;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+            padding: 0;
+        }
+        .title,
+        .company,
+        .twitter {
+            color: $orange;
+            margin: 0;
+            padding: 0;
+        }
+        .body {
+            color: rgb(84,83,83);
+            margin: 0.5em 0 0 0;
+        }
+        .headshot {
+            float: right;
+            margin: 10px;
+            border: 1px solid $orange;
+        }
+    }
+}

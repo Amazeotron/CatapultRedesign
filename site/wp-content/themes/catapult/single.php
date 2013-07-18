@@ -27,7 +27,7 @@
 				$theName = implode(' ', array(get_the_author_meta('first_name'), get_the_author_meta('last_name')));
 				?>
 				<div class="post-author">By <?php echo $theName; ?> | <?php the_time('F j, Y'); ?> | <?php comments_number('No Responses', 'One Response', '% Responses' ); ?></div>
-				<hr>
+				<div class="divider"></div>
 			</div>
 			
 			<div class="post-body">

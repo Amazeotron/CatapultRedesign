@@ -1,5 +1,7 @@
 $(document).ready(function(event) {
 	
+  cataCommon.init();
+  
 	$(document).on("click", ".accordion__item", function(event) {
 		
 		event.stopPropagation();

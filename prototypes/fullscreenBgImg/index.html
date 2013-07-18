@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Full page background images</title>
+		
+		<style type="text/css">
+			body {
+				/*background-image: url(img/grid.png), url(img/bgimg_1.jpg);
+				background-position: top left, top left;
+				background-repeat: repeat, no-repeat;
+				-webkit-background-size: inherit, cover;
+				        background-size: inherit, cover;*/
+				background-color: #000000;
+				color: white;
+				font-family: Helvetica, Arial, sans-serif;
+				margin: 0;
+				padding: 0;
+			}
+			
+			#page {
+				width: 100%;
+				height: 2000px;
+			}
+			
+			.main {
+				width: 68%;
+				float: left;
+				padding: 1em 1%;
+				background-color: rgba(25,200,40,0.5);
+			}
+			
+			.sidebar {
+				width: 28%;
+				float: right;
+				padding: 1em 1%;
+				background-color: rgba(0,0,0,0.5);
+				min-height: 10em;
+			}
+			
+			.backgroundimages {
+				position: absolute;
+				z-index: -1;
+				top: 0;
+				left: 0;
+				width: 100%;
+			}
+				.backgroundimages .images {
+					position: absolute;
+					z-index: 0;
+					top: 0;
+					left: 0;
+					width: 100%;
+				}
+				.backgroundimages .backgroundimage {
+					width: 100%;
+				}
+				.backgroundimages .backgroundtile {
+					background: url(img/grid.png) top left repeat;
+					position: absolute;
+					z-index: 1;
+					width: 100%;
+				}
+		</style>
+		
+		<script type="text/javascript">
+			// manually set the height of the pattern overlay tile since
+			// the height of the basolutely-positioned background images
+			// container is unknown in CSS.
+			window.onload = function() {
+				var tiler = document.querySelector(".backgroundtile");
+				var imgsHeight = document.querySelector(".images").offsetHeight;
+				tiler.style.height = imgsHeight + "px";
+			}
+		</script>
+	</head>
+	<body>
+		<div id="page">
+			<div class="backgroundimages">
+				<div class="images">
+					<img class="backgroundimage" src="img/bgimg_1.jpg" alt="background image">
+					<img class="backgroundimage" src="img/bgimg_2.jpg" alt="background image">
+					<img class="backgroundimage" src="img/bgimg_3.jpg" alt="background image">
+				</div>
+				<div class="backgroundtile"></div>
+			</div>
+			<section>
+				<h1>Main Title</h1>
+				<div class="main">
+					<h2>This is the main column</h2>
+				</div>
+				<div class="sidebar">
+					<h3>Sidebar</h3>
+				</div>
+			</section>
+		</div>
+	</body>
+</html>

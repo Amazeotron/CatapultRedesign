@@ -53,4 +53,17 @@ $catIDsSeparated = implode(",", $catIDs);
         
         <a href="<?php echo home_url('/'); ?>?feed=rss2" class="header-title contact-button contact-button--rss">Subscribe to Blog</a>
     </div>
+    
+    <!-- Twitter Feed -->
+    <?php
+    // Pull in XML feed for Twitter posts
+    include(ABSPATH . "wp-content/themes/catapult/inc/TwitterRSSParser.php");
+    $twitterParser = new TwitterRSSParser();
+    $tweets = NewsParser::commonize($twitterParser->init(), "twitter", 4);
+    echo '<ul class="twitter-list">';
+    foreach ($tweets as $newsItem) {
+      echo '<li class="twitter-list__item">' . $newsItem->title . "</li>";
+    }
+    echo "</ul>";
+    ?>
 </aside><!-- end main-aside -->

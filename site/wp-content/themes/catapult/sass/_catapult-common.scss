@@ -211,6 +211,28 @@ section {
     }
 }
 
+// On small screens, two col is one col.
+@media only screen and (max-width: 490px) {
+.two-col {
+  width: 100%;
+  float: none;
+  
+  &.padded {
+    width: 100%;
+    padding: 0;
+  }
+  
+  &.margin-right {
+    width: 100%;
+    margin-right: 0;
+  }
+  &.margin-left {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+}
+
 .three-col {
     float: left;
     width: 33%;
@@ -383,7 +405,6 @@ section {
     width: 100%;
     height: 100%;
     position: fixed;
-    background: rgba(255,255,255,0.5);
     z-index: 9999;
     top: 0;
     left: 0;
@@ -395,6 +416,15 @@ section {
     }
     &.hide {
         display: none;
+    }
+    
+    .overlay-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255,255,255,0.5);
     }
     
     
@@ -464,11 +494,14 @@ section {
             width: 40%;
             max-width: 162px;
         }
+        .overlay-twitter {
+            padding-top: 10px;
+        }
     }
 }
 
 .callout {
-    @include transitionWith(opacity, 0.3s);
+    // @include transitionWith(opacity, 0.3s);
     background:rgba(255,255,255,1.0);
     padding: 10px;
     width: 120px;
@@ -515,7 +548,7 @@ section {
         position: absolute;
         top: 5px;
         right: 5px;
-        padding: 0 3px;
+        padding: 1px 3px 0 3px;
         background: rgba(240,240,240,0.8);
         border: 1px solid rgba(0,0,0,0.15);
         border-radius: 7px;
@@ -526,7 +559,7 @@ section {
 
         /* Font styles */
         color: rgba(150,150,150,0.7);
-        font-size: 0.7em;
+        font-size: 0.5em;
         text-decoration: none;
         text-shadow: 1px 1px rgba(255,255,255,0.9);
         

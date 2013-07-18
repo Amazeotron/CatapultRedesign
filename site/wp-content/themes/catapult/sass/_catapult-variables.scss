@@ -16,11 +16,21 @@ $serifFont: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 //"freight-text-pro",serif;
 $sansFont: "franklin-gothic-ext-comp-urw", "Arial Narrow", sans-serif;
 
+
+@mixin edgeGradientColors($color1, $color2) {
+    background-image: -moz-linear-gradient(left, $color1 0%, $color2 10%, $color2 90%, $color1 100%);
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0%,$color1), color-stop(10%,$color2), color-stop(90%,$color2), color-stop(100%,$color1));
+    background-image: -webkit-linear-gradient(left, $color1 0%,$color2 10%,$color2 90%,$color1 100%);
+    background-image: -o-linear-gradient(left, $color1 0%,$color2 10%,$color2 90%,$color1 100%);
+    background-image: -ms-linear-gradient(left, $color1 0%,$color2 10%,$color2 90%,$color1 100%);
+    background-image: linear-gradient(to right, $color1 0%,$color2 10%,$color2 90%,$color1 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$color1}', endColorstr='#{$color2}',GradientType=1 );
+}
+
 @mixin edgeGradient($color, $darkenAmount) {
-    background: $color; /* Old browsers */
     background-image: -moz-linear-gradient(left, darken($color, $darkenAmount) 0%, $color 10%, $color 90%, darken($color, $darkenAmount) 100%); /* FF3.6+ */
     background-image: -webkit-gradient(linear, left top, right top, color-stop(0%,darken($color, $darkenAmount)), color-stop(10%,$color), color-stop(90%,$color), color-stop(100%,darken($color, $darkenAmount))); /* Chrome,Safari4+ */
-    background-image: -webkit-linear-gradient(left,  darken($color, $darkenAmount) 0%,$color 10%,$color 90%,darken($color, $darkenAmount) 100%); /* Chrome10+,Safari5.1+ */
+    background-image: -webkit-linear-gradient(left, darken($color, $darkenAmount) 0%,$color 10%,$color 90%,darken($color, $darkenAmount) 100%); /* Chrome10+,Safari5.1+ */
     background-image: -o-linear-gradient(left, darken($color, $darkenAmount) 0%,$color 10%,$color 90%,darken($color, $darkenAmount) 100%); /* Opera 11.10+ */
     background-image: -ms-linear-gradient(left, darken($color, $darkenAmount) 0%,$color 10%,$color 90%,darken($color, $darkenAmount) 100%); /* IE10+ */
     background-image: linear-gradient(to right, darken($color, $darkenAmount) 0%,$color 10%,$color 90%,darken($color, $darkenAmount) 100%); /* W3C */

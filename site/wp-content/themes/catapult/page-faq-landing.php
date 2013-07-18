@@ -36,7 +36,7 @@
 				</section>
 				<section class="accordion__item closed">
 					<div class="pointer">&#9654;</div>
-					<a href="#" class="accordion__link header-title">Is there a particular degree I should get in order to find a job in social impact?</a>
+					<a href="#" class="accordion__link header-title">Is there a particular degree I should get to find a job in social impact?</a>
 					<p class="accordion__body">We believe it takes all kinds.  As an agency with expertise in products and services, we’re keen on product designers, design strategists, mechanical engineers, MBAs, anthropologists.  We hire people who aren’t afraid to build stuff with their hands (technical capacity) but also have appreciation and experience in the social science aspect of the work (empathy capacity).  Other design firms have different opportunities (graphic design, branding strategy, etc).</p>
 				</section>
 				<section class="accordion__item closed">
@@ -61,7 +61,7 @@
 			<h2>Press Kit</h2>
 			
 			<h4>Overview of Catapult Design</h4>
-			<a href="<?php the_field('face_sheet'); ?>"><?php the_field('fact_sheet_link_text'); ?></a>
+			<a href="<?php the_field('fact_sheet'); ?>"><?php the_field('fact_sheet_link_text'); ?></a>
 			<h4>Press Releases</h4>
 			<a href="<?php the_field('press_release'); ?>"><?php the_field('press_release_link_text'); ?></a>
 			

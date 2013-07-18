@@ -1,0 +1,252 @@
+/* --------------------------------
+    Catapult Blog
+-------------------------------- */
+
+#page-wrap {
+	overflow: hidden;
+	margin: 0 auto;
+	padding: 89px 0 0 0;
+	min-width: 960px;
+	width: 960px;
+	
+	input[type="submit"] {
+		border: none;
+		@include searchButton();
+		
+		&:active {
+			@include innerShadow;
+		}
+	}
+	
+	input[type="text"], textarea {
+		border: none;
+		padding: 1px 0 1px 7px;
+		@include innerShadow;
+	}
+	
+	input[type="text"] {
+		height: 30px;
+	}
+	
+	#main-section {
+		float: left;
+		width: 67%;
+		max-width: 850px;
+		padding: 40px 40px 0 6px;
+		
+		hr {
+			display: block;
+			border: 0;
+			width: 100%;
+			height: 1px;
+			margin: 40px 0 0 0;
+			@include edgeGradient($lightGreyFont, 53%);
+		}
+	}
+	
+	#main-aside {
+		float: left;
+		width: 214px;
+		@include edgeGradient($grey, 4%);
+		padding: 40px 20px;
+		margin: 40px 0;
+	}
+}
+
+#posts {
+	
+}
+
+#main-aside, .post-box, #post {
+	@include borderShadow(3px, 3px, 14px, 3px, 0.4);
+}
+
+.post-title {
+	font-size: 3.3em;
+	color: rgba(227, 220, 216, 1.0);
+}
+
+
+/* -------------------
+	POST SUMMARY BOX (BLOG HOMEPAGE)
+-------------------- */
+.post-box {
+	display: block;
+	overflow: hidden;
+	margin: 20px 0 0 0;
+	position: relative;
+	
+	&:first-of-type {
+		margin-top: 0;
+	}
+	
+	&:last-of-type {
+		margin-bottom: 40px;
+	}
+	
+	.post-image {
+		width: 100%;
+		position: absolute;
+		z-index: -1;
+		@include grayFilter;
+	}
+	
+	.post-top {
+		padding: 20px 0 0 40px;
+	}
+	
+	.post-title {
+		margin: 0;
+		padding: 0 0 0.2em 0;
+	}
+	
+	.tags {
+		overflow: hidden;
+		margin: 0 0 20px 0;
+		
+		.tag {
+			display: block;
+			float: left;
+			padding: 1px 5px;
+			margin: 0 1px;
+			color: white;
+			font-weight: normal;
+			
+			&.education {
+				background: $grey;
+			}
+			
+			&.innovation {
+				background: $yellow;
+				color: #666;
+			}
+			
+			&.newsletter {
+				background: $pink;
+			}
+			
+			&.insights {
+				background: $orange;
+				color: #666;
+			}
+		}
+	}
+	
+	.post-meta {
+		display: block;
+		background: rgba(80, 81, 82, 0.8);
+		padding: 20px 0 20px 40px;
+		color: rgba(255, 255, 255, 0.7);
+		font-family: $serifFont;
+		letter-spacing: 1px;
+		
+		span {
+			
+		}
+	}
+}
+
+
+/* -------------------
+	SEARCH BOX
+-------------------- */
+.search-box {
+	form {
+		input[type="text"] {
+			width: 173px;
+		}
+	}
+	
+	.filters {
+		margin: 20px 0 0 0;
+		
+		a {
+			text-decoration: none;
+			font-size: 1.5em;
+			letter-spacing: 1px;
+			color: rgba(224,218,216,1.0);
+			padding: 0 19px 0 0;
+			
+			&:last-of-type {
+				padding: 0;
+			}
+			
+			&:hover {
+				color: $orange;
+			}
+		}
+	}
+}
+
+
+/* -------------------
+	SINGLE BLOG POST
+-------------------- */
+
+#post {
+	background: rgba(94, 95, 95, 1.0);
+	padding: 20px;
+	
+	.post-image {
+		width: 100%;
+	}
+	
+	.post-title {
+		font-size: 4em;
+		line-height: 0.85em;
+		text-align: left;
+		margin: 0.3em 0;
+	}
+	
+	.post-meta {
+		font-family: $serifFont;
+	}
+}
+
+#post-comments {
+	
+	h2 {
+		font-size: 1.6em;
+	}
+	
+	.comment {
+		margin: 0 0 20px 0;
+		font-family: $serifFont;
+		
+		.comment-author {
+			color: $orange;
+		}
+		
+		.comment-date {
+			
+		}
+		
+		.comment-body {
+			margin: 0.5em 0 0 0;
+		}
+	}
+	
+	.comment-form {
+		h2 {
+			font-size: 1.7em;
+		}
+		
+		.two-col {
+			input[type="text"] {
+				width: 80%;
+				margin: 0 0 10px 0;
+			}
+			
+			input[type="submit"] {
+				width: 70px;
+			}
+			
+			textarea {
+				width: 293px;
+				height: 71px;
+				margin: 0 0 10px 0;
+				resize: none;
+			}
+		}
+	}
+}

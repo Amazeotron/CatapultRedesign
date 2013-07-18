@@ -89,15 +89,16 @@
         }
         
         .team-member-details {
+            @include transition(0.2s);
+            @include noSelect();
             display: block;
             position: absolute;
             top: 84%;
             left: 0;
             padding: 6px 10px 0 10px;
             height: 100%;
-            @include transition(0.2s);
-            @include noSelect();
             cursor: pointer;
+            background-color: $orange;
             
             @media only screen and (min-width: 914px) {
                 top: 80%;

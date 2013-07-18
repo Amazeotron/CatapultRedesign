@@ -8,7 +8,7 @@ class NewsParser
 	
 	public static function getRootURL() {
 		if ($_SERVER["SERVER_PORT"] == "8888" || $_SERVER['SERVER_NAME'] == "localhost") {
-			return "http://llmac.local:8888/wordpress";
+			return "http://llmac.local:8888/cata";
 		} else if ($_SERVER["SERVER_PORT"] == "80" || preg_match('/\/dev/', $_SERVER['REQUEST_URI']) != 0) {
 			return "http://catapultdesign.org/dev";
 		}
@@ -30,13 +30,18 @@ class NewsParser
 	* Params:
 			$arr: Array pulled in via HTTP of posts, Tweets or Events
 			$type: The type of news. Can be "twitter", "post" or "event"
+      $limit: How many items to limit the results to. If $limit is 0, then all results are returned.
 	* Returns an array of NewsItem objects
 	*/
-	public static function commonize($arr, $type) {
+	public static function commonize($arr, $type, $limit = 0) {
 		include_once(ABSPATH . "wp-content/themes/catapult/inc/NewsItem.php");
 		
+    $count = 0;
 		$newsItems = array();
 		foreach ($arr as &$post) {
+      
+      $count++;
+      
 			// Check for location
 			$location = "";
 			if (isset($post["custom_fields"]["location"])) {
@@ -101,6 +106,8 @@ class NewsParser
 			
 			$newsItem = new NewsItem($type, $title, $date, $content, $excerpt, $location, $eventDate, $headerImage, $link, $author, $categories);
 			array_push($newsItems, $newsItem);
+      
+      if ($count >= $limit && $limit != 0) return $newsItems;
 		}
 		return $newsItems;
 	}

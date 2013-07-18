@@ -3,9 +3,24 @@
 -------------------------------- */
 
 .keyofferings {
+    @include transition(0.4s);
+    margin-top: -100px;
     padding: 0 0 130px 0;
     background: none;
-    @include transition(0.4s);
+    
+    @media only screen and (max-width: 320px) {
+        margin-top: -40px;
+    }
+    
+    &.hide {
+      visibility: hidden;
+      opacity: 0;
+    }
+    
+    &.show {
+      visibility: visible;
+      opacity: 1;
+    }
     
     &.afterintro {
         margin-top: -100px;
@@ -76,6 +91,10 @@
     margin: 0 auto 40px auto;
     padding: 0;
     
+    @media only screen and (max-width: 320px) {
+        margin-bottom: 0;
+    }
+    
     .keyofferings-list__item {
         display: block;
         float: left;
@@ -117,17 +136,14 @@
         
         a {
             
-            
             @media only screen and (max-width: 492px) {
                 font-size: 1.2em;
             }
             @media only screen and (max-width: 395px) {
-                font-size: 1em;
+                font-size: 0.8em;
                 padding-left: 5px;
                 padding-right: 5px;
             }
-
-            
             
             &.engineering {
                 @include edgeGradient($teal, 10%);

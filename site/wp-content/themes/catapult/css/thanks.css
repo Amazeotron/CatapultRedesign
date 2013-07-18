@@ -564,8 +564,6 @@ a {
   text-decoration: none;
   display: block;
   padding: 12px 20px 12px;
-  background: #f2ad4b;
-  /* Old browsers */
   background-image: -moz-linear-gradient(left, #ef971b 0%, #f2ad4b 10%, #f2ad4b 90%, #ef971b 100%);
   /* FF3.6+ */
   background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, #ef971b), color-stop(10%, #f2ad4b), color-stop(90%, #f2ad4b), color-stop(100%, #ef971b));
@@ -601,8 +599,6 @@ a {
     -moz-box-shadow: inset 1px 1px 8px 2px rgba(0, 0, 0, 0.6);
     box-shadow: inset 1px 1px 8px 2px rgba(0, 0, 0, 0.6); }
   .clicky-button.disabled {
-    background: rgba(150, 150, 150, 0.5);
-    /* Old browsers */
     background-image: -moz-linear-gradient(left, rgba(125, 125, 125, 0.5) 0%, rgba(150, 150, 150, 0.5) 10%, rgba(150, 150, 150, 0.5) 90%, rgba(125, 125, 125, 0.5) 100%);
     /* FF3.6+ */
     background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(125, 125, 125, 0.5)), color-stop(10%, rgba(150, 150, 150, 0.5)), color-stop(90%, rgba(150, 150, 150, 0.5)), color-stop(100%, rgba(125, 125, 125, 0.5)));
@@ -707,6 +703,19 @@ section {
   .two-col.align-right {
     text-align: right; }
 
+@media only screen and (max-width: 490px) {
+  .two-col {
+    width: 100%;
+    float: none; }
+    .two-col.padded {
+      width: 100%;
+      padding: 0; }
+    .two-col.margin-right {
+      width: 100%;
+      margin-right: 0; }
+    .two-col.margin-left {
+      width: 100%;
+      margin-left: 0; } }
 .three-col {
   float: left;
   width: 33%;
@@ -844,7 +853,6 @@ section {
   width: 100%;
   height: 100%;
   position: fixed;
-  background: rgba(255, 255, 255, 0.5);
   z-index: 9999;
   top: 0;
   left: 0;
@@ -858,6 +866,13 @@ section {
     display: block; }
   .overlay.hide {
     display: none; }
+  .overlay .overlay-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5); }
   .overlay .overlay-inner {
     margin: 160px auto;
     width: 70%;
@@ -913,12 +928,10 @@ section {
       border: 1px solid #f2ad4b;
       width: 40%;
       max-width: 162px; }
+    .overlay .overlay-inner .overlay-twitter {
+      padding-top: 10px; }
 
 .callout {
-  -webkit-transition: opacity 0.3s ease-in-out;
-  -moz-transition: opacity 0.3s ease-in-out;
-  -o-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.3s ease-in-out;
   background: white;
   padding: 10px;
   width: 120px;
@@ -957,7 +970,7 @@ section {
     position: absolute;
     top: 5px;
     right: 5px;
-    padding: 0 3px;
+    padding: 1px 3px 0 3px;
     background: rgba(240, 240, 240, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 7px;
@@ -965,7 +978,7 @@ section {
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.3);
     /* Font styles */
     color: rgba(150, 150, 150, 0.7);
-    font-size: 0.7em;
+    font-size: 0.5em;
     text-decoration: none;
     text-shadow: 1px 1px rgba(255, 255, 255, 0.9); }
     .callout .callout__close:hover {
@@ -1041,8 +1054,6 @@ section {
     text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.3);
     font-size: 0.9em;
     letter-spacing: 2px;
-    background: #f2ad4b;
-    /* Old browsers */
     background-image: -moz-linear-gradient(left, #ef971b 0%, #f2ad4b 10%, #f2ad4b 90%, #ef971b 100%);
     /* FF3.6+ */
     background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, #ef971b), color-stop(10%, #f2ad4b), color-stop(90%, #f2ad4b), color-stop(100%, #ef971b));

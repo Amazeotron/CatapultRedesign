@@ -20,11 +20,11 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 // Load homepage scripts
 function do_scripts() {
-	if (!is_admin()) {
+	// if (!is_admin()) {
 		wp_deregister_script('jquery');
 		wp_register_script('jquery', '/wp-content/themes/catapult/js/libs/jquery-1.8.0.min.js');
 		wp_enqueue_script('jquery');
-	}
+	// }
 }
 
 add_action('wp_enqueue_scripts', 'do_scripts');
@@ -162,36 +162,36 @@ function member_register() {
 }
 
 // Add Team Member post type
-// add_action('init', 'teammember_register');   
+add_action('init', 'teammember_register');   
 
-// function teammember_register() {
-// 	$labels = array(
-// 		'name' => _x('Team Members', 'post type general name'), 
-// 		'singular_name' => _x('Team Member', 'post type singular name'), 
-// 		'add_new' => _x('Add New', 'teammember'), 
-// 		'add_new_item' => __('Team Member'), 
-// 		'edit_item' => __('Edit Team Member'), 
-// 		'new_item' => __('New Team Member'), 
-// 		'view_item' => __('View Team Member'), 
-// 		'search_items' => __('Search Team Members'), 
-// 		'not_found' => __('Nothing found'), 
-// 		'not_found_in_trash' => __('Nothing found in Trash'), 
-// 		'parent_item_colon' => ''
-// 	);   
-// 	$args = array( 
-// 		'labels' => $labels, 
-// 		'public' => true, 
-// 		'publicly_queryable' => true, 
-// 		'show_ui' => true, 
-// 		'query_var' => true, 
-// 		'rewrite' => true, 
-// 		'capability_type' => 'post', 
-// 		'hierarchical' => false, 
-// 		'menu_position' => null, 
-// 		'supports' => array('title', 'editor') 
-// 	);   
-// 	register_post_type( 'teammember' , $args ); 
-// }
+function teammember_register() {
+	$labels = array(
+		'name' => _x('Team Members', 'post type general name'), 
+		'singular_name' => _x('Team Member', 'post type singular name'), 
+		'add_new' => _x('Add New', 'teammember'), 
+		'add_new_item' => __('Team Member'), 
+		'edit_item' => __('Edit Team Member'), 
+		'new_item' => __('New Team Member'), 
+		'view_item' => __('View Team Member'), 
+		'search_items' => __('Search Team Members'), 
+		'not_found' => __('Nothing found'), 
+		'not_found_in_trash' => __('Nothing found in Trash'), 
+		'parent_item_colon' => ''
+	);   
+	$args = array( 
+		'labels' => $labels, 
+		'public' => true, 
+		'publicly_queryable' => true, 
+		'show_ui' => true, 
+		'query_var' => true, 
+		'rewrite' => true, 
+		'capability_type' => 'post', 
+		'hierarchical' => false, 
+		'menu_position' => null, 
+		'supports' => array('title', 'editor') 
+	);   
+	register_post_type( 'teammember' , $args ); 
+}
 
 
 add_filter('json_api_encode', 'my_encode_specs');

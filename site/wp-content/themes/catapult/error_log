@@ -1,0 +1,19 @@
+[27-Feb-2013 21:16:25 America/Chicago] PHP Warning:  curl_setopt() expects parameter 2 to be long, string given in /home/catap1/public_html/dev/wp-content/themes/catapult/getjson.php on line 8
+[27-Feb-2013 21:16:25 America/Chicago] PHP Warning:  curl_exec() expects exactly 1 parameter, 0 given in /home/catap1/public_html/dev/wp-content/themes/catapult/getjson.php on line 9
+[27-Feb-2013 21:16:25 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/catap1/public_html/dev/wp-content/themes/catapult/getjson.php:8) in /home/catap1/public_html/dev/wp-content/themes/catapult/getjson.php on line 11
+[27-Feb-2013 21:16:58 America/Chicago] PHP Warning:  curl_exec() expects exactly 1 parameter, 0 given in /home/catap1/public_html/dev/wp-content/themes/catapult/getjson.php on line 9
+[27-Feb-2013 21:16:58 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/catap1/public_html/dev/wp-content/themes/catapult/getjson.php:9) in /home/catap1/public_html/dev/wp-content/themes/catapult/getjson.php on line 11
+[27-Feb-2013 21:18:18 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/catap1/public_html/dev/wp-content/themes/catapult/getjson.php:10) in /home/catap1/public_html/dev/wp-content/themes/catapult/getjson.php on line 11
+[31-Mar-2013 18:39:15 America/Chicago] PHP Parse error:  syntax error, unexpected '[' in /home/catap1/public_html/dev/wp-content/themes/catapult/getimageurl.php on line 6
+[31-Mar-2013 18:39:15 America/Chicago] PHP Parse error:  syntax error, unexpected '[' in /home/catap1/public_html/dev/wp-content/themes/catapult/getimageurl.php on line 6
+[31-Mar-2013 18:39:28 America/Chicago] PHP Parse error:  syntax error, unexpected '[' in /home/catap1/public_html/dev/wp-content/themes/catapult/getimageurl.php on line 6
+[31-Mar-2013 18:39:28 America/Chicago] PHP Parse error:  syntax error, unexpected '[' in /home/catap1/public_html/dev/wp-content/themes/catapult/getimageurl.php on line 6
+[31-Mar-2013 18:40:06 America/Chicago] PHP Parse error:  syntax error, unexpected '[' in /home/catap1/public_html/dev/wp-content/themes/catapult/getimageurl.php on line 6
+[31-Mar-2013 18:40:06 America/Chicago] PHP Parse error:  syntax error, unexpected '[' in /home/catap1/public_html/dev/wp-content/themes/catapult/getimageurl.php on line 6
+[31-Mar-2013 18:40:23 America/Chicago] PHP Parse error:  syntax error, unexpected '[' in /home/catap1/public_html/dev/wp-content/themes/catapult/getimageurl.php on line 6
+[31-Mar-2013 18:40:23 America/Chicago] PHP Parse error:  syntax error, unexpected '[' in /home/catap1/public_html/dev/wp-content/themes/catapult/getimageurl.php on line 6
+[31-Mar-2013 18:41:08 America/Chicago] PHP Parse error:  syntax error, unexpected '[' in /home/catap1/public_html/dev/wp-content/themes/catapult/getimageurl.php on line 6
+[31-Mar-2013 18:41:08 America/Chicago] PHP Parse error:  syntax error, unexpected '[' in /home/catap1/public_html/dev/wp-content/themes/catapult/getimageurl.php on line 6
+[31-Mar-2013 18:41:14 America/Chicago] PHP Parse error:  syntax error, unexpected '[' in /home/catap1/public_html/dev/wp-content/themes/catapult/getimageurl.php on line 6
+[31-Mar-2013 23:42:42 UTC] PHP Warning:  fopen() expects parameter 1 to be string, array given in /home/catap1/public_html/dev/wp-content/themes/catapult/getimageurl.php on line 11
+[31-Mar-2013 23:42:42 UTC] PHP Warning:  fpassthru() expects parameter 1 to be resource, boolean given in /home/catap1/public_html/dev/wp-content/themes/catapult/getimageurl.php on line 14

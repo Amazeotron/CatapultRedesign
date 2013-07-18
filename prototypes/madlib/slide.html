@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+	<head>
+		<title>MadLib Prototype - Slide</title>
+		
+		<link rel="stylesheet" href="css/common.css" type="text/css">
+		<style type="text/css">
+		.projectNameWrap {
+			overflow: hidden;
+			position: relative;
+			text-align: left;
+			width: 100px;
+		}
+		.projectNames {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 500px;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<h1 class="headline">Catapult is a design firm dedicated to serving impoverished communities worldwide.</h1>
+			<h2 class="tagline">We create 
+				<span id="js-projectNameWrap" class="projectNameWrap">
+					<span class="projectNames">
+						<span class="projectName">Project 1</span>
+						<span class="projectName">Project 2</span>
+						<span class="projectName">Project 3</span>
+						<span class="projectName">Project 4</span>
+					</span>
+					
+				</span> to help people thrive.
+			</h2>
+			<div class="capabilities" id="js-capabilities"></div>
+		</div>
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+  		<script>window.jQuery || document.write('<script src="../js/libs/jquery-1.8.0.js"><\/script>')</script>
+  		
+  		<script type="text/javascript" src="js/libs/jquery.typist.js"></script>
+  		<script type="text/javascript">
+  		$(document).ready(function() {
+			
+			var projectNames = $(".projectNames");
+			var projectNameWrap = $("#js-projectNameWrap");
+			
+			function doSliding() {
+				projectNames.delay(1500).animate({ left: -110 }, 500);
+				projectNames.delay(3000).animate({ left: -218 }, 500);
+				projectNames.delay(4500).animate({ left: -326 }, 500);
+			}
+			
+			doSliding();
+			
+		});
+  		</script>
+	</body>
+</html>

@@ -120,7 +120,11 @@ $(document).ready(function() {
 	// });
 	
 	intro.init(cataCommon.getRootURL() + "wp-content/themes/catapult/", function() {
-		// Open News, but only if we're on the homepage, and only if we're at the top of the page
+		
+    // Show Key Offerings buttons
+    $(".keyofferings").removeClass("hide");
+    
+    // Open News, but only if we're on the homepage, and only if we're at the top of the page
 		if (Number($("body").scrollTop()) < 100 && Modernizr.cssanimations) {
 			cataCommon.peekNews();
 			
@@ -131,32 +135,34 @@ $(document).ready(function() {
 	});
 	
 	// get case studies
-	var casestudiesURL = cataCommon.getRootURL() + '?json=get_recent_posts&dev=1&post_type=casestudy&custom_fields=category,category_description,client,main_image,header_image,display_order&meta_key=display_order&order_by=meta_value&order=ASC&Duration=0&callback=';
-	console.log(casestudiesURL);
-	$.getJSON(casestudiesURL, 'jsonp', function(data, textStatus, jqXHR) {
-		console.log("Case Studies data: " + data);
-		if (data) {
-			casestudies.init(cataCommon.getRootURL() + "wp-content/themes/catapult/", data.posts);
-		} else {
-			$("#casestudies").hide();
-		}
-	})
-	.success(function() {
-		console.log("Successfully loaded the case studies.");
-	})
-	.error(function(error) {
-		console.log("There was an error loading the Case Studies. Error:");
-		console.log(error);
-		$("#casestudies").hide();
-	});
+	// var casestudiesURL = cataCommon.getRootURL() + '?json=get_recent_posts&dev=1&post_type=casestudy&custom_fields=category,category_description,client,main_image,header_image,display_order&meta_key=display_order&order_by=meta_value&order=ASC&Duration=0&callback=';
+	// $.getJSON(casestudiesURL, 'jsonp', function(data, textStatus, jqXHR) {
+	// 	console.log("Case Studies data: " + data);
+	// 	if (data) {
+	// 		casestudies.init(cataCommon.getRootURL() + "wp-content/themes/catapult/", data.posts);
+	// 	} else {
+	// 		$("#casestudies").hide();
+	// 	}
+	// })
+	// .success(function() {
+	// 	console.log("Successfully loaded the case studies.");
+	// })
+	// .error(function(error) {
+	// 	console.log("There was an error loading the Case Studies. Error:");
+	// 	console.log(error);
+	// 	$("#casestudies").hide();
+	// });
+	
+	casestudies.init(null, null);
 	
 	// Locations Map
 	locations.init();
 	
 	
 	// Make the team section
-	$.getJSON(cataCommon.getRootURL() + "wp-content/themes/catapult/js/team-json.js", function(data, textStatus, jqXHR) {
-		team.init(data.teamData, cataCommon.getRootURL());
+	var teamURL = cataCommon.getRootURL() + "?json=get_recent_posts&dev=1&post_type=teammember&custom_fields=level,job_title,company_name,excerpt,headshot,twitter_handle";
+	$.getJSON(teamURL, function(data, textStatus, jqXHR) {
+		team.init(data.posts, cataCommon.getRootURL());
 	}).success(function() {
 		console.log("Successfully loaded the team data.");
 	})
