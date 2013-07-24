@@ -17,14 +17,15 @@
 		</footer>
 
 	<?php wp_footer(); ?>
-	
+
 	<script src="<?php bloginfo('template_url'); ?>/js/common.js"></script>
   <!--<script src="<?php bloginfo('template_url'); ?>/js/libs/enquire.js"></script> -->
   <script src="<?php bloginfo('template_url'); ?>/js/libs/swipe.js"></script>
   <script src="<?php bloginfo('template_url'); ?>/js/libs/underscore-min.js"></script>
   
-  <script src="<?php bloginfo('template_url'); ?>/js/libs/jquery.transition.min.js"></script>
-  <script src="<?php bloginfo('template_url'); ?>/js/libs/jquery.transform3d.js"></script>
+  <!--<script src="<?php //bloginfo('template_url'); ?>/js/libs/jquery.transition.min.js"></script>-->
+  <!--<script src="<?php //bloginfo('template_url'); ?>/js/libs/jquery.transform3d.js"></script>-->
+  <script src="<?php bloginfo('template_url'); ?>/js/libs/jquery.slides.min.js"></script>
   
   <?php if (is_page("Home")) { ?>
 	  <script src="https://js.stripe.com/v1/"></script>

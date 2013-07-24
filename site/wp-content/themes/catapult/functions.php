@@ -57,7 +57,7 @@ function casestudy_register() {
 		'query_var' => true, 
 		'rewrite' => true, 
 		'capability_type' => 'post', 
-		'hierarchical' => false, 
+		'hierarchical' => true, 
 		'menu_position' => null, 
 		'supports' => array('title', 'editor') 
 	);   
@@ -191,6 +191,70 @@ function teammember_register() {
 		'supports' => array('title', 'editor') 
 	);   
 	register_post_type( 'teammember' , $args ); 
+}
+
+// Add Project post type
+add_action('init', 'project_register');
+
+function project_register() {
+  $labels = array(
+    'name' => _x('Project', 'post type general name'),
+    'singular_name' => _x('Project', 'post type singular name'),
+    'add_new' => _x('Add New', 'project'),
+    'add_new_item' => __('Project'),
+    'edit_item' => __('Edit Project'),
+    'new_item' => __('New Project'),
+    'view_item' => __('View Project'),
+    'search_items' => __('Search Projects'),
+    'not_found' => __('Nothing found'),
+    'not_found_in_trash' => __('Nothing found in Trash'),
+    'parent_item_colon' => ''
+  );
+  $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true,
+    'query_var' => true,
+    'rewrite' => true,
+    'capability_type' => 'post',
+    'hierarchical' => true,
+    'menu_position' => null,
+    'supports' => array('title', 'editor')
+  );
+  register_post_type( 'project' , $args );
+}
+
+// Add Homepage Slideshow post type
+add_action('init', 'homepageslideshow_register');
+
+function homepageslideshow_register() {
+  $labels = array(
+    'name' => _x('Homepage Slideshow', 'post type general name'),
+    'singular_name' => _x('Homepage Slideshow', 'post type singular name'),
+    'add_new' => _x('Add New', 'homepageslideshow'),
+    'add_new_item' => __('Homepage Slideshow'),
+    'edit_item' => __('Edit Homepage Slideshow'),
+    'new_item' => __('New Homepage Slideshow'),
+    'view_item' => __('View Homepage Slideshow'),
+    'search_items' => __('Search Homepage Slideshows'),
+    'not_found' => __('Nothing found'),
+    'not_found_in_trash' => __('Nothing found in Trash'),
+    'parent_item_colon' => ''
+  );
+  $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true,
+    'query_var' => true,
+    'rewrite' => true,
+    'capability_type' => 'post',
+    'hierarchical' => true,
+    'menu_position' => null,
+    'supports' => array('title', 'editor')
+  );
+  register_post_type( 'homepageslideshow' , $args );
 }
 
 

@@ -118,21 +118,26 @@ $(document).ready(function() {
 	// CenterTag.init("centerTagLocationsMap", cataCommon.getRootURL(), function() {
 	// 	console.log("Center Tag is Ready!");
 	// });
-	
-	intro.init(cataCommon.getRootURL() + "wp-content/themes/catapult/", function() {
-		
-    // Show Key Offerings buttons
-    $(".keyofferings").removeClass("hide");
-    
-    // Open News, but only if we're on the homepage, and only if we're at the top of the page
-		if (Number($("body").scrollTop()) < 100 && Modernizr.cssanimations) {
-			cataCommon.peekNews();
-			
-			setTimeout(function() {
-				cataCommon.hideNews();
-			}, 1500);
-		}
-	});
+
+  $('#slides').slidesjs({
+    width: 940,
+    height: 528
+  });
+  
+//	intro.init(cataCommon.getRootURL() + "wp-content/themes/catapult/", function() {
+//		
+//    // Show Key Offerings buttons
+//    $(".keyofferings").removeClass("hide");
+//    
+//    // Open News, but only if we're on the homepage, and only if we're at the top of the page
+//		if (Number($("body").scrollTop()) < 100 && Modernizr.cssanimations) {
+//			cataCommon.peekNews();
+//			
+//			setTimeout(function() {
+//				cataCommon.hideNews();
+//			}, 1500);
+//		}
+//	});
 	
 	// get case studies
 	// var casestudiesURL = cataCommon.getRootURL() + '?json=get_recent_posts&dev=1&post_type=casestudy&custom_fields=category,category_description,client,main_image,header_image,display_order&meta_key=display_order&order_by=meta_value&order=ASC&Duration=0&callback=';
@@ -160,7 +165,7 @@ $(document).ready(function() {
 	
 	
 	// Make the team section
-	var teamURL = cataCommon.getRootURL() + "?json=get_recent_posts&dev=1&post_type=teammember&custom_fields=level,job_title,company_name,excerpt,headshot,twitter_handle";
+	var teamURL = cataCommon.getRootURL() + "?json=get_recent_posts&dev=1&post_type=teammember&custom_fields=level,job_title,company_name,excerpt,headshot,twitter_handle&count=20";
 	$.getJSON(teamURL, function(data, textStatus, jqXHR) {
 		team.init(data.posts, cataCommon.getRootURL());
 	}).success(function() {

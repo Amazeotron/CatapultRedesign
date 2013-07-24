@@ -1333,25 +1333,96 @@ html.no-svg .header .logo {
 /* --------------------------------
     Intro Section
 -------------------------------- */
-@media only screen and (max-width: 720px) {
-  .intro {
-    padding-top: 60px; } }
-.intro .caption {
-  overflow: hidden; }
-  .intro .caption .intro-desc {
-    float: left;
-    width: 786px;
-    padding: 0 30px 0 0; }
-  .intro .caption .what-we-do {
+.intro {
+  /* Center the slideshow */
+  /* Show active item in the pagination */
+  /* Media quires for a responsive layout */
+  /* For tablets & smart phones */
+  /* For smartphones */
+  /* For smaller displays like laptops */
+  /* For larger displays */ }
+  .intro #slides {
+    display: none;
+    position: relative; }
+  .intro .container {
+    margin: 0 auto; }
+  .intro .slidesjs-navigation {
+    position: absolute;
+    top: 50%;
+    z-index: 1000;
     display: block;
-    background: url(../img/homepage/what-we-do.png) top left no-repeat;
-    width: 84px;
-    height: 114px;
+    background-color: white;
+    width: 80px;
+    text-align: center;
+    padding: 5px 0;
+    font-family: "franklin-gothic-ext-comp-urw", "Arial Narrow", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1em;
+    font-weight: normal;
+    font-size: 1.5em;
+    color: #969696;
+    border-radius: 5px;
+    text-decoration: none; }
+  .intro .slidesjs-previous {
+    left: 10px; }
+  .intro .slidesjs-next {
+    right: 10px; }
+  .intro .slidesjs-pagination {
+    padding: 0;
+    overflow: hidden; }
+  .intro .slidesjs-pagination .active {
+    background-color: red; }
+  .intro .slidesjs-pagination-item {
+    list-style-type: none;
+    display: block;
+    margin-right: 10px;
+    float: left; }
+  .intro .slidesjs-pagination-item a {
+    display: block;
+    text-indent: -10000px;
+    background: white;
+    border-radius: 5px;
+    width: 10px;
+    height: 10px;
     float: left;
-    text-indent: -10000px; }
-.intro .divider {
-  padding-top: 50px;
-  background-position: bottom; }
+    margin-right: 5px; }
+  .intro .slideshow-image {
+    width: 100%; }
+  @media (max-width: 767px) {
+    .intro body {
+      padding-left: 10px;
+      padding-right: 10px; }
+    .intro .container {
+      width: auto; } }
+  @media (max-width: 480px) {
+    .intro .container {
+      width: auto; } }
+  @media (min-width: 768px) and (max-width: 979px) {
+    .intro .container {
+      width: 724px; } }
+  @media (min-width: 1200px) {
+    .intro .container {
+      width: 1170px; } }
+  @media only screen and (max-width: 720px) {
+    .intro {
+      padding-top: 60px; } }
+  .intro .caption {
+    overflow: hidden; }
+    .intro .caption .intro-desc {
+      float: left;
+      width: 786px;
+      padding: 0 30px 0 0; }
+    .intro .caption .what-we-do {
+      display: block;
+      background: url(../img/homepage/what-we-do.png) top left no-repeat;
+      width: 84px;
+      height: 114px;
+      float: left;
+      text-indent: -10000px; }
+  .intro .divider {
+    padding-top: 50px;
+    background-position: bottom; }
 
 /* --------------------------------
     Key Offerings Section

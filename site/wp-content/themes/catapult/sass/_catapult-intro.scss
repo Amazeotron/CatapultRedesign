@@ -3,7 +3,111 @@
 -------------------------------- */
 
 .intro {
-    
+
+  #slides {
+    display: none;
+    position: relative;
+  }
+
+  /* Center the slideshow */
+  .container {
+    margin: 0 auto
+  }
+  
+  .slidesjs-navigation {
+    position: absolute;
+    top: 50%;
+    z-index: 1000;
+    display: block;
+    background-color: white;
+    width: 80px;
+    text-align: center;
+    padding: 5px 0;
+    font-family: $sansFont;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1em;
+    font-weight: normal;
+    font-size: 1.5em;
+    color: rgb(150,150,150);
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  .slidesjs-previous {
+    left: 10px;
+  }
+
+  .slidesjs-next {
+    right: 10px;
+  }
+  
+  /* Show active item in the pagination */
+  .slidesjs-pagination {
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .slidesjs-pagination .active {
+    background-color: red;
+  }
+
+  .slidesjs-pagination-item {
+    list-style-type: none;
+    display: block;
+    margin-right: 10px;
+    float: left;
+  }
+  
+  .slidesjs-pagination-item a {
+    display: block;
+    text-indent: -10000px;
+    background: white;
+    border-radius: 5px;
+    width: 10px;
+    height: 10px;
+    float: left;
+    margin-right: 5px;
+  }
+  
+  .slideshow-image {
+    width: 100%;
+  }
+
+  /* Media quires for a responsive layout */
+
+  /* For tablets & smart phones */
+  @media (max-width: 767px) {
+    body {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .container {
+      width: auto
+    }
+  }
+
+  /* For smartphones */
+  @media (max-width: 480px) {
+    .container {
+      width: auto
+    }
+  }
+
+  /* For smaller displays like laptops */
+  @media (min-width: 768px) and (max-width: 979px) {
+    .container {
+      width: 724px
+    }
+  }
+
+  /* For larger displays */
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px
+    }
+  }
+  
     @media only screen and (max-width : 720px) {
         padding-top: 60px;
     }
