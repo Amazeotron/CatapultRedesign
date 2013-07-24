@@ -117,7 +117,7 @@ if (isset($_POST['stripeToken'])) {
           <div class="slideshow-item">
             <a href="<?php the_field('link'); ?>">
               <img src="<?php the_field('image'); ?>" alt="" class="slideshow-image" />
-              <h3><?php the_field('caption'); ?></h3>
+              <h3 class="slideshow-caption"><?php the_field('caption'); ?></h3>
             </a>
           </div>
           <?php $index++; ?>

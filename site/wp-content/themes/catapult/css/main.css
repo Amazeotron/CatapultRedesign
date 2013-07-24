@@ -1389,6 +1389,15 @@ html.no-svg .header .logo {
     margin-right: 5px; }
   .intro .slideshow-image {
     width: 100%; }
+  .intro .slideshow-caption {
+    position: absolute;
+    z-index: 10;
+    color: black;
+    bottom: 0;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    padding: 5px; }
   @media (max-width: 767px) {
     .intro body {
       padding-left: 10px;
