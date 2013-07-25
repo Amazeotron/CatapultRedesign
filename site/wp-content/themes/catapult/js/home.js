@@ -158,7 +158,7 @@ $(document).ready(function() {
 	// 	$("#casestudies").hide();
 	// });
 	
-	casestudies.init(null, null);
+	//casestudies.init(null, null);
 	
 	// Locations Map
 	locations.init();

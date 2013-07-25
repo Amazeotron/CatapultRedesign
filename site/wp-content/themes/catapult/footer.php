@@ -39,9 +39,9 @@
 	  <script src="<?php bloginfo('template_url'); ?>/js/ImagePreloader.js"></script>
 	  <script src="<?php bloginfo('template_url'); ?>/js/libs/parsley.min.js"></script>
 	  
-	  <script src="<?php bloginfo('template_url'); ?>/js/intro.js"></script>
+	  <!--<script src="<?php //bloginfo('template_url'); ?>/js/intro.js"></script>-->
 	  <script src="<?php bloginfo('template_url'); ?>/js/keyofferings.js"></script>
-	  <script src="<?php bloginfo('template_url'); ?>/js/casestudies.js"></script>
+	  <!--<script src="<?php //bloginfo('template_url'); ?>/js/casestudies.js"></script>-->
 	  <script src="<?php bloginfo('template_url'); ?>/js/locations.js"></script>
 	  <script src="<?php bloginfo('template_url'); ?>/js/team.js"></script>
 	  <script src="<?php bloginfo('template_url'); ?>/js/partners.js"></script>

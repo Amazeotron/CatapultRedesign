@@ -132,27 +132,26 @@ if (isset($_POST['stripeToken'])) {
     <?php include(ABSPATH . "wp-content/themes/catapult/inc/keyofferings.php"); ?>
   </section><!-- end keyofferings -->
 
-  <section class="casestudies" id="casestudies">
+  <!--<section class="casestudies" id="casestudies">
     <div id="casestudies-container">
       <article class="casestudy">
         <div id="casestudy-images" class="casestudy-images">
           <ul id="casestudy-images-sub">
-            <?php include(ABSPATH . "wp-content/themes/catapult/inc/casestudies-images.php"); ?>
+            <?php //include(ABSPATH . "wp-content/themes/catapult/inc/casestudies-images.php"); ?>
           </ul>
         </div>
         <div id="casestudy-content" class="swipe">
           <ul id="casestudy-content-sub">
-            <?php include(ABSPATH . "wp-content/themes/catapult/inc/casestudies.php"); ?>
+            <?php //include(ABSPATH . "wp-content/themes/catapult/inc/casestudies.php"); ?>
           </ul>
         </div>
         <div class="paddles">
-          <a class="paddle prev" href="#" tabindex="13" id="casestudy-paddle-prev"><img src="<?php bloginfo('template_url'); ?>/img/homepage/casestudies/arrows/arrow-left.png"/></a>
-          <a class="paddle next" href="#" tabindex="14" id="casestudy-paddle-next"><img src="<?php bloginfo('template_url'); ?>/img/homepage/casestudies/arrows/arrow-right.png"/></a>
+          <a class="paddle prev" href="#" tabindex="13" id="casestudy-paddle-prev"><img src="<?php //bloginfo('template_url'); ?>/img/homepage/casestudies/arrows/arrow-left.png"/></a>
+          <a class="paddle next" href="#" tabindex="14" id="casestudy-paddle-next"><img src="<?php //bloginfo('template_url'); ?>/img/homepage/casestudies/arrows/arrow-right.png"/></a>
         </div>
       </article>
     </div>
-    <!-- end casestudies-container -->
-  </section><!-- end case studies -->
+  </section>-->
 
   <section class="locations drawer" id="locations">
     <div id="js-locations-content" class="drawer__content">
