@@ -6,6 +6,38 @@
 	// background: none; // Remove the background on this center tag because there is a Canvas element handling the drawing.
 }
 
+#map-callout {
+  background: url(../img/homepage/locations/map-callout.png) top left no-repeat;
+  width: 463px;
+  height: 218px;
+  position: absolute;
+  z-index: 1000;
+  top: 106px;
+  left: 50%;
+  margin-left: -231px;
+  padding: 20px;
+  
+  &.hide {
+    display: none;
+  }
+  
+  img {
+    float: left;
+    border: 1px solid $orange;
+    width: 156px;
+    height: 156px;
+    margin-right: 20px;
+  }
+  
+  p {
+    color: #515052;
+  }
+  
+  h2 {
+    color: $orange;
+  }
+}
+
 .locations {
 	
 	position: relative;
@@ -13,6 +45,10 @@
 	@media only screen and (max-width : 720px) {
 		display: none;
 	}
+  
+  #locations-map {
+    height: 500px;
+  }
 	
 	.drawer__content {
 		background: url(../img/homepage/locations/world.svg) top left no-repeat;

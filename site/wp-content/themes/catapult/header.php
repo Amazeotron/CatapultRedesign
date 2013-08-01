@@ -29,6 +29,12 @@
     
     <?php if (is_page('Home')) { ?>
       <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/main.css">
+      <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/js/libs/leaflet/leaflet.css">
+      <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/js/libs/leaflet/markercluster/MarkerCluster.css">
+      <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/js/libs/leaflet/markercluster/MarkerCluster.Default.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/js/libs/leaflet/leaflet.ie.css">
+    <![endif]-->
       
     <?php } else if (is_page('Thanks')) { ?>
       <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/thanks.css">
@@ -91,34 +97,37 @@
       <div class="header-divider"></div>
     </header>
     
-    <section id="header-drawer" class="hide">
+    <!--<section id="header-drawer" class="hide">
       <div class="news">
         <div class="news-secondary">
           <h2 class="news-title header-title">Our Approach and Philosophy</h2>
           <div class="news-video">
             <iframe width="100%" height="70%" src="http://www.youtube.com/embed/sNqi2WRm5eQ?rel=0" frameborder="0" allowfullscreen></iframe>
           </div>
-        </div><!-- end news-secondary -->
+        </div>
         <div class="news-primary">
           <h2 class="news-title header-title">Join the Team!</h2>
-          <p class="news-body">Do you know who Martin Fisher is? Is Mastering the Machine your favorite book? Is your idea of vacation traveling to Malawi? You may be a perfect fit.</p>
+          <p class="news-body">Do you know who Martin Fisher is? Is Mastering the Machine your favorite book? Is your idea of vacation traveling to Malawi? You may be a perfect fit.</p>-->
           
           <?php
+          /*
           include_once(ABSPATH . "wp-content/themes/catapult/inc/NewsParser.php");
           $jobJSON = NewsParser::loadJSON(NewsParser::getRootURL() . "/?json=get_recent_posts&dev=1&post_type=job&custom_fields=header_image");
-          $jobPosts = NewsParser::commonize($jobJSON["posts"], "post"); ?>
-          <div class="news-jobs">
-          <? foreach ($jobPosts as $jobPost) : ?>
-            <div class="news-job">
-            <h3 class="news-job-title header-title"><? echo $jobPost->title; ?></h3>
-            <p class="news-body"><? echo $jobPost->excerpt; ?> <a href="<? echo $jobPost->link; ?>" title="">More details &raquo;</a></p>
+          $jobPosts = NewsParser::commonize($jobJSON["posts"], "post"); 
+          */
+          ?>
+          <!--<div class="news-jobs">-->
+          <? //foreach ($jobPosts as $jobPost) : ?>
+            <!--<div class="news-job">
+            <h3 class="news-job-title header-title"><? //echo $jobPost->title; ?></h3>
+            <p class="news-body"><? //echo $jobPost->excerpt; ?> <a href="<? //echo $jobPost->link; ?>" title="">More details &raquo;</a></p>
             </div>
-          <? endforeach; ?>
+          <? //endforeach; ?>
           </div>
           
-        </div><!-- end news-primary -->
-      </div><!-- end news -->
+        </div>
+      </div>
       <div class="center-tag-wrap">
         <a class="center-tag center-tag--primary center-tag--orange header-title fancy" id="header-center-tag" href="#"><span class="center-tag__title">CURRENTLY</span></a>
       </div>
-    </section><!-- end header-drawer -->
+    </section>-->

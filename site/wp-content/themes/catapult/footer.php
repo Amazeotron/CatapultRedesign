@@ -38,6 +38,8 @@
 	  <script src="<?php bloginfo('template_url'); ?>/js/CenterTag.js"></script>
 	  <script src="<?php bloginfo('template_url'); ?>/js/ImagePreloader.js"></script>
 	  <script src="<?php bloginfo('template_url'); ?>/js/libs/parsley.min.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/js/libs/leaflet/leaflet.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/js/libs/leaflet/markercluster/leaflet.markercluster-src.js"></script>
 	  
 	  <!--<script src="<?php //bloginfo('template_url'); ?>/js/intro.js"></script>-->
 	  <script src="<?php bloginfo('template_url'); ?>/js/keyofferings.js"></script>

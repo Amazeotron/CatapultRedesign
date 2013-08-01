@@ -153,19 +153,12 @@ if (isset($_POST['stripeToken'])) {
     </div>
   </section>-->
 
-  <section class="locations drawer" id="locations">
-    <div id="js-locations-content" class="drawer__content">
-      <h1 class="drawer__content__title header-title title-shadow">Catapult Projects</h1>
-      <div class="locations-markers"></div>
-      <a href="#" class="close-button ir" tabindex="15">Close</a>
-      <div class="bottom-peek"></div>
+  <section class="locations" id="locations">
+    <div id="map-callout clearfix">
+      <div class="map-callout-img"></div>
     </div>
-    <div class="center-tag-wrap">
-      <a href="#" class="center-tag center-tag--grey center-tag--secondary closed header-title fancy on-dark-bg" id="locations-center-tag">
-        <!-- <canvas class="center-tag__canvas" id="centerTagLocationsMap" width="319" height="55"></canvas> -->
-        <span class="center-tag__title">SEE WHERE WE'VE WORKED</span>
-      </a>
-    </div>
+    <h1 class="header-title title-shadow">Catapult Projects</h1>
+    <div id="locations-map"></div>
   </section><!-- end locations -->
 
   <section class="team" id="team">

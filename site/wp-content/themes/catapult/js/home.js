@@ -161,7 +161,92 @@ $(document).ready(function() {
 	//casestudies.init(null, null);
 	
 	// Locations Map
-	locations.init();
+	//locations.init();
+  
+  var map = new L.Map('locations-map', {
+    scrollWheelZoom: false
+  }).setView([13.662, 10.019], 2);
+  L.tileLayer('http://{s}.tile.cloudmade.com/e92b182bf4084fa88391e1b310961939/103976/256/{z}/{x}/{y}.png', {
+    maxZoom: 10
+  }).addTo(map);
+
+  var myIcon = L.icon({
+    iconUrl: '/dev/wp-content/themes/catapult/js/libs/leaflet/images/marker-icon.png',
+    iconRetinaUrl: '/dev/wp-content/themes/catapult/js/libs/leaflet/images/marker-icon.png',
+    iconSize: [33, 39],
+    iconAnchor: [16, 39],
+    popupAnchor: [-3, -20],
+    shadowUrl: '/dev/wp-content/themes/catapult/js/libs/leaflet/images/marker-shadow.png',
+    shadowRetinaUrl: '/dev/wp-content/themes/catapult/js/libs/leaflet/images/marker-shadow.png',
+    shadowSize: [41, 41],
+    shadowAnchor: [16, 39]
+  });
+
+  map.on('click', function(event) {
+    console.log(event);
+    hideMapMarker();
+  });
+  
+  map.on('dragstart', function(event) {
+    hideMapMarker();
+  });
+  
+  var locsURL = cataCommon.getRootURL() + "?json=get_recent_posts&dev=1&post_type=casestudy&custom_fields=client,category,location,main_image&count=-1";
+  var markers = new L.MarkerClusterGroup();
+  
+  $.getJSON(locsURL, function(data, textStatus, jqXHR) {
+    for (var i = 0; i < data.posts.length; i++) {
+      var loc = data.posts[i].custom_fields.location;
+      if (typeof loc !== 'undefined') {
+        loc = loc[0];
+        var latlon = loc.substring(loc.indexOf('|')+1, loc.length).split(',');
+        var marker = new L.Marker([latlon[0], latlon[1]], {
+          icon: myIcon,
+          clickable: true,
+          riseOnHover: true
+        });
+        markers.addLayer(marker);
+        marker.cataInfo = data.posts[i];
+        
+        marker.on('click', function(event) {
+          console.log(event);
+          console.log('Clicked on marker: ' + event.latlng);
+          console.log("Marker coordinates: " + map.latLngToContainerPoint(event.latlng));
+          console.log("Marker coordinates: " + map.latLngToLayerPoint(event.latlng));
+          console.log("Marker coordinates: " + map.project(event.latlng));
+          
+          // Center map
+          map.setView(event.latlng, map.getZoom(), {
+            pan: {
+              animate: true
+            },
+            zoom: {
+              animate: true
+            }
+          });
+
+          showMapMarker(event.target.cataInfo);
+        });
+      }
+    }
+    map.addLayer(markers);
+  });
+  
+  function showMapMarker(data) {
+    var callout = $('#map-callout');
+    callout.removeClass('hide');
+
+    // populate callout
+    var img = $('<img src="' + data.attachments[0].images.thumbnail.url + '" />');
+    callout.append(img);
+  }
+  
+  function hideMapMarker() {
+    var callout = $('#map-callout');
+    callout.addClass('hide');
+    callout.find('img').remove();
+  }
+  
 	
 	
 	// Make the team section

@@ -43,7 +43,7 @@ var locations = {
       }
     });
     
-    self.close();
+    //self.close();
     
   },
   

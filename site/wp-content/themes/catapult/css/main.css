@@ -511,6 +511,11 @@ textarea {
 /* --------------------------------
     Common Elements
 -------------------------------- */
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
 body {
   background: url(../img/homepage/bg/bgtile.jpg) top left repeat #666666;
   font-size: 15px;
@@ -1232,7 +1237,7 @@ html.no-svg .header .logo {
   padding: 0;
   margin: 0;
   position: fixed;
-  z-index: 999; }
+  z-index: 1001; }
   .header.compact {
     -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
@@ -1349,7 +1354,7 @@ html.no-svg .header .logo {
   .intro .slidesjs-navigation {
     position: absolute;
     top: 50%;
-    z-index: 1000;
+    z-index: 998;
     display: block;
     background-color: white;
     width: 80px;
@@ -1941,11 +1946,36 @@ html.no-touch .team-member-details.hover {
 /* --------------------------------
     Location Map Section
 -------------------------------- */
+#map-callout {
+  background: url(../img/homepage/locations/map-callout.png) top left no-repeat;
+  width: 463px;
+  height: 218px;
+  position: absolute;
+  z-index: 1000;
+  top: 106px;
+  left: 50%;
+  margin-left: -231px;
+  padding: 20px; }
+  #map-callout.hide {
+    display: none; }
+  #map-callout img {
+    float: left;
+    border: 1px solid #f2ad4b;
+    width: 156px;
+    height: 156px;
+    margin-right: 20px; }
+  #map-callout p {
+    color: #515052; }
+  #map-callout h2 {
+    color: #f2ad4b; }
+
 .locations {
   position: relative; }
   @media only screen and (max-width: 720px) {
     .locations {
       display: none; } }
+  .locations #locations-map {
+    height: 500px; }
   .locations .drawer__content {
     background: url(../img/homepage/locations/world.svg) top left no-repeat;
     background-size: 100% auto; }
