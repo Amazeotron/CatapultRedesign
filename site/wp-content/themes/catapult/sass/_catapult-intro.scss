@@ -15,31 +15,36 @@
   }
   
   .slidesjs-navigation {
+    @include transition(100ms);
     position: absolute;
     top: 50%;
     z-index: 998;
     display: block;
-    background-color: white;
-    width: 80px;
+    background-color: rgba(51,51,51,0.75);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    width: 44px;
+    height: 44px;
+    border-radius: 22px;
     text-align: center;
-    padding: 5px 0;
-    font-family: $sansFont;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    line-height: 1em;
-    font-weight: normal;
-    font-size: 1.5em;
-    color: rgb(150,150,150);
-    border-radius: 5px;
-    text-decoration: none;
+    text-indent: -10000px;
+
+    &:hover {
+      -webkit-transform: scale(0.9);
+         -moz-transform: scale(0.9);
+          -ms-transform: scale(0.9);
+              transform: scale(0.9);
+    }
   }
   
   .slidesjs-previous {
-    left: 10px;
+    left: 20px;
+    background-image: url(../img/homepage/intro/arrow-left.png);
   }
 
   .slidesjs-next {
-    right: 10px;
+    right: 20px;
+    background-image: url(../img/homepage/intro/arrow-right.png);
   }
   
   /* Show active item in the pagination */
@@ -49,7 +54,7 @@
   }
   
   .slidesjs-pagination .active {
-    background-color: red;
+    background-position: 0 -16px;
   }
 
   .slidesjs-pagination-item {
@@ -62,12 +67,11 @@
   .slidesjs-pagination-item a {
     display: block;
     text-indent: -10000px;
-    background: white;
-    border-radius: 5px;
-    width: 10px;
-    height: 10px;
-    float: left;
-    margin-right: 5px;
+    width: 16px;
+    height: 16px;
+    background-image: url(../img/homepage/intro/slideshow-indicator.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
   }
   
   .slideshow-image {
@@ -77,12 +81,14 @@
   .slideshow-caption {
     position: absolute;
     z-index: 10;
-    color: black;
+    color: #FFFFFF;
+    font-size: 1.1em;
+    letter-spacing: 1px;
     bottom: 0;
     margin: 0;
-    background: rgba(255,255,255,0.5);
+    padding: 5px 10px;
+    background: rgba(51,51,51,0.75);
     width: 100%;
-    padding: 5px;
   }
 
   /* Media quires for a responsive layout */

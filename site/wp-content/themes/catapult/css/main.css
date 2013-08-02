@@ -670,6 +670,12 @@ section {
 .level-three {
   color: #84b6b4; }
 
+.level-four {
+  color: #f2ca0d; }
+
+.level-five {
+  color: #a87b8b; }
+
 .row {
   width: 900px;
   margin: 0 auto; }
@@ -1352,32 +1358,39 @@ html.no-svg .header .logo {
   .intro .container {
     margin: 0 auto; }
   .intro .slidesjs-navigation {
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-transition: all 100ms ease-in-out;
+    -moz-transition: all 100ms ease-in-out;
+    -o-transition: all 100ms ease-in-out;
+    transition: all 100ms ease-in-out;
     position: absolute;
     top: 50%;
     z-index: 998;
     display: block;
-    background-color: white;
-    width: 80px;
+    background-color: rgba(51, 51, 51, 0.75);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    width: 44px;
+    height: 44px;
+    border-radius: 22px;
     text-align: center;
-    padding: 5px 0;
-    font-family: "franklin-gothic-ext-comp-urw", "Arial Narrow", sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    line-height: 1em;
-    font-weight: normal;
-    font-size: 1.5em;
-    color: #969696;
-    border-radius: 5px;
-    text-decoration: none; }
+    text-indent: -10000px; }
+    .intro .slidesjs-navigation:hover {
+      -webkit-transform: scale(0.9);
+      -moz-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+      transform: scale(0.9); }
   .intro .slidesjs-previous {
-    left: 10px; }
+    left: 20px;
+    background-image: url(../img/homepage/intro/arrow-left.png); }
   .intro .slidesjs-next {
-    right: 10px; }
+    right: 20px;
+    background-image: url(../img/homepage/intro/arrow-right.png); }
   .intro .slidesjs-pagination {
     padding: 0;
     overflow: hidden; }
   .intro .slidesjs-pagination .active {
-    background-color: red; }
+    background-position: 0 -16px; }
   .intro .slidesjs-pagination-item {
     list-style-type: none;
     display: block;
@@ -1386,23 +1399,24 @@ html.no-svg .header .logo {
   .intro .slidesjs-pagination-item a {
     display: block;
     text-indent: -10000px;
-    background: white;
-    border-radius: 5px;
-    width: 10px;
-    height: 10px;
-    float: left;
-    margin-right: 5px; }
+    width: 16px;
+    height: 16px;
+    background-image: url(../img/homepage/intro/slideshow-indicator.png);
+    background-repeat: no-repeat;
+    background-position: 0 0; }
   .intro .slideshow-image {
     width: 100%; }
   .intro .slideshow-caption {
     position: absolute;
     z-index: 10;
-    color: black;
+    color: #FFFFFF;
+    font-size: 1.1em;
+    letter-spacing: 1px;
     bottom: 0;
     margin: 0;
-    background: rgba(255, 255, 255, 0.5);
-    width: 100%;
-    padding: 5px; }
+    padding: 5px 10px;
+    background: rgba(51, 51, 51, 0.75);
+    width: 100%; }
   @media (max-width: 767px) {
     .intro body {
       padding-left: 10px;
@@ -1947,27 +1961,36 @@ html.no-touch .team-member-details.hover {
     Location Map Section
 -------------------------------- */
 #map-callout {
+  position: relative;
   background: url(../img/homepage/locations/map-callout.png) top left no-repeat;
-  width: 463px;
+  width: 535px;
   height: 218px;
   position: absolute;
   z-index: 1000;
   top: 106px;
   left: 50%;
-  margin-left: -231px;
+  margin-left: -267px;
   padding: 20px; }
   #map-callout.hide {
     display: none; }
-  #map-callout img {
+  #map-callout .map-callout-img {
     float: left;
     border: 1px solid #f2ad4b;
     width: 156px;
     height: 156px;
     margin-right: 20px; }
-  #map-callout p {
-    color: #515052; }
+    #map-callout .map-callout-img img {
+      width: 100%; }
+  #map-callout .map-callout-content {
+    float: left;
+    width: 55%; }
   #map-callout h2 {
-    color: #f2ad4b; }
+    color: #f2ad4b;
+    font-size: 2.1em;
+    margin: 0 0 10px 0; }
+  #map-callout p {
+    color: #515052;
+    margin: 0; }
 
 .locations {
   position: relative; }

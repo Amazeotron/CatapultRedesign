@@ -235,17 +235,26 @@ $(document).ready(function() {
   function showMapMarker(data) {
     var callout = $('#map-callout');
     callout.removeClass('hide');
-
+    
     // populate callout
     var img = $('<img src="' + data.attachments[0].images.thumbnail.url + '" />');
-    callout.append(img);
+    callout.find('.map-callout-img').append(img);
+    callout.find('h2').append(data.title);
+    callout.find('p').append(data.excerpt);
   }
   
   function hideMapMarker() {
     var callout = $('#map-callout');
     callout.addClass('hide');
     callout.find('img').remove();
+    callout.find('h2').empty();
+    callout.find('p').empty();
   }
+
+  $('#map-callout').find('.close-button').on('click', function(event) {
+    event.preventDefault();
+    hideMapMarker();
+  });
   
 	
 	

@@ -109,6 +109,9 @@ if (isset($_POST['stripeToken'])) {
   </section>--><!-- end intro -->
   <section class="intro page-top">
     <div class="container">
+      <h1>
+        At Catapult Design, we <span class="header-title level-one">IDEATE</span>, <span class="header-title level-two">PROTOTYPE</span>, <span class="header-title level-three">COMMECIALIZE</span>, <span class="header-title level-four">IMPLEMENT</span> &amp; <span class="header-title level-five">EDUCATE</span> to close the gap in equality
+      </h1>
       <div id="slides">
         <?php
         $index = 0;
@@ -154,8 +157,13 @@ if (isset($_POST['stripeToken'])) {
   </section>-->
 
   <section class="locations" id="locations">
-    <div id="map-callout clearfix">
+    <div id="map-callout" class="clearfix hide">
+      <a href="#" class="close-button"></a>
       <div class="map-callout-img"></div>
+      <div class="map-callout-content">
+        <h2 class="header-title"></h2>
+        <p></p>
+      </div>
     </div>
     <h1 class="header-title title-shadow">Catapult Projects</h1>
     <div id="locations-map"></div>

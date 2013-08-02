@@ -7,34 +7,47 @@
 }
 
 #map-callout {
+  position: relative;
   background: url(../img/homepage/locations/map-callout.png) top left no-repeat;
-  width: 463px;
+  width: 535px;
   height: 218px;
   position: absolute;
   z-index: 1000;
   top: 106px;
   left: 50%;
-  margin-left: -231px;
+  margin-left: -267px;
   padding: 20px;
   
   &.hide {
     display: none;
   }
   
-  img {
+  .map-callout-img {
     float: left;
     border: 1px solid $orange;
     width: 156px;
     height: 156px;
     margin-right: 20px;
+    
+    img {
+      width: 100%;
+    }
   }
   
-  p {
-    color: #515052;
+  .map-callout-content {
+    float: left;
+    width: 55%;
   }
   
   h2 {
     color: $orange;
+    font-size: 2.1em;
+    margin: 0 0 10px 0;
+  }
+
+  p {
+    color: #515052;
+    margin: 0;
   }
 }
 

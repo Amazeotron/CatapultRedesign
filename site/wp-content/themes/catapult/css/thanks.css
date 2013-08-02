@@ -669,6 +669,12 @@ section {
 .level-three {
   color: #84b6b4; }
 
+.level-four {
+  color: #f2ca0d; }
+
+.level-five {
+  color: #a87b8b; }
+
 .row {
   width: 900px;
   margin: 0 auto; }
