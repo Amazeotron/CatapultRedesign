@@ -119,10 +119,17 @@ $(document).ready(function() {
 	// 	console.log("Center Tag is Ready!");
 	// });
 
+
+  // -------------------------------------------------------------------------
+  // INTRO SLIDESHOW
+  // -------------------------------------------------------------------------
+  
   $('#slides').slidesjs({
-    width: 940,
-    height: 528
+    width: 900,
+    height: 506
   });
+  
+  
   
 //	intro.init(cataCommon.getRootURL() + "wp-content/themes/catapult/", function() {
 //		
@@ -163,6 +170,11 @@ $(document).ready(function() {
 	// Locations Map
 	//locations.init();
   
+  
+  // -------------------------------------------------------------------------
+  // LOCATIONS MAP
+  // -------------------------------------------------------------------------
+  
   var map = new L.Map('locations-map', {
     scrollWheelZoom: false
   }).setView([13.662, 10.019], 2);
@@ -191,48 +203,75 @@ $(document).ready(function() {
     hideMapMarker();
   });
   
-  var locsURL = cataCommon.getRootURL() + "?json=get_recent_posts&dev=1&post_type=casestudy&custom_fields=client,category,location,main_image&count=-1";
-  var markers = new L.MarkerClusterGroup();
+  var locsURL = cataCommon.getRootURL() + "?json=get_recent_posts&dev=1&post_type=casestudy&custom_fields=client,category,location,main_image&count=-1",
+      markers = new L.MarkerClusterGroup(),
+      caseStudiesData = {};
   
-  $.getJSON(locsURL, function(data, textStatus, jqXHR) {
+  $.getJSON(locsURL, handleLocationsLoaded);
+  
+  function handleLocationsLoaded(data, textStatus, jqXHR) {
+    caseStudiesData = data.posts;
     for (var i = 0; i < data.posts.length; i++) {
-      var loc = data.posts[i].custom_fields.location;
-      if (typeof loc !== 'undefined') {
-        loc = loc[0];
-        var latlon = loc.substring(loc.indexOf('|')+1, loc.length).split(',');
-        var marker = new L.Marker([latlon[0], latlon[1]], {
-          icon: myIcon,
-          clickable: true,
-          riseOnHover: true
-        });
-        markers.addLayer(marker);
-        marker.cataInfo = data.posts[i];
-        
-        marker.on('click', function(event) {
-          console.log(event);
-          console.log('Clicked on marker: ' + event.latlng);
-          console.log("Marker coordinates: " + map.latLngToContainerPoint(event.latlng));
-          console.log("Marker coordinates: " + map.latLngToLayerPoint(event.latlng));
-          console.log("Marker coordinates: " + map.project(event.latlng));
-          
-          // Center map
-          map.setView(event.latlng, map.getZoom(), {
-            pan: {
-              animate: true
-            },
-            zoom: {
-              animate: true
-            }
-          });
-
-          showMapMarker(event.target.cataInfo);
-        });
-      }
+      addMarker(data.posts[i]);
     }
     map.addLayer(markers);
-  });
+  }
   
-  function showMapMarker(data) {
+  function addMarker(data) {
+    var loc = data.custom_fields.location;
+    if (typeof loc !== 'undefined') {
+      loc = loc[0];
+      var latlon = loc.substring(loc.indexOf('|')+1, loc.length).split(',');
+      var marker = new L.Marker([latlon[0], latlon[1]], {
+        icon: myIcon,
+        clickable: true,
+        riseOnHover: true
+      });
+      markers.addLayer(marker);
+      marker.cataInfo = data;
+
+      marker.on('click', handleMarkerClick);
+    }
+  }
+
+  // Filter project data by category
+  function filterCasestudies(data, category) {
+    return _.filter(data, function(post) {
+      return post.custom_fields.category[0] == category;
+    });
+  }
+  
+  function redrawMarkersWithFilter(filter) {
+    var filteredData = filter === 'all' ? caseStudiesData : filterCasestudies(caseStudiesData, filter);
+    markers.clearLayers();
+    for (var i = 0, len = filteredData.length; i < len; i++) {
+      addMarker(filteredData[i]);
+    }
+    // Zoom back out to world view
+    map.setZoom(2, {animate: true});
+  }
+  
+  function handleMarkerClick(event) {
+    console.log(event);
+    console.log('Clicked on marker: ' + event.latlng);
+    console.log("Marker coordinates: " + map.latLngToContainerPoint(event.latlng));
+    console.log("Marker coordinates: " + map.latLngToLayerPoint(event.latlng));
+    console.log("Marker coordinates: " + map.project(event.latlng));
+
+    // Center map
+    map.setView(event.latlng, map.getZoom(), {
+      pan: {
+        animate: true
+      },
+      zoom: {
+        animate: true
+      }
+    });
+
+    showMapCallout(event.target.cataInfo);
+  }
+  
+  function showMapCallout(data) {
     var callout = $('#map-callout');
     callout.removeClass('hide');
     
@@ -256,8 +295,38 @@ $(document).ready(function() {
     hideMapMarker();
   });
   
-	
-	
+  // Deal with filtering
+  $('#js-location-filter-all').on('click', function(event) {
+    if (typeof event !== 'undefined') event.preventDefault();
+    redrawMarkersWithFilter('all');
+  });
+  $('#js-location-filter-water').on('click', function(event) {
+    if (typeof event !== 'undefined') event.preventDefault();
+    redrawMarkersWithFilter('water');
+  });
+  $('#js-location-filter-enterprise').on('click', function(event) {
+    if (typeof event !== 'undefined') event.preventDefault();
+    redrawMarkersWithFilter('enterprise');
+  });
+  $('#js-location-filter-energy').on('click', function(event) {
+    if (typeof event !== 'undefined') event.preventDefault();
+    redrawMarkersWithFilter('energy');
+  });
+  $('#js-location-filter-health').on('click', function(event) {
+    if (typeof event !== 'undefined') event.preventDefault();
+    redrawMarkersWithFilter('health');
+  });
+  $('#js-location-filter-mobility').on('click', function(event) {
+    if (typeof event !== 'undefined') event.preventDefault();
+    redrawMarkersWithFilter('mobility');
+  });
+
+
+
+  // -------------------------------------------------------------------------
+  // TEAM
+  // -------------------------------------------------------------------------
+  
 	// Make the team section
 	var teamURL = cataCommon.getRootURL() + "?json=get_recent_posts&dev=1&post_type=teammember&custom_fields=level,job_title,company_name,excerpt,headshot,twitter_handle&count=20";
 	$.getJSON(teamURL, function(data, textStatus, jqXHR) {

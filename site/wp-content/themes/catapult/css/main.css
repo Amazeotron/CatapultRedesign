@@ -545,7 +545,7 @@ select {
   height: 24px; }
 
 h1 {
-  font-size: 3em;
+  font-size: 2.75em;
   text-align: center;
   font-weight: normal; }
 
@@ -563,6 +563,15 @@ h5 {
 
 a {
   color: #f2ad4b; }
+
+hr {
+  display: block;
+  border: 0;
+  width: 100%;
+  height: 2px;
+  margin: 10px 0 0 0;
+  padding: 0;
+  background: url(../img/divider.png) top left repeat-x; }
 
 .clicky-button {
   overflow: visible;
@@ -653,7 +662,7 @@ a.fancy {
   color: #84b6b4; }
 
 .page-top {
-  padding-top: 128px; }
+  padding-top: 80px; }
 
 section:first-of-type {
   background: none; }
@@ -1365,14 +1374,15 @@ html.no-svg .header .logo {
     transition: all 100ms ease-in-out;
     position: absolute;
     top: 50%;
+    width: 44px;
+    height: 44px;
+    border-radius: 22px;
+    margin-top: -22px;
     z-index: 998;
     display: block;
     background-color: rgba(51, 51, 51, 0.75);
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    width: 44px;
-    height: 44px;
-    border-radius: 22px;
     text-align: center;
     text-indent: -10000px; }
     .intro .slidesjs-navigation:hover {
@@ -1875,7 +1885,7 @@ html.no-svg .header .logo {
         text-decoration: none; }
       .team .team-members .team-member img {
         border: 2px solid;
-        width: 98%;
+        width: 100%;
         height: auto; }
       .team .team-members .team-member.primary img {
         border-color: #f2ad4b; }
@@ -1961,13 +1971,18 @@ html.no-touch .team-member-details.hover {
     Location Map Section
 -------------------------------- */
 #map-callout {
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
   position: relative;
   background: url(../img/homepage/locations/map-callout.png) top left no-repeat;
   width: 535px;
   height: 218px;
   position: absolute;
   z-index: 1000;
-  top: 106px;
+  top: 138px;
   left: 50%;
   margin-left: -267px;
   padding: 20px; }
@@ -1994,11 +2009,23 @@ html.no-touch .team-member-details.hover {
 
 .locations {
   position: relative; }
-  @media only screen and (max-width: 720px) {
-    .locations {
-      display: none; } }
   .locations #locations-map {
     height: 500px; }
+  .locations .map-footer h2 {
+    float: left; }
+  .locations .map-footer ul {
+    margin: 0;
+    padding: 0;
+    float: right; }
+    .locations .map-footer ul li {
+      list-style-type: none;
+      float: left;
+      margin: 4px 0 0 20px;
+      padding: 0; }
+      .locations .map-footer ul li a {
+        text-decoration: none; }
+        .locations .map-footer ul li a:hover {
+          color: white; }
   .locations .drawer__content {
     background: url(../img/homepage/locations/world.svg) top left no-repeat;
     background-size: 100% auto; }

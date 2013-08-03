@@ -7,13 +7,14 @@
 }
 
 #map-callout {
+  @include transition(300ms);
   position: relative;
   background: url(../img/homepage/locations/map-callout.png) top left no-repeat;
   width: 535px;
   height: 218px;
   position: absolute;
   z-index: 1000;
-  top: 106px;
+  top: 138px;
   left: 50%;
   margin-left: -267px;
   padding: 20px;
@@ -52,15 +53,37 @@
 }
 
 .locations {
-	
 	position: relative;
 	
-	@media only screen and (max-width : 720px) {
-		display: none;
-	}
-  
   #locations-map {
     height: 500px;
+  }
+  
+  .map-footer {
+    h2 {
+      float: left;
+    }
+    
+    ul {
+      margin: 0;
+      padding: 0;
+      float: right;
+      
+      li {
+        list-style-type: none;
+        float: left;
+        margin: 4px 0 0 20px;
+        padding: 0;
+        
+        a {
+          text-decoration: none;
+          
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
   }
 	
 	.drawer__content {

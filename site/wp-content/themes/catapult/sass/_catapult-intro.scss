@@ -18,14 +18,16 @@
     @include transition(100ms);
     position: absolute;
     top: 50%;
+    width: 44px;
+    height: 44px;
+    border-radius: 22px;
+    margin-top: -22px;
     z-index: 998;
     display: block;
     background-color: rgba(51,51,51,0.75);
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    width: 44px;
-    height: 44px;
-    border-radius: 22px;
+    
     text-align: center;
     text-indent: -10000px;
 

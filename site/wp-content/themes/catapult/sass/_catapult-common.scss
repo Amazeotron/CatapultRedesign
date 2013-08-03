@@ -40,7 +40,7 @@ select{
     height: 24px;
 }
 h1 {
-    font-size: 3em;
+    font-size: 2.75em;
     text-align: center;
     font-weight: normal;
 }
@@ -60,6 +60,19 @@ h5 {
 a {
     color: $orange;
 }
+
+hr {
+  display: block;
+  border: 0;
+  width: 100%;
+  height: 2px;
+  margin: 10px 0 0 0;
+  padding: 0;
+  background: url(../img/divider.png) top left repeat-x;
+}
+
+
+
 
 .clicky-button {
     overflow: visible;
@@ -135,7 +148,7 @@ a.fancy {
 }
 
 .page-top {
-    padding-top: 128px;
+    padding-top: 80px;
 }
 
 section, footer {

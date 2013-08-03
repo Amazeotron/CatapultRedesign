@@ -107,33 +107,30 @@ if (isset($_POST['stripeToken'])) {
       </canvas>
     </div>
   </section>--><!-- end intro -->
-  <section class="intro page-top">
-    <div class="container">
-      <h1>
-        At Catapult Design, we <span class="header-title level-one">IDEATE</span>, <span class="header-title level-two">PROTOTYPE</span>, <span class="header-title level-three">COMMECIALIZE</span>, <span class="header-title level-four">IMPLEMENT</span> &amp; <span class="header-title level-five">EDUCATE</span> to close the gap in equality
-      </h1>
-      <div id="slides">
-        <?php
-        $index = 0;
-        $the_query = new WP_Query(array('post_type' => 'homepageslideshow', 'posts_per_page' => '-1'));
-        while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-          <div class="slideshow-item">
-            <a href="<?php the_field('link'); ?>">
-              <img src="<?php the_field('image'); ?>" alt="" class="slideshow-image" />
-              <h3 class="slideshow-caption"><?php the_field('caption'); ?></h3>
-            </a>
-          </div>
-          <?php $index++; ?>
-        <?php endwhile; ?>
-        
-        <?php wp_reset_postdata(); ?>
-      </div>
+  <section class="intro page-top row">
+    <h1>At Catapult Design, we <span class="header-title level-one">IDEATE</span>, <span class="header-title level-two">PROTOTYPE</span>, <span class="header-title level-three">COMMECIALIZE</span>, <span class="header-title level-four">IMPLEMENT</span> &amp; <span class="header-title level-five">EDUCATE</span> to close the gap in equality &raquo;</h1>
+    <div id="slides">
+      <?php
+      $index = 0;
+      $the_query = new WP_Query(array('post_type' => 'homepageslideshow', 'posts_per_page' => '-1'));
+      while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+        <div class="slideshow-item">
+          <a href="<?php the_field('link'); ?>">
+            <img src="<?php the_field('image'); ?>" alt="" class="slideshow-image" />
+            <h3 class="slideshow-caption"><?php the_field('caption'); ?></h3>
+          </a>
+        </div>
+        <?php $index++; ?>
+      <?php endwhile; ?>
+      
+      <?php wp_reset_postdata(); ?>
     </div>
   </section>
+  <hr />
 
-  <section class="keyofferings hide" id="keyofferings">
-    <?php include(ABSPATH . "wp-content/themes/catapult/inc/keyofferings.php"); ?>
-  </section><!-- end keyofferings -->
+  <!--<section class="keyofferings hide" id="keyofferings">
+    <?php //include(ABSPATH . "wp-content/themes/catapult/inc/keyofferings.php"); ?>
+  </section>--><!-- end keyofferings -->
 
   <!--<section class="casestudies" id="casestudies">
     <div id="casestudies-container">
@@ -156,7 +153,15 @@ if (isset($_POST['stripeToken'])) {
     </div>
   </section>-->
 
-  <section class="locations" id="locations">
+  <section class="featured">
+    <h1>Our <span class="header-title level-one">FEATURES</span> &amp; <span class="header-title level-two">PUBLICATIONS</span> include &raquo;</h1>
+    <div class="featured-logos">
+      
+    </div>
+  </section>
+  <hr />
+
+  <section class="locations row" id="locations">
     <div id="map-callout" class="clearfix hide">
       <a href="#" class="close-button"></a>
       <div class="map-callout-img"></div>
@@ -165,35 +170,45 @@ if (isset($_POST['stripeToken'])) {
         <p></p>
       </div>
     </div>
-    <h1 class="header-title title-shadow">Catapult Projects</h1>
+    <h1>Headline about <span class="header-title level-one">PROJECTS</span> here &raquo;</h1>
     <div id="locations-map"></div>
-  </section><!-- end locations -->
+    <div class="map-footer clearfix">
+      <h2><span class="header-title">FILTER</span> by <span class="header-title">INDUSTRY</span></h2>
+      <ul class="clearfix">
+        <li><h2 class="header-title"><a href="#" id="js-location-filter-all">ALL</a></h2></li>
+        <li><h2 class="header-title"><a href="#" id="js-location-filter-water">WATER</a></h2></li>
+        <li><h2 class="header-title"><a href="#" id="js-location-filter-enterprise">ENTERPRISE</a></h2></li>
+        <li><h2 class="header-title"><a href="#" id="js-location-filter-energy">ENERGY</a></h2></li>
+        <li><h2 class="header-title"><a href="#" id="js-location-filter-health">HEALTH</a></h2></li>
+        <li><h2 class="header-title"><a href="#" id="js-location-filter-mobility">MOBILITY</a></h2></li>
+      </ul>
+    </div>
+  </section>
+  <hr />
 
   <section class="team" id="team">
     <div class="row">
       <h1>Meet the Catapult <span class="header-title level-one">Team</span>, <span class="header-title level-two">Board</span> &amp; <span class="header-title level-three">Advisors</span>.</h1>
       <?php include(ABSPATH . "wp-content/themes/catapult/inc/team.php"); ?>
     </div>
-    <!-- end team row -->
   </section><!-- end team -->
+  <hr />
 
-  <section class="partners drawer" id="partners">
+  <!--<section class="partners drawer" id="partners">
     <div id="js-partners-content" class="drawer__content">
       <div class="row">
         <h1 class="title-shadow">our <span class="header-title orange">PARTNERS</span> &amp; <span class="header-title green">SPONSORS</span></h1>
         <p><span class="header-title">We&apos;re constantly working to build our network</span> to offer the best service possible to our clients. We invite organizations in this field to partner with us on funding, design, and distribution.</p>
-        <?php include(ABSPATH . "wp-content/themes/catapult/inc/partners.php"); ?>
+        <?php //include(ABSPATH . "wp-content/themes/catapult/inc/partners.php"); ?>
         <p>If you&apos;re a company, individual, or service-provider interested in partnering with or sponsoring Catapult&apos;s work, please <a href="#contact">contact us</a>.</p>
       </div>
-      <!-- end row -->
       <a href="#" class="close-button ir">Close</a>
       <div class="bottom-peek"></div>
     </div>
-    <!-- end js-partners-content -->
     <div class="center-tag-wrap">
       <a href="#" class="center-tag center-tag--purple center-tag--secondary header-title fancy on-dark-bg" id="partners-center-tag" tabindex="32"><span class="center-tag__title">MEET OUR PARTNERS</span></a>
     </div>
-  </section><!-- end partners -->
+  </section>--><!-- end partners -->
 
   <section class="contact" id="contact">
     <div class="row">
@@ -237,23 +252,24 @@ if (isset($_POST['stripeToken'])) {
       </div>
     </div>
   </section><!-- end contact -->
+  <hr />
 
-  <section class="events drawer" id="events">
+  <!--<section class="events drawer" id="events">
     <div id="js-events-content" class="drawer__content">
       <div class="row">
         <h1 class="drawer__content__title header-title title-shadow">Upcoming Events</h1>
 
         <?php
-        include_once(ABSPATH . "wp-content/themes/catapult/inc/NewsParser.php");
-        $eventJSON = NewsParser::loadJSON(NewsParser::getRootURL() . "/?json=get_recent_posts&dev=1&post_type=event&custom_fields=header_image");
-        $eventPosts = NewsParser::commonize($eventJSON["posts"], "post"); ?>
+//        include_once(ABSPATH . "wp-content/themes/catapult/inc/NewsParser.php");
+//        $eventJSON = NewsParser::loadJSON(NewsParser::getRootURL() . "/?json=get_recent_posts&dev=1&post_type=event&custom_fields=header_image");
+//        $eventPosts = NewsParser::commonize($eventJSON["posts"], "post"); ?>
         <div class="events__group">
-          <? foreach ($eventPosts as $eventPost) : ?>
+          <? //foreach ($eventPosts as $eventPost) : ?>
             <div class="events__group__event">
-              <h3 class="events__group__event-title header-title"><? echo $eventPost->title; ?></h3>
-              <p class="events__group__event-body"><? echo $eventPost->excerpt; ?> <a href="<? echo $eventPost->link; ?>" title="">More details &raquo;</a></p>
+              <h3 class="events__group__event-title header-title"><? //echo $eventPost->title; ?></h3>
+              <p class="events__group__event-body"><? //echo $eventPost->excerpt; ?> <a href="<? //echo $eventPost->link; ?>" title="">More details &raquo;</a></p>
             </div>
-          <? endforeach; ?>
+          <? //endforeach; ?>
         </div>
       </div>
       <a href="#" class="close-button ir">Close</a>
@@ -261,8 +277,8 @@ if (isset($_POST['stripeToken'])) {
     </div>
     <div class="center-tag-wrap">
       <a href="#" class="center-tag center-tag--secondary header-title fancy on-dark-bg" id="events-center-tag" tabindex="39"><span class="center-tag__title">Attend a Catapult Event</span></a>
-    </div>=
-  </section><!-- end events -->
+    </div>
+  </section>--><!-- end events -->
 
   <section class="donate" id="donate">
     <div class="row">
