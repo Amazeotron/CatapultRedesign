@@ -761,7 +761,7 @@ section {
   background: url(../img/homepage/contact/icons.png) top left no-repeat;
   margin: 0;
   padding: 2px 0 0 40px;
-  height: 32px;
+  height: 33px;
   text-decoration: none;
   color: #e0dad8;
   font-size: 1.8em; }
@@ -1052,7 +1052,7 @@ section {
 .social .social-button {
   position: relative;
   display: block;
-  width: 32px; }
+  width: 33px; }
   .social .social-button span {
     -webkit-transform: translate3d(0, 0, 0);
     -webkit-transition: all 0.3s ease-in-out;
@@ -1064,9 +1064,8 @@ section {
     left: 0;
     z-index: -1;
     display: block;
-    width: 32px;
-    height: 28px;
-    /* 32px - 4px padding */
+    width: 33px;
+    height: 33px;
     overflow: hidden;
     border-radius: 16px 0 0 16px;
     padding-top: 4px;
@@ -1097,11 +1096,11 @@ section {
       width: 100px;
       opacity: 1; }
   .social .social-button.contact-button--twitter .hover {
-    width: 95px; }
+    width: 110px; }
   .social .social-button.contact-button--facebook .hover {
-    width: 65px; }
+    width: 85px; }
   .social .social-button.contact-button--rss .hover {
-    width: 35px; }
+    width: 80px; }
 
 @media only screen and (max-width: 1024px) {
   .social {
@@ -1998,11 +1997,18 @@ html.no-touch .team-member-details.hover {
       width: 100%; }
   #map-callout .map-callout-content {
     float: left;
-    width: 55%; }
+    width: 55%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto; }
   #map-callout h2 {
     color: #f2ad4b;
     font-size: 2.1em;
     margin: 0 0 10px 0; }
+  #map-callout h3 {
+    color: #333333;
+    font-size: 1.2em;
+    margin: 0; }
   #map-callout p {
     color: #515052;
     margin: 0; }
@@ -2298,6 +2304,18 @@ footer {
   -webkit-box-shadow: inset 0px 7px 7px 0px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: inset 0px 7px 7px 0px rgba(0, 0, 0, 0.5);
   box-shadow: inset 0px 7px 7px 0px rgba(0, 0, 0, 0.5); }
+  footer .footer-links {
+    margin: 0;
+    padding: 20px 0; }
+    footer .footer-links li {
+      list-style-type: none;
+      float: left;
+      padding: 0 25px 0 0; }
+      footer .footer-links li a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.5em;
+        letter-spacing: 1px; }
 
 .contact-button {
   margin-bottom: 7px; }

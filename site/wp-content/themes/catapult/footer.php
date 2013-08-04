@@ -1,19 +1,19 @@
 		<footer>
 			<div class="row">
-				<div class="col-wrap">
-					<div class="two-col">
-						<p>Catapult Design is a non-profit design firm providing engineering and implementation support to the thousands of organizations in of technologies or products. The net benefit of our activities is nothing less than a fundamental improvement in the lives of those who need it most.</p>
-						<p>&copy; COPYRIGHT 2013</p>
-					</div>
-					<div class="two-col margin-left">
-						<a href="https://twitter.com/Catapult_Design" class="contact-button contact-button--twitter header-title" tabindex="54">@catapult_design</a>
-						<a href="https://www.facebook.com/CatapultDesign" class="contact-button contact-button--facebook header-title" tabindex="55">facebook.com/catapult-design</a>
-						<a href="mailto:info@catapultdesign.org" class="contact-button contact-button--email header-title" tabindex="56">info@catapultdesign.org</a>
-						<a href="<?php echo site_url('/faq-and-press-kit/'); ?>" class="contact-button contact-button--faq header-title" tabindex="57">FAQ &amp; PRESSKIT</a>
-					</div>
-				</div>
+        <a href="https://twitter.com/Catapult_Design" class="contact-button contact-button--twitter header-title" tabindex="54">@catapult_design</a>
+        <a href="https://www.facebook.com/CatapultDesign" class="contact-button contact-button--facebook header-title" tabindex="55">facebook.com/catapult-design</a>
+        <a href="mailto:info@catapultdesign.org" class="contact-button contact-button--email header-title" tabindex="56">info@catapultdesign.org</a>
+        <a href="<?php echo site_url('/faq-and-press-kit/'); ?>" class="contact-button contact-button--faq header-title" tabindex="57">FAQ &amp; PRESSKIT</a>
+        <ul class="footer-links clearfix">
+          <li><a href="/dev/services" class="header-title">SERVICES &raquo;</a></li>
+          <li><a href="/dev/press" class="header-title">PRESS &amp; PUBLICATIONS &raquo;</a></li>
+          <li><a href="/dev/projects" class="header-title">PROJECTS &raquo;</a></li>
+          <li><a href="/dev/partners" class="header-title">PARTNERS &amp; SPONSORS &raquo;</a></li>
+          <li><a href="/dev/news" class="header-title">NEWS &raquo;</a></li>
+        </ul>
+        <p>Catapult Design is a non-profit design firm providing engineering and implementation support to the thousands of organizations in of technologies or products. The net benefit of our activities is nothing less than a fundamental improvement in the lives of those who need it most.</p>
+        <p>&copy; COPYRIGHT 2013</p>
 			</div>
-			
 		</footer>
 
 	<?php wp_footer(); ?>

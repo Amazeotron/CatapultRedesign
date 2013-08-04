@@ -276,9 +276,15 @@ $(document).ready(function() {
     callout.removeClass('hide');
     
     // populate callout
-    var img = $('<img src="' + data.attachments[0].images.thumbnail.url + '" />');
+    var img = $('<img src="' + data.attachments[0].images.thumbnail.url + '" />'),
+        loc = data.custom_fields.location[0];
+    
+    loc = loc.substring(0, loc.indexOf('|'));
+    
+    console.log("location: " + loc);
     callout.find('.map-callout-img').append(img);
     callout.find('h2').append(data.title);
+    callout.find('h3').append(loc);
     callout.find('p').append(data.excerpt);
   }
   
@@ -287,6 +293,7 @@ $(document).ready(function() {
     callout.addClass('hide');
     callout.find('img').remove();
     callout.find('h2').empty();
+    callout.find('h3').empty();
     callout.find('p').empty();
   }
 

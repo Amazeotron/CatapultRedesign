@@ -4,6 +4,24 @@ footer {
 	overflow: hidden;
 	background: rgba(0,0,0,0.5);
 	@include innerShadow(0px, 7px, 7px, 0px, 0.5);
+  
+  .footer-links {
+    margin: 0;
+    padding: 20px 0;
+    
+    li {
+      list-style-type: none;
+      float: left;
+      padding: 0 25px 0 0;
+      
+      a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.5em;
+        letter-spacing: 1px;
+      }
+    }
+  }
 }
 
 .contact-button {

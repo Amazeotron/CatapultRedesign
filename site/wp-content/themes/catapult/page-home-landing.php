@@ -167,6 +167,7 @@ if (isset($_POST['stripeToken'])) {
       <div class="map-callout-img"></div>
       <div class="map-callout-content">
         <h2 class="header-title"></h2>
+        <h3></h3>
         <p></p>
       </div>
     </div>
