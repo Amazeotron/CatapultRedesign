@@ -1467,9 +1467,13 @@ footer {
   -webkit-box-shadow: inset 0px 7px 7px 0px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: inset 0px 7px 7px 0px rgba(0, 0, 0, 0.5);
   box-shadow: inset 0px 7px 7px 0px rgba(0, 0, 0, 0.5); }
+  footer .contact-button {
+    width: 33px;
+    float: left;
+    text-indent: -10000px; }
   footer .footer-links {
     margin: 0;
-    padding: 20px 0; }
+    padding: 29px 0 20px 0; }
     footer .footer-links li {
       list-style-type: none;
       float: left;
@@ -1479,6 +1483,8 @@ footer {
         text-decoration: none;
         font-size: 1.5em;
         letter-spacing: 1px; }
+        footer .footer-links li a:hover {
+          color: #f2ad4b; }
 
 .contact-button {
   margin-bottom: 7px; }
