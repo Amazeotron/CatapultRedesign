@@ -305,26 +305,51 @@ $(document).ready(function() {
   // Deal with filtering
   $('#js-location-filter-all').on('click', function(event) {
     if (typeof event !== 'undefined') event.preventDefault();
+    // Turn off all markers
+    $('.location-filter').each(function() {
+      $(this).removeClass('active');
+    });
+    $(this).addClass('active');
     redrawMarkersWithFilter('all');
   });
   $('#js-location-filter-water').on('click', function(event) {
     if (typeof event !== 'undefined') event.preventDefault();
+    $('.location-filter').each(function() {
+      $(this).removeClass('active');
+    });
+    $(this).addClass('active');
     redrawMarkersWithFilter('water');
   });
   $('#js-location-filter-enterprise').on('click', function(event) {
     if (typeof event !== 'undefined') event.preventDefault();
+    $('.location-filter').each(function() {
+      $(this).removeClass('active');
+    });
+    $(this).addClass('active');
     redrawMarkersWithFilter('enterprise');
   });
   $('#js-location-filter-energy').on('click', function(event) {
     if (typeof event !== 'undefined') event.preventDefault();
+    $('.location-filter').each(function() {
+      $(this).removeClass('active');
+    });
+    $(this).addClass('active');
     redrawMarkersWithFilter('energy');
   });
   $('#js-location-filter-health').on('click', function(event) {
     if (typeof event !== 'undefined') event.preventDefault();
+    $('.location-filter').each(function() {
+      $(this).removeClass('active');
+    });
+    $(this).addClass('active');
     redrawMarkersWithFilter('health');
   });
   $('#js-location-filter-mobility').on('click', function(event) {
     if (typeof event !== 'undefined') event.preventDefault();
+    $('.location-filter').each(function() {
+      $(this).removeClass('active');
+    });
+    $(this).addClass('active');
     redrawMarkersWithFilter('mobility');
   });
 

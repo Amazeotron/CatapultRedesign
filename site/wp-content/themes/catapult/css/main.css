@@ -2029,9 +2029,12 @@ html.no-touch .team-member-details.hover {
       margin: 4px 0 0 20px;
       padding: 0; }
       .locations .map-footer ul li a {
-        text-decoration: none; }
-        .locations .map-footer ul li a:hover {
-          color: white; }
+        text-decoration: none;
+        color: #FFFFFF; }
+        .locations .map-footer ul li a:hover, .locations .map-footer ul li a.active {
+          color: #f2ad4b; }
+        .locations .map-footer ul li a.active {
+          text-shadow: -2px -2px 0px rgba(0, 0, 0, 0.3); }
   .locations .drawer__content {
     background: url(../img/homepage/locations/world.svg) top left no-repeat;
     background-size: 100% auto; }

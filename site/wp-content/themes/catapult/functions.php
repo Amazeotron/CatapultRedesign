@@ -14,7 +14,7 @@ function init_sessions() {
 add_action('init', 'init_sessions');
 
 function custom_excerpt_length( $length ) {
-	return 20;
+	return 15;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
@@ -198,7 +198,7 @@ add_action('init', 'project_register');
 
 function project_register() {
   $labels = array(
-    'name' => _x('Project', 'post type general name'),
+    'name' => _x('Projects', 'post type general name'),
     'singular_name' => _x('Project', 'post type singular name'),
     'add_new' => _x('Add New', 'project'),
     'add_new_item' => __('Project'),

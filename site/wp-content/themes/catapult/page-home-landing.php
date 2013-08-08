@@ -176,12 +176,12 @@ if (isset($_POST['stripeToken'])) {
     <div class="map-footer clearfix">
       <h2><span class="header-title">FILTER</span> by <span class="header-title">INDUSTRY</span></h2>
       <ul class="clearfix">
-        <li><h2 class="header-title"><a href="#" id="js-location-filter-all">ALL</a></h2></li>
-        <li><h2 class="header-title"><a href="#" id="js-location-filter-water">WATER</a></h2></li>
-        <li><h2 class="header-title"><a href="#" id="js-location-filter-enterprise">ENTERPRISE</a></h2></li>
-        <li><h2 class="header-title"><a href="#" id="js-location-filter-energy">ENERGY</a></h2></li>
-        <li><h2 class="header-title"><a href="#" id="js-location-filter-health">HEALTH</a></h2></li>
-        <li><h2 class="header-title"><a href="#" id="js-location-filter-mobility">MOBILITY</a></h2></li>
+        <li><h2 class="header-title"><a href="#" class="location-filter active" id="js-location-filter-all">ALL</a></h2></li>
+        <li><h2 class="header-title"><a href="#" class="location-filter" id="js-location-filter-water">WATER</a></h2></li>
+        <li><h2 class="header-title"><a href="#" class="location-filter" id="js-location-filter-enterprise">ENTERPRISE</a></h2></li>
+        <li><h2 class="header-title"><a href="#" class="location-filter" id="js-location-filter-energy">ENERGY</a></h2></li>
+        <li><h2 class="header-title"><a href="#" class="location-filter" id="js-location-filter-health">HEALTH</a></h2></li>
+        <li><h2 class="header-title"><a href="#" class="location-filter" id="js-location-filter-mobility">MOBILITY</a></h2></li>
       </ul>
     </div>
   </section>
