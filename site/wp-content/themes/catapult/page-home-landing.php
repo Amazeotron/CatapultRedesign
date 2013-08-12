@@ -153,11 +153,15 @@ if (isset($_POST['stripeToken'])) {
     </div>
   </section>-->
 
-  <section class="featured">
+  <section class="featured row">
     <h1>Our <span class="header-title level-one">FEATURES</span> &amp; <span class="header-title level-two">PUBLICATIONS</span> include &raquo;</h1>
-    <div class="featured-logos">
-      
-    </div>
+    <ul class="featured-logos nolist clearfix">
+      <li><a href=""><img src="<?php bloginfo('template_url'); ?>/img/logos/fast-company-logo.png" alt=""/></a></li>
+      <li><a href=""><img src="<?php bloginfo('template_url'); ?>/img/logos/pop-tech-logo.png" alt=""/></a></li>
+      <li><a href=""><img src="<?php bloginfo('template_url'); ?>/img/logos/new-yorker-logo.png" alt=""/></a></li>
+      <li><a href=""><img src="<?php bloginfo('template_url'); ?>/img/logos/good-logo.png" alt=""/></a></li>
+      <li><a href=""><img src="<?php bloginfo('template_url'); ?>/img/logos/wired-logo.png" alt=""/></a></li>
+    </ul>
   </section>
   <hr />
 
@@ -176,12 +180,12 @@ if (isset($_POST['stripeToken'])) {
     <div class="map-footer clearfix">
       <h2><span class="header-title">FILTER</span> by <span class="header-title">INDUSTRY</span></h2>
       <ul class="clearfix">
-        <li><h2 class="header-title"><a href="#" class="location-filter active" id="js-location-filter-all">ALL</a></h2></li>
-        <li><h2 class="header-title"><a href="#" class="location-filter" id="js-location-filter-water">WATER</a></h2></li>
-        <li><h2 class="header-title"><a href="#" class="location-filter" id="js-location-filter-enterprise">ENTERPRISE</a></h2></li>
-        <li><h2 class="header-title"><a href="#" class="location-filter" id="js-location-filter-energy">ENERGY</a></h2></li>
-        <li><h2 class="header-title"><a href="#" class="location-filter" id="js-location-filter-health">HEALTH</a></h2></li>
-        <li><h2 class="header-title"><a href="#" class="location-filter" id="js-location-filter-mobility">MOBILITY</a></h2></li>
+        <li><h2 class="header-title"><a href="#" class="location-filter active" id="js-location-filter-all" data-tag="all">ALL</a></h2></li>
+        <li><h2 class="header-title"><a href="#" class="location-filter" id="js-location-filter-water" data-tag="water">WATER</a></h2></li>
+        <li><h2 class="header-title"><a href="#" class="location-filter" id="js-location-filter-enterprise" data-tag="enterprise">ENTERPRISE</a></h2></li>
+        <li><h2 class="header-title"><a href="#" class="location-filter" id="js-location-filter-energy" data-tag="energy">ENERGY</a></h2></li>
+        <li><h2 class="header-title"><a href="#" class="location-filter" id="js-location-filter-health" data-tag="health">HEALTH</a></h2></li>
+        <li><h2 class="header-title"><a href="#" class="location-filter" id="js-location-filter-mobility" data-tag="mobility">MOBILITY</a></h2></li>
       </ul>
     </div>
   </section>

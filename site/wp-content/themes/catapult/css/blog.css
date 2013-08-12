@@ -528,7 +528,7 @@ h1, h2, h3, h4, h5, p, label, input, textarea, li {
 
 input[type="text"], input[type="tel"], input[type="email"], input[type="number"], select {
   border: none;
-  padding: 6px 0 5px 5px;
+  padding: 6px 0 5px 15px;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-size: 0.8em;
   color: black; }
@@ -547,6 +547,9 @@ h1 {
   font-size: 2.75em;
   text-align: center;
   font-weight: normal; }
+  @media only screen and (max-width: 320px) {
+    h1 {
+      font-size: 1.7em; } }
 
 h2 {
   font-size: 2.5em; }
@@ -571,6 +574,15 @@ hr {
   margin: 10px 0 0 0;
   padding: 0;
   background: url(../img/divider.png) top left repeat-x; }
+
+ul.nolist {
+  margin: 0;
+  padding: 0; }
+  ul.nolist li {
+    list-style-type: none;
+    float: left; }
+    ul.nolist li:last-of-type {
+      margin-right: 0; }
 
 .clicky-button {
   overflow: visible;
@@ -770,12 +782,12 @@ section {
   @media only screen and (max-width: 862px) {
     .contact-button {
       padding-top: 5px;
-      height: 29px;
+      height: 33px;
       font-size: 1.4em; } }
   @media only screen and (max-width: 693px) {
     .contact-button {
       padding-top: 7px;
-      height: 27px;
+      height: 33px;
       font-size: 1.1em; } }
   .contact-button.contact-button--small {
     font-size: 0.9em;
@@ -1311,7 +1323,7 @@ html.no-svg .header .logo {
   overflow: hidden;
   float: right;
   background: url(../img/homepage/divider-vert.png) top right no-repeat;
-  padding: 29px 0 0 0; }
+  padding: 25px 0 0 0; }
   @media only screen and (max-width: 720px) {
     .mainnav {
       padding-top: 16px; } }
@@ -1437,7 +1449,7 @@ html.no-svg .header .logo {
 #page-wrap {
   overflow: hidden;
   margin: 0 auto;
-  padding-top: 130px;
+  padding-top: 100px;
   padding-bottom: 100px;
   min-width: 960px;
   width: 960px; }
@@ -1450,9 +1462,9 @@ html.no-svg .header .logo {
       padding-top: 25px; } }
   #page-wrap #main-section {
     float: left;
-    width: 66%;
+    width: 67%;
     max-width: 850px;
-    padding: 40px 3% 0 1%; }
+    padding: 40px 3% 0 0; }
     #page-wrap #main-section hr {
       margin-bottom: 0; }
     @media only screen and (max-width: 720px) {
@@ -1461,8 +1473,7 @@ html.no-svg .header .logo {
         width: 96%; } }
   #page-wrap #main-aside {
     float: left;
-    width: 26%;
-    padding: 0 2%; }
+    width: 33%; }
     #page-wrap #main-aside hr {
       margin-bottom: 20px; }
     @media only screen and (max-width: 720px) {
@@ -1470,23 +1481,7 @@ html.no-svg .header .logo {
         float: none;
         width: 96%; } }
     #page-wrap #main-aside #main-aside-inner {
-      width: 84%;
-      padding: 40px 8%;
-      margin: 40px 0;
-      background-image: -moz-linear-gradient(left, #6f7170 0%, #797b7a 10%, #797b7a 90%, #6f7170 100%);
-      /* FF3.6+ */
-      background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, #6f7170), color-stop(10%, #797b7a), color-stop(90%, #797b7a), color-stop(100%, #6f7170));
-      /* Chrome,Safari4+ */
-      background-image: -webkit-linear-gradient(left, #6f7170 0%, #797b7a 10%, #797b7a 90%, #6f7170 100%);
-      /* Chrome10+,Safari5.1+ */
-      background-image: -o-linear-gradient(left, #6f7170 0%, #797b7a 10%, #797b7a 90%, #6f7170 100%);
-      /* Opera 11.10+ */
-      background-image: -ms-linear-gradient(left, #6f7170 0%, #797b7a 10%, #797b7a 90%, #6f7170 100%);
-      /* IE10+ */
-      background-image: linear-gradient(to right, #6f7170 0%, #797b7a 10%, #797b7a 90%, #6f7170 100%);
-      /* W3C */
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#797b7a', endColorstr='#797b7a',GradientType=1 );
-      /* IE6-8 */ }
+      margin: 40px 0; }
     #page-wrap #main-aside .contact-button {
       min-width: 244px; }
   #page-wrap .twitter-list {
@@ -1500,14 +1495,9 @@ html.no-svg .header .logo {
 .post-body img {
   max-width: 100%; }
 
-#main-aside-inner, .post-box, #post {
-  -webkit-box-shadow: 3px 3px 14px 3px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 3px 3px 14px 3px rgba(0, 0, 0, 0.4);
-  box-shadow: 3px 3px 14px 3px rgba(0, 0, 0, 0.4); }
-
 .post-title {
   text-align: left;
-  font-size: 3.3em;
+  font-size: 2em;
   line-height: 0.85em;
   color: #e3dcd8; }
   .post-title a {
@@ -1519,7 +1509,7 @@ html.no-svg .header .logo {
 -------------------- */
 .tags {
   overflow: hidden;
-  margin: 0 0 10px 0;
+  margin: 10px 0;
   padding: 0; }
   .tags .tag {
     list-style: none;
@@ -1565,20 +1555,7 @@ html.no-svg .header .logo {
   padding-right: 90px;
   position: relative; }
   .post-box.with-bg {
-    background-image: -moz-linear-gradient(left, #606160 0%, #797b7a 10%, #797b7a 90%, #606160 100%);
-    /* FF3.6+ */
-    background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, #606160), color-stop(10%, #797b7a), color-stop(90%, #797b7a), color-stop(100%, #606160));
-    /* Chrome,Safari4+ */
-    background-image: -webkit-linear-gradient(left, #606160 0%, #797b7a 10%, #797b7a 90%, #606160 100%);
-    /* Chrome10+,Safari5.1+ */
-    background-image: -o-linear-gradient(left, #606160 0%, #797b7a 10%, #797b7a 90%, #606160 100%);
-    /* Opera 11.10+ */
-    background-image: -ms-linear-gradient(left, #606160 0%, #797b7a 10%, #797b7a 90%, #606160 100%);
-    /* IE10+ */
-    background-image: linear-gradient(to right, #606160 0%, #797b7a 10%, #797b7a 90%, #606160 100%);
-    /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#797b7a', endColorstr='#797b7a',GradientType=1 );
-    /* IE6-8 */ }
+    background: #515052; }
   .post-box:first-of-type {
     margin-top: 0; }
   .post-box:last-of-type {
@@ -1599,6 +1576,8 @@ html.no-svg .header .logo {
     padding: 20px 20px 0 40px; }
     .post-box .post-top.twitter {
       padding-bottom: 20px; }
+    .post-box .post-top p {
+      margin: 0; }
   .post-box .post-title {
     margin: 0;
     padding: 0 0 0.2em 0;
@@ -1619,7 +1598,7 @@ html.no-svg .header .logo {
     color: #e3dcd8; }
   .post-box .post-meta {
     display: block;
-    padding: 20px 0 20px 40px;
+    padding: 5px 0;
     color: white;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     letter-spacing: 1px; }
@@ -1629,18 +1608,22 @@ html.no-svg .header .logo {
 -------------------- */
 .search-box form {
   overflow: hidden;
-  padding-bottom: 5px; }
+  padding-bottom: 5px;
+  float: right;
+  width: 33%; }
   .search-box form input[type="text"] {
     float: left;
     width: 80%;
-    height: 20px; }
+    height: 31px; }
   .search-box form input[type="submit"] {
     float: left;
     width: 16%; }
 .search-box .filters {
   margin: 20px 0 0 0;
   padding: 0;
-  overflow: hidden; }
+  overflow: hidden;
+  float: left;
+  width: 67%; }
   .search-box .filters li {
     list-style: none;
     float: left;
@@ -1768,6 +1751,10 @@ footer {
       list-style-type: none;
       float: left;
       padding: 0 25px 0 0; }
+      @media only screen and (max-width: 320px) {
+        footer .footer-links li {
+          float: none;
+          padding-bottom: 10px; } }
       footer .footer-links li a {
         color: white;
         text-decoration: none;

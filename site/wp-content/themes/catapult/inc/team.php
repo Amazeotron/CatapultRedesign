@@ -21,10 +21,7 @@ $the_query = new WP_Query(array('post_type' => 'teammember', 'posts_per_page' =>
   <a class="team-member-link" href="#<? echo hyphenate(get_the_title()); ?>" tabindex="<? echo $index++; ?>">
     <img class="team-member-headshot" src="<?php the_field('headshot'); ?>" alt="<? the_title(); ?>" />
     <div class="team-member-details">
-      <h3 class="header-title"><? the_title(); ?></h3>
-      <h4><? the_field('job_title'); ?></h4>
-      <h5><? the_field('company_name'); ?></h5>
-      <p><? the_field('excerpt'); ?> more &raquo;</p>
+      <h3><? the_title(); ?></h3>
     </div>
   </a>
   </li>

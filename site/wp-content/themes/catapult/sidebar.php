@@ -11,14 +11,6 @@ $catIDsSeparated = implode(",", $catIDs);
 ?>
 <aside id="main-aside">
     <div id="main-aside-inner">
-        <div class="search-box">
-            <?php get_search_form(); ?>
-            <ul class="filters clearfix">
-                <li><a class="link-secondary header-title" href="<?php echo home_url('/news'); ?>" title="View All">View All</a></li>
-                <li><a class="link-secondary header-title" href="<?php echo home_url('/blog'); ?>" title="Articles">Articles</a></li>
-                <li><a class="link-secondary header-title" href="<?php echo home_url('/events'); ?>" title="Events">Events</a></li>
-            </ul>
-        </div><!-- end search-box -->
         <div class="divider"></div>
         <ul class="tags">
             <?php
@@ -65,5 +57,25 @@ $catIDsSeparated = implode(",", $catIDs);
       echo '<li class="twitter-list__item">' . $newsItem->title . "</li>";
     }
     echo "</ul>";
+
+    // Get the Twitter feed for the sidebar
+
+    function getTwitterFeed($username) {
+      include_once('inc/TwitterAPIExchange.php');
+
+      $settings = array(
+        'oauth_access_token' => "463123231-fjumJz5441JSO6OAVWbMxhNOu56mFYjwU0hv9p5c",
+        'oauth_access_token_secret' => "vIxoEmf6hvvp8cjQJiDZNPTQWN6ou0tXUKNXAwuJ2TI",
+        'consumer_key' => "vXiVeH1ut0pmml9JhbhHVw",
+        'consumer_secret' => "zAoHQN3Tlpcb9utdjReMPapkqMwYpRMwUPkaKFicws"
+      );
+      $url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
+      $getfield = '?screen_name=' . $username . '&include_entities=true&include_rts=true&count=5';
+      $requestMethod = 'GET';
+      $twitter = new TwitterAPIExchange($settings);
+      $twitter->setGetfield($getfield);
+      $twitter->buildOauth($url, $requestMethod);
+      return json_decode($twitter->performRequest());
+    }
     ?>
 </aside><!-- end main-aside -->

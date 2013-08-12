@@ -5,7 +5,7 @@
 #page-wrap {
   overflow: hidden;
   margin: 0 auto;
-  padding-top: 130px;
+  padding-top: 100px;
   padding-bottom: 100px;
   min-width: 960px;
   width: 960px;
@@ -21,9 +21,9 @@
   
   #main-section {
     float: left;
-    width: 66%;
+    width: 67%;
     max-width: 850px;
-    padding: 40px 3% 0 1%;
+    padding: 40px 3% 0 0;
     
     hr {
       margin-bottom: 0;
@@ -37,8 +37,7 @@
   
   #main-aside {
     float: left;
-    width: 26%;
-    padding: 0 2%;
+    width: 33%;
     
     hr {
       margin-bottom: 20px;
@@ -50,10 +49,7 @@
     }
     
     #main-aside-inner {
-      width: 84%;
-      padding: 40px 8%;
       margin: 40px 0;
-      @include edgeGradient($grey, 4%);
     }
     
     .contact-button {
@@ -80,14 +76,10 @@
 }
 
 
-#main-aside-inner, .post-box, #post {
-  @include borderShadow(3px, 3px, 14px, 3px, 0.4);
-}
-
 // Common style for all post-title elements
 .post-title {
   text-align: left;
-  font-size: 3.3em;
+  font-size: 2em;
   line-height: 0.85em;
   color: rgba(227, 220, 216, 1.0);
   
@@ -104,7 +96,7 @@
 -------------------- */
 .tags {
   overflow: hidden;
-  margin: 0 0 10px 0;
+  margin: 10px 0;
   padding: 0;
   
   .tag {
@@ -166,10 +158,10 @@
   overflow: hidden;
   margin: 20px 0 0 0;
   padding-right: 90px;
-  position: relative;
+  position: relative;  
   
   &.with-bg {
-    @include edgeGradient($grey, 10%);
+    background: #515052;
   }
   
   &:first-of-type {
@@ -201,6 +193,10 @@
     
     &.twitter {
       padding-bottom: 20px;
+    }
+
+    p {
+      margin: 0;
     }
   }
   
@@ -234,7 +230,7 @@
   
   .post-meta {
     display: block;
-    padding: 20px 0 20px 40px;
+    padding: 5px 0;
     color: rgb(255, 255, 255);
     font-family: $serifFont;
     letter-spacing: 1px;
@@ -253,11 +249,13 @@
   form {
     overflow: hidden;
     padding-bottom: 5px;
+    float: right;
+    width: 33%;
     
     input[type="text"] {
       float: left;
       width: 80%;
-      height: 20px;
+      height: 31px;
     }
     
     input[type="submit"] {
@@ -270,6 +268,8 @@
     margin: 20px 0 0 0;
     padding: 0;
     overflow: hidden;
+    float: left;
+    width: 67%;
     
     li {
       list-style: none;

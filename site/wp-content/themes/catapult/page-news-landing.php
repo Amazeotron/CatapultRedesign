@@ -12,6 +12,18 @@
 <?php get_header(); ?>
 	
 	<div id="page-wrap" class="page-top">
+
+    <div class="search-box clearfix">
+      <ul class="filters clearfix">
+        <li><a class="link-secondary header-title" href="<?php echo home_url('/news'); ?>" title="View All">View All</a></li>
+        <li><a class="link-secondary header-title" href="<?php echo home_url('/blog'); ?>" title="Articles">Articles</a></li>
+        <li><a class="link-secondary header-title" href="<?php echo home_url('/projects'); ?>" title="View All">Projects</a></li>
+        <li><a class="link-secondary header-title" href="<?php echo home_url('/events'); ?>" title="Events">Events</a></li>
+        <li><a class="link-secondary header-title" href="<?php echo home_url('/press'); ?>" title="View All">Press</a></li>
+      </ul>
+      <?php get_search_form(); ?>
+    </div><!-- end search-box -->
+    
 		<section id="main-section">
 			<div id="posts">
 				
@@ -34,11 +46,20 @@
 						</figure>
 							
 						<? else : ?>
-						<article class="post-box with-bg">	
+						<article class="post-box with-bg">
 						<? endif; ?>
 						
 						<header class="post-top">
 							<h1 class="post-title header-title"><a href="<?php echo $newsItem->link; ?>"><?php echo $newsItem->title; ?></a></h1>
+
+              <?php if ($newsItem->type != "twitter") : ?>
+                <div class="post-meta">
+                  <span>By <?php echo $newsItem->author; ?></span> | <span><?php echo $newsItem->nice_date; ?></span>
+                </div>
+              <? endif; ?>
+              
+              <?php echo $newsItem->excerpt; ?>
+              
 							<ul class="tags">
 		        <?php
 		        $categories = $newsItem->categories;
@@ -51,15 +72,8 @@
 						<p class="post-tweet"><?php echo $newsItem->title; ?></p>
 						<span class="category-item header-title insights">TWEET</span> <a class="post-tweetlink" href="<?php echo $newsItem->link ?>">@catapult_design</a> <span class="post-tweetdate">| <?php echo $newsItem->nice_date; ?></span>
 					<? endif; ?>
-					
-					
+
 				</header><!-- end post-top -->
-				
-				<?php if ($newsItem->type != "twitter") : ?>
-				<div class="post-meta">
-					<span>By <?php echo $newsItem->author; ?></span> | <span><?php echo $newsItem->nice_date; ?></span>
-				</div>
-				<? endif; ?>
 					
 				</article>
 			<?php endforeach; ?>

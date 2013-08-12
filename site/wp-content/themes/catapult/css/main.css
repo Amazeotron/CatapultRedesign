@@ -529,7 +529,7 @@ h1, h2, h3, h4, h5, p, label, input, textarea, li {
 
 input[type="text"], input[type="tel"], input[type="email"], input[type="number"], select {
   border: none;
-  padding: 6px 0 5px 5px;
+  padding: 6px 0 5px 15px;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-size: 0.8em;
   color: black; }
@@ -548,6 +548,9 @@ h1 {
   font-size: 2.75em;
   text-align: center;
   font-weight: normal; }
+  @media only screen and (max-width: 320px) {
+    h1 {
+      font-size: 1.7em; } }
 
 h2 {
   font-size: 2.5em; }
@@ -572,6 +575,15 @@ hr {
   margin: 10px 0 0 0;
   padding: 0;
   background: url(../img/divider.png) top left repeat-x; }
+
+ul.nolist {
+  margin: 0;
+  padding: 0; }
+  ul.nolist li {
+    list-style-type: none;
+    float: left; }
+    ul.nolist li:last-of-type {
+      margin-right: 0; }
 
 .clicky-button {
   overflow: visible;
@@ -771,12 +783,12 @@ section {
   @media only screen and (max-width: 862px) {
     .contact-button {
       padding-top: 5px;
-      height: 29px;
+      height: 33px;
       font-size: 1.4em; } }
   @media only screen and (max-width: 693px) {
     .contact-button {
       padding-top: 7px;
-      height: 27px;
+      height: 33px;
       font-size: 1.1em; } }
   .contact-button.contact-button--small {
     font-size: 0.9em;
@@ -1312,7 +1324,7 @@ html.no-svg .header .logo {
   overflow: hidden;
   float: right;
   background: url(../img/homepage/divider-vert.png) top right no-repeat;
-  padding: 29px 0 0 0; }
+  padding: 25px 0 0 0; }
   @media only screen and (max-width: 720px) {
     .mainnav {
       padding-top: 16px; } }
@@ -1398,6 +1410,9 @@ html.no-svg .header .logo {
   .intro .slidesjs-pagination {
     padding: 0;
     overflow: hidden; }
+    @media only screen and (max-width: 320px) {
+      .intro .slidesjs-pagination {
+        display: none; } }
   .intro .slidesjs-pagination .active {
     background-position: 0 -16px; }
   .intro .slidesjs-pagination-item {
@@ -1661,6 +1676,12 @@ html.no-svg .header .logo {
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a87b8b', endColorstr='#a87b8b',GradientType=1 );
       /* IE6-8 */ }
 
+.featured-logos li {
+  width: 20%;
+  margin: 0; }
+  .featured-logos li img {
+    width: 100%; }
+
 /* --------------------------------
     Case Studies Section
 -------------------------------- */
@@ -1859,8 +1880,6 @@ html.no-svg .header .logo {
 .team {
   margin: 0 0 80px 0; }
   .team h1 {
-    font-weight: normal;
-    font-size: 3em;
     margin-top: 0;
     padding: 1em 0 0 0;
     text-align: center;
@@ -1877,6 +1896,10 @@ html.no-svg .header .logo {
       overflow: hidden;
       position: relative;
       margin: 1%; }
+      @media only screen and (max-width: 674px) {
+        .team .team-members .team-member {
+          margin: 2%;
+          width: 46%; } }
       .team .team-members .team-member .team-member-link {
         position: relative;
         display: block; }
@@ -1897,10 +1920,9 @@ html.no-svg .header .logo {
         padding: 0;
         font-weight: normal;
         color: rgba(255, 255, 255, 0.9);
-        line-height: 1.2em;
-        text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5); }
+        line-height: 1.2em; }
       .team .team-members .team-member h3 {
-        font-size: 1.6em;
+        font-size: 1em;
         padding-bottom: 0.5em;
         color: white; }
         @media only screen and (max-width: 913px) {
@@ -1910,18 +1932,9 @@ html.no-svg .header .logo {
         font-size: 1.1em; }
       .team .team-members .team-member h5 {
         font-size: 1.0em; }
-      @media only screen and (max-width: 422px) {
-        .team .team-members .team-member {
-          margin: 2%;
-          width: 46%; } }
       .team .team-members .team-member p {
         text-decoration: none; }
     .team .team-members .team-member-details {
-      -webkit-transform: translate3d(0, 0, 0);
-      -webkit-transition: all 0.2s ease-in-out;
-      -moz-transition: all 0.2s ease-in-out;
-      -o-transition: all 0.2s ease-in-out;
-      transition: all 0.2s ease-in-out;
       -webkit-touch-callout: none;
       -webkit-user-select: none;
       -khtml-user-select: none;
@@ -1930,15 +1943,19 @@ html.no-svg .header .logo {
       user-select: none;
       display: block;
       position: absolute;
-      top: 84%;
+      bottom: 0;
       left: 0;
-      padding: 6px 10px 0 10px;
-      height: 100%;
+      padding: 15px 0px 5px 10px;
+      width: 100%;
       cursor: pointer;
       background-color: #f2ad4b; }
       @media only screen and (min-width: 914px) {
         .team .team-members .team-member-details {
-          top: 80%; } }
+          top: 77%; } }
+      @media only screen and (max-width: 320px) {
+        .team .team-members .team-member-details {
+          padding: 8px 0px 0px 8px;
+          font-size: 0.7em; } }
       .team .team-members .team-member-details p {
         color: #fff;
         line-height: 1.1em; }
@@ -2017,20 +2034,53 @@ html.no-touch .team-member-details.hover {
   position: relative; }
   .locations #locations-map {
     height: 500px; }
+    @media only screen and (max-width: 563px) {
+      .locations #locations-map {
+        height: 250px; } }
   .locations .map-footer h2 {
     float: left; }
+    @media only screen and (max-width: 1024px) {
+      .locations .map-footer h2 {
+        font-size: 2em; } }
+    @media only screen and (max-width: 795px) {
+      .locations .map-footer h2 {
+        float: none;
+        text-align: center;
+        margin-bottom: 0; } }
+    @media only screen and (max-width: 563px) {
+      .locations .map-footer h2 {
+        font-size: 1.7em; } }
+    @media only screen and (max-width: 320px) {
+      .locations .map-footer h2 {
+        font-size: 1em; } }
   .locations .map-footer ul {
     margin: 0;
     padding: 0;
     float: right; }
+    @media only screen and (max-width: 795px) {
+      .locations .map-footer ul {
+        float: none;
+        width: 500px;
+        margin: 0 auto; } }
+    @media only screen and (max-width: 320px) {
+      .locations .map-footer ul {
+        width: 100%; } }
     .locations .map-footer ul li {
       list-style-type: none;
       float: left;
       margin: 4px 0 0 20px;
       padding: 0; }
+      .locations .map-footer ul li:first-of-type {
+        margin-left: 0; }
+      @media only screen and (max-width: 795px) {
+        .locations .map-footer ul li h2 {
+          margin: 0; } }
+      @media only screen and (max-width: 320px) {
+        .locations .map-footer ul li {
+          margin-left: 10px; } }
       .locations .map-footer ul li a {
         text-decoration: none;
-        color: #FFFFFF; }
+        color: #e3dcd8; }
         .locations .map-footer ul li a:hover, .locations .map-footer ul li a.active {
           color: #f2ad4b; }
         .locations .map-footer ul li a.active {
@@ -2318,6 +2368,10 @@ footer {
       list-style-type: none;
       float: left;
       padding: 0 25px 0 0; }
+      @media only screen and (max-width: 320px) {
+        footer .footer-links li {
+          float: none;
+          padding-bottom: 10px; } }
       footer .footer-links li a {
         color: white;
         text-decoration: none;

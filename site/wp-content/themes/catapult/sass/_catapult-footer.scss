@@ -20,6 +20,11 @@ footer {
       float: left;
       padding: 0 25px 0 0;
       
+      @media only screen and (max-width: 320px) {
+        float: none;
+        padding-bottom: 10px;
+      }
+      
       a {
         color: white;
         text-decoration: none;

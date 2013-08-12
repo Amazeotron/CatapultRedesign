@@ -11,11 +11,11 @@ var team = {
 		this._dataLength = this._teamData.length;
 		var self = this;
 
-		$(".team-member").hover(function() {
-			$(this).find(".team-member-details").addClass("hover");
-		}, function() {
-			$(this).find(".team-member-details").removeClass("hover");
-		});
+//		$(".team-member").hover(function() {
+//			$(this).find(".team-member-details").addClass("hover");
+//		}, function() {
+//			$(this).find(".team-member-details").removeClass("hover");
+//		});
 
 		$(".team-member").on("click", function(event) {
 			event.preventDefault();

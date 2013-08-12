@@ -1,0 +1,6 @@
+/* line 3, site/wp-content/themes/catapult/sass/_catapult-events.scss */
+.events .events__group {
+  height: 196px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}

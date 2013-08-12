@@ -27,6 +27,7 @@
   <!--<script src="<?php //bloginfo('template_url'); ?>/js/libs/jquery.transition.min.js"></script>-->
   <!--<script src="<?php //bloginfo('template_url'); ?>/js/libs/jquery.transform3d.js"></script>-->
   <script src="<?php bloginfo('template_url'); ?>/js/libs/jquery.slides.min.js"></script>
+  <script src="<?php bloginfo('template_url'); ?>/js/libs/jquery.transit.min.js"></script>
   
   <?php if (is_page("Home")) { ?>
 	  <script src="https://js.stripe.com/v1/"></script>
@@ -45,7 +46,7 @@
 	  <!--<script src="<?php //bloginfo('template_url'); ?>/js/intro.js"></script>-->
 	  <script src="<?php bloginfo('template_url'); ?>/js/keyofferings.js"></script>
 	  <!--<script src="<?php //bloginfo('template_url'); ?>/js/casestudies.js"></script>-->
-	  <script src="<?php bloginfo('template_url'); ?>/js/locations.js"></script>
+	  <script src="<?php bloginfo('template_url'); ?>/js/map.js"></script>
 	  <script src="<?php bloginfo('template_url'); ?>/js/team.js"></script>
 	  <script src="<?php bloginfo('template_url'); ?>/js/partners.js"></script>
 	  <script src="<?php bloginfo('template_url'); ?>/js/events.js"></script>

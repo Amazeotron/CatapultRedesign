@@ -3,139 +3,142 @@
 -------------------------------- */
 
 .team {
-    margin: 0 0 80px 0;
-    
-    h1 {
-        font-weight: normal;
-        font-size: 3em;
-        margin-top: 0;
-        padding: 1em 0 0 0;
-        text-align: center;
-        letter-spacing: 1px;
-    }
+  margin: 0 0 80px 0;
 
-    .team-members {
-        overflow: hidden;
-        padding: 0;
-        margin: 0 auto;
+  h1 {
+    margin-top: 0;
+    padding: 1em 0 0 0;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
+  .team-members {
+    overflow: hidden;
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+
+    .team-member {
+      display: block;
+      float: left;
+      width: 23%;
+      overflow: hidden;
+      position: relative;
+      margin: 1%;
+
+      @media only screen and (max-width: 674px) {
+        margin: 2%;
+        width: 46%;
+      }
+
+      .team-member-link {
+        position: relative;
+        display: block;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      img {
+        border: 2px solid;
         width: 100%;
-        
-        .team-member {
-            display: block;
-            float: left;
-            // width: 178px;
-            width: 23%;
-            overflow: hidden;
-            position: relative;
-            margin: 1%;
-            
-            .team-member-link {
-                position: relative;
-                display: block;
-            }
-            
-            a {
-                text-decoration: none;
-            }
-            
-            img {
-                border: 2px solid;
-                width: 100%;
-                height: auto;
-            }
-            
-            &.primary img {
-                border-color: $orange;
-            }
-            &.secondary img {
-                border-color: $pink;
-            }
-            &.tertiary img {
-                border-color: $teal;
-            }
-            
-            h3, h4, h5 {
-                margin: 0;
-                padding: 0;
-                font-weight: normal;
-                color: rgba(255,255,255,0.9);
-                line-height: 1.2em;
-                @include textShadow(1px, 1px, 0px, rgba(0,0,0,0.5));
-            }
-            h3 {
-                font-size: 1.6em;
-                padding-bottom: 0.5em;
-                color: rgba(255,255,255,1);
-                
-                @media only screen and (max-width: 913px) {
-                    font-size: 1.1em;
-                }
-            }
-            h4 {
-                font-size: 1.1em;
-            }
-            h5 {
-                font-size: 1.0em;
-            }
-            
-            @media only screen and (max-width: 422px) {
-                margin: 2%;
-                width: 46%;
-            }
-            
-            p {
-                text-decoration: none;
-            }
-        }
-        
-        .team-member-details {
-            @include transition(0.2s);
-            @include noSelect();
-            display: block;
-            position: absolute;
-            top: 84%;
-            left: 0;
-            padding: 6px 10px 0 10px;
-            height: 100%;
-            cursor: pointer;
-            background-color: $orange;
-            
-            @media only screen and (min-width: 914px) {
-                top: 80%;
-            }
+        height: auto;
+      }
 
-            p {
-                color: #fff;
-                line-height: 1.1em;
+      &.primary img {
+        border-color: $orange;
+      }
+      &.secondary img {
+        border-color: $pink;
+      }
+      &.tertiary img {
+        border-color: $teal;
+      }
 
-                a {
-                    color: #fff;
-                    text-decoration: underline;
-                }
-                a:after {
-                    content: " »";
-                }
-            }
+      h3, h4, h5 {
+        margin: 0;
+        padding: 0;
+        font-weight: normal;
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.2em;
+      }
+      h3 {
+        font-size: 1em;
+        padding-bottom: 0.5em;
+        color: rgba(255, 255, 255, 1);
+
+        @media only screen and (max-width: 913px) {
+          font-size: 1.1em;
         }
-        
-        @media only screen and (max-width : 422px) {    
-            .team-member-details, 
-            .team-member-details.hover {
-                top: 105px;
-            }
+      }
+      h4 {
+        font-size: 1.1em;
+      }
+      h5 {
+        font-size: 1.0em;
+      }
+
+      p {
+        text-decoration: none;
+      }
+    }
+
+    .team-member-details {
+      @include noSelect();
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 15px 0px 5px 10px;
+      width: 100%;
+      cursor: pointer;
+      background-color: $orange;
+
+      @media only screen and (min-width: 914px) {
+        top: 77%;
+      }
+
+      @media only screen and (max-width: 320px) {
+        padding: 8px 0px 0px 8px;
+        font-size: 0.7em;
+      }
+
+      
+
+      p {
+        color: #fff;
+        line-height: 1.1em;
+
+        a {
+          color: #fff;
+          text-decoration: underline;
         }
+        a:after {
+          content: " »";
+        }
+      }
     }
-    
-    .primary .team-member-details {
-        background: rgba($orange, 0.95);
+
+    @media only screen and (max-width: 422px) {
+      .team-member-details,
+      .team-member-details.hover {
+        top: 105px;
+      }
     }
-    .secondary .team-member-details {
-        background: rgba($pink, 0.95);
-    }
-    .tertiary .team-member-details {
-        background: rgba($teal, 0.95);
-    }
+  }
+
+  .primary .team-member-details {
+    background: rgba($orange, 0.95);
+  }
+  .secondary .team-member-details {
+    background: rgba($pink, 0.95);
+  }
+  .tertiary .team-member-details {
+    background: rgba($teal, 0.95);
+  }
 }
+
 html.no-touch .team-member-details.hover {
-    top: 0;
+  top: 0;
 }

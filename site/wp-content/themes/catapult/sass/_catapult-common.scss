@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5, p, label, input, textarea, li {
 }
 input[type="text"], input[type="tel"], input[type="email"], input[type="number"], select {
     border: none;
-    padding: 6px 0 5px 5px;
+    padding: 6px 0 5px 15px;
     font-family: $serifFont;
     font-size: 0.8em;
     color: black;
@@ -43,6 +43,10 @@ h1 {
     font-size: 2.75em;
     text-align: center;
     font-weight: normal;
+
+  @media only screen and (max-width: 320px) {
+    font-size: 1.7em;
+  }
 }
 h2 {
     font-size: 2.5em;
@@ -69,6 +73,20 @@ hr {
   margin: 10px 0 0 0;
   padding: 0;
   background: url(../img/divider.png) top left repeat-x;
+}
+
+ul.nolist {
+  margin: 0;
+  padding: 0;
+  
+  li {
+    list-style-type: none;
+    float: left;
+    
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
 }
 
 
@@ -238,24 +256,24 @@ section {
 
 // On small screens, two col is one col.
 @media only screen and (max-width: 490px) {
-.two-col {
-  width: 100%;
-  float: none;
-  
-  &.padded {
+  .two-col {
     width: 100%;
-    padding: 0;
+    float: none;
+    
+    &.padded {
+      width: 100%;
+      padding: 0;
+    }
+    
+    &.margin-right {
+      width: 100%;
+      margin-right: 0;
+    }
+    &.margin-left {
+      width: 100%;
+      margin-left: 0;
+    }
   }
-  
-  &.margin-right {
-    width: 100%;
-    margin-right: 0;
-  }
-  &.margin-left {
-    width: 100%;
-    margin-left: 0;
-  }
-}
 }
 
 .three-col {
@@ -305,12 +323,12 @@ section {
     
     @media only screen and (max-width: 862px) {
         padding-top: 5px;
-        height: 29px;
+        height: 33px;
         font-size: 1.4em;
     }
     @media only screen and (max-width: 693px) {
         padding-top: 7px;
-        height: 27px;
+        height: 33px;
         font-size: 1.1em;
     }
     
