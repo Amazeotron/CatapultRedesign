@@ -1509,12 +1509,12 @@ html.no-svg .header .logo {
 -------------------- */
 .tags {
   overflow: hidden;
-  margin: 10px 0;
+  margin: 10px 0 0 0;
   padding: 0; }
   .tags .tag {
     list-style: none;
     float: left;
-    margin: 0 3px 4px 0; }
+    margin: 0; }
 
 .category-item {
   display: inline-block;
@@ -1552,7 +1552,7 @@ html.no-svg .header .logo {
   display: block;
   overflow: hidden;
   margin: 20px 0 0 0;
-  padding-right: 90px;
+  padding: 20px;
   position: relative; }
   .post-box.with-bg {
     background: #515052; }
@@ -1560,20 +1560,21 @@ html.no-svg .header .logo {
     margin-top: 0; }
   .post-box:last-of-type {
     margin-bottom: 40px; }
+  .post-box figure {
+    float: left;
+    width: 30%;
+    margin-right: 5%; }
   .post-box .post-main-link {
     display: block;
     overflow: hidden; }
   .post-box .post-image {
-    width: 100%;
-    position: absolute;
-    z-index: -1;
-    -webkit-filter: grayscale(100%) brightness(-40%) contrast(50%);
-    -moz-filter: grayscale(100%) brightness(-40%) contrast(50%);
-    -ms-filter: grayscale(100%) brightness(-40%) contrast(50%);
-    -o-filter: grayscale(100%) brightness(-40%) contrast(50%);
-    filter: grayscale(100%) brightness(-40%) contrast(50%); }
+    width: 100%; }
   .post-box .post-top {
-    padding: 20px 20px 0 40px; }
+    padding: 0;
+    float: left;
+    width: 65%; }
+    .post-box .post-top.full-width {
+      width: 100%; }
     .post-box .post-top.twitter {
       padding-bottom: 20px; }
     .post-box .post-top p {

@@ -96,13 +96,13 @@
 -------------------- */
 .tags {
   overflow: hidden;
-  margin: 10px 0;
+  margin: 10px 0 0 0;
   padding: 0;
   
   .tag {
     list-style: none;
     float: left;
-    margin: 0 3px 4px 0;
+    margin: 0;
   }
 }
 .category-item {
@@ -157,7 +157,7 @@
   display: block;
   overflow: hidden;
   margin: 20px 0 0 0;
-  padding-right: 90px;
+  padding: 20px;
   position: relative;  
   
   &.with-bg {
@@ -172,6 +172,12 @@
     margin-bottom: 40px;
   }
   
+  figure {
+    float: left;
+    width: 30%;
+    margin-right: 5%;
+  }
+  
   .post-main-link {
     display: block;
     overflow: hidden;
@@ -179,17 +185,19 @@
   
   .post-image {
     width: 100%;
-    position: absolute;
-    z-index: -1;
-    // @include transition(5s);
-    @include blogImageEffect();
   }
   
   &.hover .post-image {
   }
   
   .post-top {
-    padding: 20px 20px 0 40px;
+    padding: 0;
+    float: left;
+    width: 65%;
+    
+    &.full-width {
+      width: 100%;
+    }
     
     &.twitter {
       padding-bottom: 20px;
