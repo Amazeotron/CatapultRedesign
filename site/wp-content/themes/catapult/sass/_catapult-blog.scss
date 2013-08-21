@@ -18,15 +18,33 @@
   @media only screen and (max-width: 720px) {
     padding-top: 25px;
   }
+
+  .post-header {
+    margin-bottom: 30px;
+  }
   
   #main-section {
     float: left;
-    width: 67%;
+    width: 68.75%;
     max-width: 850px;
     padding: 40px 3% 0 0;
     
     hr {
       margin-bottom: 0;
+    }
+    
+    .contact-buttons {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      float: right;
+      
+      li {
+        float: left;
+        a {
+          text-indent: -100000px;
+        }
+      }
     }
     
     @media only screen and (max-width: 720px) {
@@ -37,7 +55,7 @@
   
   #main-aside {
     float: left;
-    width: 33%;
+    width: 31.25%;
     
     hr {
       margin-bottom: 20px;
@@ -79,13 +97,12 @@
 // Common style for all post-title elements
 .post-title {
   text-align: left;
-  font-size: 2em;
-  line-height: 0.85em;
-  color: rgba(227, 220, 216, 1.0);
+  font-size: 2.5em;
+  line-height: 1em;
   
   a {
     text-decoration: none;
-    color: rgba(227, 220, 216, 1.0);
+    color: #FFFFFF;
   }
 }
 
@@ -96,8 +113,9 @@
 -------------------- */
 .tags {
   overflow: hidden;
-  margin: 10px 0 0 0;
+  margin: 0;
   padding: 0;
+  float: left;
   
   .tag {
     list-style: none;
@@ -210,7 +228,7 @@
   
   .post-title {
     margin: 0;
-    padding: 0 0 0.2em 0;
+    padding: 0 0 22px 0;
     @include textShadow(-1px, -1px, 0px, rgba(0,0,0,0.5));
     
     a:hover {
@@ -239,7 +257,6 @@
   .post-meta {
     display: block;
     padding: 5px 0;
-    color: rgb(255, 255, 255);
     font-family: $serifFont;
     letter-spacing: 1px;
     
@@ -258,7 +275,7 @@
     overflow: hidden;
     padding-bottom: 5px;
     float: right;
-    width: 33%;
+    width: 31.25%;
     
     input[type="text"] {
       float: left;
@@ -269,15 +286,20 @@
     input[type="submit"] {
       float: left;
       width: 16%;
+      font-size: 4em;
+      line-height: 1em;
+      padding: 0;
+      height: 51px;
+      margin-top: -20px;
     }
   }
   
   .filters {
-    margin: 20px 0 0 0;
+    margin: 0;
     padding: 0;
     overflow: hidden;
     float: left;
-    width: 67%;
+    width: 68.75%;
     
     li {
       list-style: none;
@@ -293,6 +315,8 @@
       }
       
       a {
+        font-size: 1.2em;
+        letter-spacing: 1px;
         text-decoration: none;
         color: rgba(224,218,216,1.0);
         
@@ -316,10 +340,9 @@
 -------------------- */
 
 .post {
-  background: $grey;
+  background: $darkGrey;
   padding: 20px;
   margin-bottom: 40px;
-  @include borderShadow(1px, 1px, 6px, 1px, 0.5);
   
   // Draw the inner shadow around header image.
   .post-border {
@@ -348,18 +371,19 @@
   }
   
   .post-title {
-    font-size: 4em;
+    font-size: 2.8em;
     text-align: left;
-    margin: 0.3em 0;
+    margin: 0 0 20px 0;
   }
   
   .post-meta {
     font-family: $serifFont;
+    padding-bottom: 12px;
   }
   
   .post-author {
     color: $lightGreyFont;
-    font-size: 1.2em;
+    font-size: 1em;
     font-family: $serifFont;
     color: $lightGreyFont;
   }
@@ -436,10 +460,11 @@
   padding: 0;
   
   .related-article {
-    margin: 5px 0;
+    margin: 15px 0;
     padding: 0;
     list-style: none;
-    line-height: 14px;
+    line-height: 1.2em;
+    font-size: 1.3em;
     
     a {
       color: $lightGreyFont;

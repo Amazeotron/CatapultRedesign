@@ -584,6 +584,30 @@ ul.nolist {
     ul.nolist li:last-of-type {
       margin-right: 0; }
 
+img.alignright {
+  float: right;
+  margin: 0 0 1em 1em; }
+
+img.alignleft {
+  float: left;
+  margin: 0 1em 1em 0; }
+
+img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.alignright {
+  float: right; }
+
+.alignleft {
+  float: left; }
+
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
 .clicky-button {
   overflow: visible;
   position: relative;
@@ -1460,20 +1484,31 @@ html.no-svg .header .logo {
   @media only screen and (max-width: 720px) {
     #page-wrap {
       padding-top: 25px; } }
+  #page-wrap .post-header {
+    margin-bottom: 30px; }
   #page-wrap #main-section {
     float: left;
-    width: 67%;
+    width: 68.75%;
     max-width: 850px;
     padding: 40px 3% 0 0; }
     #page-wrap #main-section hr {
       margin-bottom: 0; }
+    #page-wrap #main-section .contact-buttons {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      float: right; }
+      #page-wrap #main-section .contact-buttons li {
+        float: left; }
+        #page-wrap #main-section .contact-buttons li a {
+          text-indent: -100000px; }
     @media only screen and (max-width: 720px) {
       #page-wrap #main-section {
         float: none;
         width: 96%; } }
   #page-wrap #main-aside {
     float: left;
-    width: 33%; }
+    width: 31.25%; }
     #page-wrap #main-aside hr {
       margin-bottom: 20px; }
     @media only screen and (max-width: 720px) {
@@ -1497,20 +1532,20 @@ html.no-svg .header .logo {
 
 .post-title {
   text-align: left;
-  font-size: 2em;
-  line-height: 0.85em;
-  color: #e3dcd8; }
+  font-size: 2.5em;
+  line-height: 1em; }
   .post-title a {
     text-decoration: none;
-    color: #e3dcd8; }
+    color: #FFFFFF; }
 
 /* -------------------
   TAGS
 -------------------- */
 .tags {
   overflow: hidden;
-  margin: 10px 0 0 0;
-  padding: 0; }
+  margin: 0;
+  padding: 0;
+  float: left; }
   .tags .tag {
     list-style: none;
     float: left;
@@ -1581,7 +1616,7 @@ html.no-svg .header .logo {
       margin: 0; }
   .post-box .post-title {
     margin: 0;
-    padding: 0 0 0.2em 0;
+    padding: 0 0 22px 0;
     text-shadow: -1px -1px 0px rgba(0, 0, 0, 0.5); }
     .post-box .post-title a:hover {
       color: #f2ad4b; }
@@ -1600,7 +1635,6 @@ html.no-svg .header .logo {
   .post-box .post-meta {
     display: block;
     padding: 5px 0;
-    color: white;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     letter-spacing: 1px; }
 
@@ -1611,20 +1645,25 @@ html.no-svg .header .logo {
   overflow: hidden;
   padding-bottom: 5px;
   float: right;
-  width: 33%; }
+  width: 31.25%; }
   .search-box form input[type="text"] {
     float: left;
     width: 80%;
     height: 31px; }
   .search-box form input[type="submit"] {
     float: left;
-    width: 16%; }
+    width: 16%;
+    font-size: 4em;
+    line-height: 1em;
+    padding: 0;
+    height: 51px;
+    margin-top: -20px; }
 .search-box .filters {
-  margin: 20px 0 0 0;
+  margin: 0;
   padding: 0;
   overflow: hidden;
   float: left;
-  width: 67%; }
+  width: 68.75%; }
   .search-box .filters li {
     list-style: none;
     float: left;
@@ -1636,6 +1675,8 @@ html.no-svg .header .logo {
     .search-box .filters li:last-of-type {
       padding: 0; }
     .search-box .filters li a {
+      font-size: 1.2em;
+      letter-spacing: 1px;
       text-decoration: none;
       color: #e0dad8; }
       .search-box .filters li a:hover {
@@ -1650,12 +1691,9 @@ html.no-svg .header .logo {
   SINGLE BLOG POST
 -------------------- */
 .post {
-  background: #797b7a;
+  background: #515052;
   padding: 20px;
-  margin-bottom: 40px;
-  -webkit-box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.5);
-  box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.5); }
+  margin-bottom: 40px; }
   .post .post-border .post-figure {
     display: block;
     position: relative;
@@ -1675,14 +1713,15 @@ html.no-svg .header .logo {
     -moz-box-shadow: inset 1px 5px 5px 0px rgba(0, 0, 0, 0.5);
     box-shadow: inset 1px 5px 5px 0px rgba(0, 0, 0, 0.5); }
   .post .post-title {
-    font-size: 4em;
+    font-size: 2.8em;
     text-align: left;
-    margin: 0.3em 0; }
+    margin: 0 0 20px 0; }
   .post .post-meta {
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; }
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    padding-bottom: 12px; }
   .post .post-author {
     color: #e3dcd8;
-    font-size: 1.2em;
+    font-size: 1em;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     color: #e3dcd8; }
   .post .post-map small {
@@ -1723,10 +1762,11 @@ html.no-svg .header .logo {
   margin: 0;
   padding: 0; }
   .related-articles .related-article {
-    margin: 5px 0;
+    margin: 15px 0;
     padding: 0;
     list-style: none;
-    line-height: 14px; }
+    line-height: 1.2em;
+    font-size: 1.3em; }
     .related-articles .related-article a {
       color: #e3dcd8;
       text-decoration: none; }

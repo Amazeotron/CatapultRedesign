@@ -1,26 +1,9 @@
-<?php
-$categories = (array)get_the_category();
-$catNames = array();
-$catIDs = array();
-foreach ($categories as $category) {
-  array_push($catNames, $category->category_nicename);
-  array_push($catIDs, $category->category_id);
-}
-$catIDsSeparated = implode(",", $catIDs);
 
-?>
 <aside id="main-aside">
   <div id="main-aside-inner">
-    <hr/>
-    <ul class="tags">
-      <?php
-      foreach ($categories as $cat) {
-        echo '<li class="tag header-title"><a class="category-item ' . $cat->category_nicename . '" href="' . get_category_link($cat->term_id) . '">' . $cat->category_nicename . '</a></li>';
-      }
-      ?>
-    </ul>
-
+    
     <?php
+    if (strpos($_SERVER["REQUEST_URI"], 'blog')) {
     $args = array(
       'numberposts' => 5,
       'offset' => 0,
@@ -31,12 +14,15 @@ $catIDsSeparated = implode(",", $catIDs);
     );
     $posts_array = get_posts($args);
     ?>
-    <h3 class="header-title related-header">Related Articles</h3>
+      <hr/>
+      <h3 class="header-title related-header">Related Articles</h3>
     <ul class="related-articles">
       <?php foreach ($posts_array as $post) :  setup_postdata($post); ?>
         <li class="related-article header-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
       <?php endforeach; ?>
     </ul>
+    <? } ?>
+    
   </div>
   <hr/>
   <?php
