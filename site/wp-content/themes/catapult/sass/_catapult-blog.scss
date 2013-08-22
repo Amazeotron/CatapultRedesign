@@ -82,7 +82,7 @@
     
     .twitter-list__item {
       padding: 0;
-      margin: 0 0 20px 0;
+      margin: 0 0 40px 0;
     }
   }
 }
@@ -102,7 +102,7 @@
   
   a {
     text-decoration: none;
-    color: #FFFFFF;
+    color: $orange;
   }
 }
 
@@ -113,7 +113,7 @@
 -------------------- */
 .tags {
   overflow: hidden;
-  margin: 0;
+  margin: 12px 0 0 0;
   padding: 0;
   float: left;
   
@@ -179,7 +179,7 @@
   position: relative;  
   
   &.with-bg {
-    background: #515052;
+    background: $greyBG;
   }
   
   &:first-of-type {
@@ -227,8 +227,8 @@
   }
   
   .post-title {
-    margin: 0;
-    padding: 0 0 22px 0;
+    margin: -4px 0 0 0;
+    padding: 0 0 11px 0;
     @include textShadow(-1px, -1px, 0px, rgba(0,0,0,0.5));
     
     a:hover {
@@ -256,7 +256,7 @@
   
   .post-meta {
     display: block;
-    padding: 5px 0;
+    padding: 0 0 10px 0;
     font-family: $serifFont;
     letter-spacing: 1px;
     

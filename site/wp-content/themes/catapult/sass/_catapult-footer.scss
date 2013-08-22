@@ -2,8 +2,7 @@ footer {
 	margin: 0;	
 	padding: 40px 0;
 	overflow: hidden;
-	background: rgba(0,0,0,0.5);
-	@include innerShadow(0px, 7px, 7px, 0px, 0.5);
+	background-color: $greyBG;
   
   .contact-button {
     width: 33px;
@@ -41,4 +40,8 @@ footer {
 
 .contact-button {
 	margin-bottom: 7px;
+}
+
+.footer-link {
+  display: none;
 }

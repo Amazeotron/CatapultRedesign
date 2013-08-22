@@ -43,7 +43,7 @@ This page shows a list of recent "news" items, like upcoming learning labs, blog
                 <img class="post-image" src="<?php echo $croppedImage; ?>" alt="<?php the_title(); ?>" width="100%">
               </figure>
               <header class="post-top">
-                <h1 class="post-title header-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+                <h1 class="post-title header-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?> &raquo;</a></h1>
                 
                 <? if (get_post_type() == 'post') : ?>
                   <div class="post-meta">
