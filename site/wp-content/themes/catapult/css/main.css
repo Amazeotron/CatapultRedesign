@@ -3906,6 +3906,12 @@ html.no-touch .team-member-details.hover {
   margin-bottom: 10px;
 }
 
+/* line 517, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+img.pe2-photo.picasa-image {
+  padding: 10px;
+  border: none;
+}
+
 /* line 4, site/wp-content/themes/catapult/sass/_catapult-thanks.scss */
 .donors .donors__list {
   list-style-type: none;

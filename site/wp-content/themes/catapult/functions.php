@@ -41,6 +41,27 @@ add_action('wp_enqueue_scripts', 'do_scripts');
 // add support for thumbnails
 add_theme_support('post-thumbnails');
 
+
+// Rewrite default post type
+add_action( 'init', 'my_new_default_post_type', 1 );
+function my_new_default_post_type() {
+
+  register_post_type( 'post', array(
+    'labels' => array(
+      'name_admin_bar' => _x( 'Post', 'add new on admin bar' ),
+    ),
+    'public'  => true,
+    '_builtin' => false,
+    '_edit_link' => 'post.php?post=%d',
+    'capability_type' => 'post',
+    'map_meta_cap' => true,
+    'hierarchical' => false,
+    'rewrite' => array( 'slug' => 'article' ),
+    'query_var' => false,
+    'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'post-formats' ),
+  ) );
+}
+
 // Add Lab post type
 add_action('init', 'event_register');
 
@@ -69,7 +90,7 @@ function event_register()
     'capability_type' => 'post',
     'hierarchical' => false,
     'menu_position' => null,
-    'supports' => array('title', 'editor', 'page-attributes')
+    'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats')
   );
   register_post_type('event', $args);
 }
@@ -102,7 +123,7 @@ function job_register()
     'capability_type' => 'post',
     'hierarchical' => false,
     'menu_position' => null,
-    'supports' => array('title', 'editor', 'excerpt')
+    'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats')
   );
   register_post_type('job', $args);
 }
@@ -136,7 +157,7 @@ function member_register()
     'capability_type' => 'post',
     'hierarchical' => false,
     'menu_position' => null,
-    'supports' => array('title', 'editor', 'thumbnail', 'custom-fields')
+    'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats')
   );
   register_post_type('member', $args);
 }
@@ -169,7 +190,7 @@ function teammember_register()
     'capability_type' => 'post',
     'hierarchical' => false,
     'menu_position' => null,
-    'supports' => array('title', 'editor')
+    'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats')
   );
   register_post_type('teammember', $args);
 }
@@ -202,7 +223,7 @@ function project_register()
     'capability_type' => 'post',
     'hierarchical' => true,
     'menu_position' => null,
-    'supports' => array('title', 'editor'),
+    'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats'),
     'taxonomies' => array('category', 'post_tag'),
   );
   register_post_type('project', $args);
@@ -236,7 +257,7 @@ function homepageslideshow_register()
     'capability_type' => 'post',
     'hierarchical' => true,
     'menu_position' => null,
-    'supports' => array('title', 'editor')
+    'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats')
   );
   register_post_type('homepageslideshow', $args);
 }
@@ -269,7 +290,7 @@ function featured_articles_register()
     'capability_type' => 'post',
     'hierarchical' => true,
     'menu_position' => null,
-    'supports' => array('title', 'editor'),
+    'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats'),
     'taxonomies' => array('category', 'post_tag'),
   );
   register_post_type('Featured Article', $args);

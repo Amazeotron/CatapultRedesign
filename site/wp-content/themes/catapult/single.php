@@ -30,19 +30,6 @@ the_post(); ?>
               <li><a href="#" class="contact-button contact-button--email">Email</a></li>
             </ul>
           </div>
-          
-          <?php
-          $headerImage = get_field('image');
-          $croppedImage;
-          if ($headerImage) :
-            $croppedImage = wp_get_attachment_image_src($headerImage["id"], array(643, 183));
-            $croppedImage = $croppedImage[0]; ?>
-            <div class="post-border">
-              <figure class="post-figure">
-                <img class="post-image" src="<?php echo $croppedImage; ?>" alt="<?php the_title(); ?>" width="100%">
-              </figure>
-            </div>
-          <? endif; ?>
 
           <header class="post-top">
             <h1 class="post-title header-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
