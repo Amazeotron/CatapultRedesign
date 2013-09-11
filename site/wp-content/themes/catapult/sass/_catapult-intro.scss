@@ -3,7 +3,8 @@
 -------------------------------- */
 
 .intro {
-
+  min-height: 800px;
+  
   #slides {
     display: none;
     position: relative;
@@ -13,7 +14,7 @@
   .container {
     margin: 0 auto
   }
-  
+
   .slidesjs-navigation {
     @include transition(100ms);
     position: absolute;
@@ -24,21 +25,21 @@
     margin-top: -22px;
     z-index: 998;
     display: block;
-    background-color: rgba(51,51,51,0.75);
+    background-color: rgba(51, 51, 51, 0.75);
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    
+
     text-align: center;
     text-indent: -10000px;
 
     &:hover {
       -webkit-transform: scale(0.9);
-         -moz-transform: scale(0.9);
-          -ms-transform: scale(0.9);
-              transform: scale(0.9);
+      -moz-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+      transform: scale(0.9);
     }
   }
-  
+
   .slidesjs-previous {
     left: 20px;
     background-image: url(../img/homepage/intro/arrow-left.png);
@@ -48,17 +49,17 @@
     right: 20px;
     background-image: url(../img/homepage/intro/arrow-right.png);
   }
-  
+
   /* Show active item in the pagination */
   .slidesjs-pagination {
     padding: 0;
     overflow: hidden;
-    
+
     @media only screen and (max-width: 320px) {
       display: none;
     }
   }
-  
+
   .slidesjs-pagination .active {
     background-position: 0 -16px;
   }
@@ -69,7 +70,7 @@
     margin-right: 10px;
     float: left;
   }
-  
+
   .slidesjs-pagination-item a {
     display: block;
     text-indent: -10000px;
@@ -79,11 +80,11 @@
     background-repeat: no-repeat;
     background-position: 0 0;
   }
-  
+
   .slideshow-image {
     width: 100%;
   }
-  
+
   .slideshow-caption {
     position: absolute;
     z-index: 10;
@@ -93,7 +94,7 @@
     bottom: 0;
     margin: 0;
     padding: 5px 10px;
-    background: rgba(51,51,51,0.75);
+    background: rgba(51, 51, 51, 0.75);
     width: 100%;
   }
 
@@ -106,59 +107,55 @@
       padding-right: 10px;
     }
     .container {
-      width: auto
+      width: auto;
     }
   }
 
   /* For smartphones */
   @media (max-width: 480px) {
     .container {
-      width: auto
+      width: auto;
     }
   }
 
   /* For smaller displays like laptops */
   @media (min-width: 768px) and (max-width: 979px) {
     .container {
-      width: 724px
+      width: 724px;
     }
   }
 
   /* For larger displays */
   @media (min-width: 1200px) {
     .container {
-      width: 1170px
+      width: 1170px;
     }
   }
-  
-    @media only screen and (max-width : 720px) {
-        padding-top: 60px;
-    }
-    
-    #intro__canvas {
-        
-    }
-    
-    .caption {
-        overflow: hidden;
 
-        .intro-desc {
-            float: left;
-            width: 786px;
-            padding: 0 30px 0 0;
-        }
-        .what-we-do {
-            display: block;
-            background: url(../img/homepage/what-we-do.png) top left no-repeat;
-            width: 84px;
-            height: 114px;
-            float: left;
-            text-indent: -10000px;
-        }
+  #intro__canvas {
+
+  }
+
+  .caption {
+    overflow: hidden;
+
+    .intro-desc {
+      float: left;
+      width: 786px;
+      padding: 0 30px 0 0;
     }
-        
-    .divider {
-        padding-top: 50px;
-        background-position: bottom;
+    .what-we-do {
+      display: block;
+      background: url(../img/homepage/what-we-do.png) top left no-repeat;
+      width: 84px;
+      height: 114px;
+      float: left;
+      text-indent: -10000px;
     }
+  }
+
+  .divider {
+    padding-top: 50px;
+    background-position: bottom;
+  }
 }

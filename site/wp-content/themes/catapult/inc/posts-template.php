@@ -2,7 +2,7 @@
   <!-- there are two columns: big on the left, small on the right -->
   <?php while (have_posts()) :
     the_post();
-    $headerImage = get_field('header_image');
+    $headerImage = get_field('image');
     $croppedImage = '';
 
     if ($headerImage) {

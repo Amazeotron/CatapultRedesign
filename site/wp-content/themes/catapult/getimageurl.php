@@ -1,8 +1,8 @@
 <?php
   define('WP_USE_THEMES', false);
-  require($_SERVER['DOCUMENT_ROOT'] . '/dev/wp-blog-header.php');
+  require($_SERVER['DOCUMENT_ROOT'] . '/wp-blog-header.php');
   $imgID = $_GET["imageID"];
-  $imgurl = wp_get_attachment_image_src($imgID, "full");
+  $imgurl = wp_get_attachment_image_src($imgID, $_GET["size"]);
   $imgurl = $imgurl[0];
   
   // echo $imgurl;

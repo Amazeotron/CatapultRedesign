@@ -7,8 +7,15 @@
 
 	h1 {
 		margin-top: 0;
-		padding-top: 1em;
 	}
+  
+  h3, h4 {
+    text-align: center;
+    margin: 0;
+  }
+  h3 {
+    font-size: 1.9em;
+  }
 
 	.contact__buttons {
 		padding-top: 30px;
@@ -50,4 +57,28 @@
     	@include innerShadow(8px, 8px, 15px, 0px, 0.3);
     }
 	}
+  
+  .locations {
+    margin-bottom: 40px;
+  }
+  
+  .contact-location {
+    text-indent: -10000px;
+    display: block;
+    overflow: hidden;
+    width: 97px;
+    height: 97px;
+    background: url(../img/homepage/locations-icons.png) 0 0 no-repeat;
+    margin: 0 auto 20px auto;
+    
+    &.sf {
+      background-position: 0 -97px;
+    }
+    &.ny {
+      background-position: 0 -194px;
+    }
+    &.co {
+      background-position: 0 -291px;
+    }
+  }
 }

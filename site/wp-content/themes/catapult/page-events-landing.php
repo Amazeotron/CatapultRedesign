@@ -5,7 +5,7 @@
 */
 
 /*
-This page shows a list of recent blog posts.
+This page shows a list of recent events.
 */
 
 ?>

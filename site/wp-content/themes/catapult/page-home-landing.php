@@ -175,7 +175,7 @@ if (isset($_POST['stripeToken'])) {
         <p></p>
       </div>
     </div>
-    <h1>Headline about <span class="header-title level-one">PROJECTS</span> here &raquo;</h1>
+    <h1>View our <span class="header-title level-one">PROJECTS</span> &raquo;</h1>
     <div id="locations-map"></div>
     <div class="map-footer clearfix">
       <h2><span class="header-title">FILTER</span> by <span class="header-title">INDUSTRY</span></h2>
@@ -218,29 +218,27 @@ if (isset($_POST['stripeToken'])) {
   <section class="contact" id="contact">
     <div class="row">
       <h1><span class="header-title level-one">FOLLOW</span>, <span class="header-title level-two">LIKE</span> &amp; <span class="header-title level-three">CONTACT</span> Us.</h1>
-      <div class="divider"></div>
-      <div class="col-wrap">
-        <div class="two-col margin-right">
-          <div class="contact-section">
-            <a href="https://maps.google.com/maps?q=972+Mission+Street,+San+Francisco,+CA&hl=en&sll=37.7577,-122.4376&sspn=0.330606,0.468636&oq=972+mission+&t=v&hnear=972+Mission+St,+San+Francisco,+California+94103&z=17"
-                class="contact-button contact-button--street header-title">
-              <span>972 Mission St, 5TH FLOOR</span>
-            </a>
-            <p class="contact__subtitle">San Francisco, CA 94103</p>
-          </div>
-          <div class="contact-section">
-            <a href="<?php echo site_url('/events'); ?>" class="contact-button contact-button--openhouse header-title"><span>Open Studio</span></a>
-            <p class="contact__subtitle">4-6PM Every 1st and 3rd Wednesday</p>
-          </div>
-          <p>Have a question about Catapult, want to see our projects in person, or interested in working with us? Join us for open studio!</p>
-        </div>
-        <!-- end column -->
-        <div class="two-col margin-left">
-          <div class="map">
-            <img src="https://maps.googleapis.com/maps/api/staticmap?center=972+Mission+Street,+San+Francisco,+CA&zoom=17&size=600x300&sensor=false&markers=label:C%7C972+Mission+Street,+San+Francisco,+CA" alt="">
-          </div>
-        </div>
-        <!-- end column -->
+      <div class="col-wrap locations">
+        <section class="contact four-col margin-right">
+          <div class="contact-location">Contact Us</div>
+          <h3 class="header-title">OPEN STUDIOS</h3>
+          <h4 class="header-title">EVERY 1ST &amp; 3RD WED<br/>4-6P IN SF OR SKYPE</h4>
+        </section>
+        <section class="contact four-col margin-right">
+          <div class="contact-location sf">Contact Us</div>
+          <h3 class="header-title">SAN FRANCISCO</h3>
+          <h4 class="header-title">972 MISSION ST, SUITE 500<br/>SAN FRANCISCO, CA 94103</h4>
+        </section>
+        <section class="contact four-col margin-right">
+          <div class="contact-location ny">Contact Us</div>
+          <h3 class="header-title">NEW YORK CITY</h3>
+          <h4 class="header-title">123 STREET<br/>NEW YORK, NY 12345</h4>
+        </section>
+        <section class="contact four-col margin-right">
+          <div class="contact-location co">Contact Us</div>
+          <h3 class="header-title">DENVER</h3>
+          <h4 class="header-title">1031 33RD STREET, SUITE 174<br/>DENVER, CO 80205</h4>
+        </section>
       </div>
 
       <div class="col-wrap contact__buttons">
@@ -288,7 +286,6 @@ if (isset($_POST['stripeToken'])) {
   <section class="donate" id="donate">
     <div class="row">
       <h1><span class="header-title level-one">SUPPORT</span> Catapult</h1>
-      <div class="divider"></div>
       <h3 class="header-title">Catapult Design is a 501(c)(3) non-profit and all donations are tax-deductible.</h3>
       <h4 class="header-title">Your donation supports</h4>
       <p>Materials and prototype budget for our project work, tools (from wrenches to software) our designers need to get the job done, travel costs associated with assessment and implementation, and our designers who are committed to using their skills to make a difference. If you have questions regarding how your donation will be used, please contact us as info@catapultdesign.org.</p>
@@ -298,7 +295,7 @@ if (isset($_POST['stripeToken'])) {
       <p>Write out your donation to “Catapult Design” and mail to Catapult Design, 972 Mission St. Suite 500, San Francisco, CA 94103.</p>
       <h4 class="header-title">To donate online</h4>
       <p>We accept secure online donations through both Google Checkout and Paypal. Recurring donations are only available through PayPal.</p>
-      <?php include(ABSPATH . "wp-content/themes/catapult/inc//donation_form.php"); ?>
+      <?php include(ABSPATH . "wp-content/themes/catapult/inc/donation_form.php"); ?>
     </div>
     <!-- end row -->
   </section><!-- end donate -->

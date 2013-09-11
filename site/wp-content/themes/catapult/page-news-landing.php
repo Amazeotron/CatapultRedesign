@@ -20,7 +20,7 @@ This page shows a list of recent "news" items, like upcoming learning labs, blog
         <?php
         $args = array(
           "posts_per_page" => 25,
-          "post_type" => array("post", "event", "casestudy", "job", "lab")
+          "post_type" => array("post", "event", "project", "job", "press")
         );
         query_posts($args);
         ?>
@@ -28,7 +28,7 @@ This page shows a list of recent "news" items, like upcoming learning labs, blog
           <!-- there are two columns: big on the left, small on the right -->
           <?php while (have_posts()) :
             the_post();
-            $headerImage = get_field('header_image');
+            $headerImage = get_field('image');
             $croppedImage = '';
 
             if ($headerImage) {

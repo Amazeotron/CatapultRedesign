@@ -3,7 +3,12 @@
   <div id="main-aside-inner">
     
     <?php
-    if (strpos($_SERVER["REQUEST_URI"], 'blog')) {
+    if ( (strpos($_SERVER["REQUEST_URI"], '/news') == false) &&
+        (strpos($_SERVER["REQUEST_URI"], '/blog') == false) &&
+        (strpos($_SERVER["REQUEST_URI"], '/casestudies') == false) &&
+        (strpos($_SERVER["REQUEST_URI"], '/projects') == false) &&
+        (strpos($_SERVER["REQUEST_URI"], '/events') == false) &&
+        (strpos($_SERVER["REQUEST_URI"], '/press') == false)) {
     $args = array(
       'numberposts' => 5,
       'offset' => 0,
@@ -45,8 +50,8 @@
     $twitter->buildOauth($url, $requestMethod);
     return json_decode($twitter->performRequest());
   }
-
-  echo '<ul class="twitter-list">';
+  echo '<div class="twitter-list-wrap">';
+  echo '<ul id="js-twitter-list" class="twitter-list">';
   foreach (getTwitterFeed('catapult_design') as $tweet) {
     $pattern = '/https?:\/\/\S+/i';
     $replaced = preg_replace($pattern, '<a href="$0" target="_blank">$0</a>', $tweet->text);
@@ -54,7 +59,7 @@
     $strTweet = preg_replace('/(?<=@)\w+/', '<a href="https://twitter.com/$0" target="_blank">$0</a>', $strTweet);
     echo '<li class="twitter-list__item">' . $strTweet . '</li>';
   }
-  echo '</ul>';
+  echo '</ul></div>';
   ?>
   <hr/>
   <div class="contact-buttons">

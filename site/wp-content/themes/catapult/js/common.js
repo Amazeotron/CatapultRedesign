@@ -17,7 +17,7 @@ var cataCommon = {
 		if (window.location.href.indexOf(":8888") != -1) {
 			return "http://llmac.local:8888/cata/"; // testing
 		} else {
-			return "http://catapultdesign.org/dev/"; // development
+			return "http://catapult.staging.wpengine.com/"; // development
 		// return "http://catapultdesign.org/"; // live
 		}
 	},
@@ -60,7 +60,7 @@ var cataCommon = {
 			if (scrollPositions[i].section == target) {
 				scrollTop = scrollPositions[i].offset;
 			}
-		};
+		}
 		
 		// Update the URL
 		if (cataCommon.isHome() === true) {

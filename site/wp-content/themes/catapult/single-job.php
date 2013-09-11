@@ -1,6 +1,7 @@
 <?php get_header(); the_post(); ?>
 	
 	<div id="page-wrap" class="page-top">
+    <? include(ABSPATH . 'wp-content/themes/catapult/inc/posts-landing-header.php'); ?>
 	<section id="main-section">
 	<div id="posts">
 		<article class="post">

@@ -1,35 +1,35 @@
 footer {
-	margin: 0;	
-	padding: 40px 0;
-	overflow: hidden;
-	background-color: $greyBG;
-  
+  margin: 0;
+  padding: 40px;
+  overflow: hidden;
+  background-color: $greyBG;
+
   .contact-button {
     width: 33px;
     float: left;
     text-indent: -10000px;
   }
-  
+
   .footer-links {
     margin: 0;
     padding: 29px 0 20px 0;
-    
+
     li {
       list-style-type: none;
       float: left;
       padding: 0 25px 0 0;
-      
+
       @media only screen and (max-width: 320px) {
         float: none;
         padding-bottom: 10px;
       }
-      
+
       a {
         color: white;
         text-decoration: none;
         font-size: 1.5em;
         letter-spacing: 1px;
-        
+
         &:hover {
           color: $orange;
         }
@@ -39,7 +39,7 @@ footer {
 }
 
 .contact-button {
-	margin-bottom: 7px;
+  margin-bottom: 7px;
 }
 
 .footer-link {

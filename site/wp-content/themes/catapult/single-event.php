@@ -1,6 +1,7 @@
 <?php get_header(); the_post(); ?>
 	
 	<div id="page-wrap" class="page-top">
+    <? include(ABSPATH . 'wp-content/themes/catapult/inc/posts-landing-header.php'); ?>
 	<section id="main-section">
 	<div id="posts">
 		<article class="post">
@@ -67,8 +68,28 @@
 			</div>
 			
 			<div class="post-map">
-				<h4>Location: <?php the_field("location_address"); ?></h4>
-				<? the_field("location_map"); ?>
+				<h4>Location:</h4>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+        <script>
+          var map;
+          var myLatLang = new google.maps.LatLng(<?php $location = get_field('location'); echo $location['coordinates']; ?>);
+          function initialize() {
+            var mapOptions = {
+              zoom: 15,
+              center: myLatLang,
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            map = new google.maps.Map(document.getElementById('map-canvas'),
+                mapOptions);
+            var marker = new google.maps.Marker({
+              position: myLatLang,
+              map: map,
+              title:"<?php echo the_title(); ?>"
+            });
+          };
+          google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+        <div id="map-canvas" style="height: 300px;"></div>
 			</div>
 			
 		</article><!-- end post -->

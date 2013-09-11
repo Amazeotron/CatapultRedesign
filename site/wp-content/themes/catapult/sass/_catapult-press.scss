@@ -1,11 +1,17 @@
-.featured-logos {
-  li {
-    width: 20%;
-    margin: 0;
-    
-    img {
-      width: 100%;
-    }
+.featured {
+  
+  h1 {
+    margin-top: 0;
   }
   
+  .featured-logos {
+    li {
+      width: 20%;
+      margin: 0;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
 }

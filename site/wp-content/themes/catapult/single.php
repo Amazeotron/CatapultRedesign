@@ -32,7 +32,7 @@ the_post(); ?>
           </div>
           
           <?php
-          $headerImage = get_field('header_image');
+          $headerImage = get_field('image');
           $croppedImage;
           if ($headerImage) :
             $croppedImage = wp_get_attachment_image_src($headerImage["id"], array(643, 183));

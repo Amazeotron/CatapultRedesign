@@ -26,24 +26,15 @@
     
     <link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/img/favicon.ico" />
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/uniform.default.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/main.css">
     
     <?php if (is_page('Home')) { ?>
-      <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/main.css">
       <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/js/libs/leaflet/leaflet.css">
       <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/js/libs/leaflet/markercluster/MarkerCluster.css">
       <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/js/libs/leaflet/markercluster/MarkerCluster.Default.css">
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/js/libs/leaflet/leaflet.ie.css">
     <![endif]-->
-      
-    <?php } else if (is_page('Thanks')) { ?>
-      <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/thanks.css">
-    
-    <?php } else if (is_page('faq-and-press-kit')) { ?>
-      <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/faq.css">
-    
-    <?php } else if (is_page() || is_single() || is_404() || is_category() || is_search()) { ?>
-      <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/blog.css">
     
     <?php } ?>
     

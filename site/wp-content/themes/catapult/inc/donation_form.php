@@ -18,7 +18,7 @@
 		<div id="js-donation-credit-card-info" class="credit-card-info two-col padded margin-right clearfix">
 			<h3>Credit Card Info</h3>
 			<div class="form-item">
-				<label for="full-name">Name as appears on card: *</label>
+				<label for="card-full-name">Name as appears on card: *</label>
 				<input id="card-full-name" type="text" name="full-name" tabindex="42" value="" data-required="true" data-trigger="change" data-notblank="true">
 			</div>
 			
@@ -34,7 +34,7 @@
 			</div>
 			
 			<div class="form-item">
-				<label for="expiration">Expiration Date: *</label>
+				<label for="card-expiration-month">Expiration Date: *</label>
 				<select id="card-expiration-month" single tabindex="45" data-required="true" data-trigger="change" data-notblank="true">
 					<?php include(ABSPATH . "wp-content/themes/catapult/inc/months.php"); ?>
 				</select>
@@ -48,32 +48,32 @@
 			<h3>Billing Info</h3>
 			
 			<div class="form-item">
-				<label for="street">Street: *</label>
+				<label for="billing-street">Street: *</label>
 				<input id="billing-street" type="text" tabindex="47" name="billing-street" value="" data-required="true" data-notblank="true">
 			</div>
 			<div class="form-item">
 				<div class="two-col margin-right city">
-					<label for="city">City: *</label>
+					<label for="billing-city">City: *</label>
 					<input id="billing-city" type="text" tabindex="48" name="billing-city" value="" data-required="true" data-notblank="true">
 				</div>
 				<div class="two-col state right">
-					<label for="state">State: *</label>
+					<label for="billing-state">State: *</label>
 					<select id="billing-state" tabindex="49" name="billing-state" data-required="true"> 
 						<?php include(ABSPATH . "wp-content/themes/catapult/inc/us_states.php"); ?>
 					</select>
 				</div>
 			</div>
 			<div class="form-item">
-				<label for="zip">Zip code: *</label>
+				<label for="billing-zipcode">Zip code: *</label>
 				<input id="billing-zipcode" type="tel" tabindex="50" name="billing-zipcode" value="" data-required="true" data-maxlength="5" data-notblank="true">
 			</div>
 			<div class="form-item">
 				<div class="two-col margin-right telephone">
-					<label for="street">Telephone number:</label>
+					<label for="billing-telephone">Telephone number:</label>
 					<input id="billing-telephone" type="tel" tabindex="51" name="billing-telephone" value="" data-required="false" data-notblank="true">
 				</div>
 				<div class="two-col email right">
-					<label for="street">E-mail address: *</label>
+					<label for="billing-email">E-mail address: *</label>
 					<input id="billing-email" type="email" tabindex="52" name="billing-email" value="" data-required="true" data-type="email">
 				</div>
 			</div>

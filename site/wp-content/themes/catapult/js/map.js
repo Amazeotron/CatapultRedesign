@@ -9,18 +9,20 @@ var map = {
       maxZoom: 10
     }).addTo(_map);
 
+    var _callout = $('#map-callout');
+
     var _mapIcon = L.icon({
-          iconUrl: '/dev/wp-content/themes/catapult/js/libs/leaflet/images/marker-icon.png',
-          iconRetinaUrl: '/dev/wp-content/themes/catapult/js/libs/leaflet/images/marker-icon.png',
+          iconUrl: '/wp-content/themes/catapult/js/libs/leaflet/images/marker-icon.png',
+          iconRetinaUrl: '/wp-content/themes/catapult/js/libs/leaflet/images/marker-icon.png',
           iconSize: [33, 39],
           iconAnchor: [16, 39],
           popupAnchor: [-3, -20],
-          shadowUrl: '/dev/wp-content/themes/catapult/js/libs/leaflet/images/marker-shadow.png',
-          shadowRetinaUrl: '/dev/wp-content/themes/catapult/js/libs/leaflet/images/marker-shadow.png',
+          shadowUrl: '/wp-content/themes/catapult/js/libs/leaflet/images/marker-shadow.png',
+          shadowRetinaUrl: '/wp-content/themes/catapult/js/libs/leaflet/images/marker-shadow.png',
           shadowSize: [41, 41],
           shadowAnchor: [16, 39]
         }),
-        _locsURL = cataCommon.getRootURL() + "?json=get_recent_posts&dev=1&post_type=casestudy&custom_fields=client,category,location,main_image&count=-1",
+        _locsURL = "/api/get_posts/?post_type=project&custom_fields=client,category,location,image&count=-1&callback=?",
         _markers = new L.MarkerClusterGroup(),
         _projectsData = {};
     
@@ -40,6 +42,7 @@ var map = {
     $.getJSON(_locsURL, handleLocationsLoaded);
 
     function handleLocationsLoaded(data, textStatus, jqXHR) {
+      console.log(data);
       _projectsData = data.posts;
       for (var i = 0; i < data.posts.length; i++) {
         addMarker(data.posts[i]);
@@ -59,7 +62,6 @@ var map = {
         });
         _markers.addLayer(marker);
         marker.cataInfo = data;
-
         marker.on('click', handleMarkerClick);
       }
     }
@@ -115,33 +117,30 @@ var map = {
     }
 
     function showMapCallout(data) {
-      var callout = $('#_map-callout');
-
-      callout.removeClass('hide');
+      _callout.removeClass('hide');
 
       // populate callout
-      var img = $('<img src="' + data.attachments[0].images.thumbnail.url + '" />'),
+      var img = $('<img src="/wp-content/themes/catapult/getimageurl.php?imageID=' + data.custom_fields.image[0] + '" />'),
           loc = data.custom_fields.location[0];
 
       loc = loc.substring(0, loc.indexOf('|'));
 
       console.log("location: " + loc);
-      callout.find('._map-callout-img').append(img);
-      callout.find('h2').append(data.title);
-      callout.find('h3').append(loc);
-      callout.find('p').append(data.excerpt);
+      _callout.find('.map-callout-img').append(img);
+      _callout.find('h2').append(data.title);
+      _callout.find('h3').append(loc);
+      _callout.find('p').append(data.excerpt);
     }
 
     function hideMapCallout() {
-      var callout = $('#_map-callout');
-      callout.addClass('hide');
-      callout.find('img').remove();
-      callout.find('h2').empty();
-      callout.find('h3').empty();
-      callout.find('p').empty();
+      _callout.addClass('hide');
+      _callout.find('img').remove();
+      _callout.find('h2').empty();
+      _callout.find('h3').empty();
+      _callout.find('p').empty();
     }
 
-    $('#_map-callout').find('.close-button').on('click', function(event) {
+    _callout.find('.close-button').on('click', function(event) {
       event.preventDefault();
       hideMapCallout();
     });

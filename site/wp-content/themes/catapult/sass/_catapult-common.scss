@@ -4,65 +4,79 @@
 
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    background: url(../img/homepage/bg/bgtile.jpg) top left repeat #666;
-    font-size: 15px;
-    font-family: $serifFont;
-    color: $lightGreyFont;
+  background: url(../img/homepage/bg/bgtile.jpg) top left repeat #666;
+  font-size: 15px;
+  font-family: $serifFont;
+  color: $lightGreyFont;
 }
 
 h1, h2, h3, h4, h5, p, label, input, textarea, li {
-    font-family: $serifFont;
-    color: $lightGreyFont;
-    font-size: 1em;
+  font-family: $serifFont;
+  color: $lightGreyFont;
+  font-size: 1em;
 }
-input[type="text"], input[type="tel"], input[type="email"], input[type="number"], select {
-    border: none;
-    padding: 6px 0 5px 15px;
-    font-family: $serifFont;
-    font-size: 0.8em;
-    color: black;
-    
-    &.parsley-error {
-        background: rgba(248,139,139,1.0);
-        color: white;
-    }
-}
-input[type="submit"] {
-    -webkit-appearance: none;
-    border: none;
-}
-select{
-    height: 24px;
-}
-h1 {
-    font-size: 2.75em;
-    text-align: center;
-    font-weight: normal;
 
-  @media only screen and (max-width: 320px) {
-    font-size: 1.7em;
+input[type="text"], input[type="tel"], input[type="email"], input[type="number"], select {
+  border: none;
+  padding: 6px 0 5px 15px;
+  font-family: $serifFont;
+  font-size: 0.8em;
+  color: black;
+
+  &.parsley-error {
+    background: rgba(248, 139, 139, 1.0);
+    color: white;
   }
 }
+
+input[type="submit"] {
+  -webkit-appearance: none;
+  border: none;
+}
+
+select {
+  height: 24px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 2.75em;
+  font-weight: normal;
+
+  @media only screen and (max-width: 720px) {
+    font-size: 1.7em;
+  }
+  @media only screen and (max-width: 320px) {
+    font-size: 1.4em;
+  }
+}
+
 h2 {
-    font-size: 2.5em;
+  font-size: 2.5em;
 }
+
 h3 {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
+
 h4 {
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
+
 h5 {
-    font-size: 1.1em;
+  font-size: 1.1em;
 }
 
 a {
-    color: $orange;
+  color: $orange;
 }
 
 hr {
@@ -78,187 +92,218 @@ hr {
 ul.nolist {
   margin: 0;
   padding: 0;
-  
+
   li {
     list-style-type: none;
     float: left;
-    
+
     &:last-of-type {
       margin-right: 0;
     }
   }
 }
 
-img.alignright {float:right; margin:0 0 1em 1em}
-img.alignleft {float:left; margin:0 1em 1em 0}
-img.aligncenter {display: block; margin-left: auto; margin-right: auto}
-.alignright {float:right; }
-.alignleft {float:left; }
-.aligncenter {display: block; margin-left: auto; margin-right: auto}
+img.alignright {
+  float: right;
+  margin: 0 0 1em 1em
+}
 
+img.alignleft {
+  float: left;
+  margin: 0 1em 1em 0
+}
 
+img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
 
+.alignright {
+  float: right;
+}
+
+.alignleft {
+  float: left;
+}
+
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
 
 .clicky-button {
-    overflow: visible;
-    position: relative;
-    text-decoration: none;
-    display: block;
-    padding: 12px 20px 12px;
-    @include edgeGradient($orange, 10%);
-    text-align: center;
-    font-family: $sansFont;
-    font-size: 1.6em;
-    font-weight: normal;
-    color: white;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    @include textShadow(-1px, -1px, 0px, rgba(0,0,0,0.5));
-    @include borderShadow(0px, 3px, 3px, 0px, 0.4);
-    
-    &:hover, 
-    &.active, 
-    &:focus {
-        @include innerShadow(0px, 4px, 5px, 0px, 0.5);
-    }
-    
-    &:active, 
-    &:focus {
-        @include textShadow(-1px, -1px, 3px, rgba(0,0,0,0.5));
-        @include innerShadow(1px, 1px, 8px, 2px, 0.6);
-    }
-    
-    &.disabled {
-        @include edgeGradient(rgba(150,150,150,0.5), 10%);
-    }
-    &:hover.disabled,
-    &:active.disabled {
-        @include innerShadow(0, 0, 0, 0, 0.0);
-        @include textShadow(0, 0, 0, 0.0);
-    }
+  overflow: visible;
+  position: relative;
+  text-decoration: none;
+  display: block;
+  padding: 12px 20px 12px;
+  @include edgeGradient($orange, 10%);
+  text-align: center;
+  font-family: $sansFont;
+  font-size: 1.6em;
+  font-weight: normal;
+  color: white;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  @include textShadow(-1px, -1px, 0px, rgba(0, 0, 0, 0.5));
+  @include borderShadow(0px, 3px, 3px, 0px, 0.4);
+
+  &:hover,
+  &.active,
+  &:focus {
+    @include innerShadow(0px, 4px, 5px, 0px, 0.5);
+  }
+
+  &:active,
+  &:focus {
+    @include textShadow(-1px, -1px, 3px, rgba(0, 0, 0, 0.5));
+    @include innerShadow(1px, 1px, 8px, 2px, 0.6);
+  }
+
+  &.disabled {
+    @include edgeGradient(rgba(150, 150, 150, 0.5), 10%);
+  }
+  &:hover.disabled,
+  &:active.disabled {
+    @include innerShadow(0, 0, 0, 0, 0.0);
+    @include textShadow(0, 0, 0, 0.0);
+  }
 }
 
 a.fancy {
-    text-decoration: none;
-    color: $darkOrange;
-    @include textShadow(1px, 1px, 0px, rgba(255,255,255,0.3));
-    
-    &.on-dark-bg {
-        color: rgba(220,220,220,0.7);
-        @include textShadow(-1px, -1px, 0px, rgba(0,0,0,1));
-    }
-    
-    &.dark {
-        color: $darkGreyFont;
-        @include textShadow(1px, 1px, 0px, rgba(255,255,255,0.1));
-    }
+  text-decoration: none;
+  color: $darkOrange;
+  @include textShadow(1px, 1px, 0px, rgba(255, 255, 255, 0.3));
+
+  &.on-dark-bg {
+    color: rgba(220, 220, 220, 0.7);
+    @include textShadow(-1px, -1px, 0px, rgba(0, 0, 0, 1));
+  }
+
+  &.dark {
+    color: $darkGreyFont;
+    @include textShadow(1px, 1px, 0px, rgba(255, 255, 255, 0.1));
+  }
 }
 
 .header-title {
-    font-family: $sansFont;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    line-height: 1em;
-    font-weight: normal;
+  font-family: $sansFont;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1em;
+  font-weight: normal;
 }
+
 .title-shadow {
-    @include textShadow(2px, 2px, 5px, rgba(0,0,0,0.9));
+  @include textShadow(2px, 2px, 5px, rgba(0, 0, 0, 0.9));
 }
 
 .orange {
-    color: $orange;
+  color: $orange;
 }
+
 .green {
-    color: $teal;
+  color: $teal;
 }
 
 .page-top {
-    padding-top: 80px;
+  padding-top: 80px;
+
+  @media only screen and (max-width: 1024px) {
+    padding-top: 0;
+  }
 }
 
 section, footer {
-    // background: url(../img/homepage/shadow-top.png) top left repeat-x;
+  // background: url(../img/homepage/shadow-top.png) top left repeat-x;
 }
 
 section:first-of-type {
-    background: none;
+  background: none;
 }
 
 section {
-    padding-top: 30px;
+  padding-top: 30px;
 }
 
 .level-one {
-    color: $orange;
+  color: $orange;
 }
+
 .level-two {
-    color: $pink;
+  color: $pink;
 }
+
 .level-three {
-    color: $teal;
+  color: $teal;
 }
+
 .level-four {
   color: $yellow;
 }
+
 .level-five {
   color: $purple;
 }
 
 .row {
-    width: 900px;
-    margin: 0 auto;
+  width: 900px;
+  margin: 0 auto;
 }
+
 @media only screen and (max-width: 1024px) {
-    
-    .row {
-        width: 94%;
-        padding: 0 3%;
-    }
-    
+  .row {
+    width: 94%;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
 }
+
 .row-header {
-    padding: 0 30px;
+  padding: 0 30px;
 }
 
 .col-wrap {
-    overflow: hidden;
-    width: 100%;
+  overflow: hidden;
+  width: 100%;
 }
 
 .one-col {
-    float: left;
-    width: 100%;
+  float: left;
+  width: 100%;
 }
 
 .two-col {
-    float: left;
-    width: 50%;
-    margin-left: 0;
-    margin-right: 0;
-    
-    &.padded {
-        width: 45%;
-    }
-    
-    &.margin-left {
-        margin-left: 5%;
-        width: 45%;
-    }
-    
-    &.margin-right {
-        margin-right: 5%;
-        width: 45%;
-    }
-    
-    &.align-center {
-        text-align: center;
-    }
-    &.align-left {
-       text-align: left; 
-    }
-    &.align-right {
-        text-align: right;
-    }
+  float: left;
+  width: 50%;
+  margin-left: 0;
+  margin-right: 0;
+
+  &.padded {
+    width: 45%;
+  }
+
+  &.margin-left {
+    margin-left: 5%;
+    width: 45%;
+  }
+
+  &.margin-right {
+    margin-right: 5%;
+    width: 45%;
+  }
+
+  &.align-center {
+    text-align: center;
+  }
+  &.align-left {
+    text-align: left;
+  }
+  &.align-right {
+    text-align: right;
+  }
 }
 
 // On small screens, two col is one col.
@@ -266,12 +311,12 @@ section {
   .two-col {
     width: 100%;
     float: none;
-    
+
     &.padded {
       width: 100%;
       padding: 0;
     }
-    
+
     &.margin-right {
       width: 100%;
       margin-right: 0;
@@ -284,127 +329,128 @@ section {
 }
 
 .three-col {
-    float: left;
-    width: 33%;
-    margin-left: 0;
-    margin-right: 0;
+  float: left;
+  width: 33%;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .four-col {
-    float: left;
-    width: 25%;
+  float: left;
+  width: 25%;
 }
 
 .float-left {
-    float: left;
-    
-    &.center {
-        text-align: center;
-    }
-    &.left {
-       text-align: left; 
-    }
-    &.right {
-        text-align: right;
-    }
+  float: left;
+
+  &.center {
+    text-align: center;
+  }
+  &.left {
+    text-align: left;
+  }
+  &.right {
+    text-align: right;
+  }
 }
 
-
 .contact-button {
-    display: block;
-    background: url(../img/homepage/contact/icons.png) top left no-repeat;
-    margin: 0;
-    padding: 2px 0 0 40px;
+  display: block;
+  background: url(../img/homepage/contact/icons.png) top left no-repeat;
+  margin: 0;
+  padding: 3px 0 0 38px;
+  //width: 33px;
+  height: 33px;
+  text-decoration: none;
+  color: rgb(224, 218, 216);
+  font-size: 1.8em;
+
+  &:hover,
+  &:focus,
+  &:hover .contact-button__title,
+  &:focus .contact-button__title {
+    outline: none;
+    color: $orange;
+  }
+
+  @media only screen and (max-width: 862px) {
+    padding-top: 5px;
     height: 33px;
-    text-decoration: none;
-    color: rgb(224,218,216);
-    font-size: 1.8em;
-    
-    &:hover, 
-    &:focus,
-    &:hover .contact-button__title,
-    &:focus .contact-button__title {
-        outline: none;
-        color: $orange;
-    }
-    
-    @media only screen and (max-width: 862px) {
-        padding-top: 5px;
-        height: 33px;
-        font-size: 1.4em;
-    }
-    @media only screen and (max-width: 693px) {
-        padding-top: 7px;
-        height: 33px;
-        font-size: 1.1em;
-    }
-    
-    &.contact-button--small {
-        font-size: 0.9em;
-        padding-top: 7px;
-        padding-left: 34px;
-        height: 20px; // 27px - 7px padding
-        background-size: 27px auto;
-    }
-    
-    &.contact-button--twitter {
-        background-position: 0 0px;
-    }
-    &.contact-button--twitter.contact-button--small {
-        background-position: 0 0px;
-    }
-    &.contact-button--youtube {
-        background-position: 0 -33px;
-    }
-    &.contact-button--youtube.contact-button--small {
-        background-position: 0 -27px;
-    }
-    &.contact-button--email {
-        background-position: 0 -66px;
-    }
-    &.contact-button--email.contact-button--small {
-        background-position: 0 -54px;
-    }
-    &.contact-button--rss {
-        background-position: 0 -99px;
-    }
-    &.contact-button--rss.contact-button--small {
-        background-position: 0 -81px;
-    }
-    &.contact-button--facebook {
-        background-position: 0 -132px;
-    }
-    &.contact-button--facebook.contact-button--small {
-        background-position: 0 -108px;
-    }
-    &.contact-button--openhouse {
-        background-position: 0 -165px;
-    }
-    &.contact-button--openhouse.contact-button--small {
-        background-position: 0 -135px;
-    }
-    &.contact-button--street {
-        background-position: 0 -198px;
-    }
-    &.contact-button--street.contact-button--small {
-        background-position: 0 -162px;
-    }
-    &.contact-button--newsletter {
-        background-position: 0 -231px;
-    }
-    &.contact-button--newsletter.contact-button--small {
-        background-position: 0 -189px;
-    }
-    &.contact-button--faq {
-        background-position: 0 -264px;
-    }
-    &.contact-button--faq.contact-button--small {
-        background-position: 0 -216px;
-    }
-    
-    .contact-button__subtitle {
-        font-size: 0.8em;
-    }
+    font-size: 1.4em;
+  }
+  @media only screen and (max-width: 693px) {
+    padding-top: 7px;
+    height: 33px;
+    font-size: 1.1em;
+  }
+
+  &.contact-button--small {
+    font-size: 0.9em;
+    padding-top: 7px;
+    padding-left: 34px;
+    height: 20px;
+    // 27px - 7px padding
+    background-size: 27px auto;
+  }
+
+  &.contact-button--twitter {
+    background-position: 0 0px;
+  }
+  &.contact-button--twitter.contact-button--small {
+    background-position: 0 0px;
+  }
+  &.contact-button--youtube {
+    background-position: 0 -33px;
+  }
+  &.contact-button--youtube.contact-button--small {
+    background-position: 0 -27px;
+  }
+  &.contact-button--email {
+    background-position: 0 -66px;
+  }
+  &.contact-button--email.contact-button--small {
+    background-position: 0 -54px;
+  }
+  &.contact-button--rss {
+    background-position: 0 -99px;
+  }
+  &.contact-button--rss.contact-button--small {
+    background-position: 0 -81px;
+  }
+  &.contact-button--facebook {
+    background-position: 0 -132px;
+  }
+  &.contact-button--facebook.contact-button--small {
+    background-position: 0 -108px;
+  }
+  &.contact-button--openhouse {
+    background-position: 0 -165px;
+  }
+  &.contact-button--openhouse.contact-button--small {
+    background-position: 0 -135px;
+  }
+  &.contact-button--street {
+    background-position: 0 -198px;
+  }
+  &.contact-button--street.contact-button--small {
+    background-position: 0 -162px;
+  }
+  &.contact-button--newsletter {
+    background-position: 0 -231px;
+  }
+  &.contact-button--newsletter.contact-button--small {
+    background-position: 0 -189px;
+  }
+  &.contact-button--faq {
+    background-position: 0 -264px;
+  }
+  &.contact-button--faq.contact-button--small {
+    background-position: 0 -216px;
+  }
+
+  .contact-button__subtitle {
+    font-size: 0.8em;
+  }
 }
 
 .main-title {
@@ -412,249 +458,259 @@ section {
 }
 
 .secondary-title {
-    font-family: $serifFont;
+  font-family: $serifFont;
 }
 
 .divider {
+  width: 100%;
+  height: 3px;
+  background: url(../img/homepage/divider.png) top left no-repeat;
+  background-size: contain;
+  @media only screen and (max-width: 1023px) {
     width: 100%;
-    height: 3px;
-    background: url(../img/homepage/divider.png) top left no-repeat;
-    background-size: contain;
-    @media only screen and (max-width : 1023px) {
-        width: 100%;
-    }
-    padding-bottom: 20px;
+  }
+  padding-bottom: 20px;
 }
 
 @-webkit-keyframes shrink {
-    0% { -webkit-transform: scale(1.1); }
-    100% { -webkit-transform: scale(1.0); }
+  0% {
+    -webkit-transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1.0);
+  }
 }
+
 @-webkit-keyframes show {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
+
 @-webkit-keyframes hide {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .close-button {
-    display: block;
-    position: absolute;
-    z-index: 10;
-    top: 20px;
-    right: 20px;
-    width: 36px;
-    height: 37px;
-    background: url(../img/homepage/overlay-close-button.png) top left no-repeat;
+  display: block;
+  position: absolute;
+  z-index: 10;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 37px;
+  background: url(../img/homepage/overlay-close-button.png) top left no-repeat;
 }
-        
 
 .overlay {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: 9999;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  @include transition(0.3s);
+
+  &.show {
+    -webkit-animation: show 0.3s ease-out;
+    display: block;
+  }
+  &.hide {
+    display: none;
+  }
+
+  .overlay-bg {
+    position: absolute;
     top: 0;
     left: 0;
-    @include transition(0.3s);
-    
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  .overlay-inner {
+    margin: 160px auto;
+    width: 70%;
+    padding: 30px 30px 30px 30px;
+    background: rgba(255, 255, 255, 1);
+    position: relative;
+    overflow: hidden;
+    color: black;
+    @include borderShadow(0px, 0px, 10px, 3px, 0.5);
+
+    @media only screen and (max-width: 1024px) {
+      margin-top: 20px;
+      height: 500px;
+      overflow-y: auto;
+    }
+    @media only screen and (max-width: 768px) {
+      height: 700px;
+    }
+    @media only screen and (max-width: 442px) {
+      height: 360px;
+    }
+
     &.show {
-        -webkit-animation: show 0.3s ease-out;
-        display: block;
+      -webkit-animation: shrink 0.4s ease-out;
     }
-    &.hide {
-        display: none;
+
+    p {
+      color: $darkGreyFont;
     }
-    
-    .overlay-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(255,255,255,0.5);
+
+    .overlay-name {
+      color: $orange;
+      font-size: 4em;
+      text-align: left;
+      letter-spacing: 2px;
+      margin: 0 0 20px 0;
+      padding: 0;
+
+      @media only screen and (max-width: 442px) {
+        font-size: 2em;
+      }
     }
-    
-    
-    .overlay-inner {
-        margin: 160px auto;
-        width: 70%;
-        padding: 30px 30px 30px 30px;
-        background: rgba(255,255,255,1);
-        position: relative;
-        overflow: hidden;
-        color: black;
-        @include borderShadow(0px, 0px, 10px, 3px, 0.5);
-        
-        @media only screen and (max-width : 1024px) {
-            margin-top: 20px;
-            height: 500px;
-            overflow-y: auto;
-        }
-        @media only screen and (max-width : 768px) {
-            height: 700px;
-        }
-        @media only screen and (max-width : 442px) {
-            height: 360px;
-        }
-        
-        &.show {
-            -webkit-animation: shrink 0.4s ease-out;
-        }
-        
-        p {
-            color: $darkGreyFont;
-        }
-        
-        .overlay-name {
-            color: $orange;
-            font-size: 4em;
-            text-align: left;
-            letter-spacing: 2px;
-            margin: 0 0 20px 0;
-            padding: 0;
-            
-            @media only screen and (max-width: 442px) {
-                font-size: 2em;
-            }
-        }
-        .overlay-title {
-            @media only screen and (max-width: 442px) {
-                font-size: 1.2em;
-            }
-        }
-        .overlay-title,
-        .overlay-company,
-        .overlay-twitter {
-            color: $orange;
-            margin: 0;
-            padding: 0;
-            line-height: 1em;
-        }
-        .overlay-body {
-            color: rgb(84,83,83);
-            margin: 0.5em 0 0 0;
-        }
-        .overlay-headshot {
-            float: right;
-            margin: 10px;
-            border: 1px solid $orange;
-            width: 40%;
-            max-width: 162px;
-        }
-        .overlay-twitter {
-            padding-top: 10px;
-        }
+    .overlay-title {
+      @media only screen and (max-width: 442px) {
+        font-size: 1.2em;
+      }
     }
+    .overlay-title,
+    .overlay-company,
+    .overlay-twitter {
+      color: $orange;
+      margin: 0;
+      padding: 0;
+      line-height: 1em;
+    }
+    .overlay-body {
+      color: rgb(84, 83, 83);
+      margin: 0.5em 0 0 0;
+    }
+    .overlay-headshot {
+      float: right;
+      margin: 10px;
+      border: 1px solid $orange;
+      width: 40%;
+      max-width: 162px;
+    }
+    .overlay-twitter {
+      padding-top: 10px;
+    }
+  }
 }
 
 .callout {
-    // @include transitionWith(opacity, 0.3s);
-    background:rgba(255,255,255,1.0);
-    padding: 10px;
-    width: 120px;
-    margin: 5px;
-    border-radius: 4px;
+  // @include transitionWith(opacity, 0.3s);
+  background: rgba(255, 255, 255, 1.0);
+  padding: 10px;
+  width: 120px;
+  margin: 5px;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 200;
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
+
+  &.hide {
+    opacity: 0;
+  }
+  &.show {
+    opacity: 1;
+  }
+
+  h2 {
+    display: inline-block;
+    // So we can get the width
+    color: $darkGreyFont;
+    font-size: 1em;
+    padding: 0;
+    margin: 0;
+  }
+
+  &:before {
+    content: "";
     position: absolute;
-    z-index: 200;
-    box-shadow: 0px 0px 7px rgba(0,0,0,0.5);
-    
-    &.hide {
-        opacity: 0;
-    }
-    &.show {
-        opacity: 1;
-    }
-    
-    h2 {
-        display: inline-block; // So we can get the width
-        color: $darkGreyFont;
-        font-size: 1em;
-        padding: 0;
-        margin: 0;
-    }
-    
-    &:before {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        bottom: -10px;
-        left: 10%;
-        background: rgba(255,255,255,1.0);
-        -webkit-transform: rotate(45deg);
-        -moz-transform: rotate(45deg);
-        -o-transform: rotate(45deg);
-        transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        /* reduce the damage in FF3.0 */
-        display: block;
-        width: 24px;
-        height: 24px;
-    }
-    
-    .callout__close {
-        position: absolute;
-        top: 5px;
-        right: 5px;
-        padding: 1px 3px 0 3px;
-        background: rgba(240,240,240,0.8);
-        border: 1px solid rgba(0,0,0,0.15);
-        border-radius: 7px;
-        transition: all 0.3s ease-out;
-        box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.5),
-        0 0 2px rgba(0,0,0,0.3);
+    z-index: -1;
+    bottom: -10px;
+    left: 10%;
+    background: rgba(255, 255, 255, 1.0);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    /* reduce the damage in FF3.0 */
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
 
-        /* Font styles */
-        color: rgba(150,150,150,0.7);
-        font-size: 0.5em;
-        text-decoration: none;
-        text-shadow: 1px 1px rgba(255,255,255,0.9);
-        
-        &:hover  { background: $orange; }
+  .callout__close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 1px 3px 0 3px;
+    background: rgba(240, 240, 240, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 7px;
+    transition: all 0.3s ease-out;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.3);
+
+    /* Font styles */
+    color: rgba(150, 150, 150, 0.7);
+    font-size: 0.5em;
+    text-decoration: none;
+    text-shadow: 1px 1px rgba(255, 255, 255, 0.9);
+
+    &:hover {
+      background: $orange;
     }
+  }
 }
-
-
 
 /*
 --------- SWIPE ----------
 */
 
 .swipe {
-    padding-bottom:20px;
-    position:relative;
-    z-index:1;
-    -webkit-perspective: 1000;
-    -webkit-backface-visibility: hidden;
+  padding-bottom: 20px;
+  position: relative;
+  z-index: 1;
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
 }
+
 .swipe li div, .swipe div div div {
-    margin:0 10px;
-    padding:50px 10px;
-    background:#1db1ff;
-    font-weight:bold;
-    color:#fff;
-    font-size:20px;
-    text-align:center;
+  margin: 0 10px;
+  padding: 50px 10px;
+  background: #1db1ff;
+  font-weight: bold;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
 }
-
-
 
 /*
 --------- PARSLEY ERRORS ----------
 */
 
 .parsley-error-list {
-    margin: 5px 0 0 0;
+  margin: 5px 0 0 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+    margin: 0;
     padding: 0;
-    
-    li {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        font-size: 0.7em;
-        color: white;
-    }
+    font-size: 0.7em;
+    color: white;
+  }
 }

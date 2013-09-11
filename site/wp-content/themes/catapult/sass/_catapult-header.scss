@@ -3,314 +3,314 @@
 -------------------------------- */
 
 @mixin header-break-med {
-    @media only screen and (max-width: 720px) {
-        @content;
-    }
+  @media only screen and (max-width: 720px) {
+    @content;
+  }
 }
 
 #header-drawer {
-    @include transition(0.5s);
-    padding: 0;
-    position: fixed;
-    z-index: 998;
-    left: 0;
-    width: 100%;
-    height: 341px;
-    @include borderShadow(0px, 2px, 5px, 0px, 0.5);
-    @include greyGradient();
-    
-    &.compact {
-        top: -350px;
-    }
-    
-    @media only screen and (max-width: 1024px) and (min-width:721px) {
-        position: absolute;
-    }
-    
-    // iPhone
-    @include header-break-med {
-        display: none;
-    }
-    
-    &.show {
-        top: 82px;
-    }
-    
-    &.peek {
-        top: -180px;
-    }
-    
-    &.hide {
-        top: -243px;
-    }
-    
-    h2, h3 {
-        padding: 0;
-        margin: 0;
-    }
-    
-    .news {
-        padding: 0;
-        margin: 0 auto;
-        width: 900px;
-        height: 100%;
-        overflow: hidden;
-        
-        @media only screen and (max-width: 974px) {
-            overflow-y: auto;
-            margin-left: 2%;
-            margin-right: 2%;
-            width: 92%;
-        }
-        
-        &.hide {
-            display: none;
-        }
-        
-        &.show {
-            display: block;
-        }
-        
-        .news-title {
-            padding: 15px 0;
-            letter-spacing: 0.5px;
-            font-size: 1.5em;
-            color: $orange;
-        }
-        
-        .news-jobs {
-            height: 220px;
-            overflow-y: auto;
-            overflow-x: hidden;
-        }
-        
-        .news-job {
-            padding: 10px 0 0 0;
-            
-            .news-job-title {
-                color: $greyFont;
-                letter-spacing: 1px;
-            }
-        }
-        
-        .news-body {
-           color: $greyFont;
-           padding: 0;
-           margin: 0; 
-           line-height: 1em;
-        }
-        
-        .horiz-divider {
-            float: left;
-            display: inline-block;
-            background-position: top left;
-            background-repeat: no-repeat;
-            background-size: contain;
-            width: 14px;
-            height: 120px;
-            margin-top: -30px;
-            
-            &.left {
-               background-image: url(../img/homepage/horiz-divider-left.png);
-               border-right: 1px solid rgba(255,255,255,0.1);
-               background-position: right top;
-            }
-            
-            &.right {
-                background-image: url(../img/homepage/horiz-divider-right.png);
-                border-left: 1px solid rgba(255,255,255,0.1);
-                background-position: left top;
-            }
-        }
-        
-        
-        .news-primary, .news-secondary {
-            overflow: auto;
-            overflow-y: hidden;
-            display: block;
-            float: left;
-            position: relative;
-        }
-        .news-primary {
-            width: 55%;
-            padding-left: 5%;
-        }
-        .news-secondary {
-            width: 40%;
-        }
-        
-    }
-    
-    ul {
-        position: relative;
-        top: 0;
-        left: 0;
-        padding: 0;
-        margin: 0;
-        overflow: hidden;
-        width: 7810px;
-        li {
-            list-style: none;
-            float: left;
-            width: 350px;
-            height: 65px;
-            border-top: 1px solid rgba(50, 50, 50, 0.7);
-            margin: 0 10px 6px 10px;
-            padding: 10px 10px 0 10px;
-            font-size: 0.8em;
-            color: rgba(200,200,200,1.0);
-            background: rgba(255, 255, 255, 0.05);
-            @include border-radius(5px);
-        }
-    }
-}
-html.no-svg
-{
-    .header {
-        .logo {
-            display: inline-block;
-            margin: 10px 0 10px 50px;
-            padding: 0;
-            background: url(../img/catapult-logo.png) top left no-repeat;
-            width: 192px;
-            height: 54px;
-            
-            .logo-img {
-                display: none;
-            }
-        }
-    }
-}
-.header {
-	background: url(../img/homepage/navbar-bg.png) top left repeat-x;
-    background-size: contain;
-	width: 100%;
-    overflow: visible;
+  @include transition(0.5s);
+  padding: 0;
+  position: fixed;
+  z-index: 998;
+  left: 0;
+  width: 100%;
+  height: 341px;
+  @include borderShadow(0px, 2px, 5px, 0px, 0.5);
+  @include greyGradient();
+
+  &.compact {
+    top: -350px;
+  }
+
+  @media only screen and (max-width: 1024px) and (min-width: 721px) {
+    position: absolute;
+  }
+
+  // iPhone
+  @include header-break-med {
+    display: none;
+  }
+
+  &.show {
+    top: 82px;
+  }
+
+  &.peek {
+    top: -180px;
+  }
+
+  &.hide {
+    top: -243px;
+  }
+
+  h2, h3 {
     padding: 0;
     margin: 0;
-    position: fixed;
-    z-index: 1001;
-    
-    &.compact {
-        @include borderShadow(0px, 5px, 5px, 0px, 0.3);
+  }
+
+  .news {
+    padding: 0;
+    margin: 0 auto;
+    width: 900px;
+    height: 100%;
+    overflow: hidden;
+
+    @media only screen and (max-width: 974px) {
+      overflow-y: auto;
+      margin-left: 2%;
+      margin-right: 2%;
+      width: 92%;
     }
-    
-    @media only screen and (max-width: 1024px) {
-        position: absolute;
+
+    &.hide {
+      display: none;
     }
-    
+
+    &.show {
+      display: block;
+    }
+
+    .news-title {
+      padding: 15px 0;
+      letter-spacing: 0.5px;
+      font-size: 1.5em;
+      color: $orange;
+    }
+
+    .news-jobs {
+      height: 220px;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    .news-job {
+      padding: 10px 0 0 0;
+
+      .news-job-title {
+        color: $greyFont;
+        letter-spacing: 1px;
+      }
+    }
+
+    .news-body {
+      color: $greyFont;
+      padding: 0;
+      margin: 0;
+      line-height: 1em;
+    }
+
+    .horiz-divider {
+      float: left;
+      display: inline-block;
+      background-position: top left;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 14px;
+      height: 120px;
+      margin-top: -30px;
+
+      &.left {
+        background-image: url(../img/homepage/horiz-divider-left.png);
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        background-position: right top;
+      }
+
+      &.right {
+        background-image: url(../img/homepage/horiz-divider-right.png);
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        background-position: left top;
+      }
+    }
+
+    .news-primary, .news-secondary {
+      overflow: auto;
+      overflow-y: hidden;
+      display: block;
+      float: left;
+      position: relative;
+    }
+    .news-primary {
+      width: 55%;
+      padding-left: 5%;
+    }
+    .news-secondary {
+      width: 40%;
+    }
+
+  }
+
+  ul {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    width: 7810px;
+    li {
+      list-style: none;
+      float: left;
+      width: 350px;
+      height: 65px;
+      border-top: 1px solid rgba(50, 50, 50, 0.7);
+      margin: 0 10px 6px 10px;
+      padding: 10px 10px 0 10px;
+      font-size: 0.8em;
+      color: rgba(200, 200, 200, 1.0);
+      background: rgba(255, 255, 255, 0.05);
+      @include border-radius(5px);
+    }
+  }
+}
+
+html.no-svg {
+  .header {
     .logo {
-        display: inline-block;
-        padding: 10px 0 7px 50px;
-        
-        &:focus {
-            // border: 1px solid white;
-            @include brightness(-80%);
-            outline: none;
-        }
-        
-        // iPhone
-        @include header-break-med {
-            padding-left: 10px;
-        }
-        .logo--full {
-            @include header-break-med {
-                display: none;
-            }
-            &.show {
-                display: block;
-            }
-            &.hide {
-                display: none;
-            }
-        }
-        .logo--partial {
-            width: 30px;
-            height: 30px;
-            @media only screen and (min-width: 721px) {
-                display: none;
-            }
-            &.show {
-                display: block;
-            }
-            &.hide {
-                display: none;
-            }
-        }
-        
+      display: inline-block;
+      margin: 10px 0 10px 50px;
+      padding: 0;
+      background: url(../img/catapult-logo.png) top left no-repeat;
+      width: 192px;
+      height: 54px;
+
+      .logo-img {
+        display: none;
+      }
     }
-    .header-divider {
-        background: url(../img/homepage/header-detail.png) top left no-repeat #e38e15;
-        width: 100%;
-        height: 2px;
+  }
+}
+
+.header {
+  background: url(../img/homepage/navbar-bg.png) top left repeat-x;
+  background-size: contain;
+  width: 100%;
+  overflow: visible;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  z-index: 1001;
+
+  &.compact {
+    @include borderShadow(0px, 5px, 5px, 0px, 0.3);
+  }
+
+  @media only screen and (max-width: 1024px) {
+    position: relative;
+  }
+
+  .logo {
+    display: inline-block;
+    padding: 10px 0 7px 50px;
+
+    &:focus {
+      // border: 1px solid white;
+      @include brightness(-80%);
+      outline: none;
     }
-    .header-bottom {
-        background: url(../img/homepage/shadow-top.png) top left repeat;
-        width: 100%;
-        height: 15px;
-        position: relative;
-        margin: 10px 0;
+
+    // iPhone
+    @include header-break-med {
+      padding-left: 10px;
     }
+    .logo--full {
+      @include header-break-med {
+        display: none;
+      }
+      &.show {
+        display: block;
+      }
+      &.hide {
+        display: none;
+      }
+    }
+    .logo--partial {
+      width: 30px;
+      height: 30px;
+      @media only screen and (min-width: 721px) {
+        display: none;
+      }
+      &.show {
+        display: block;
+      }
+      &.hide {
+        display: none;
+      }
+    }
+
+  }
+  .header-divider {
+    background: url(../img/homepage/header-detail.png) top left no-repeat #e38e15;
+    width: 100%;
+    height: 2px;
+  }
+  .header-bottom {
+    background: url(../img/homepage/shadow-top.png) top left repeat;
+    width: 100%;
+    height: 15px;
+    position: relative;
+    margin: 10px 0;
+  }
 }
 
 /* --------------------------------
     Main Nav Section
 -------------------------------- */
 .mainnav {
-    @include transition(0.3s);
+  @include transition(0.3s);
+  overflow: hidden;
+  float: right;
+  background: url(../img/homepage/divider-vert.png) top right no-repeat;
+  padding: 25px 0 0 0;
+
+  @include header-break-med {
+    padding-top: 16px;
+  }
+
+  &.compact {
+    padding-top: 13px;
+  }
+
+  ul {
     overflow: hidden;
-    float: right;
-    background: url(../img/homepage/divider-vert.png) top right no-repeat;
-    padding: 25px 0 0 0;
-    
+    padding: 0;
+    margin: 0;
+  }
+
+  .mainnav-item {
+    float: left;
+    padding: 0 35px 0 0;
+    vertical-align: top;
+
     @include header-break-med {
-        padding-top: 16px;
+      padding-right: 10px;
     }
-    
-    &.compact {
-        padding-top: 13px;
+
+    .mainnav-item-link {
+      font-size: 1.6em;
+      color: rgb(176, 95, 1);
+
+      @include header-break-med {
+        font-size: 1em;
+        color: darken($orange, 30%);
+      }
+
+      &:hover,
+      &.active,
+      &:focus {
+        outline: none;
+        color: white;
+        @include textShadow(-1px, -1px, 0px, rgba(0, 0, 0, 0.3));
+      }
     }
-    
-    ul {
-        overflow: hidden;
-        padding: 0;
-        margin: 0;
+  }
+  .mainnav-item:last-of-type {
+    padding-left: 35px;
+    padding-right: 28px;
+    border-left: 1px solid darken($orange, 10%);
+    @include header-break-med {
+      padding-left: 10px;
+      padding-right: 10px;
     }
-    
-    .mainnav-item {
-        float: left;
-        padding: 0 35px 0 0;
-        vertical-align: top;
-        
-        @include header-break-med {
-            padding-right: 10px;
-        }
-        
-        .mainnav-item-link {
-            font-size: 1.6em;
-            color: rgb(176,95,1);
-            
-            @include header-break-med {
-                font-size: 1em;
-                color: darken($orange, 30%);
-            }
-            
-            &:hover,
-            &.active, 
-            &:focus {
-                outline: none;
-                color: white;
-                @include textShadow(-1px, -1px, 0px, rgba(0,0,0,0.3));
-            }
-        }
-    }
-    .mainnav-item:last-of-type {
-        padding-left: 35px;
-        padding-right: 28px;
-        border-left: 1px solid darken($orange, 10%);
-        @include header-break-med {
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-    }
+  }
 }

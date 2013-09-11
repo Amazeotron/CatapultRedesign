@@ -41,6 +41,12 @@
       
       li {
         float: left;
+        padding-right: 10px;
+        
+        &:last-of-type {
+          padding-right: 0;
+        }
+        
         a {
           text-indent: -100000px;
         }
@@ -75,16 +81,23 @@
     }
   }
   
-  .twitter-list {
-    list-style: none;
-    padding: 0;
+  .twitter-list-wrap {
+    overflow: hidden;
     margin: 20px 0 0 0;
+    height: 500px;
     
-    .twitter-list__item {
+    .twitter-list {
+      list-style: none;
       padding: 0;
-      margin: 0 0 40px 0;
+      margin: 0;
+
+      .twitter-list__item {
+        padding: 0;
+        margin: 0 0 40px 0;
+      }
     }
   }
+  
 }
 
 .post-body {
@@ -102,7 +115,7 @@
   
   a {
     text-decoration: none;
-    color: $orange;
+    color: #FFFFFF;
   }
 }
 
@@ -113,7 +126,7 @@
 -------------------- */
 .tags {
   overflow: hidden;
-  margin: 12px 0 0 0;
+  margin: 0;
   padding: 0;
   float: left;
   
@@ -121,6 +134,11 @@
     list-style: none;
     float: left;
     margin: 0;
+    padding-right: 5px;
+    
+    &:last-of-type {
+      padding-right: 0;
+    }
   }
 }
 .category-item {
@@ -194,6 +212,10 @@
     float: left;
     width: 30%;
     margin-right: 5%;
+  }
+  
+  .tags {
+    margin-top: 20px;
   }
   
   .post-main-link {
@@ -475,4 +497,20 @@
       }
     }
   }
+}
+
+/* -------------------
+  FLICKR GALLERY (MASONRY)
+-------------------- */
+
+.flickr-gallery {
+  
+  .figure {
+    margin-bottom: 10px;
+    
+    //img {
+    //  width: 100%;
+    //}
+  }
+  
 }
