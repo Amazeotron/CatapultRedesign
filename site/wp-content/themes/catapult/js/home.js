@@ -45,7 +45,7 @@ $(document).ready(function () {
   $(window).scroll(function (event) {
 
     var scrollPos = $(this).scrollTop();
-    // console.log(scrollPos);
+//    console.log(scrollPos);
 
     if (scrollPos > 100) {
       $(".logo .logo--full").removeClass("show").addClass("hide");

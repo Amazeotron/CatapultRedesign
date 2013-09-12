@@ -55,7 +55,7 @@ h1 {
     font-size: 1.7em;
   }
   @media only screen and (max-width: 320px) {
-    font-size: 1.4em;
+    font-size: 1.2em;
   }
 }
 
@@ -255,7 +255,7 @@ section {
 
 @media only screen and (max-width: 1024px) {
   .row {
-    width: 94%;
+    width: 100%;
     padding-left: 3%;
     padding-right: 3%;
   }
@@ -519,6 +519,10 @@ section {
   left: 0;
   @include transition(0.3s);
 
+  @media only screen and (max-width: 442px) {
+    padding-top: 0;
+  }
+
   &.show {
     -webkit-animation: show 0.3s ease-out;
     display: block;
@@ -555,7 +559,20 @@ section {
       height: 700px;
     }
     @media only screen and (max-width: 442px) {
-      height: 360px;
+      width: 92%;
+      height: 92%;
+      margin: 4%;
+      padding: 10px;
+    }
+    
+    .close-button {
+      @media only screen and (max-width: 442px) {
+        width: 26px;
+        height: 26px;
+        background-size: 100%;
+        top: 10px;
+        right: 10px;
+      }
     }
 
     &.show {
@@ -575,12 +592,12 @@ section {
       padding: 0;
 
       @media only screen and (max-width: 442px) {
-        font-size: 2em;
+        font-size: 1.7em;
       }
     }
     .overlay-title {
       @media only screen and (max-width: 442px) {
-        font-size: 1.2em;
+        font-size: 0.9em;
       }
     }
     .overlay-title,
@@ -604,6 +621,10 @@ section {
     }
     .overlay-twitter {
       padding-top: 10px;
+
+      @media only screen and (max-width: 442px) {
+        font-size: 1em;
+      }
     }
   }
 }

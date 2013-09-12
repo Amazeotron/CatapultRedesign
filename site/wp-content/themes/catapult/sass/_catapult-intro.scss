@@ -3,7 +3,6 @@
 -------------------------------- */
 
 .intro {
-  min-height: 800px;
   
   #slides {
     display: none;
@@ -37,6 +36,10 @@
       -moz-transform: scale(0.9);
       -ms-transform: scale(0.9);
       transform: scale(0.9);
+    }
+    
+    @media only screen and (max-width: 320px) {
+      display: none;
     }
   }
 

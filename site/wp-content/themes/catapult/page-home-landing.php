@@ -153,7 +153,7 @@ if (isset($_POST['stripeToken'])) {
     </div>
   </section>-->
 
-  <section class="featured row">
+  <section class="featured row" id="featured">
     <h1>Our <span class="header-title level-one">FEATURES</span> &amp; <span class="header-title level-two">PUBLICATIONS</span> include &raquo;</h1>
     <ul class="featured-logos nolist clearfix">
       <li><a href=""><img src="<?php bloginfo('template_url'); ?>/img/logos/fast-company-logo.png" alt=""/></a></li>
@@ -165,7 +165,7 @@ if (isset($_POST['stripeToken'])) {
   </section>
   <hr />
 
-  <section class="locations row" id="locations">
+  <section class="locations row" id="projects">
     <div id="map-callout" class="clearfix hide">
       <a href="#" class="close-button"></a>
       <div class="map-callout-img"></div>
@@ -218,26 +218,26 @@ if (isset($_POST['stripeToken'])) {
   <section class="contact" id="contact">
     <div class="row">
       <h1><span class="header-title level-one">FOLLOW</span>, <span class="header-title level-two">LIKE</span> &amp; <span class="header-title level-three">CONTACT</span> Us.</h1>
-      <div class="col-wrap locations">
-        <section class="contact four-col margin-right">
+      <div class="col-wrap contact-locations clearfix">
+        <section class="contact__item float-left">
           <div class="contact-location">Contact Us</div>
           <h3 class="header-title">OPEN STUDIOS</h3>
           <h4 class="header-title">EVERY 1ST &amp; 3RD WED<br/>4-6P IN SF OR SKYPE</h4>
         </section>
-        <section class="contact four-col margin-right">
+        <section class="contact__item float-left">
           <div class="contact-location sf">Contact Us</div>
           <h3 class="header-title">SAN FRANCISCO</h3>
           <h4 class="header-title">972 MISSION ST, SUITE 500<br/>SAN FRANCISCO, CA 94103</h4>
         </section>
-        <section class="contact four-col margin-right">
+        <section class="contact__item float-left">
           <div class="contact-location ny">Contact Us</div>
           <h3 class="header-title">NEW YORK CITY</h3>
           <h4 class="header-title">123 STREET<br/>NEW YORK, NY 12345</h4>
         </section>
-        <section class="contact four-col margin-right">
+        <section class="contact__item float-left">
           <div class="contact-location co">Contact Us</div>
           <h3 class="header-title">DENVER</h3>
-          <h4 class="header-title">1031 33RD STREET, SUITE 174<br/>DENVER, CO 80205</h4>
+          <h4 class="header-title">1031 33RD STREET, STE 174<br/>DENVER, CO 80205</h4>
         </section>
       </div>
 

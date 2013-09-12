@@ -11,12 +11,17 @@
   width: 960px;
   
   @media only screen and (max-width: 1024px) {
-    width: 100%;
-    min-width: 100%;
+    width: 96%;
+    min-width: 96%;
+    padding-top: 25px;
   }
   
   @media only screen and (max-width: 720px) {
     padding-top: 25px;
+  }
+
+  @media only screen and (max-widt: 490px) {
+    width: 100%;
   }
 
   .post-header {
@@ -25,9 +30,9 @@
   
   #main-section {
     float: left;
-    width: 68.75%;
+    width: 70%;
     max-width: 850px;
-    padding: 40px 3% 0 0;
+    padding: 40px 20px 0 0;
     
     hr {
       margin-bottom: 0;
@@ -55,13 +60,14 @@
     
     @media only screen and (max-width: 720px) {
       float: none;
-      width: 96%;
+      width: 100%;
+      padding-right: 0;
     }
   }
   
   #main-aside {
     float: left;
-    width: 31.25%;
+    width: 30%;
     
     hr {
       margin-bottom: 20px;
@@ -331,6 +337,10 @@
       letter-spacing: 1px;
       margin: 0;
       padding: 0 19px 0 0;
+
+      @media only screen and (max-width: 615px) {
+        padding-right: 10px;
+      }
         
       &:last-of-type {
         padding: 0;
@@ -344,6 +354,13 @@
         
         &:hover {
           color: $orange;
+        }
+        
+        @media only screen and (max-width: 615px) {
+          font-size: 0.9em;
+        }
+        @media only screen and (max-width: 490px) {
+          font-size: 0.6em;
         }
       }
     }

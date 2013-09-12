@@ -49,10 +49,10 @@ var cataCommon = {
 	handleNav: function(target) {
 		// Scroll positions for the sections
 		var scrollPositions = [	
-				{section: "#casestudies", 	offset:751}, 
-				{section: "#team",					offset:2116},
-				{section: "#contact", 			offset:3296},
-				{section: "#donate", 				offset:3996}
+				{section: "#projects", 	    offset:1062}, 
+				{section: "#team",					offset:1800},
+				{section: "#contact", 			offset:2902},
+				{section: "#donate", 				offset:3450}
 			],
 				scrollTop = 0;
 		

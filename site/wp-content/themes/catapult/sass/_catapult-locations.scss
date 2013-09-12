@@ -10,14 +10,22 @@
   @include transition(300ms);
   position: relative;
   background: url(../img/homepage/locations/map-callout.png) top left no-repeat;
+  background-size: 100% 100%;
   width: 535px;
   height: 218px;
   position: absolute;
-  z-index: 1000;
+  z-index: 1010;
   top: 138px;
   left: 50%;
   margin-left: -267px;
   padding: 20px;
+  
+  @media only screen and (max-width: 563px) {
+    width: 300px;
+    height: auto;
+    margin-left: -150px;
+    top: 1px;
+  }
   
   &.hide {
     display: none;
@@ -33,6 +41,10 @@
     img {
       width: 100%;
     }
+
+    @media only screen and (max-width: 563px) {
+      display: none;
+    }
   }
   
   .map-callout-content {
@@ -41,6 +53,10 @@
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
+
+    @media only screen and (max-width: 563px) {
+      width: 100%;
+    }
   }
   
   h2 {
