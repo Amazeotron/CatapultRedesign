@@ -11,6 +11,9 @@
     } else {
       $croppedImage = get_bloginfo('template_url') . "/img/cata-placeholder.png";
     }
+    
+    // Filter out any projects marked as disabled
+    if (get_field('disabled') == false) :
     ?>
     <article class="post-box with-bg">
       <figure>
@@ -21,9 +24,23 @@
 
         <div class="post-meta">
           <?php
-          $theName = implode(' ', array(get_the_author_meta('first_name'), get_the_author_meta('last_name')));
-          ?>
-          <span>By <?php echo $theName; ?></span> | <span><?php the_time('F j, Y'); ?></span>
+          if (get_post_type() == 'post') {
+            $theName = implode(' ', array(get_the_author_meta('first_name'), get_the_author_meta('last_name'))); ?>
+            <span>By <?php echo $theName; ?></span> | <span><?php the_time('F j, Y'); ?></span>
+          <? } else if (get_post_type() == 'project') { ?>
+            <?php
+            $location = array();
+            if (get_field('locations')) {
+              while (has_sub_field('locations')) {
+                $loc = get_sub_field('location');
+                $loc = $loc['address'];
+                array_push($location, $loc);
+              }
+            }
+            ?>
+            <div class="post-author">Location: <?php echo implode('; ', $location); ?></div>
+          <? } ?> 
+          
         </div>
 
         <p class="post-excerpt"><? the_excerpt(); ?></p>
@@ -37,8 +54,8 @@
         </ul>
       </header>
       <!-- end post-top -->
-
     </article>
+    <?php endif; ?>
     <!-- end post-box -->
 
   <?php endwhile; ?>

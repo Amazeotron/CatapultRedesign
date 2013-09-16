@@ -16,7 +16,7 @@
         <?php
         $args = array(
           "posts_per_page" => 25,
-          "post_type" => array("featuredarticle")
+          "post_type" => array("featured_article")
         );
         query_posts($args);
         ?>

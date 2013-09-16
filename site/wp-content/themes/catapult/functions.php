@@ -59,6 +59,7 @@ function my_new_default_post_type() {
     'rewrite' => array( 'slug' => 'article' ),
     'query_var' => false,
     'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'post-formats' ),
+    'taxonomies' => array('category', 'post_tag')
   ) );
 }
 
@@ -90,7 +91,8 @@ function event_register()
     'capability_type' => 'post',
     'hierarchical' => false,
     'menu_position' => null,
-    'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats')
+    'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats'),
+    'taxonomies' => array('category', 'post_tag')
   );
   register_post_type('event', $args);
 }
@@ -123,7 +125,8 @@ function job_register()
     'capability_type' => 'post',
     'hierarchical' => false,
     'menu_position' => null,
-    'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats')
+    'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats'),
+    'taxonomies' => array('category', 'post_tag')
   );
   register_post_type('job', $args);
 }
@@ -157,7 +160,8 @@ function member_register()
     'capability_type' => 'post',
     'hierarchical' => false,
     'menu_position' => null,
-    'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats')
+    'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats'),
+    'taxonomies' => array('category', 'post_tag')
   );
   register_post_type('member', $args);
 }
@@ -190,7 +194,8 @@ function teammember_register()
     'capability_type' => 'post',
     'hierarchical' => false,
     'menu_position' => null,
-    'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats')
+    'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats'),
+    'taxonomies' => array('category', 'post_tag')
   );
   register_post_type('teammember', $args);
 }
@@ -257,7 +262,8 @@ function homepageslideshow_register()
     'capability_type' => 'post',
     'hierarchical' => true,
     'menu_position' => null,
-    'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats')
+    'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats'),
+    'taxonomies' => array('category', 'post_tag')
   );
   register_post_type('homepageslideshow', $args);
 }
@@ -286,14 +292,14 @@ function featured_articles_register()
     'publicly_queryable' => true,
     'show_ui' => true,
     'query_var' => true,
-    'rewrite' => true,
+    'rewrite' => array('slug' => 'featured-article'),
     'capability_type' => 'post',
     'hierarchical' => true,
     'menu_position' => null,
     'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats'),
-    'taxonomies' => array('category', 'post_tag'),
+    'taxonomies' => array('category', 'post_tag')
   );
-  register_post_type('Featured Article', $args);
+  register_post_type('featured_article', $args);
 }
 
 
@@ -319,4 +325,24 @@ function my_add_specs(&$post)
   $post->specs = get_field('casestudy', $post->id);
 }
 
-?>
+
+add_filter('json_api_encode', 'json_api_encode_acf');
+
+function json_api_encode_acf($response)
+{
+  if (isset($response['posts'])) {
+    foreach ($response['posts'] as $post) {
+      json_api_add_acf($post); // Add specs to each post
+    }
+  }
+  else if (isset($response['post'])) {
+    json_api_add_acf($response['post']); // Add a specs property
+  }
+
+  return $response;
+}
+
+function json_api_add_acf(&$post)
+{
+  $post->acf = get_fields($post->id);
+}

@@ -37,6 +37,8 @@ This page shows a list of recent "news" items, like upcoming learning labs, blog
             } else {
               $croppedImage = get_bloginfo('template_url') . "/img/cata-placeholder.png";
             }
+            // Filter out any projects marked as disabled
+            if (get_field('disabled') == false) : 
             ?>
             <article class="post-box with-bg">
               <figure>
@@ -65,8 +67,8 @@ This page shows a list of recent "news" items, like upcoming learning labs, blog
                 </ul>
               </header>
               <!-- end post-top -->
-
             </article>
+            <?php endif; ?>
             <!-- end post-box -->
 
           <?php endwhile; ?>

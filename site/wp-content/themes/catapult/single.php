@@ -37,11 +37,23 @@ the_post(); ?>
           <!-- end post-top -->
 
           <div class="post-meta">
-            <?php
-            $theName = implode(' ', array(get_the_author_meta('first_name'), get_the_author_meta('last_name')));
-            ?>
-            <div class="post-author">By <?php echo $theName; ?> | <?php the_time('F j, Y'); ?></div>
-            
+            <?php if (get_post_type() == 'post') {
+              $theName = implode(' ', array(get_the_author_meta('first_name'), get_the_author_meta('last_name'))); ?>
+              <div class="post-author">By <?php echo $theName; ?> | <?php the_time('F j, Y'); ?></div>
+            <? } else if (get_post_type() == 'project') { ?>
+              <div class="post-author">Client: <?php the_field('client_name'); ?></div>
+              <?php
+              $location = array();
+              if (get_field('locations')) {
+                while (has_sub_field('locations')) {
+                  $loc = get_sub_field('location');
+                  $loc = $loc['address'];
+                  array_push($location, $loc);
+                }
+              }
+              ?>
+              <div class="post-author">Location: <?php echo implode('; ', $location); ?></div>
+            <? } ?>
           </div>
 
           <div class="post-body">

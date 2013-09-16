@@ -17,23 +17,49 @@
 
 <?php wp_footer(); ?>
 
+<script src="<?php bloginfo('template_url'); ?>/js/libs/swipe.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/libs/underscore-min.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/libs/jquery.slides.min.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/libs/jquery.transit.min.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/libs/masonry.pkgd.min.js"></script>
+
 <script src="<?php bloginfo('template_url'); ?>/js/common.js"></script>
-<script src="<?php bloginfo('template_url'); ?>/js/libs/jquery.transit.js"></script>
 
 <?php if (is_page("Home")) { ?>
+  
+  <script src="<?php bloginfo('template_url'); ?>/js/libs/parsley.min.js"></script>
+  <script src="<?php bloginfo('template_url'); ?>/js/libs/leaflet/leaflet.js"></script>
+  <script src="<?php bloginfo('template_url'); ?>/js/libs/leaflet/markercluster/leaflet.markercluster-src.js"></script>
 
-  <script src="<?php bloginfo('template_url'); ?>/js/home.min.js"></script>
-  <script src="https://js.stripe.com/v1/"></script>
-  <script> Stripe.setPublishableKey('pk_test_WYPj12umdvftkbOTR5kQL8ni'); </script>
+  <script src="<?php bloginfo('template_url'); ?>/js/keyofferings.js"></script>
+  <script src="<?php bloginfo('template_url'); ?>/js/map.js"></script>
+  <script src="<?php bloginfo('template_url'); ?>/js/team.js"></script>
+  <script src="<?php bloginfo('template_url'); ?>/js/partners.js"></script>
+  <script src="<?php bloginfo('template_url'); ?>/js/events.js"></script>
+  <script src="<?php bloginfo('template_url'); ?>/js/donations.js"></script>
+  <script src="<?php bloginfo('template_url'); ?>/js/home.js"></script>
+
+<?php } else if (is_page('faq-and-press-kit')) { ?>
+
+  <script src="<?php bloginfo('template_url'); ?>/js/faq.js"></script>
+
+<?php } else if (is_page('Thanks')) { ?>
+
+  <script src="<?php bloginfo('template_url'); ?>/js/libs/parsley.min.js"></script>
+  <script src="<?php bloginfo('template_url'); ?>/js/thanks.js"></script>
+  <script src="<?php bloginfo('template_url'); ?>/js/thanks-page.js"></script>
 
 <?php } else if (is_page() || is_single()) { ?>
 
   <script src="<?php bloginfo('template_url'); ?>/js/ParsePostType.js"></script>
-  <script src="<?php bloginfo('template_url'); ?>/js/libs/masonry.pkgd.min.js"></script>
   <script src="<?php bloginfo('template_url'); ?>/js/blog.js"></script>
 
 <?php } ?>
 
+<script src="https://js.stripe.com/v1/"></script>
+<script> Stripe.setPublishableKey('pk_test_WYPj12umdvftkbOTR5kQL8ni'); </script>
+
+<!-- Don't forget analytics -->
 <script type="text/javascript">
 
   var _gaq = _gaq || [];

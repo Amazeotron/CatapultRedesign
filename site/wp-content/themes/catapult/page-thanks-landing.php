@@ -76,6 +76,8 @@
 	<script>
 		var $_SESSION = <?php echo json_encode($_SESSION); ?>;
 	</script>
+  <script src="<?php bloginfo('template_url'); ?>/js/thanks.js"></script>
+  <script src="<?php bloginfo('template_url'); ?>/js/thanks-page.js"></script>
 	
 	<section class="overlay hide" id="thanks-overlay">
 		<div class="overlay-inner">

@@ -22,7 +22,7 @@ var map = {
           shadowSize: [41, 41],
           shadowAnchor: [16, 39]
         }),
-        _locsURL = "/api/get_posts/?post_type=project&custom_fields=client,category,location,image&count=-1&callback=?",
+        _locsURL = "/api/get_posts/?post_type=project&custom_fields=client_name,disabled,slug,category,locations,image&count=-1&callback=?",
         _markers = new L.MarkerClusterGroup(),
         _projectsData = {};
     
@@ -42,19 +42,35 @@ var map = {
     $.getJSON(_locsURL, handleLocationsLoaded);
 
     function handleLocationsLoaded(data, textStatus, jqXHR) {
-      console.log(data);
       _projectsData = data.posts;
-      for (var i = 0; i < data.posts.length; i++) {
-        addMarker(data.posts[i]);
+      
+      // Look for projects that have multiple locations. For each location, duplicate the project.
+      var dupes = [];
+      _.each(_projectsData, function(elem, index) {
+        if (elem.acf.locations && elem.acf.locations.length) {
+          _.each(elem.acf.locations, function(elem2, index2) {
+            // Make a copy of this item
+            var copy = _.clone(elem);
+            copy.location = {
+              address: elem2.location.address,
+              coordinates: elem2.location.coordinates
+            };
+            dupes.push(copy);
+          });
+        }
+      });
+      _projectsData = dupes;
+      
+      for (var i = 0; i < _projectsData.length; i++) {
+        addMarker(_projectsData[i]);
       }
       _map.addLayer(_markers);
     }
 
     function addMarker(data) {
-      var loc = data.custom_fields.location;
+      var loc = data.location;
       if (typeof loc !== 'undefined') {
-        loc = loc[0];
-        var latlon = loc.substring(loc.indexOf('|')+1, loc.length).split(',');
+        var latlon = loc.coordinates.split(',');
         var marker = new L.Marker([latlon[0], latlon[1]], {
           icon: _mapIcon,
           clickable: true,
@@ -121,15 +137,20 @@ var map = {
 
       // populate callout
       var img = $('<img src="/wp-content/themes/catapult/getimageurl.php?imageID=' + data.custom_fields.image[0] + '" />'),
-          loc = data.custom_fields.location[0];
+          loc = data.location.address,
+          $h2 = _callout.find('h2');
 
-      loc = loc.substring(0, loc.indexOf('|'));
-
-      console.log("location: " + loc);
+      // Remove previous link, if one
+      if ($h2.parent().is('a')) $h2.unwrap();
+      // If the link isn't disabled, add it
+      if (typeof data.custom_fields.disabled !== 'undefined' && data.custom_fields.disabled[0] === '0') {
+        var $link = $('<a href="' + data.url + '" id="js-map-callout-link"></a>');
+        $h2.wrap($link);
+      }
       _callout.find('.map-callout-img').append(img);
-      _callout.find('h2').append(data.title);
+      $h2.append(data.title);
       _callout.find('h3').append(loc);
-      _callout.find('p').append(data.excerpt);
+      if (typeof data.custom_fields.slug !== 'undefined') _callout.find('p').append(data.custom_fields.slug);
     }
 
     function hideMapCallout() {
