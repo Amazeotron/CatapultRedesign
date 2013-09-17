@@ -2,7 +2,7 @@
   define('WP_USE_THEMES', false);
   require($_SERVER['DOCUMENT_ROOT'] . '/wp-blog-header.php');
   $imgID = $_GET["imageID"];
-  $imgurl = wp_get_attachment_image_src($imgID, $_GET["size"]);
+  $imgurl = wp_get_attachment_image_src($imgID, array($_GET["width"],$_GET["height"]));
   $imgurl = $imgurl[0];
   
   // echo $imgurl;

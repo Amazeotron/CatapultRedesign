@@ -6,7 +6,7 @@
     $croppedImage = '';
 
     if ($headerImage) {
-      $croppedImage = wp_get_attachment_image_src($headerImage["id"], array(643, 183));
+      $croppedImage = wp_get_attachment_image_src($headerImage["id"], 'thumbnail');
       $croppedImage = $croppedImage[0];
     } else {
       $croppedImage = get_bloginfo('template_url') . "/img/cata-placeholder.png";

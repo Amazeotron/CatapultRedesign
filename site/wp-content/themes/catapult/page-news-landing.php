@@ -32,7 +32,7 @@ This page shows a list of recent "news" items, like upcoming learning labs, blog
             $croppedImage = '';
 
             if ($headerImage) {
-              $croppedImage = wp_get_attachment_image_src($headerImage["id"], array(155, 155));
+              $croppedImage = wp_get_attachment_image_src($headerImage["id"], 'thumbnail');
               $croppedImage = $croppedImage[0];
             } else {
               $croppedImage = get_bloginfo('template_url') . "/img/cata-placeholder.png";

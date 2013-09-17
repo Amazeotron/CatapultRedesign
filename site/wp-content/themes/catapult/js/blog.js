@@ -24,6 +24,10 @@ $(document).ready(function () {
     console.log(href);
   });
   
+  $('.picasa-gallery').masonry({
+    columnWidth: 300,
+    itemSelector: '.picasa-image'
+  });
   
   
   // Animate the Twitter feed.
