@@ -17,7 +17,7 @@ require ABSPATH . "wp-admin/includes/file.php";
 require ABSPATH . "wp-admin/includes/media.php";
 
 // If we're on this page and there's a quote, it means the person came here from adding a quote
-if (isset($_POST['quote'])) {
+if (isset($_POST['fullName'])) {
 
   // Grab their name and other info to add to WP
 
@@ -25,7 +25,6 @@ if (isset($_POST['quote'])) {
   $post = array(
     'post_type' => 'member',
     'post_title' => $_POST['fullName'],
-    'post_content' => $_POST['quote'],
     'post_status' => 'pending',
     'post_author' => 1
   );
@@ -35,7 +34,7 @@ if (isset($_POST['quote'])) {
   $overrides = array('test_form' => FALSE);
 
   // Second, upload and insert the image as their avatar (and the featured image on the post)
-  $file_array = array(
+  /*$file_array = array(
     'name' => $_FILES['img']['name'][0],
     'type' => $_FILES['img']['type'][0],
     'tmp_name' => $_FILES['img']['tmp_name'][0],
@@ -52,7 +51,7 @@ if (isset($_POST['quote'])) {
       'post_excerpt' => 'Person Avatar'
     );
     wp_update_post($attachment_data);
-  }
+  }*/
 
   // Finally, add the metadata (custom fields) to the new Member.
   // These are things like email, address, etc.
@@ -64,6 +63,7 @@ if (isset($_POST['quote'])) {
   add_post_meta($post_id, "state", $_SESSION['state']);
   add_post_meta($post_id, "zip", $_SESSION['zip']);
   add_post_meta($post_id, "phone", $_SESSION['phone']);
+  add_post_meta($post_id, "twitter_handle", $_POST['twitterHandle']);
 
   // Destroy the session
   $_SESSION = array();
@@ -75,6 +75,7 @@ if (isset($_POST['quote'])) {
 
   <script>
     var $_SESSION = <?php echo json_encode($_SESSION); ?>;
+    var $_POST = <?php echo json_encode($_POST); ?>;
   </script>
   <script src="<?php bloginfo('template_url'); ?>/js/thanks.js"></script>
   <script src="<?php bloginfo('template_url'); ?>/js/thanks-page.js"></script>
@@ -105,13 +106,9 @@ if (isset($_POST['quote'])) {
               echo $_SESSION['fullName'];
             } ?>">
 
-            <p>Would you like to include a quote as to why you gave to Catapult Design?</p>
-            <textarea class="overlay__form__input" placeholder="Enter your message." name="quote"></textarea>
-
-            <p>Would you like to upload a photo to appear along with other donors to Catapult Design?</p>
-
-            <div class="overlay__form__item"><input id="js-file-upload" type="file" name="img"/></div>
-            <div class="overlay__form__item"><input id="js-quote-submit" class="clicky-button" type="Submit" value="Submit">Submit</input></div>
+            <p>If you&apos;d like us to thank you on Twitter, enter your Twitter handle here:</p>
+            <input type="text" class="overlay__form__input" placeholder="Enter your Twitter handle" name="twitterHandle">
+            <div class="overlay__form__item"><input id="js-quote-submit" class="clicky-button" type="Submit" value="Submit"></div>
           </div>
 
         </form>
@@ -150,20 +147,25 @@ if (isset($_POST['quote'])) {
         <?php the_content(); ?>
       </div>
       
-      <h3>Thank you to <span class="header-title level-three">all of our donors</span>!</h3>
       <?php
         $args = array(
           "posts_per_page" => 50,
-          "post_type" => array("members")
+          "post_type" => array("member")
         );
         query_posts($args);
-        if (have_posts()) :
+        if (have_posts()) : ?>
+          <h3>Thank you to <span class="header-title level-three">all of our donors</span>!</h3>
+          <ul>
+        <?php
           while (have_posts()) :
-          the_post();
+            the_post();
+            $fullName = get_the_title();
       ?>
-      <!-- TODO: Put member names here! -->
+      <?php if (!empty($fullName)) : ?><li><?php echo $fullName; ?></li><?php endif; ?>
       <?php endwhile; ?>
+        </ul>
       <?php endif; ?>
+      <?php wp_reset_query(); ?>
     </div>
   </div><!-- end page-wrap -->
 

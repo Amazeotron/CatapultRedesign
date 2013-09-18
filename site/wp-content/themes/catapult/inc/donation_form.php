@@ -69,7 +69,7 @@
 			</div>
 			<div class="form-item">
 				<div class="two-col margin-right telephone">
-					<label for="billing-telephone">Telephone number:</label>
+					<label for="billing-telephone">Telephone number: *</label>
 					<input id="billing-telephone" type="tel" tabindex="51" name="billing-telephone" value="" data-required="false" data-notblank="true">
 				</div>
 				<div class="two-col email right">

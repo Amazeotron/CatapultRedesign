@@ -530,6 +530,7 @@ section {
   &.show {
     -webkit-animation: show 0.3s ease-out;
     display: block;
+    background: rgba(0,0,0,0.7);
   }
   &.hide {
     display: none;
@@ -545,12 +546,14 @@ section {
   }
 
   .overlay-inner {
-    margin: 160px auto;
+    margin: 8% auto;
     width: 70%;
+    height: 70%;
     padding: 30px 30px 30px 30px;
     background: rgba(255, 255, 255, 1);
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     color: black;
     @include borderShadow(0px, 0px, 10px, 3px, 0.5);
 

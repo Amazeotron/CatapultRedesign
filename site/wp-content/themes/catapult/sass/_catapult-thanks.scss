@@ -17,6 +17,10 @@
 
 .overlay__form {
 	width: 100%;
+  
+  .clicky-button {
+    margin-top: 20px;
+  }
 	
 	.overlay__form__item {
 		width: 100%;
@@ -25,10 +29,14 @@
 	}
 	
 	.overlay__form__input {
-		border: 1px solid black;
-		margin: 0 10px;
+		border: 1px solid #666;
+		margin: 0;
 		color: black;
 	}
+  
+  input[type="text"] {
+    width: 200px;
+  }
 	
 	.hide {
 		display: none;
