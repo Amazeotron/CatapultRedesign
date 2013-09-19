@@ -44,11 +44,11 @@ select {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  letter-spacing: 1px;
+  letter-spacing: 0.02em;
 }
 
 h1 {
-  font-size: 2.75em;
+  font-size: 2.6em;
   font-weight: normal;
 
   @media only screen and (max-width: 720px) {
@@ -191,9 +191,10 @@ a.fancy {
 .header-title {
   font-family: $sansFont;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.05em;
   line-height: 1em;
   font-weight: normal;
+  font-size: 1.2em;
 }
 
 .header-link {
@@ -229,7 +230,7 @@ section:first-of-type {
 }
 
 section {
-  padding-top: 30px;
+  padding-top: 70px; // matches height of header main nav
 }
 
 .level-one {

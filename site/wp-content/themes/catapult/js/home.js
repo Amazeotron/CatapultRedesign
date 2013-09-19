@@ -10,36 +10,33 @@ $(document).ready(function () {
   keyofferings.init();
 
   // If there's a hash, intercept it so we can do our own scrolling
-  function checkHash() {
-    var hash = window.location.hash;
-    if (hash != "") {
-      window.scrollTo(0, 0);
-      cataCommon.handleNav(hash);
-    }
-  }
-
-  // Main nav
-  function handleMainNav() {
-    var self = this;
-    $(".mainnav-item:not(.blog) a, #what-we-do").click(function (event) {
-
-      // if we're already on the homepage, just do the scrolling.
-      // Otherwise, change URLs
-      var href = $(this).attr("href");
-      if (window.location.href.indexOf("blog/") != -1) {
-
-      } else {
-        event.preventDefault();
-        href = href.substring(href.indexOf("#"), href.length);
-        // console.log(href);
-        cataCommon.handleNav(href);
-        return false;
-      }
-    });
-  }
-
-  checkHash();
-  handleMainNav();
+//  function checkHash() {
+//    var hash = window.location.hash;
+//    if (hash != "") {
+//      window.scrollTo(0, 0);
+//      cataCommon.handleNav(hash);
+//    }
+//  }
+//
+//  // Main nav
+//  function handleMainNav() {
+//    var self = this;
+//    $(".mainnav-item:not(.blog) a").click(function (event) {
+//
+//      // if we're already on the homepage, just do the scrolling.
+//      // Otherwise, change URLs
+//      var href = $(this).attr("href");
+//      if (cataCommon.isHome()) {
+//        event.preventDefault();
+//        href = href.substring(href.indexOf("#"), href.length);
+//        cataCommon.handleNav(href);
+//        return false;
+//      }
+//    });
+//  }
+//
+//  checkHash();
+//  handleMainNav();
 
   // When the page scrolls past 100 px vertically, change the nav to mini version
   $(window).scroll(function (event) {
@@ -84,35 +81,35 @@ $(document).ready(function () {
   }
 
   // Change the nav on scroll
-  $(window).scroll(function (event) {
-    var scrollPos = $(this).scrollTop();
-    // console.log(scrollPos);
-    // Remove all active styles if it's in the intro
-    if (scrollPos <= 589) {
-      $(".mainnav-item a").removeClass("active");
-    }
-    // Projects (Case Studies)
-    else if (scrollPos >= 590 && scrollPos <= 2000) {
-      // Change first nav element
-      $(".mainnav-item a").removeClass("active");
-      $("#mainnav-projects a").addClass("active");
-    }
-    // Team
-    else if (scrollPos >= 2001 && scrollPos <= 2916) {
-      $(".mainnav-item a").removeClass("active");
-      $("#mainnav-team a").addClass("active");
-    }
-    // Contact
-    else if (scrollPos >= 2917 && scrollPos <= 3684) {
-      $(".mainnav-item a").removeClass("active");
-      $("#mainnav-contact a").addClass("active");
-    }
-    // Donate
-    else if (scrollPos >= 3685) {
-      $(".mainnav-item a").removeClass("active");
-      $("#mainnav-donate a").addClass("active");
-    }
-  });
+//  $(window).scroll(function (event) {
+//    var scrollPos = $(this).scrollTop();
+//    // console.log(scrollPos);
+//    // Remove all active styles if it's in the intro
+//    if (scrollPos <= 589) {
+//      $(".mainnav-item a").removeClass("active");
+//    }
+//    // Projects (Case Studies)
+//    else if (scrollPos >= 590 && scrollPos <= 2000) {
+//      // Change first nav element
+//      $(".mainnav-item a").removeClass("active");
+//      $("#mainnav-projects a").addClass("active");
+//    }
+//    // Team
+//    else if (scrollPos >= 2001 && scrollPos <= 2916) {
+//      $(".mainnav-item a").removeClass("active");
+//      $("#mainnav-team a").addClass("active");
+//    }
+//    // Contact
+//    else if (scrollPos >= 2917 && scrollPos <= 3684) {
+//      $(".mainnav-item a").removeClass("active");
+//      $("#mainnav-contact a").addClass("active");
+//    }
+//    // Donate
+//    else if (scrollPos >= 3685) {
+//      $(".mainnav-item a").removeClass("active");
+//      $("#mainnav-donate a").addClass("active");
+//    }
+//  });
 
   // CenterTag.init("centerTagLocationsMap", cataCommon.getRootURL(), function() {
   // 	console.log("Center Tag is Ready!");

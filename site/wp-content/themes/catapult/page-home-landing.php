@@ -46,11 +46,18 @@
   <section class="featured row" id="featured">
     <a href="/featured-articles/" class="header-link"><h1>Our <span class="header-title level-one">FEATURES</span> &amp; <span class="header-title level-two">PUBLICATIONS</span> include &raquo;</h1></a>
     <ul class="featured-logos nolist clearfix">
-      <li><a href="/featured-articles/fast-company/"><img src="<?php bloginfo('template_url'); ?>/img/logos/fast-company-logo.png" alt=""/></a></li>
-      <li><a href="/featured-articles/pop-tech/"><img src="<?php bloginfo('template_url'); ?>/img/logos/pop-tech-logo.png" alt=""/></a></li>
-      <li><a href="/featured-articles/the-new-yorker/"><img src="<?php bloginfo('template_url'); ?>/img/logos/new-yorker-logo.png" alt=""/></a></li>
-      <li><a href="/featured-articles/good/"><img src="<?php bloginfo('template_url'); ?>/img/logos/good-logo.png" alt=""/></a></li>
-      <li><a href="/featured-articles/wired/"><img src="<?php bloginfo('template_url'); ?>/img/logos/wired-logo.png" alt=""/></a></li>
+    <?php
+    $the_query = new WP_Query(array('post_type' => 'featured_article', 'posts_per_page' => '6'));
+    while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+      <?
+      $number_of_results = $the_query->found_posts;
+      $image_id = get_field('image');
+      $image_id = $image_id['id'];
+      $image = wp_get_attachment_image_src($image_id, array(150, 150));
+      ?>
+      <li style="width: <? echo min(20, (1 / $number_of_results)*100) ?>%"><a href="<? the_permalink() ?>"><img src="<?php echo $image[0]; ?>" alt=""/></a></li>
+    <?php endwhile; ?>
+    <?php wp_reset_postdata(); ?>
     </ul>
   </section>
   <hr />
@@ -65,17 +72,17 @@
         <p></p>
       </div>
     </div>
-    <a href="/featured-articles/" class="header-link"><h1>View our <span class="header-title level-one">PROJECTS</span> &raquo;</h1></a>
+    <a href="/projects/" class="header-link"><h1>View our <span class="header-title level-one">PROJECTS</span> &raquo;</h1></a>
     <div id="locations-map"></div>
     <div class="map-footer clearfix">
       <h2><span class="header-title">FILTER</span> by <span class="header-title">INDUSTRY</span></h2>
-      <ul class="clearfix">
-        <li><h2 class="header-title"><a href="#" class="location-filter active" id="js-location-filter-all" data-tag="all">ALL</a></h2></li>
-        <li><h2 class="header-title"><a href="#" class="location-filter" id="js-location-filter-water" data-tag="water">WATER</a></h2></li>
-        <li><h2 class="header-title"><a href="#" class="location-filter" id="js-location-filter-enterprise" data-tag="enterprise">ENTERPRISE</a></h2></li>
-        <li><h2 class="header-title"><a href="#" class="location-filter" id="js-location-filter-energy" data-tag="energy">ENERGY</a></h2></li>
-        <li><h2 class="header-title"><a href="#" class="location-filter" id="js-location-filter-health" data-tag="health">HEALTH</a></h2></li>
-        <li><h2 class="header-title"><a href="#" class="location-filter" id="js-location-filter-mobility" data-tag="mobility">MOBILITY</a></h2></li>
+      <ul class="locations-filter clearfix">
+        <li class="locations-filter__item"><h2 class="header-title"><a href="#" class="location-filter active" id="js-location-filter-all" data-tag="all">ALL</a></h2></li>
+        <li class="locations-filter__item"><h2 class="header-title"><a href="#" class="location-filter" id="js-location-filter-energy" data-tag="energy">ENERGY</a></h2></li>
+        <li class="locations-filter__item"><h2 class="header-title"><a href="#" class="location-filter" id="js-location-filter-enterprise" data-tag="enterprise">ENTERPRISE</a></h2></li>
+        <li class="locations-filter__item"><h2 class="header-title"><a href="#" class="location-filter" id="js-location-filter-health-agriculture" data-tag="health-agriculture">HEALTH/AGRICULTURE</a></h2></li>
+        <li class="locations-filter__item"><h2 class="header-title"><a href="#" class="location-filter" id="js-location-filter-mobility" data-tag="mobility">MOBILITY</a></h2></li>
+        <li class="locations-filter__item"><h2 class="header-title"><a href="#" class="location-filter" id="js-location-filter-water-sanitation" data-tag="water-sanitation">WATER/SANITATION</a></h2></li>
       </ul>
     </div>
   </section>
@@ -106,7 +113,7 @@
         <section class="contact__item float-left">
           <div class="contact-location ny">Contact Us</div>
           <h3 class="header-title">NEW YORK CITY</h3>
-          <h4 class="header-title">123 STREET<br/>NEW YORK, NY 12345</h4>
+          <h4 class="header-title">COMING SOON</h4>
         </section>
         <section class="contact__item float-left">
           <div class="contact-location co">Contact Us</div>

@@ -78,7 +78,7 @@
       </a>
       <nav class="mainnav">
         <ul>
-          <li class="mainnav-item" id="mainnav-casestudies"><a tabindex="2" class="header-title fancy mainnav-item-link" href="<?php echo home_url('/#projects'); ?>">PROJECTS</a></li>
+          <li class="mainnav-item" id="mainnav-projects"><a tabindex="2" class="header-title fancy mainnav-item-link" href="<?php echo home_url('/#projects'); ?>">PROJECTS</a></li>
           <li class="mainnav-item" id="mainnav-team"><a tabindex="3" class="header-title fancy mainnav-item-link" href="<?php echo home_url('/#team'); ?>">TEAM</a></li>
           <li class="mainnav-item" id="mainnav-contact"><a tabindex="4" class="header-title fancy mainnav-item-link" href="<?php echo home_url('/#contact'); ?>">CONTACT</a></li>
           <li class="mainnav-item" id="mainnav-donate"><a tabindex="5" class="header-title fancy mainnav-item-link" href="<?php echo home_url('/#donate'); ?>">DONATE</a></li>

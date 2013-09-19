@@ -85,7 +85,7 @@
   }
   
   #locations-map {
-    height: 500px;
+    height: 500px; // Gets updated dynamically
 
     @media only screen and (max-width: 563px) {
       height: 250px;
@@ -95,11 +95,16 @@
   .map-footer {
     h2 {
       float: left;
+      font-size: 2em;
+      color: $teal;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      
       @media only screen and (max-width: 1024px) {
         font-size: 2em;
       }
 
-      @media only screen and (max-width: 795px) {
+      @media only screen and (max-width: 902px) {
         float: none;
         text-align: center;
         margin-bottom: 0;
@@ -114,25 +119,43 @@
       }
     }
     
+    .locations-filter {
+      .locations-filter__item {
+        h2 {
+          font-size: 1.8em;
+
+          @media only screen and (max-width: 676px) {
+            font-size: 1.5em;
+          }
+          @media only screen and (max-width: 606px) {
+            font-size: 1.3em;
+          }
+          @media only screen and (max-width: 420px) {
+            font-size: 1.1em;
+          }
+        }
+      }
+    }
+    
     ul {
       margin: 0;
       padding: 0;
       float: right;
 
-      @media only screen and (max-width: 795px) {
+      @media only screen and (max-width: 902px) {
         float: none;
-        width: 500px;
+        width: 645px;
         margin: 0 auto;
       }
 
-      @media only screen and (max-width: 320px) {
+      @media only screen and (max-width: 676px) {
         width: 100%;
       }
       
       li {
         list-style-type: none;
         float: left;
-        margin: 4px 0 0 20px;
+        margin: 9px 0 0 20px;
         padding: 0;
 
         &:first-of-type {
@@ -145,7 +168,7 @@
           }
         }
 
-        @media only screen and (max-width: 320px) {
+        @media only screen and (max-width: 531px) {
           margin-left: 10px;
         }
         

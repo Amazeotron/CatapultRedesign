@@ -85,13 +85,13 @@ var map = {
     // Filter project data by category
     function filterCasestudies(data, category) {
       return _.filter(data, function(post) {
-        return post.custom_fields.category[0] == category;
+        return post.categories[0].slug == category;
       });
     }
 
     function redrawMarkersWithFilter(filter) {
       var filteredData = filter === 'all' ? _projectsData : filterCasestudies(_projectsData, filter);
-      
+      console.log('filter: ' + filter);
       if ($('.leaflet-marker-icon').length > 0) {
         $('.leaflet-marker-icon, .leaflet-marker-shadow').transition({opacity: 0}, 300, function() {
           redrawMarkerDone(filteredData);
@@ -167,8 +167,7 @@ var map = {
     });
     
     // Deal with filtering
-    $('#js-location-filter-all, #js-location-filter-water, #js-location-filter-enterprise, #js-location-filter-energy, #js-location-filter-health, ' +
-        '#js-location-filter-mobility').on('click', function(event) {
+    $('#js-location-filter-all, #js-location-filter-energy, #js-location-filter-enterprise, #js-location-filter-health-agriculture, #js-location-filter-mobility, #js-location-filter-water-sanitation').on('click', function(event) {
       if (typeof event !== 'undefined') event.preventDefault();
       // Turn off all _markers
       $('.location-filter').removeClass('active');

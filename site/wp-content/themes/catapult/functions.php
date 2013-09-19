@@ -58,7 +58,7 @@ function my_new_default_post_type() {
     'hierarchical' => false,
     'rewrite' => array( 'slug' => 'article' ),
     'query_var' => false,
-    'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'post-formats' ),
+    'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats' ),
     'taxonomies' => array('category', 'post_tag')
   ) );
 }
