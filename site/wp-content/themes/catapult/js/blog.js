@@ -1,4 +1,4 @@
-$(document).ready(function () {
+//$(document).ready(function () {
 
   cataCommon.init();
 
@@ -50,4 +50,4 @@ $(document).ready(function () {
     }
   }, 4000);
 
-});
+//});

@@ -11,6 +11,16 @@ var cataCommon = {
       $(".overlay").removeClass("show").addClass("hide");
       return false;
     });
+
+    $('footer').waypoint(function(direction) {
+      if (direction === 'down') {
+        $('.floater.social').css({'display': 'none'});
+      } else {
+        $('.floater.social').css({'display': ''});
+      }
+    }, {
+      offset: $(window).height()
+    });
   },
 
   getRootURL: function () {

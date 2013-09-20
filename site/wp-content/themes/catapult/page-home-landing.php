@@ -111,14 +111,14 @@
           <h4 class="header-title">972 MISSION ST, SUITE 500<br/>SAN FRANCISCO, CA 94103</h4>
         </section>
         <section class="contact__item float-left">
-          <div class="contact-location ny">Contact Us</div>
-          <h3 class="header-title">NEW YORK CITY</h3>
-          <h4 class="header-title">COMING SOON</h4>
-        </section>
-        <section class="contact__item float-left">
           <div class="contact-location co">Contact Us</div>
           <h3 class="header-title">DENVER</h3>
           <h4 class="header-title">1031 33RD STREET, STE 174<br/>DENVER, CO 80205</h4>
+        </section>
+        <section class="contact__item float-left">
+          <div class="contact-location ny">Contact Us</div>
+          <h3 class="header-title">NEW YORK CITY</h3>
+          <h4 class="header-title">COMING SOON</h4>
         </section>
       </div>
 
@@ -131,7 +131,7 @@
         <div class="two-col margin-left">
           <a href="http://oi.vresp.com/?fid=9fcbd66d02" class="contact-button contact-button--newsletter header-title" tabindex="36">SUBSCRIBE TO NEWSLETTER</a>
           <a href="http://www.youtube.com/user/CatapultDesign" class="contact-button contact-button--youtube header-title" tabindex="37">/CATAPULTDESIGN</a>
-          <a href="<?php echo site_url('/faq-and-press-kit/'); ?>" class="contact-button contact-button--faq header-title" tabindex="38">FAQ &amp; PRESSKIT</a>
+          <a href="<?php echo site_url('/faq-and-press-kit/'); ?>" class="contact-button contact-button--faq header-title" tabindex="38">FAQ &amp; MEDIA KIT</a>
         </div>
       </div>
     </div>

@@ -6,19 +6,19 @@
   </div>
   <ul class="footer-links clearfix">
     <li><a href="/services" class="header-title">SERVICES &raquo;</a></li>
-    <li><a href="/press" class="header-title">PRESS &amp; PUBLICATIONS &raquo;</a></li>
+    <li><a href="/about-learning-labs" class="header-title">LEARNING LABS &raquo;</a></li>
+    <li><a href="/featured-articles" class="header-title">PRESS &raquo;</a></li>
     <li><a href="/projects" class="header-title">PROJECTS &raquo;</a></li>
-    <li><a href="/partners" class="header-title">PARTNERS &amp; SPONSORS &raquo;</a></li>
+    <li><a href="/faq-and-press-kit/" class="header-title">FAQS &amp; PRESS KIT &raquo;</a></li>
     <li><a href="/news" class="header-title">NEWS &raquo;</a></li>
   </ul>
-  <p>Catapult Design is a non-profit design firm providing engineering and implementation support to the thousands of organizations in of technologies or products. The net benefit of our activities is nothing less than a fundamental improvement in the lives of those who need it most.</p>
+  <p>Catapult Design is a non-profit design firm. We research, design, and develop human-centered products and services to improve the lives of those who need it most.</p>
   <h4 class="header-title">&copy; COPYRIGHT 2013</h4>
 </footer>
 
 <?php wp_footer(); ?>
 
-<script src="<?php bloginfo('template_url'); ?>/js/common.js"></script>
-<script src="<?php bloginfo('template_url'); ?>/js/libs/jquery.transit.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/common.min.js"></script>
 
 <?php if (is_page("Home")) { ?>
 
@@ -26,12 +26,8 @@
   <script src="https://js.stripe.com/v1/"></script>
   <script> Stripe.setPublishableKey('pk_test_WYPj12umdvftkbOTR5kQL8ni'); </script>
 
-<?php } else if (is_page() || is_single()) { ?>
-
-  <script src="<?php bloginfo('template_url'); ?>/js/ParsePostType.js"></script>
-  <script src="<?php bloginfo('template_url'); ?>/js/libs/masonry.pkgd.min.js"></script>
-  <script src="<?php bloginfo('template_url'); ?>/js/blog.js"></script>
-
+<?php } else { ?>
+  <script src="<?php bloginfo('template_url'); ?>/js/blog.min.js"></script>
 <?php } ?>
 
 <script type="text/javascript">
