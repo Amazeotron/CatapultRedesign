@@ -68,7 +68,7 @@
       <ul>
         <li class="social-item"><a href="https://twitter.com/Catapult_Design" class="social-button contact-button contact-button--twitter"><span class="header-title">Follow Us</span></a></li>
         <li class="social-item"><a href="https://www.facebook.com/CatapultDesign" class="social-button contact-button contact-button--facebook"><span class="header-title">Like Us</span></a></li>
-        <li class="social-item"><a href="<?php echo home_url('/'); ?>?feed=rss2" class="social-button contact-button contact-button--rss"><span class="header-title">RSS Feed</span></a></li>
+        <li class="social-item"><a href="<?php echo home_url('/'); ?>?feed=rss2" class="social-button contact-button contact-button--link"><span class="header-title">RSS Feed</span></a></li>
       </ul>
     </div><!-- end floater -->
     <header class="header">
@@ -87,38 +87,3 @@
       </nav>
       <div class="header-divider"></div>
     </header>
-    
-    <!--<section id="header-drawer" class="hide">
-      <div class="news">
-        <div class="news-secondary">
-          <h2 class="news-title header-title">Our Approach and Philosophy</h2>
-          <div class="news-video">
-            <iframe width="100%" height="70%" src="http://www.youtube.com/embed/sNqi2WRm5eQ?rel=0" frameborder="0" allowfullscreen></iframe>
-          </div>
-        </div>
-        <div class="news-primary">
-          <h2 class="news-title header-title">Join the Team!</h2>
-          <p class="news-body">Do you know who Martin Fisher is? Is Mastering the Machine your favorite book? Is your idea of vacation traveling to Malawi? You may be a perfect fit.</p>-->
-          
-          <?php
-          /*
-          include_once(ABSPATH . "wp-content/themes/catapult/inc/NewsParser.php");
-          $jobJSON = NewsParser::loadJSON(NewsParser::getRootURL() . "/?json=get_recent_posts&dev=1&post_type=job&custom_fields=header_image");
-          $jobPosts = NewsParser::commonize($jobJSON["posts"], "post"); 
-          */
-          ?>
-          <!--<div class="news-jobs">-->
-          <? //foreach ($jobPosts as $jobPost) : ?>
-            <!--<div class="news-job">
-            <h3 class="news-job-title header-title"><? //echo $jobPost->title; ?></h3>
-            <p class="news-body"><? //echo $jobPost->excerpt; ?> <a href="<? //echo $jobPost->link; ?>" title="">More details &raquo;</a></p>
-            </div>
-          <? //endforeach; ?>
-          </div>
-          
-        </div>
-      </div>
-      <div class="center-tag-wrap">
-        <a class="center-tag center-tag--primary center-tag--orange header-title fancy" id="header-center-tag" href="#"><span class="center-tag__title">CURRENTLY</span></a>
-      </div>
-    </section>-->

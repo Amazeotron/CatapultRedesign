@@ -17,7 +17,7 @@
     ?>
     <article class="post-box with-bg">
       <figure>
-        <img class="post-image" src="<?php echo $croppedImage; ?>" alt="<?php the_title(); ?>" width="100%">
+        <img class="post-image" src="<?php echo $croppedImage; ?>" alt="<?php the_title(); ?>">
       </figure>
       <header class="post-top">
         <h1 class="post-title header-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?> &raquo;</a></h1>

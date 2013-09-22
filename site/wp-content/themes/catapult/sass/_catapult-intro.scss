@@ -17,7 +17,7 @@
   .slidesjs-navigation {
     @include transition(100ms);
     position: absolute;
-    top: 50%;
+    top: 45%;
     width: 44px;
     height: 44px;
     border-radius: 22px;
@@ -31,15 +31,15 @@
     text-align: center;
     text-indent: -10000px;
 
+    @media only screen and (max-width: 350px) {
+      display: none;
+    }
+
     &:hover {
       -webkit-transform: scale(0.9);
       -moz-transform: scale(0.9);
       -ms-transform: scale(0.9);
       transform: scale(0.9);
-    }
-    
-    @media only screen and (max-width: 320px) {
-      display: none;
     }
   }
 

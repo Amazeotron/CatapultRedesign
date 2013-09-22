@@ -230,7 +230,7 @@
   }
   
   .post-image {
-    width: 100%;
+    max-width: 100%;
   }
   
   &.hover .post-image {
@@ -395,7 +395,7 @@
       .post-image {
         z-index: -1;
         display: block;
-        width: 100%;
+        max-width: 100%;
         position: relative;
       }
     }
@@ -447,6 +447,7 @@
   
   input[type="text"], 
   textarea {
+    width: 100%;
     margin: 0 0 10px 0;
     background: $lightGreyFont;
     color: $darkGreyFont;

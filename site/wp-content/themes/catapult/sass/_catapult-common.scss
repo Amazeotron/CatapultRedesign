@@ -48,19 +48,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 2.6em;
+  font-size: 2.2em;
   font-weight: normal;
 
-  @media only screen and (max-width: 720px) {
+  @media (max-width: 720px) and (min-width: 350px) {
     font-size: 1.7em;
   }
-  @media only screen and (max-width: 320px) {
+
+  @media (max-width: 350px) {
     font-size: 1.2em;
   }
 }
 
 h2 {
-  font-size: 2.5em;
+  font-size: 2em;
 }
 
 h3 {
@@ -194,7 +195,6 @@ a.fancy {
   letter-spacing: 0.05em;
   line-height: 1em;
   font-weight: normal;
-  font-size: 2.5em;
 }
 span.header-title {
   font-size: 1.2em;
@@ -413,47 +413,59 @@ section {
   &.contact-button--youtube.contact-button--small {
     background-position: 0 -27px;
   }
-  &.contact-button--email {
+  &.contact-button--video {
     background-position: 0 -66px;
   }
-  &.contact-button--email.contact-button--small {
+  &.contact-button--video.contact-button--small {
     background-position: 0 -54px;
   }
-  &.contact-button--rss {
+  &.contact-button--email {
     background-position: 0 -99px;
   }
-  &.contact-button--rss.contact-button--small {
+  &.contact-button--email.contact-button--small {
     background-position: 0 -81px;
   }
-  &.contact-button--facebook {
+  &.contact-button--rss {
     background-position: 0 -132px;
   }
-  &.contact-button--facebook.contact-button--small {
-    background-position: 0 -108px;
+  &.contact-button--rss.contact-button--small {
+    background-position: 0 -108;
   }
-  &.contact-button--openhouse {
+  &.contact-button--facebook {
     background-position: 0 -165px;
   }
-  &.contact-button--openhouse.contact-button--small {
+  &.contact-button--facebook.contact-button--small {
     background-position: 0 -135px;
   }
-  &.contact-button--street {
+  &.contact-button--openhouse {
     background-position: 0 -198px;
   }
-  &.contact-button--street.contact-button--small {
+  &.contact-button--openhouse.contact-button--small {
     background-position: 0 -162px;
   }
-  &.contact-button--newsletter {
+  &.contact-button--street {
     background-position: 0 -231px;
   }
-  &.contact-button--newsletter.contact-button--small {
+  &.contact-button--street.contact-button--small {
     background-position: 0 -189px;
   }
-  &.contact-button--faq {
+  &.contact-button--newsletter {
     background-position: 0 -264px;
   }
-  &.contact-button--faq.contact-button--small {
+  &.contact-button--newsletter.contact-button--small {
     background-position: 0 -216px;
+  }
+  &.contact-button--faq {
+    background-position: 0 -297px;
+  }
+  &.contact-button--faq.contact-button--small {
+    background-position: 0 -243px;
+  }
+  &.contact-button--link {
+    background-position: 0 -330px;
+  }
+  &.contact-button--link.contact-button--small {
+    background-position: 0 -276px;
   }
 
   .contact-button__subtitle {

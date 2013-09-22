@@ -8,8 +8,12 @@
 <?php get_header(); ?>
 
   <div id="page-wrap" class="page-top">
-  <div class="services">
-    <?php the_content(); ?>
+  <div class="learning-labs">
+    <?php while (have_posts()) : the_post(); ?>
+
+      <?php the_content(); ?>
+
+    <?php endwhile; ?>
   </div>
   </div><!-- end page-wrap -->
 

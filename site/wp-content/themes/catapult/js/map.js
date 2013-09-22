@@ -4,7 +4,18 @@ var map = {
 
     var _map = new L.Map('locations-map', {
       scrollWheelZoom: false
-    }).setView([13.662, 10.019], 2);
+    });
+    
+    // Set different centers and zooms based on initial window width
+    var mapWidth = $('#locations-map').width();
+    if (mapWidth <= 450) {
+      _map.setView([1.40611, 2.8125], 0);
+    } else if (mapWidth > 450 && mapWidth <= 768) {
+      _map.setView([-5.61599, 12.30469], 1);
+    } else {
+      _map.setView([13.662, 10.019], 2);
+    }
+    
     L.tileLayer('http://{s}.tile.cloudmade.com/e92b182bf4084fa88391e1b310961939/103976/256/{z}/{x}/{y}.png', {
       maxZoom: 10
     }).addTo(_map);
@@ -27,7 +38,8 @@ var map = {
         _projectsData = {};
     
     _map.on('click', function(event) {
-      console.log(event);
+      console.log('Zoom: ' + _map.getZoom());
+      console.log('LatLng: ' + _map.getCenter());
       hideMapCallout();
     });
 
@@ -36,6 +48,8 @@ var map = {
     });
 
     _map.on('zoomstart', function(event) {
+      console.log('Zoom: ' + _map.getZoom());
+      console.log('LatLng: ' + _map.getCenter());
       hideMapCallout();
     });
 
@@ -136,7 +150,7 @@ var map = {
       _callout.removeClass('hide');
 
       // populate callout
-      var img = $('<img src="/wp-content/themes/catapult/getimageurl.php?imageID=' + data.custom_fields.image[0] + '" />'),
+      var img = $('<img src="/wp-content/themes/catapult/getimageurl.php?imageID=' + data.custom_fields.image[0] + '&width=200&height=200" />'),
           loc = data.location.address,
           $h2 = _callout.find('h2');
 
@@ -145,7 +159,11 @@ var map = {
       // If the link isn't disabled, add it
       if (typeof data.custom_fields.disabled !== 'undefined' && data.custom_fields.disabled[0] === '0') {
         var $link = $('<a href="' + data.url + '" id="js-map-callout-link"></a>');
+
         $h2.wrap($link);
+        setTimeout(function() {
+          $h2.text($h2.text() + ' »');
+        }, 100);
       }
       _callout.find('.map-callout-img').append(img);
       $h2.append(data.title);

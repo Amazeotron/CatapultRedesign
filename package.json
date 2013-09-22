@@ -8,6 +8,7 @@
     "grunt-ftp-push": "~0.1.2",
     "grunt-contrib-sass": "~0.4.1",
     "grunt-contrib-watch": "~0.5.1",
-    "grunt-remove-logging": "~0.1.1"
+    "grunt-remove-logging": "~0.1.1",
+    "grunt-rsync": "~0.2.1"
   }
 }

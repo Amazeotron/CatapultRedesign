@@ -23,7 +23,7 @@
   </section>
 
   <section class="intro page-top row">
-    <a href="/services" class="header-link"><h1>At Catapult Design, we <span class="header-title level-one">IDEATE</span>, <span class="header-title level-two">PROTOTYPE</span>, <span class="header-title level-three">COMMECIALIZE</span>, <span class="header-title level-four">IMPLEMENT</span> &amp; <span class="header-title level-five">EDUCATE</span> to close the gap in equality &raquo;</h1></a>
+    <a href="/services" class="header-link"><h1>At Catapult Design, we <span class="header-title level-one">EXPORE</span>, <span class="header-title level-two">PROTOTYPE</span>, <span class="header-title level-three">REALIZE</span> &amp; <span class="header-title level-four">EDUCATE</span> to close the gap in equality &raquo;</h1></a>
     <div id="slides">
       <?php
       $index = 0;
@@ -130,7 +130,7 @@
         </div>
         <div class="two-col margin-left">
           <a href="http://oi.vresp.com/?fid=9fcbd66d02" class="contact-button contact-button--newsletter header-title" tabindex="36">SUBSCRIBE TO NEWSLETTER</a>
-          <a href="http://www.youtube.com/user/CatapultDesign" class="contact-button contact-button--youtube header-title" tabindex="37">/CATAPULTDESIGN</a>
+          <a href="http://vimeo.com/catapultdesign/" class="contact-button contact-button--video header-title" tabindex="37">/CATAPULTDESIGN</a>
           <a href="<?php echo site_url('/faq-and-press-kit/'); ?>" class="contact-button contact-button--faq header-title" tabindex="38">FAQ &amp; MEDIA KIT</a>
         </div>
       </div>

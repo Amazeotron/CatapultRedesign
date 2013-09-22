@@ -1,25 +1,26 @@
 module.exports = function(grunt) {
+  var themeRoot = 'site/wp-content/themes/catapult/';
   var homepageJSFiles = [
-    'site/wp-content/themes/catapult/js/libs/parsley.js',
-    'site/wp-content/themes/catapult/js/libs/leaflet/leaflet.js',
-    'site/wp-content/themes/catapult/js/libs/leaflet/markercluster/leaflet.markercluster-src.js',
-    'site/wp-content/themes/catapult/js/map.js',
-    'site/wp-content/themes/catapult/js/team.js',
-    'site/wp-content/themes/catapult/js/donations.js',
-    'site/wp-content/themes/catapult/js/home.js'
+    themeRoot + 'js/libs/parsley.js',
+    themeRoot + 'js/libs/leaflet/leaflet.js',
+    themeRoot + 'js/libs/leaflet/markercluster/leaflet.markercluster-src.js',
+    themeRoot + 'js/map.js',
+    themeRoot + 'js/team.js',
+    themeRoot + 'js/donations.js',
+    themeRoot + 'js/home.js'
   ];
   var commonJSFiles = [
-    'site/wp-content/themes/catapult/js/libs/underscore.js',
-    'site/wp-content/themes/catapult/js/libs/swipe.js',
-    'site/wp-content/themes/catapult/js/libs/jquery.slides.js',
-    'site/wp-content/themes/catapult/js/libs/waypoints.js',
-    'site/wp-content/themes/catapult/js/libs/jquery.transit.js',
-    'site/wp-content/themes/catapult/js/common.js'
+    themeRoot + 'js/libs/underscore.js',
+    themeRoot + 'js/libs/swipe.js',
+    themeRoot + 'js/libs/jquery.slides.js',
+    themeRoot + 'js/libs/waypoints.js',
+    themeRoot + 'js/libs/jquery.transit.js',
+    themeRoot + 'js/common.js'
   ];
   var blogJSFiles = [
-    'site/wp-content/themes/catapult/js/ParsePostType.js',
-    'site/wp-content/themes/catapult/js/libs/masonry.pkgd.min.js',
-    'site/wp-content/themes/catapult/js/blog.js'
+    themeRoot + 'js/ParsePostType.js',
+    themeRoot + 'js/libs/masonry.pkgd.min.js',
+    themeRoot + 'js/blog.js'
   ];
   // Project configuration.
   grunt.initConfig({
@@ -29,7 +30,8 @@ module.exports = function(grunt) {
         options: {
           banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
           mangle: true,
-          beautify: false
+          beautify: false,
+          report: 'min'
         },
         files: {
           'site/wp-content/themes/catapult/js/home.min.js': homepageJSFiles,
@@ -41,7 +43,8 @@ module.exports = function(grunt) {
         options: {
           banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
           mangle: false,
-          beautify: true
+          beautify: true,
+          report: 'min'
         },
         files: {
           'site/wp-content/themes/catapult/js/home.min.js': homepageJSFiles,
@@ -72,8 +75,8 @@ module.exports = function(grunt) {
     },
     removelogging: {
       dist: {
-        src: 'site/wp-content/themes/catapult/js/home.min.js',
-        dest: 'site/wp-content/themes/catapult/js/home.min.js',
+        src: themeRoot + 'js/home.min.js',
+        dest: themeRoot + 'js/home.min.js',
 
         options: {
           
@@ -91,6 +94,27 @@ module.exports = function(grunt) {
         
       }
     },
+    rsync: {
+      options: {
+        args: ['--verbose'],
+        exclude: ['.git*', '*.scss', 'node_modules', '.sass-cache'],
+        recursive: true
+      },
+      dist: {
+        options: {
+          src: [],
+          dest: ''
+        }
+      },
+      dev: {
+        options: {
+          src: ['site/wp-content/themes/catapult/js/home.min.js'],
+          dest: '/wp-content/themes/catapult/js',
+          host: 'catapult-larry@catapult.staging.wpengine.com',
+          syncDestIgnoreExcl: true
+        }
+      }
+    },
     watch: {
       files: homepageJSFiles,
       tasks: 'default'
@@ -104,6 +128,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-remove-logging');
+  grunt.loadNpmTasks('grunt-rsync');
 
   // Default task(s).
   grunt.registerTask('default', ['sass:dev', 'uglify:dev']);
