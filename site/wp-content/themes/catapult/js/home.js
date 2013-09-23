@@ -9,12 +9,13 @@ $(document).ready(function () {
   cataCommon.init();
 
   // When the page scrolls past 100 px vertically, change the nav to mini version
+  // Don't do this on the mobile site, though.
   $(window).scroll(function (event) {
 
     var scrollPos = $(this).scrollTop();
 //    console.log(scrollPos);
 
-    if (scrollPos > 100) {
+    if (scrollPos > 100 || $(window).width() <= 350) {
       $(".logo .logo--full").removeClass("show").addClass("hide");
       $(".logo .logo--partial").removeClass("hide").addClass("show");
       $(".mainnav, .header").addClass("compact");

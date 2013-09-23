@@ -2,8 +2,6 @@ module.exports = function(grunt) {
   var themeRoot = 'site/wp-content/themes/catapult/';
   var homepageJSFiles = [
     themeRoot + 'js/libs/parsley.js',
-    themeRoot + 'js/libs/leaflet/leaflet.js',
-    themeRoot + 'js/libs/leaflet/markercluster/leaflet.markercluster-src.js',
     themeRoot + 'js/map.js',
     themeRoot + 'js/team.js',
     themeRoot + 'js/donations.js',
@@ -15,6 +13,8 @@ module.exports = function(grunt) {
     themeRoot + 'js/libs/jquery.slides.js',
     themeRoot + 'js/libs/waypoints.js',
     themeRoot + 'js/libs/jquery.transit.js',
+    themeRoot + 'js/libs/leaflet/leaflet.js',
+    themeRoot + 'js/libs/leaflet/markercluster/leaflet.markercluster-src.js',
     themeRoot + 'js/common.js'
   ];
   var blogJSFiles = [

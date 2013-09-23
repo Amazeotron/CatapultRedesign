@@ -119,6 +119,10 @@
   font-size: 2.5em;
   line-height: 1em;
   
+  @media only screen and (max-width: 350px) {
+    font-size: 1.5em;
+  }
+  
   a {
     text-decoration: none;
     color: #FFFFFF;
@@ -162,30 +166,27 @@
     border-top: 1px solid rgba(255,255,255,0.2);
   }
   
-  &.education {
+  &.mobility {
     background: $darkGreyFont;
   }
 
-  &.innovation {
+  &.enterprise {
     background: $yellow;
     color: #666;
   }
 
-  &.newsletter {
+  &.health-agriculture {
     background: $pink;
+    color: $lightGreyFont;
   }
 
-  &.insights {
+  &.energy {
     background: $orange;
     color: #666;
   }
 
-  &.engineering {
+  &.water-sanitation {
     background: $teal;
-  }
-
-  &.ideation {
-    background: $pink;
   }
 }
 
@@ -299,11 +300,16 @@
   SEARCH BOX
 -------------------- */
 .search-box {
+  
   form {
     overflow: hidden;
     padding-bottom: 5px;
     float: right;
     width: 31.25%;
+
+    @media only screen and (max-width: 350px) {
+      display: none;
+    }
     
     input[type="text"] {
       float: left;
@@ -328,12 +334,15 @@
     overflow: hidden;
     float: left;
     width: 68.75%;
+
+    @media only screen and (max-width: 350px) {
+      width: 100%;
+    }
     
     li {
       list-style: none;
       float: left;
       display: block;
-      font-size: 1.5em;
       letter-spacing: 1px;
       margin: 0;
       padding: 0 19px 0 0;
@@ -347,7 +356,7 @@
       }
       
       a {
-        font-size: 1.2em;
+        font-size: 1.6em;
         letter-spacing: 1px;
         text-decoration: none;
         color: rgba(224,218,216,1.0);
@@ -357,11 +366,8 @@
           color: $orange;
         }
         
-        @media only screen and (max-width: 615px) {
-          font-size: 0.9em;
-        }
         @media only screen and (max-width: 490px) {
-          font-size: 0.6em;
+          font-size: 1.3em;
         }
       }
     }
@@ -432,6 +438,11 @@
     small {
       display: none;
     }
+  }
+  
+  #locations-map {
+    width: 100%;
+    height: 400px;
   }
 }
 

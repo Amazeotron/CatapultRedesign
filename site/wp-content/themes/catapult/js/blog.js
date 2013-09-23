@@ -11,23 +11,23 @@
   });
 
   // Make a Masonry page, if necessary
-  var $flickrGallery = $('.flickr-gallery');
-  $flickrGallery.masonry({
-    'gutter': 10,
-    'itemSelector': '.figure'
-  });
+//  var $flickrGallery = $('.flickr-gallery');
+//  $flickrGallery.masonry({
+//    'gutter': 10,
+//    'itemSelector': '.figure'
+//  });
   
   // Capture the clicks on a Flickr Gallery image
-  $flickrGallery.find('a').on('click', function(event) {
-    event.preventDefault();
-    var href = $(this).attr('href');
-    console.log(href);
-  });
+//  $flickrGallery.find('a').on('click', function(event) {
+//    event.preventDefault();
+//    var href = $(this).attr('href');
+//    console.log(href);
+//  });
   
-  $('.picasa-gallery').masonry({
-    columnWidth: 300,
-    itemSelector: '.picasa-image'
-  });
+//  $('.picasa-gallery').masonry({
+//    columnWidth: 300,
+//    itemSelector: '.picasa-image'
+//  });
   
   
   // Animate the Twitter feed.

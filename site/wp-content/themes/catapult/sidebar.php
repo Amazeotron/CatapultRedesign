@@ -2,31 +2,50 @@
 <aside id="main-aside">
   <div id="main-aside-inner">
     
-    <?php
-    if ( (strpos($_SERVER["REQUEST_URI"], '/news') == false) &&
-        (strpos($_SERVER["REQUEST_URI"], '/blog') == false) &&
-        (strpos($_SERVER["REQUEST_URI"], '/casestudies') == false) &&
-        (strpos($_SERVER["REQUEST_URI"], '/projects') == false) &&
-        (strpos($_SERVER["REQUEST_URI"], '/events') == false) &&
-        (strpos($_SERVER["REQUEST_URI"], '/press') == false)) {
-    $args = array(
-      'numberposts' => 5,
-      'offset' => 0,
-      'category' => $catIDsSeparated,
-      'orderby' => 'post_date',
-      'post_type' => 'post',
-      'exclude' => get_the_ID()
-    );
-    $posts_array = get_posts($args);
-    ?>
+    <?php 
+    if (is_singular() && get_the_ID() != 207) :
+      $args = array(
+        'numberposts' => 5,
+        'offset' => 0,
+        'category' => $catIDsSeparated,
+        'orderby' => 'post_date',
+        'post_type' => 'post',
+        'exclude' => get_the_ID()
+      );
+      $posts_array = get_posts($args);
+      ?>
+        <hr/>
+        <h3 class="header-title related-header">Related Articles</h3>
+      <ul class="related-articles">
+        <?php foreach ($posts_array as $post) :  setup_postdata($post); ?>
+          <li class="related-article header-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+        <?php endforeach; ?>
+      </ul>
+    <? elseif (get_the_ID() == 207) : ?>
+
       <hr/>
-      <h3 class="header-title related-header">Related Articles</h3>
-    <ul class="related-articles">
-      <?php foreach ($posts_array as $post) :  setup_postdata($post); ?>
-        <li class="related-article header-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-      <?php endforeach; ?>
-    </ul>
-    <? } ?>
+      <?php
+      $the_query = new WP_Query(array('post_id' => 207, 'posts_per_page' => '1'));
+      while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+        <h2>Press Kit</h2>
+
+        <h4>Overview of Catapult Design</h4>
+        <a href="<?php the_field('fact_sheet'); ?>"><?php the_field('fact_sheet_link_text'); ?></a>
+
+        <?php
+        $pressReleases = get_field('press_releases');
+        if ($pressReleases) { ?>
+          <h4>Press Releases</h4>
+          <a href="<?php $pressReleases['press_release']; ?>"><?php $pressReleases['press_release_title']; ?></a>
+        <? } ?>
+
+        <h4>Logos</h4>
+        <p><a href="<?php the_field('web_logo'); ?>" title="Catapult Design logo">Download the Catapult Design logo for Web use</a>.</p>
+        <p><a href="<?php the_field('print_logo'); ?>" title="Catapult Design logo">Download the Catapult Design logo for print use</a>.</p>
+      <?php endwhile; ?>
+      <?php wp_reset_postdata(); ?>
+        
+    <? endif; ?>
     
   </div>
   <hr/>

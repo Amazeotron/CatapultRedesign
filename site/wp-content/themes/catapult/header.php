@@ -26,16 +26,15 @@
     
     <link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/img/favicon.ico" />
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/uniform.default.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/js/libs/leaflet/leaflet.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/js/libs/leaflet/markercluster/MarkerCluster.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/js/libs/leaflet/markercluster/MarkerCluster.Default.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/main.css">
     
     <?php if (is_page('Home')) { ?>
-      <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/js/libs/leaflet/leaflet.css">
-      <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/js/libs/leaflet/markercluster/MarkerCluster.css">
-      <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/js/libs/leaflet/markercluster/MarkerCluster.Default.css">
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/js/libs/leaflet/leaflet.ie.css">
     <![endif]-->
-    
     <?php } ?>
     
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
@@ -48,7 +47,7 @@
     <script>
     Modernizr.load({
       test: window.matchMedia,
-      yep: "<?php bloginfo('template_url'); ?>/js/libs/enquire.js",
+      yep: "<?php bloginfo('template_url'); ?>/js/libs/enquire.min.js",
       nope: ["<?php bloginfo('template_url'); ?>/js/libs/matchMedia.js", "<?php bloginfo('template_url'); ?>/js/libs/matchMedia.addListener.js"]
     });
     </script>
