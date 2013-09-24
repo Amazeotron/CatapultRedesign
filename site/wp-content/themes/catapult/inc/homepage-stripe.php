@@ -25,7 +25,7 @@ if (isset($_POST['stripeToken'])) {
   include_once ABSPATH . "wp-content/themes/catapult/stripe-php/lib/Stripe.php";
   // set your secret key: remember to change this to your live secret key in production
   // see your keys here https://manage.stripe.com/account
-  Stripe::setApiKey("sk_test_qEFmlubevcYzBN6nIgq0FNyb");
+  Stripe::setApiKey("sk_live_TflCGAo4AzVXfC2LMJfjkOkw");
 
   try {
     $charge = Stripe_Charge::create(array(

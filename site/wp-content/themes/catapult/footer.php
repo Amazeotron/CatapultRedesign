@@ -23,8 +23,8 @@
 <?php if (is_page("Home")) { ?>
 
   <script src="<?php bloginfo('template_url'); ?>/js/home.min.js"></script>
-  <script src="https://js.stripe.com/v1/"></script>
-  <script> Stripe.setPublishableKey('pk_test_WYPj12umdvftkbOTR5kQL8ni'); </script>
+  <script src="https://js.stripe.com/v2/"></script>
+  <script> Stripe.setPublishableKey('pk_live_X8m51s71QDNxvH6V4IYBdWN8'); </script>
 
 <?php } else { ?>
   <script src="<?php bloginfo('template_url'); ?>/js/blog.min.js"></script>
