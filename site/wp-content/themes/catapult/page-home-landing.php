@@ -14,6 +14,8 @@
     var formErrorMessage = "<?php echo $error_message; ?>";
   </script>
 
+
+
   <section class="overlay hide" id="overlay">
     <div class="overlay-bg"></div>
     <div class="overlay-inner">
@@ -23,7 +25,8 @@
   </section>
 
   <section class="intro page-top row">
-    <a href="/services" class="header-link"><h1>At Catapult Design, we <span class="header-title level-one">EXPORE</span>, <span class="header-title level-two">PROTOTYPE</span>, <span class="header-title level-three">REALIZE</span> &amp; <span class="header-title level-four">EDUCATE</span> to close the gap in equality &raquo;</h1></a>
+    
+    <a href="<? echo get_page_link(4363); ?>" class="header-link"><h1>At Catapult Design, we <span class="header-title level-one">EXPORE</span>, <span class="header-title level-two">PROTOTYPE</span>, <span class="header-title level-three">REALIZE</span> &amp; <span class="header-title level-four">EDUCATE</span> to close the gap in equality &raquo;</h1></a>
     <div id="slides">
       <?php
       $index = 0;
@@ -44,7 +47,7 @@
   <hr />
 
   <section class="featured row" id="featured">
-    <a href="/featured-articles/" class="header-link"><h1>Our <span class="header-title level-one">FEATURES</span> &amp; <span class="header-title level-two">PUBLICATIONS</span> include &raquo;</h1></a>
+    <a href="<? echo get_page_link(4413); ?>" class="header-link"><h1>Our <span class="header-title level-one">FEATURES</span> &amp; <span class="header-title level-two">PUBLICATIONS</span> include &raquo;</h1></a>
     <ul class="featured-logos nolist clearfix">
     <?php
     $the_query = new WP_Query(array('post_type' => 'featured_article', 'posts_per_page' => '6'));
@@ -72,7 +75,7 @@
         <p></p>
       </div>
     </div>
-    <a href="/projects/" class="header-link"><h1>View our <span class="header-title level-one">PROJECTS</span> &raquo;</h1></a>
+    <a href="<? echo get_page_link(4351); ?>" class="header-link"><h1>View our <span class="header-title level-one">PROJECTS</span> &raquo;</h1></a>
     <div id="locations-map"></div>
     <div class="map-footer clearfix">
       <h2><span class="header-title">FILTER</span> by <span class="header-title">INDUSTRY</span></h2>

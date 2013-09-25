@@ -11,41 +11,41 @@
 </form>
 
 <form id="donation-form" action="<?php home_url('/#donate'); ?>" method="POST" accept-charset="utf-8">
-	
+	<div class="payment-errors"></div>
 	<input type="hidden" id="donation-amount-hidden" name="donation-amount">
 	
 	<div class="col-wrap donation-form__body hide" id="donation-form-body">
 		<div id="js-donation-credit-card-info" class="credit-card-info two-col padded margin-right clearfix">
-			<h3>Credit Card Info</h3>
+			<h3 class="header-title">Credit Card Info</h3>
 			<div class="form-item">
 				<label for="card-full-name">Name as appears on card: *</label>
-				<input id="card-full-name" type="text" name="full-name" tabindex="42" value="" data-required="true" data-trigger="change" data-notblank="true">
+				<input id="card-full-name" type="text" name="full-name" tabindex="42" value="" data-required="true" data-trigger="change" data-notblank="true" data-stripe="name">
 			</div>
 			
 			<div class="form-item">
 				<div class="two-col margin-right card-number">
 					<label for="card-number">Card number: *</label>
-					<input id="card-number" type="tel" tabindex="43" value="" autocomplete="off" data-required="true" data-trigger="change" data-notblank="true">
+					<input id="card-number" type="tel" tabindex="43" value="" autocomplete="off" data-required="true" data-trigger="change" data-notblank="true" data-stripe="number">
 				</div>
 				<div class="two-col card-cvv right">
 					<label for="card-cvv">CVV code: *</label>
-					<input id="card-cvv" type="tel" tabindex="44" value="" autocomplete="off" data-required="true" data-trigger="change" data-rangelength="[3,4]">
+					<input id="card-cvv" type="tel" tabindex="44" value="" autocomplete="off" data-required="true" data-trigger="change" data-rangelength="[3,4]" data-stripe="cvc">
 				</div>
 			</div>
 			
 			<div class="form-item">
 				<label for="card-expiration-month">Expiration Date: *</label>
-				<select id="card-expiration-month" single tabindex="45" data-required="true" data-trigger="change" data-notblank="true">
+				<select id="card-expiration-month" single tabindex="45" data-required="true" data-trigger="change" data-notblank="true" data-stripe="exp-month">
 					<?php include(ABSPATH . "wp-content/themes/catapult/inc/months.php"); ?>
 				</select>
-				<select id="card-expiration-year" single tabindex="46" data-required="true" data-trigger="change" data-notblank="true">
+				<select id="card-expiration-year" single tabindex="46" data-required="true" data-trigger="change" data-notblank="true" data-stripe="exp-year">
 					<?php include(ABSPATH . "wp-content/themes/catapult/inc/years.php"); ?>
 				</select>
 			</div>
 		</div><!-- end credit-card-info -->
 		
 		<div id="js-donation-billing-info" class="billing-info two-col padded margin-left clearfix">
-			<h3>Billing Info</h3>
+			<h3 class="header-title">Billing Info</h3>
 			
 			<div class="form-item">
 				<label for="billing-street">Street: *</label>
@@ -81,3 +81,40 @@
 		<input id="donation-form-submit" class="clicky-button" type="submit" tabindex="53" name="donation-form-submit" value="Submit">
 	</div><!-- end cols -->
 </form>
+<script type="text/javascript">
+  
+  // Handle Stripe form...
+  
+  jQuery(function($) {
+    $('#donation-form').submit(function(event) {
+      var $form = $(this);
+
+      // Disable the submit button to prevent repeated clicks
+      $form.find('input[type="submit"]').prop('disabled', true);
+
+      Stripe.createToken($form, stripeResponseHandler);
+
+      // Prevent the form from submitting with the default action
+      return false;
+    });
+    
+    var stripeResponseHandler = function(status, response) {
+      var $form = $('#donation-form');
+        
+      console.log(status);
+      console.log(response);
+      if (response.error) {
+        // Show the errors on the form
+        $form.find('.payment-errors').text(response.error.message + ' Please try again.');
+        $form.find('input[type="submit"]').prop('disabled', false).removeClass('disabled');
+      } else {
+        // token contains id, last4, and card type
+        var token = response.id;
+        // Insert the token into the form so it gets submitted to the server
+        $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+        // and submit
+        $form.get(0).submit();
+      }
+    }
+  });
+</script>

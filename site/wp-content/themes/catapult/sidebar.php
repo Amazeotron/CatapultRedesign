@@ -25,7 +25,7 @@
 
       <hr/>
       <?php
-      $the_query = new WP_Query(array('post_id' => 207, 'posts_per_page' => '1'));
+      $the_query = new WP_Query(array('page_id' => 207));
       while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
         <h2>Press Kit</h2>
 

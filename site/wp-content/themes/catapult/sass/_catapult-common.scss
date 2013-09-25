@@ -23,14 +23,13 @@ h1, h2, h3, h4, h5, p, label, input, textarea, li {
 
 input[type="text"], input[type="tel"], input[type="email"], input[type="number"], select {
   border: none;
-  padding: 6px 0 5px 15px;
+  padding: 15px 0 15px 9px;
   font-family: $serifFont;
-  font-size: 0.8em;
+  font-size: 1.2em;
   color: black;
 
   &.parsley-error {
-    background: rgba(248, 139, 139, 1.0);
-    color: white;
+    border: 2px dashed red;
   }
 }
 
@@ -40,7 +39,7 @@ input[type="submit"] {
 }
 
 select {
-  height: 24px;
+  height: 50px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -767,4 +766,8 @@ section {
 .fullwidth-image {
   width: 100%;
   height: auto;
+}
+
+#wpstats {
+  display: none;
 }

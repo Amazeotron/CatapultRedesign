@@ -9,7 +9,7 @@
     <li><a href="<? echo get_page_link(4371); ?>" class="header-title">LEARNING LABS &raquo;</a></li>
     <li><a href="<? echo get_page_link(4413); ?>" class="header-title">PRESS &raquo;</a></li>
     <li><a href="<? echo get_page_link(4351); ?>" class="header-title">PROJECTS &raquo;</a></li>
-    <li><a href="<? echo get_page_link(207); ?>" class="header-title">FAQS &amp; PRESS KIT &raquo;</a></li>
+    <li><a href="<? echo get_page_link(207); ?>" class="header-title">FAQS &amp; MEDIA KIT &raquo;</a></li>
     <li><a href="<? echo get_page_link(4148); ?>" class="header-title">NEWS &raquo;</a></li>
   </ul>
   <p>Catapult Design is a non-profit design firm. We research, design, and develop human-centered products and services to improve the lives of those who need it most.</p>

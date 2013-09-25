@@ -101,17 +101,12 @@
     
     label {
       display: block;
-      padding: 5px 0 5px 0;
     }
     
     input {
       width: 100%;
-      box-sizing: content-box;
     }
     
-    input[type="text"], input[type="tel"], input[type="number"], input[type="email"] {
-      
-    }
     #uniform-card-expiration-year span {
       width: 70px;
     }
@@ -123,17 +118,39 @@
 	form#donation-form {
 		margin: 20px 0 40px 0;
 		overflow: hidden;
+    
+    .payment-errors {
+      font-size: 1.3em;
+      color: rgb(240, 120, 0);
+    }
 		
     .donation-form__body {
       @include transition(1s);
       padding-bottom: 10px;
+      position: relative;
       
 			&.hide {
         height: 0;
+
+        #donation-form-submit {
+          display: none;
+        }
       }
       &.show {
         height: auto;
         max-height: 1000px;
+
+        #donation-form-submit {
+          display: block;
+        }
+      }
+      
+      .card-number {
+        width: 65%
+      }
+      
+      .card-cvv {
+        width: 30%;
       }
 		}
 		
@@ -141,10 +158,10 @@
   		// width: 300px;
   	}
   	#card-number {
-  		// width: 212px;
+  		
   	}
   	#card-cvv {
-  		// width: 66px;
+  		
   	}
   	#billing-street {
   		// width: 314px;
@@ -161,10 +178,12 @@
   	#billing-email {
   		// width: 160px;
   	}
-  	
-  	input[type="submit"] {
-      margin: 35px 0 0 0;
-  	}
+    
+    #donation-form-submit {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
   }
   
   .donate-button {
