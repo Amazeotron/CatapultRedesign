@@ -26,7 +26,7 @@
 
   <section class="intro page-top row">
     
-    <a href="<? echo get_page_link(4363); ?>" class="header-link"><h1>At Catapult Design, we <span class="header-title level-one">EXPORE</span>, <span class="header-title level-two">PROTOTYPE</span>, <span class="header-title level-three">REALIZE</span> &amp; <span class="header-title level-four">EDUCATE</span> to close the gap in equality &raquo;</h1></a>
+    <a href="<? echo get_page_link(4363); ?>" class="header-link"><h1>At Catapult Design, we <span class="header-title level-one">EXPLORE</span>, <span class="header-title level-two">PROTOTYPE</span>, <span class="header-title level-three">REALIZE</span> &amp; <span class="header-title level-four">EDUCATE</span> to close the gap in equality &raquo;</h1></a>
     <div id="slides">
       <?php
       $index = 0;
