@@ -63,6 +63,12 @@ This page shows a list of recent "news" items, like upcoming learning labs, blog
                   foreach ($categories as $cat) {
                     echo '<li class="tag header-title"><a class="category-item ' . $cat->category_nicename . '" href="' . get_category_link($cat->term_id) . '">' . $cat->category_nicename . '</a></li>';
                   }
+                  $posttags = get_the_tags();
+                  if ($posttags) {
+                    foreach($posttags as $tag) {
+                      echo '<li class="tag header-title"><a class="category-item" href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a></li>';
+                    }
+                  }
                   ?>
                 </ul>
               </header>

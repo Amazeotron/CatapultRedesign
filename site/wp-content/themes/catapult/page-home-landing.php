@@ -84,7 +84,7 @@
     <a href="<? echo get_page_link(4351); ?>" class="header-link"><h1>View our <span class="header-title level-one">PROJECTS</span> &raquo;</h1></a>
     <div id="locations-map"></div>
     <div class="map-footer clearfix">
-      <h2><span class="header-title">FILTER</span> by <span class="header-title">INDUSTRY</span></h2>
+      <h2><span class="header-title">FILTER</span> by <span class="header-title">SECTOR</span></h2>
       <ul class="locations-filter clearfix">
         <li class="locations-filter__item"><h2 class="header-title"><a href="#" class="location-filter active" id="js-location-filter-all" data-tag="all">ALL</a></h2></li>
         <li class="locations-filter__item"><h2 class="header-title"><a href="#" class="location-filter" id="js-location-filter-energy" data-tag="energy">ENERGY</a></h2></li>

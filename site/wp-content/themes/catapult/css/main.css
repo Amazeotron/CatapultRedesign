@@ -1624,15 +1624,15 @@ section {
 }
 /* line 56, site/wp-content/themes/catapult/sass/_catapult-floater.scss */
 .social .social-button.contact-button--twitter .hover {
-  width: 110px;
+  width: 136px;
 }
 /* line 59, site/wp-content/themes/catapult/sass/_catapult-floater.scss */
 .social .social-button.contact-button--facebook .hover {
-  width: 85px;
+  width: 109px;
 }
 /* line 62, site/wp-content/themes/catapult/sass/_catapult-floater.scss */
 .social .social-button.contact-button--rss .hover {
-  width: 80px;
+  width: 81px;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -2076,7 +2076,7 @@ html.no-svg .header .logo .logo-img {
 @media only screen and (max-width: 320px) {
   /* line 57, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
   .intro .slidesjs-pagination {
-    display: none;
+    margin: 0;
   }
 }
 /* line 66, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
@@ -3071,7 +3071,7 @@ html.no-touch .team-member-details.hover {
   display: inline-block;
   text-decoration: none;
   padding: 4px 7px 5px 7px;
-  margin: 0;
+  margin: 0 0 4px 0;
   background: #f2ad4b;
   color: #666;
   font-weight: normal;

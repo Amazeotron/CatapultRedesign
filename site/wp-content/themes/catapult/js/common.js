@@ -2,7 +2,7 @@ var cataCommon = {
 
   // Call this on page load, preferably on $()ready().
   init: function () {
-    console.log("common init");
+    
     this.handleHeader();
     this.handleSocial();
 
@@ -51,7 +51,7 @@ var cataCommon = {
     } else {
       loc = window.location.href.substring(0, window.location.href.indexOf("#"));
     }
-    console.log(loc);
+    
     return loc == cataCommon.getRootURL();
   },
 
@@ -84,7 +84,7 @@ var cataCommon = {
   loadJobs: function () {
     var jobs = new ParsePostType();
     jobs.init(getRootURL() + "?json=get_recent_posts&dev=1&post_type=job", function (jobs) {
-      console.log("Jobs have loaded");
+      
     });
   },
 

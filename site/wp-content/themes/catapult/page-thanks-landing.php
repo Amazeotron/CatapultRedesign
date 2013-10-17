@@ -118,7 +118,7 @@ if (isset($_POST['fullName'])) {
 
   <div id="page-wrap">
 
-    <div class="row page-top">
+    <div class="row">
 
       <h1>Our team <span class="header-title level-one">thanks you</span> for <span class="header-title level-two">your support</span>!</h1>
 
