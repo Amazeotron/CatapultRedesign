@@ -201,6 +201,10 @@ span.header-title {
 
 .header-link {
   text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .title-shadow {

@@ -33,7 +33,13 @@
       $the_query = new WP_Query(array('post_type' => 'homepageslideshow', 'posts_per_page' => '-1'));
       while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
         <div class="slideshow-item">
-          <a href="<?php the_field('link'); ?>">
+          <?
+          $url = get_field('link');
+          if (get_field('external_link')) {
+            $url = get_field('external_link');
+          }
+          ?>
+          <a href="<?php echo $url; ?>">
             <img src="<?php the_field('image'); ?>" alt="" class="slideshow-image" />
             <h3 class="slideshow-caption"><?php the_field('caption'); ?></h3>
           </a>
@@ -103,26 +109,26 @@
     <div class="row">
       <h1><span class="header-title level-one">FOLLOW</span>, <span class="header-title level-two">LIKE</span> &amp; <span class="header-title level-three">CONTACT</span> Us.</h1>
       <div class="col-wrap contact-locations clearfix">
-        <section class="contact__item float-left">
+        <div class="contact__item float-left">
           <div class="contact-location">Contact Us</div>
           <h3 class="header-title">OPEN STUDIOS</h3>
           <h4 class="header-title">EVERY 1ST &amp; 3RD WED<br/>4-6P IN SF OR SKYPE</h4>
-        </section>
-        <section class="contact__item float-left">
+        </div>
+        <div class="contact__item float-left">
           <div class="contact-location sf">Contact Us</div>
           <h3 class="header-title">SAN FRANCISCO</h3>
           <h4 class="header-title">972 MISSION ST, SUITE 500<br/>SAN FRANCISCO, CA 94103</h4>
-        </section>
-        <section class="contact__item float-left">
+        </div>
+        <div class="contact__item float-left">
           <div class="contact-location co">Contact Us</div>
           <h3 class="header-title">DENVER</h3>
           <h4 class="header-title">1031 33RD STREET, STE 174<br/>DENVER, CO 80205</h4>
-        </section>
-        <section class="contact__item float-left">
+        </div>
+        <div class="contact__item float-left">
           <div class="contact-location ny">Contact Us</div>
           <h3 class="header-title">NEW YORK CITY</h3>
           <h4 class="header-title">COMING SOON</h4>
-        </section>
+        </div>
       </div>
 
       <div class="col-wrap contact__buttons">
@@ -134,7 +140,7 @@
         <div class="two-col margin-left">
           <a href="http://oi.vresp.com/?fid=9fcbd66d02" class="contact-button contact-button--newsletter header-title" tabindex="36">SUBSCRIBE TO NEWSLETTER</a>
           <a href="http://vimeo.com/catapultdesign/" class="contact-button contact-button--video header-title" tabindex="37">/CATAPULTDESIGN</a>
-          <a href="<?php echo site_url('/faq-and-press-kit/'); ?>" class="contact-button contact-button--faq header-title" tabindex="38">FAQ &amp; MEDIA KIT</a>
+          <a href="<? echo get_page_link(207); ?>" class="contact-button contact-button--faq header-title" tabindex="38">FAQ &amp; MEDIA KIT</a>
         </div>
       </div>
     </div>

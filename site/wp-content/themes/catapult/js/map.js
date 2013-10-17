@@ -1,9 +1,12 @@
 var map = {
   
   init: function() {
-
+    var southWest = new L.LatLng(-69.41124, -227.10937),
+        northEast = new L.LatLng(84.47406, 202.5);
+    
     var _map = new L.Map('locations-map', {
-      scrollWheelZoom: false
+      scrollWheelZoom: false,
+      maxBounds: new L.LatLngBounds(southWest, northEast)
     });
     
     // Set different centers and zooms based on initial window width
@@ -150,7 +153,7 @@ var map = {
       _callout.removeClass('hide');
 
       // populate callout
-      var img = $('<img src="/wp-content/themes/catapult/getimageurl.php?imageID=' + data.custom_fields.image[0] + '&width=200&height=200" />'),
+      var img = $('<img src="/wp-content/themes/catapult/getthumburl.php?imageID=' + data.custom_fields.image[0] + '&width=200&height=200" />'),
           loc = data.location.address,
           $h2 = _callout.find('h2');
 
@@ -190,7 +193,7 @@ var map = {
       // Turn off all _markers
       $('.location-filter').removeClass('active');
       $(this).addClass('active');
-      
+      $('body').animate({scrollTop: 1071}, 500);
       redrawMarkersWithFilter($(this).data('tag'));
     });
   }

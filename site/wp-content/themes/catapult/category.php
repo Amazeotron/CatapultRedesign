@@ -6,6 +6,13 @@
 
     <section id="main-section">
       <div id="posts">
+        <?php
+        $args = array(
+          "posts_per_page" => -1,
+          "category_name" => "energy"
+        );
+        query_posts($args);
+        ?>
         <? include(ABSPATH . 'wp-content/themes/catapult/inc/posts-template.php'); ?>
       </div>
       <!-- end posts -->

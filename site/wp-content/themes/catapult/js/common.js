@@ -6,10 +6,9 @@ var cataCommon = {
     this.handleHeader();
     this.handleSocial();
 
-    $(document).on("click", "#overlay-close-button, .overlay-bg", function (event) {
+    $(document).on("click touchstart", "#overlay-close-button, .overlay-bg", function (event) {
       event.preventDefault();
       $(".overlay").removeClass("show").addClass("hide");
-      return false;
     });
 
     $('footer').waypoint(function(direction) {
