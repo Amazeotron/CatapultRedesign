@@ -26,7 +26,8 @@ if (isset($_POST['fullName'])) {
     'post_type' => 'member',
     'post_title' => $_POST['fullName'],
     'post_status' => 'pending',
-    'post_author' => 1
+    'post_author' => 1,
+    'comment_status' => 'closed'
   );
 
   $post_id = wp_insert_post($post);
@@ -108,6 +109,7 @@ if (isset($_POST['fullName'])) {
 
             <p>If you&apos;d like us to thank you on Twitter, enter your Twitter handle here:</p>
             <input type="text" class="overlay__form__input" placeholder="Enter your Twitter handle" name="twitterHandle">
+
             <div class="overlay__form__item"><input id="js-quote-submit" class="clicky-button" type="Submit" value="Submit"></div>
           </div>
 
@@ -118,54 +120,68 @@ if (isset($_POST['fullName'])) {
 
   <div id="page-wrap">
 
-    <div class="row">
+    <div class="row thanks">
 
       <h1>Our team <span class="header-title level-one">thanks you</span> for <span class="header-title level-two">your support</span>!</h1>
 
-      <div class="donors">
-        <ul class="donors__list">
-          <li class="donors__list__item">
+      <div class="team">
+        <ul class="team-list">
+          <li class="team-list__item">
             <img src="<?php bloginfo('template_url'); ?>/img/homepage/team/155x155/heather.jpg" alt="Heather Fleming">
           </li>
-          <li class="donors__list__item">
+          <li class="team-list__item">
             <img src="<?php bloginfo('template_url'); ?>/img/homepage/team/155x155/tyler.jpg" alt="Tyler Valiquette">
           </li>
-          <li class="donors__list__item">
+          <li class="team-list__item">
             <img src="<?php bloginfo('template_url'); ?>/img/homepage/team/155x155/david.jpg" alt="Charlie Sellers">
           </li>
-          <li class="donors__list__item">
+          <li class="team-list__item">
             <img src="<?php bloginfo('template_url'); ?>/img/homepage/team/155x155/noel.jpg" alt="Noel Wilson">
           </li>
-          <li class="donors__list__item">
+          <li class="team-list__item">
             <img src="<?php bloginfo('template_url'); ?>/img/homepage/team/155x155/karin.jpg" alt="Karin Carter">
           </li>
         </ul>
       </div>
-      <!-- end donors -->
+      <!-- end team -->
 
-      <div class="subhead">
-        <?php the_content(); ?>
-      </div>
-      
-      <?php
+      <div class="donors clearfix">
+        <?php
         $args = array(
-          "posts_per_page" => 50,
+          "posts_per_page" => -1,
           "post_type" => array("member")
         );
         query_posts($args);
+        $count = 0;
         if (have_posts()) : ?>
           <h3>Thank you to <span class="header-title level-three">all of our donors</span>!</h3>
-          <ul>
-        <?php
+          <?php
           while (have_posts()) :
+            if ($count % 5 == 0) { echo '<ul class="donors-col float-left">'; }
             the_post();
             $fullName = get_the_title();
-      ?>
-      <?php if (!empty($fullName)) : ?><li><?php echo $fullName; ?></li><?php endif; ?>
-      <?php endwhile; ?>
-        </ul>
-      <?php endif; ?>
-      <?php wp_reset_query(); ?>
+            if (!empty($fullName)) : ?>
+              <li class="donors-item"><?php echo $fullName; ?></li>
+              <? if ($count % 5 == 4) { echo '</ul>'; } ?>
+            <?php endif; ?>
+            <? $count++; ?>
+          <?php endwhile; ?>
+        <?php
+        endif;
+        wp_reset_query();
+        ?>
+      </div>
+      <!-- end donors -->
+      
+      <? if (have_posts()) : ?>
+      <? while (have_posts()) : ?>
+      <? the_post(); ?>
+      <div class="subhead">
+        <?php the_content(); ?>
+      </div>
+      <? endwhile; ?>
+      <? endif; ?>
+      
     </div>
   </div><!-- end page-wrap -->
 

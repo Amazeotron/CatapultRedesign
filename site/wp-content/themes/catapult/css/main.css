@@ -3445,53 +3445,62 @@ img.pe2-photo.picasa-image {
   padding-top: 0;
 }
 
-/* line 4, site/wp-content/themes/catapult/sass/_catapult-thanks.scss */
-.donors .donors__list {
+/* line 3, site/wp-content/themes/catapult/sass/_catapult-thanks.scss */
+.thanks .team {
+  margin: 0 0 10px 0;
+}
+/* line 6, site/wp-content/themes/catapult/sass/_catapult-thanks.scss */
+.thanks .team .team-list {
   list-style-type: none;
   overflow: hidden;
   padding: 0;
   margin: 0;
   width: 100%;
 }
-/* line 11, site/wp-content/themes/catapult/sass/_catapult-thanks.scss */
-.donors .donors__list .donors__list__item {
+/* line 13, site/wp-content/themes/catapult/sass/_catapult-thanks.scss */
+.thanks .team .team-list .team-list__item {
   float: left;
   padding: 1%;
 }
+/* line 21, site/wp-content/themes/catapult/sass/_catapult-thanks.scss */
+.thanks .donors .donors-col {
+  padding-left: 17px;
+  width: 25%;
+}
 
-/* line 18, site/wp-content/themes/catapult/sass/_catapult-thanks.scss */
+/* line 31, site/wp-content/themes/catapult/sass/_catapult-thanks.scss */
 .overlay__form {
   width: 100%;
 }
-/* line 21, site/wp-content/themes/catapult/sass/_catapult-thanks.scss */
+/* line 34, site/wp-content/themes/catapult/sass/_catapult-thanks.scss */
 .overlay__form .clicky-button {
   margin-top: 20px;
 }
-/* line 25, site/wp-content/themes/catapult/sass/_catapult-thanks.scss */
+/* line 38, site/wp-content/themes/catapult/sass/_catapult-thanks.scss */
 .overlay__form .overlay__form__item {
   width: 100%;
   display: block;
   padding: 5px 0;
 }
-/* line 31, site/wp-content/themes/catapult/sass/_catapult-thanks.scss */
+/* line 44, site/wp-content/themes/catapult/sass/_catapult-thanks.scss */
 .overlay__form .overlay__form__input {
   border: 1px solid #666666;
   margin: 0;
   color: black;
 }
-/* line 37, site/wp-content/themes/catapult/sass/_catapult-thanks.scss */
+/* line 50, site/wp-content/themes/catapult/sass/_catapult-thanks.scss */
 .overlay__form input[type="text"] {
   width: 200px;
 }
-/* line 41, site/wp-content/themes/catapult/sass/_catapult-thanks.scss */
+/* line 54, site/wp-content/themes/catapult/sass/_catapult-thanks.scss */
 .overlay__form .hide {
   display: none;
 }
-/* line 44, site/wp-content/themes/catapult/sass/_catapult-thanks.scss */
+/* line 57, site/wp-content/themes/catapult/sass/_catapult-thanks.scss */
 .overlay__form .show {
   display: block;
 }
-/* line 48, site/wp-content/themes/catapult/sass/_catapult-thanks.scss */
+/* line 61, site/wp-content/themes/catapult/sass/_catapult-thanks.scss */
 .overlay__form textarea {
   width: 520px;
   height: 150px;
