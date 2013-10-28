@@ -291,7 +291,7 @@ html.no-svg {
       color: rgb(176, 95, 1);
 
       @include header-break-med {
-        font-size: 1em;
+        font-size: 0.9em;
         color: darken($orange, 30%);
       }
 

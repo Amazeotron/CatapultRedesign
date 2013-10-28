@@ -152,11 +152,11 @@
       <h1><span class="header-title level-one">SUPPORT</span> Catapult</h1>
       <h3 class="header-title">Catapult Design is a 501(c)(3) non-profit and all donations are tax-deductible.</h3>
       <h4 class="header-title">Your donation supports</h4>
-      <p>Materials and prototype budget for our project work, tools (from wrenches to software) our designers need to get the job done, travel costs associated with assessment and implementation, and our designers who are committed to using their skills to make a difference. If you have questions regarding how your donation will be used, please contact us as info@catapultdesign.org.</p>
+      <p>Materials and prototype budget for our project work, tools (from wrenches to software) that our designers need to get the job done, travel costs associated with assessment and implementation, and our designers who are committed to using their skills to make a difference. If you have questions regarding how your donation will be used, please contact us at <a href="mailto:info@catapultdesign.org">info@catapultdesign.org</a>.</p>
       <h4 class="header-title">Corporate matching</h4>
-      <p>Catapult is currently registered with corporate matching programs at: Google, Microsoft, Applied Materials, and the Gordon and Betty Moore Foundation.</p>
+      <p>Catapult is currently registered with corporate matching programs at: Google, Microsoft, Salesforce, Applied Materials, and the Gordon and Betty Moore Foundation.</p>
       <h4 class="header-title">To donate by check</h4>
-      <p>Write out your donation to “Catapult Design” and mail to Catapult Design, 972 Mission St. Suite 500, San Francisco, CA 94103.</p>
+      <p>Write out your donation to "Catapult Design" and mail to Catapult Design, 972 Mission St. Suite 500, San Francisco, CA 94103.</p>
       <h4 class="header-title">To donate online</h4>
       <p>We accept secure online donations through both Google Checkout and Paypal. Recurring donations are only available through PayPal.</p>
       <?php include(ABSPATH . "wp-content/themes/catapult/inc/donation_form.php"); ?>

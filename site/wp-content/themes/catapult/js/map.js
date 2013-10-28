@@ -37,7 +37,7 @@ var map = {
           shadowAnchor: [16, 39]
         }),
         _locsURL = "/api/get_posts/?post_type=project&custom_fields=client_name,disabled,slug,category,locations,image&count=-1&callback=?",
-        _markers = new L.MarkerClusterGroup(),
+        _markers = new L.MarkerClusterGroup({showCoverageOnHover: false}),
         _projectsData = {};
     
     _map.on('click', function(event) {

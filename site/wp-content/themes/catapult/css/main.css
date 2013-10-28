@@ -1978,7 +1978,7 @@ html.no-svg .header .logo .logo-img {
 @media only screen and (max-width: 720px) {
   /* line 289, site/wp-content/themes/catapult/sass/_catapult-header.scss */
   .mainnav .mainnav-item .mainnav-item-link {
-    font-size: 1em;
+    font-size: 0.9em;
     color: #995e0b;
   }
 }
