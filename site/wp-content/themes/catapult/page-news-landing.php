@@ -5,7 +5,7 @@
 */
 
 /*
-This page shows a list of recent "news" items, like upcoming learning labs, blog posts, and Tweets
+This page shows a list of recent "news" items, like upcoming learning labs, blog posts, projects and jobs.
 */
 
 ?>
@@ -57,20 +57,30 @@ This page shows a list of recent "news" items, like upcoming learning labs, blog
                 <? endif; ?>
 
                 <p class="post-excerpt"><? the_excerpt(); ?></p>
-                <ul class="tags">
                   <?php
                   $categories = (array)get_the_category();
-                  foreach ($categories as $cat) {
-                    echo '<li class="tag header-title"><a class="category-item ' . $cat->category_nicename . '" href="' . get_category_link($cat->term_id) . '">' . $cat->category_nicename . '</a></li>';
-                  }
+                  if ($categories) {
+                    echo '<ul class="categories clearfix">';
+                    foreach ($categories as $cat) {
+                      echo '<li class="category header-title"><a class="category-item ' . $cat->category_nicename . '" href="' . get_category_link($cat->term_id) . '">' . $cat->category_nicename . '</a></li>';
+                    }
+                    echo '</ul>';
+                  } ?>
+                  
+                  <?
                   $posttags = get_the_tags();
                   if ($posttags) {
+                    echo '<div class="tags">';
+                    $count = 0;
+                    echo '<span class="header-title">Tags: <span></span>';
                     foreach($posttags as $tag) {
-                      echo '<li class="tag header-title"><a class="category-item" href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a></li>';
+                      echo '<a class="tag" href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>' . ($count < count($posttags)-1 ? ', ' : '');
+                      $count++;
                     }
+                    echo '</div>';
                   }
                   ?>
-                </ul>
+                
               </header>
               <!-- end post-top -->
             </article>

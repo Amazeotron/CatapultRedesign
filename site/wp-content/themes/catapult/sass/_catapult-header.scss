@@ -3,7 +3,7 @@
 -------------------------------- */
 
 @mixin header-break-med {
-  @media only screen and (max-width: 720px) {
+  @media only screen and (max-width: 750px) {
     @content;
   }
 }
@@ -201,7 +201,7 @@ html.no-svg {
 
   .logo {
     display: inline-block;
-    padding: 10px 0 10px 50px;
+    padding: 10px 0 5px 30px;
 
     &:focus {
       // border: 1px solid white;
@@ -268,7 +268,7 @@ html.no-svg {
   }
 
   &.compact {
-    padding-top: 13px;
+    //padding-top: 13px;
   }
 
   ul {
@@ -279,11 +279,21 @@ html.no-svg {
 
   .mainnav-item {
     float: left;
-    padding: 0 35px 0 0;
+    padding: 0 20px 0 0;
     vertical-align: top;
 
     @include header-break-med {
       padding-right: 10px;
+    }
+
+    &:last-of-type {
+      padding-left: 20px;
+      padding-right: 28px;
+      border-left: 1px solid darken($orange, 10%);
+      @include header-break-med {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
     }
 
     .mainnav-item-link {
@@ -304,13 +314,5 @@ html.no-svg {
       }
     }
   }
-  .mainnav-item:last-of-type {
-    padding-left: 35px;
-    padding-right: 28px;
-    border-left: 1px solid darken($orange, 10%);
-    @include header-break-med {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-  }
+  
 }

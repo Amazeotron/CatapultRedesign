@@ -4,10 +4,6 @@
   Template Name: Jobs Landing Page
 */
 
-/*
-This page shows a list of recent job posts.
-*/
-
 ?>
 <?php get_header(); ?>
 

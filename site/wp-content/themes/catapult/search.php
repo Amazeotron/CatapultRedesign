@@ -26,11 +26,11 @@
 				
 				<div class="post-top">
 					<h3 class="post-title header-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-					<ul class="tags">
+					<ul class="categories">
 		        <?php
 		        $categories = (array) get_the_category();
 		        foreach($categories as $cat) {
-		            echo '<li class="tag header-title "><a class="category-item ' . $cat->category_nicename . '" href="' . get_category_link($cat->term_id) . '">' . $cat->category_nicename . '</a></li>';
+		            echo '<li class="category header-title "><a class="category-item ' . $cat->category_nicename . '" href="' . get_category_link($cat->term_id) . '">' . $cat->category_nicename . '</a></li>';
 		        }
 		        ?>
 	    		</ul>

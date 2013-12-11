@@ -9,8 +9,7 @@ module.exports = function(grunt) {
   ];
   var commonJSFiles = [
     themeRoot + 'js/libs/underscore.js',
-    themeRoot + 'js/libs/swipe.js',
-    themeRoot + 'js/libs/jquery.slides.js',
+    themeRoot + 'js/libs/jquery.royalslider.min.js',
     themeRoot + 'js/libs/waypoints.js',
     themeRoot + 'js/libs/jquery.transit.js',
     themeRoot + 'js/libs/leaflet/leaflet.js',
@@ -29,7 +28,7 @@ module.exports = function(grunt) {
       dist: {
         options: {
           banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
-          mangle: true,
+          mangle: false,
           beautify: false,
           report: 'min'
         },

@@ -2,7 +2,6 @@ var cataCommon = {
 
   // Call this on page load, preferably on $()ready().
   init: function () {
-    
     this.handleHeader();
     this.handleSocial();
 
@@ -107,6 +106,30 @@ var cataCommon = {
       }
       return false;
     });
+    
+    function _makeSmallLogo() {
+      console.log('Making small logo');
+      $(".logo .logo--full").removeClass("show").addClass("hide");
+      $(".logo .logo--partial").removeClass("hide").addClass("show");
+    }
+    
+    function _makeBigLogo() {
+      console.log('Making big logo');
+      $(".logo .logo--full").removeClass("hide").addClass("show");
+      $(".logo .logo--partial").removeClass("show").addClass("hide");
+    }
+
+    // Check for which logo is showing
+    enquire
+    .register("screen and (max-width: 720px)", {
+      match: _makeSmallLogo,
+      unmatch: _makeBigLogo
+    })
+    
+    .register("screen and (min-width: 721px)", {
+      match: _makeBigLogo,
+      unmatch: _makeSmallLogo
+    });
   },
 
   // Handle the social buttons
@@ -118,3 +141,4 @@ var cataCommon = {
     });
   }
 };
+

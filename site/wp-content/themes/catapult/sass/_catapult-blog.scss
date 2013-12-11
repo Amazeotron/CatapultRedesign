@@ -135,12 +135,20 @@
   TAGS
 -------------------- */
 .tags {
+  margin-top: 10px;
+  
+  .tag {
+    
+  }
+}
+
+
+.categories {
   overflow: hidden;
   margin: 0;
   padding: 0;
-  float: left;
   
-  .tag {
+  .category {
     list-style: none;
     float: left;
     margin: 0;
@@ -190,6 +198,14 @@
   }
 }
 
+.post-image {
+  max-width: 100%;
+  
+  &.pad-top {
+    padding-top: 20px;
+  }
+}
+
 
 
 
@@ -221,17 +237,13 @@
     margin-right: 5%;
   }
   
-  .tags {
-    margin-top: 20px;
+  .categories {
+    margin-top: 10px;
   }
   
   .post-main-link {
     display: block;
     overflow: hidden;
-  }
-  
-  .post-image {
-    max-width: 100%;
   }
   
   &.hover .post-image {
@@ -311,6 +323,11 @@
       display: none;
     }
     
+    @media only screen and (max-width: 720px) {
+      float: none;
+      width: 100%;
+    }
+    
     input[type="text"] {
       float: left;
       width: 80%;
@@ -336,6 +353,11 @@
     width: 68.75%;
 
     @media only screen and (max-width: 350px) {
+      width: 100%;
+    }
+
+    @media only screen and (max-width: 720px) {
+      float: none;
       width: 100%;
     }
     

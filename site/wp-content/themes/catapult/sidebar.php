@@ -51,8 +51,7 @@
   <hr/>
   <?php
   // Twitter Feed
-  function getTwitterFeed($username)
-  {
+  function getTwitterFeed($username) {
     include_once(ABSPATH . 'wp-content/themes/catapult/inc/TwitterAPIExchange.php');
 
     $settings = array(
@@ -62,7 +61,7 @@
       'consumer_secret' => "1IZAXGlCEI1wV6oixiL8TRAg692hj8QK4sEEhZrw4"
     );
     $url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
-    $getfield = '?screen_name=' . $username . '&include_entities=true&include_rts=true&count=25';
+    $getfield = '?screen_name=' . $username . '&include_entities=true&include_rts=true&count=15';
     $requestMethod = 'GET';
     $twitter = new TwitterAPIExchange($settings);
     $twitter->setGetfield($getfield);
@@ -71,7 +70,13 @@
   }
   echo '<div class="twitter-list-wrap">';
   echo '<ul id="js-twitter-list" class="twitter-list">';
-  foreach (getTwitterFeed('catapult_design') as $tweet) {
+  $tweets = getTwitterFeed('catapult_design');
+  // Double the tweets so we can do a continuous loop
+  foreach ($tweets as $tweet) {
+    array_push($tweets, $tweet);
+  }
+  
+  foreach ($tweets as $tweet) {
     $pattern = '/https?:\/\/\S+/i';
     $replaced = preg_replace($pattern, '<a href="$0" target="_blank">$0</a>', $tweet->text);
     $strTweet = preg_replace('/(?<=#)\S+/', '<a href="https://twitter.com/search?q=%23$0&src=hash" target="_blank">$0</a>', $replaced);

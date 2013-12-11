@@ -28,5 +28,4 @@
     <?php get_sidebar(); ?>
   </div><!-- end page-wrap -->
 
-
 <?php get_footer(); ?>

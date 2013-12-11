@@ -5,8 +5,14 @@
 .intro {
   
   #slides {
-    display: none;
     position: relative;
+    width: 100%;
+  }
+
+  .royalSlider {
+    & > .slideshow-item {
+      opacity: 0;
+    }
   }
 
   /* Center the slideshow */

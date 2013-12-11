@@ -17,10 +17,10 @@ the_post(); ?>
           $catIDsSeparated = implode(",", $catIDs);
           ?>
           <div class="post-header clearfix">
-            <ul class="tags clearfix">
+            <ul class="categories float-left clearfix">
               <?php
               foreach ($categories as $cat) {
-                echo '<li class="tag header-title"><a class="category-item ' . $cat->category_nicename . '" href="' . get_category_link($cat->term_id) . '">' . $cat->category_nicename . '</a></li>';
+                echo '<li class="category header-title"><a class="category-item ' . $cat->category_nicename . '" href="' . get_category_link($cat->term_id) . '">' . $cat->category_nicename . '</a></li>';
               }
               ?>
             </ul>
@@ -54,6 +54,19 @@ the_post(); ?>
               ?>
               <div class="post-author">Location: <?php echo implode('; ', $location); ?></div>
             <? } ?>
+            <?
+            $posttags = get_the_tags();
+            if ($posttags) {
+              echo '<div class="tags">';
+              $count = 0;
+              echo 'Tags: ';
+              foreach($posttags as $tag) {
+                echo '<a class="tag" href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>' . ($count < count($posttags)-1 ? ', ' : '');
+                $count++;
+              }
+              echo '</div>';
+            }
+            ?>
           </div>
 
           <div class="post-body">

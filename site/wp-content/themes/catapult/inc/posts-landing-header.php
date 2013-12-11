@@ -5,6 +5,7 @@
     <li><a class="link-secondary header-title <?php if ($_SERVER["REQUEST_URI"] == '/projects/') echo 'active'; ?>" href="<? echo get_page_link(4351); ?>" title="Projects">Projects</a></li>
     <li><a class="link-secondary header-title <?php if ($_SERVER["REQUEST_URI"] == '/events/') echo 'active'; ?>" href="<? echo get_page_link(192); ?>" title="Events">Events</a></li>
     <li><a class="link-secondary header-title <?php if ($_SERVER["REQUEST_URI"] == '/press/') echo 'active'; ?>" href="<? echo get_page_link(4413); ?>" title="Press">Press</a></li>
+    <li><a class="link-secondary header-title <?php if ($_SERVER["REQUEST_URI"] == '/jobs/') echo 'active'; ?>" href="<? echo get_page_link(61); ?>" title="Jobs">Jobs</a></li>
   </ul>
   <?php get_search_form(); ?>
 </div>

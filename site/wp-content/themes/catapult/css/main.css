@@ -621,6 +621,892 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+/* v1.0.5 */
+/* Core RS CSS file. 95% of time you shouldn't change anything here. */
+/* line 3, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.royalSlider {
+  width: 600px;
+  height: 400px;
+  position: relative;
+  direction: ltr;
+}
+
+/* line 9, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.royalSlider > * {
+  float: left;
+}
+
+/* line 13, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.rsWebkit3d .rsSlide {
+  -webkit-transform: translateZ(0);
+}
+
+/* line 27, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.rsWebkit3d .rsSlide,
+.rsWebkit3d .rsContainer,
+.rsWebkit3d .rsThumbs,
+.rsWebkit3d .rsPreloader,
+.rsWebkit3d img,
+.rsWebkit3d .rsOverflow,
+.rsWebkit3d .rsBtnCenterer,
+.rsWebkit3d .rsAbsoluteEl,
+.rsWebkit3d .rsABlock,
+.rsWebkit3d .rsLink {
+  -webkit-backface-visibility: hidden;
+}
+
+/* line 32, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.rsFade.rsWebkit3d .rsSlide,
+.rsFade.rsWebkit3d img,
+.rsFade.rsWebkit3d .rsContainer {
+  -webkit-transform: none;
+}
+
+/* line 35, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.rsOverflow {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  float: left;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* line 43, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.rsVisibleNearbyWrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* line 52, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.rsVisibleNearbyWrap .rsOverflow {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* line 58, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.rsContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* line 66, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.rsArrow,
+.rsThumbsArrow {
+  cursor: pointer;
+}
+
+/* line 70, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.rsThumb {
+  float: left;
+  position: relative;
+}
+
+/* line 78, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.rsArrow,
+.rsNav,
+.rsThumbsArrow {
+  opacity: 1;
+  -webkit-transition: opacity 0.3s linear;
+  -moz-transition: opacity 0.3s linear;
+  -o-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
+}
+
+/* line 85, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.rsHidden {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+  -moz-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+  -o-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+  transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+}
+
+/* line 95, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.rsGCaption {
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+
+/* Fullscreen options, very important ^^ */
+/* line 102, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.royalSlider.rsFullscreen {
+  position: fixed !important;
+  height: auto !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  z-index: 2147483647 !important;
+  top: 0 !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  right: 0 !important;
+}
+
+/* line 115, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.royalSlider .rsSlide.rsFakePreloader {
+  opacity: 1 !important;
+  -webkit-transition: 0s;
+  -moz-transition: 0s;
+  -o-transition: 0s;
+  transition: 0s;
+  display: none;
+}
+
+/* line 124, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.rsSlide {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+/* line 136, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.royalSlider.rsAutoHeight,
+.rsAutoHeight .rsSlide {
+  height: auto;
+}
+
+/* line 140, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.rsContent {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* line 146, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.rsPreloader {
+  position: absolute;
+  z-index: 0;
+}
+
+/* line 151, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.rsNav {
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* line 156, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.rsNavItem {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.25);
+}
+
+/* line 160, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.rsThumbs {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  float: left;
+  z-index: 22;
+}
+
+/* line 167, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.rsTabs {
+  float: left;
+  background: none !important;
+}
+
+/* line 172, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.rsTabs,
+.rsThumbs {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* line 178, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.rsVideoContainer {
+  /*left: 0;
+  top: 0;
+  position: absolute;*/
+  /*width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  float: left;*/
+  width: auto;
+  height: auto;
+  line-height: 0;
+  position: relative;
+}
+
+/* line 193, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.rsVideoFrameHolder {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #141414;
+  opacity: 0;
+  -webkit-transition: .3s;
+}
+
+/* line 201, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.rsVideoFrameHolder.rsVideoActive {
+  opacity: 1;
+}
+
+/* line 207, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.rsVideoContainer iframe,
+.rsVideoContainer video,
+.rsVideoContainer embed,
+.rsVideoContainer .rsVideoObj {
+  position: absolute;
+  z-index: 50;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ios controls over video bug, shifting video */
+/* line 218, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.rsVideoContainer.rsIOSVideo iframe,
+.rsVideoContainer.rsIOSVideo video,
+.rsVideoContainer.rsIOSVideo embed {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 44px;
+}
+
+/* line 225, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.rsABlock {
+  left: 0;
+  top: 0;
+  position: absolute;
+  z-index: 15;
+}
+
+/* line 233, site/wp-content/themes/catapult/sass/_royalslider.scss */
+img.rsImg {
+  max-width: none;
+}
+
+/* line 237, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.grab-cursor {
+  cursor: url(../img/royalslider/grab.png) 8 8, move;
+}
+
+/* line 241, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.grabbing-cursor {
+  cursor: url(../img/royalslider/grabbing.png) 8 8, move;
+}
+
+/* line 245, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.rsNoDrag {
+  cursor: auto;
+}
+
+/* line 249, site/wp-content/themes/catapult/sass/_royalslider.scss */
+.rsLink {
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 20;
+  background: url(../img/royalslider/blank.gif);
+}
+
+/******************************
+*
+*  RoyalSlider Default Skin 
+*
+*    1. Arrows 
+*    2. Bullets
+*    3. Thumbnails
+*    4. Tabs
+*    5. Fullscreen button
+*    6. Play/close video button
+*    7. Preloader
+*    8. Caption
+*    
+*  Sprite: 'rs-default.png'
+*  Feel free to edit anything
+*  If you don't some part - just delete it
+* 
+******************************/
+/* Background */
+/* line 26, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault,
+.rsDefault .rsOverflow,
+.rsDefault .rsSlide,
+.rsDefault .rsVideoFrameHolder,
+.rsDefault .rsThumbs {
+  background: #151515;
+  color: #FFF;
+}
+
+/***************
+*
+*  1. Arrows
+*
+****************/
+/* line 38, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsArrow {
+  height: 100%;
+  width: 44px;
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  z-index: 21;
+}
+
+/* line 46, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault.rsVer .rsArrow {
+  width: 100%;
+  height: 44px;
+}
+
+/* line 51, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault.rsVer .rsArrowLeft {
+  top: 0;
+  left: 0;
+}
+
+/* line 52, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault.rsVer .rsArrowRight {
+  bottom: 0;
+  left: 0;
+}
+
+/* line 54, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault.rsHor .rsArrowLeft {
+  left: 0;
+  top: 0;
+}
+
+/* line 55, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault.rsHor .rsArrowRight {
+  right: 0;
+  top: 0;
+}
+
+/* line 57, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsArrowIcn {
+  width: 32px;
+  height: 32px;
+  top: 50%;
+  left: 50%;
+  margin-top: -16px;
+  margin-left: -16px;
+  position: absolute;
+  cursor: pointer;
+  background: url("../img/royalslider/rs-default.png");
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.75);
+  *background-color: #000;
+  border-radius: 2px;
+}
+
+/* line 75, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsArrowIcn:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* line 79, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault.rsHor .rsArrowLeft .rsArrowIcn {
+  background-position: -64px -32px;
+}
+
+/* line 80, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault.rsHor .rsArrowRight .rsArrowIcn {
+  background-position: -64px -64px;
+}
+
+/* line 82, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault.rsVer .rsArrowLeft .rsArrowIcn {
+  background-position: -96px -32px;
+}
+
+/* line 83, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault.rsVer .rsArrowRight .rsArrowIcn {
+  background-position: -96px -64px;
+}
+
+/* line 85, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsArrowDisabled .rsArrowIcn {
+  opacity: .2;
+  filter: alpha(opacity=20);
+  *display: none;
+}
+
+/***************
+*
+*  2. Bullets
+*
+****************/
+/* line 94, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsBullets {
+  position: absolute;
+  z-index: 35;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  background: #000;
+  background: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  line-height: 8px;
+  overflow: hidden;
+}
+
+/* line 110, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsBullet {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  padding: 6px 5px 6px;
+}
+
+/* line 118, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsBullet span {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #777;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* line 126, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsBullet.rsNavSelected span {
+  background-color: #FFF;
+}
+
+/***************
+*
+*  3. Thumbnails
+*
+****************/
+/* line 140, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsThumbsHor {
+  width: 100%;
+  height: 72px;
+}
+
+/* line 144, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsThumbsVer {
+  width: 96px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* line 151, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault.rsWithThumbsHor .rsThumbsContainer {
+  position: relative;
+  height: 100%;
+}
+
+/* line 155, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault.rsWithThumbsVer .rsThumbsContainer {
+  position: relative;
+  width: 100%;
+}
+
+/* line 159, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsThumb {
+  float: left;
+  overflow: hidden;
+  width: 96px;
+  height: 72px;
+}
+
+/* line 165, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsThumb img {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 169, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsThumb.rsNavSelected {
+  background: #02874a;
+}
+
+/* line 172, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsThumb.rsNavSelected img {
+  opacity: 0.3;
+  filter: alpha(opacity=30);
+}
+
+/* line 176, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsTmb {
+  display: block;
+}
+
+/* Thumbnails with text */
+/* line 181, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsTmb h5 {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  line-height: 20px;
+  color: #FFF;
+}
+
+/* line 188, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsTmb span {
+  color: #DDD;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* Thumbnails arrow icons */
+/* line 199, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsThumbsArrow {
+  height: 100%;
+  width: 20px;
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  z-index: 21;
+  background: #000;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+/* line 209, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsThumbsArrow:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+/* line 212, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault.rsWithThumbsVer .rsThumbsArrow {
+  width: 100%;
+  height: 20px;
+}
+
+/* line 216, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault.rsWithThumbsVer .rsThumbsArrowLeft {
+  top: 0;
+  left: 0;
+}
+
+/* line 217, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault.rsWithThumbsVer .rsThumbsArrowRight {
+  bottom: 0;
+  left: 0;
+}
+
+/* line 219, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault.rsWithThumbsHor .rsThumbsArrowLeft {
+  left: 0;
+  top: 0;
+}
+
+/* line 220, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault.rsWithThumbsHor .rsThumbsArrowRight {
+  right: 0;
+  top: 0;
+}
+
+/* line 222, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsThumbsArrowIcn {
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  margin-top: -8px;
+  margin-left: -8px;
+  position: absolute;
+  cursor: pointer;
+  background: url("../img/royalslider/rs-default.png");
+}
+
+/* line 234, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault.rsWithThumbsHor .rsThumbsArrowLeft .rsThumbsArrowIcn {
+  background-position: -128px -32px;
+}
+
+/* line 235, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault.rsWithThumbsHor .rsThumbsArrowRight .rsThumbsArrowIcn {
+  background-position: -128px -48px;
+}
+
+/* line 237, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault.rsWithThumbsVer .rsThumbsArrowLeft .rsThumbsArrowIcn {
+  background-position: -144px -32px;
+}
+
+/* line 238, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault.rsWithThumbsVer .rsThumbsArrowRight .rsThumbsArrowIcn {
+  background-position: -144px -48px;
+}
+
+/* line 240, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsThumbsArrowDisabled {
+  display: none !important;
+}
+
+/* Thumbnails resizing on smaller screens */
+@media screen and (min-width: 0px) and (max-width: 800px) {
+  /* line 244, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+  .rsDefault .rsThumb {
+    width: 59px;
+    height: 44px;
+  }
+
+  /* line 248, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+  .rsDefault .rsThumbsHor {
+    height: 44px;
+  }
+
+  /* line 251, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+  .rsDefault .rsThumbsVer {
+    width: 59px;
+  }
+}
+/***************
+*
+*  4. Tabs
+*
+****************/
+/* line 265, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsTabs {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+  padding-top: 12px;
+  position: relative;
+}
+
+/* line 272, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsTab {
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  height: auto;
+  width: auto;
+  color: #333;
+  padding: 5px 13px 6px;
+  min-width: 72px;
+  border: 1px solid #d9d9dd;
+  border-right: 1px solid whitesmoke;
+  text-decoration: none;
+  background-color: #FFF;
+  background-image: -webkit-linear-gradient(top, #fefefe, #f4f4f4);
+  background-image: -moz-linear-gradient(top, #fefefe, #f4f4f4);
+  background-image: linear-gradient(to bottom, #fefefe, #f4f4f4);
+  -webkit-box-shadow: inset 1px 0 0 white;
+  box-shadow: inset 1px 0 0 white;
+  *display: inline;
+  *zoom: 1;
+}
+
+/* line 296, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsTab:first-child {
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+/* line 302, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsTab:last-child {
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-right: 1px solid #cfcfcf;
+}
+
+/* line 310, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsTab:active {
+  border: 1px solid #d9d9dd;
+  background-color: #f4f4f4;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) inset;
+}
+
+/* line 315, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsTab.rsNavSelected {
+  color: #FFF;
+  border: 1px solid #999999;
+  text-shadow: 1px 1px #838383;
+  box-shadow: 0 1px 9px rgba(102, 102, 102, 0.65) inset;
+  background: #ACACAC;
+  background-image: -webkit-linear-gradient(top, #acacac, #bbbbbb);
+  background-image: -moz-llinear-gradient(top, #acacac, #bbbbbb);
+  background-image: linear-gradient(to bottom, #acacac, #bbbbbb);
+}
+
+/***************
+*
+*  5. Fullscreen button
+*
+****************/
+/* line 336, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsFullscreenBtn {
+  right: 0;
+  top: 0;
+  width: 44px;
+  height: 44px;
+  z-index: 22;
+  display: block;
+  position: absolute;
+  cursor: pointer;
+}
+
+/* line 347, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsFullscreenIcn {
+  display: block;
+  margin: 6px;
+  width: 32px;
+  height: 32px;
+  background: url("../img/royalslider/rs-default.png") 0 0;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.75);
+  *background-color: #000;
+  border-radius: 2px;
+}
+
+/* line 360, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsFullscreenIcn:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* line 363, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault.rsFullscreen .rsFullscreenIcn {
+  background-position: -32px 0;
+}
+
+/***************
+*
+*  6. Play/close video button
+*
+****************/
+/* line 377, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsPlayBtn {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+  width: 64px;
+  height: 64px;
+  margin-left: -32px;
+  margin-top: -32px;
+  cursor: pointer;
+}
+
+/* line 385, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsPlayBtnIcon {
+  width: 64px;
+  display: block;
+  height: 64px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  transition: .3s;
+  background: url(../img/royalslider/rs-default.png) no-repeat 0 -32px;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.75);
+  *background-color: #000;
+}
+
+/* line 401, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsPlayBtn:hover .rsPlayBtnIcon {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* line 404, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsBtnCenterer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+/* line 409, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsCloseVideoBtn {
+  right: 0;
+  top: 0;
+  width: 44px;
+  height: 44px;
+  z-index: 500;
+  position: absolute;
+  cursor: pointer;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+}
+
+/* line 421, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsCloseVideoBtn.rsiOSBtn {
+  top: -38px;
+  right: -6px;
+}
+
+/* line 426, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsCloseVideoIcn {
+  margin: 6px;
+  width: 32px;
+  height: 32px;
+  background: url("../img/royalslider/rs-default.png") -64px 0;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.75);
+  *background-color: #000;
+}
+
+/* line 435, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsCloseVideoIcn:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+/***************
+*
+*  7. Preloader
+*
+****************/
+/* line 447, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsPreloader {
+  width: 20px;
+  height: 20px;
+  background-image: url(../img/royalslider/preloader-white.gif);
+  left: 50%;
+  top: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
+}
+
+/***************
+*
+*  8. Global caption
+*
+****************/
+/* line 466, site/wp-content/themes/catapult/sass/_royalslider-default.scss */
+.rsDefault .rsGCaption {
+  position: absolute;
+  float: none;
+  bottom: 6px;
+  left: 6px;
+  text-align: left;
+  background: black;
+  background: rgba(0, 0, 0, 0.75);
+  color: #FFF;
+  padding: 2px 8px;
+  width: auto;
+  font-size: 12px;
+  border-radius: 2px;
+}
+
 /* --------------------------------
     SASS Variables
 -------------------------------- */
@@ -929,120 +1815,132 @@ section:first-of-type {
 section {
   padding-top: 70px;
 }
+@media only screen and (max-width: 768px) {
+  /* line 238, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+  section {
+    padding-top: 50px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  /* line 238, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+  section {
+    padding-top: 30px;
+  }
+}
 
-/* line 242, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 250, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .level-one {
   color: #f2ad4b;
 }
 
-/* line 246, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 254, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .level-two {
   color: #ec5062;
 }
 
-/* line 250, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 258, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .level-three {
   color: #84b6b4;
 }
 
-/* line 254, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 262, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .level-four {
   color: #f2ca0d;
 }
 
-/* line 258, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 266, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .level-five {
   color: #a87b8b;
 }
 
-/* line 262, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 270, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .row {
   width: 900px;
   margin: 0 auto;
 }
 
 @media only screen and (max-width: 1024px) {
-  /* line 268, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+  /* line 276, site/wp-content/themes/catapult/sass/_catapult-common.scss */
   .row {
     width: 100%;
     padding-left: 3%;
     padding-right: 3%;
   }
 }
-/* line 275, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 283, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .row-header {
   padding: 0 30px;
 }
 
-/* line 279, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 287, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .col-wrap {
   overflow: hidden;
   width: 100%;
 }
 
-/* line 284, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 292, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .one-col {
   float: left;
   width: 100%;
 }
 
-/* line 289, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 297, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .two-col {
   float: left;
   width: 50%;
   margin-left: 0;
   margin-right: 0;
 }
-/* line 295, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 303, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .two-col.padded {
   width: 45%;
 }
-/* line 299, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 307, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .two-col.margin-left {
   margin-left: 5%;
   width: 45%;
 }
-/* line 304, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 312, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .two-col.margin-right {
   margin-right: 5%;
   width: 45%;
 }
-/* line 309, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 317, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .two-col.align-center {
   text-align: center;
 }
-/* line 312, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 320, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .two-col.align-left {
   text-align: left;
 }
-/* line 315, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 323, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .two-col.align-right {
   text-align: right;
 }
 
 @media only screen and (max-width: 490px) {
-  /* line 322, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+  /* line 330, site/wp-content/themes/catapult/sass/_catapult-common.scss */
   .two-col {
     width: 100%;
     float: none;
   }
-  /* line 326, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+  /* line 334, site/wp-content/themes/catapult/sass/_catapult-common.scss */
   .two-col.padded {
     width: 100%;
     padding: 0;
   }
-  /* line 331, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+  /* line 339, site/wp-content/themes/catapult/sass/_catapult-common.scss */
   .two-col.margin-right {
     width: 100%;
     margin-right: 0;
   }
-  /* line 335, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+  /* line 343, site/wp-content/themes/catapult/sass/_catapult-common.scss */
   .two-col.margin-left {
     width: 100%;
     margin-left: 0;
   }
 }
-/* line 342, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 350, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .three-col {
   float: left;
   width: 33%;
@@ -1050,30 +1948,30 @@ section {
   margin-right: 0;
 }
 
-/* line 349, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 357, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .four-col {
   float: left;
   width: 25%;
 }
 
-/* line 354, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 362, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .float-left {
   float: left;
 }
-/* line 357, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 365, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .float-left.center {
   text-align: center;
 }
-/* line 360, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 368, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .float-left.left {
   text-align: left;
 }
-/* line 363, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 371, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .float-left.right {
   text-align: right;
 }
 
-/* line 368, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 376, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .contact-button {
   display: block;
   background: url(../img/homepage/contact/icons.png) top left no-repeat;
@@ -1084,13 +1982,13 @@ section {
   color: #e0dad8;
   font-size: 1.8em;
 }
-/* line 382, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 390, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .contact-button:hover, .contact-button:focus, .contact-button:hover .contact-button__title, .contact-button:focus .contact-button__title {
   outline: none;
   color: #f2ad4b;
 }
 @media only screen and (max-width: 862px) {
-  /* line 368, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+  /* line 376, site/wp-content/themes/catapult/sass/_catapult-common.scss */
   .contact-button {
     padding-top: 5px;
     height: 33px;
@@ -1098,14 +1996,14 @@ section {
   }
 }
 @media only screen and (max-width: 693px) {
-  /* line 368, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+  /* line 376, site/wp-content/themes/catapult/sass/_catapult-common.scss */
   .contact-button {
     padding-top: 7px;
     height: 33px;
     font-size: 1.1em;
   }
 }
-/* line 398, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 406, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .contact-button.contact-button--small {
   font-size: 0.9em;
   padding-top: 7px;
@@ -1113,110 +2011,110 @@ section {
   height: 20px;
   background-size: 27px auto;
 }
-/* line 407, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 415, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .contact-button.contact-button--twitter {
   background-position: 0 0px;
 }
-/* line 410, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 418, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .contact-button.contact-button--twitter.contact-button--small {
   background-position: 0 0px;
 }
-/* line 413, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 421, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .contact-button.contact-button--youtube {
   background-position: 0 -33px;
 }
-/* line 416, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 424, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .contact-button.contact-button--youtube.contact-button--small {
   background-position: 0 -27px;
 }
-/* line 419, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 427, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .contact-button.contact-button--video {
   background-position: 0 -66px;
 }
-/* line 422, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 430, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .contact-button.contact-button--video.contact-button--small {
   background-position: 0 -54px;
 }
-/* line 425, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 433, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .contact-button.contact-button--email {
   background-position: 0 -99px;
 }
-/* line 428, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 436, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .contact-button.contact-button--email.contact-button--small {
   background-position: 0 -81px;
 }
-/* line 431, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 439, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .contact-button.contact-button--rss {
   background-position: 0 -132px;
 }
-/* line 434, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 442, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .contact-button.contact-button--rss.contact-button--small {
   background-position: 0 -108;
 }
-/* line 437, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 445, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .contact-button.contact-button--facebook {
   background-position: 0 -165px;
 }
-/* line 440, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 448, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .contact-button.contact-button--facebook.contact-button--small {
   background-position: 0 -135px;
 }
-/* line 443, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 451, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .contact-button.contact-button--openhouse {
   background-position: 0 -198px;
 }
-/* line 446, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 454, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .contact-button.contact-button--openhouse.contact-button--small {
   background-position: 0 -162px;
 }
-/* line 449, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 457, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .contact-button.contact-button--street {
   background-position: 0 -231px;
 }
-/* line 452, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 460, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .contact-button.contact-button--street.contact-button--small {
   background-position: 0 -189px;
 }
-/* line 455, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 463, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .contact-button.contact-button--newsletter {
   background-position: 0 -264px;
 }
-/* line 458, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 466, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .contact-button.contact-button--newsletter.contact-button--small {
   background-position: 0 -216px;
 }
-/* line 461, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 469, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .contact-button.contact-button--faq {
   background-position: 0 -297px;
 }
-/* line 464, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 472, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .contact-button.contact-button--faq.contact-button--small {
   background-position: 0 -243px;
 }
-/* line 467, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 475, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .contact-button.contact-button--link {
   background-position: 0 -330px;
 }
-/* line 470, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 478, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .contact-button.contact-button--link.contact-button--small {
   background-position: 0 -276px;
 }
-/* line 474, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 482, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .contact-button .contact-button__subtitle {
   font-size: 0.8em;
 }
 
-/* line 479, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 487, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .main-title {
   font-family: "franklin-gothic-ext-comp-urw", "Arial Narrow", sans-serif;
 }
 
-/* line 483, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 491, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .secondary-title {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
-/* line 487, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 495, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .divider {
   width: 100%;
   height: 3px;
@@ -1225,61 +2123,61 @@ section {
   padding-bottom: 20px;
 }
 @media only screen and (max-width: 1023px) {
-  /* line 487, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+  /* line 495, site/wp-content/themes/catapult/sass/_catapult-common.scss */
   .divider {
     width: 100%;
   }
 }
 
 @-webkit-keyframes shrink {
-  /* line 499, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+  /* line 507, site/wp-content/themes/catapult/sass/_catapult-common.scss */
   0% {
     -webkit-transform: scale(1.1);
   }
 
-  /* line 502, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+  /* line 510, site/wp-content/themes/catapult/sass/_catapult-common.scss */
   100% {
     -webkit-transform: scale(1);
   }
 }
 
 @-webkit-keyframes show {
-  /* line 508, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+  /* line 516, site/wp-content/themes/catapult/sass/_catapult-common.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 511, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+  /* line 519, site/wp-content/themes/catapult/sass/_catapult-common.scss */
   100% {
     opacity: 1;
   }
 }
 
 @-webkit-keyframes hide {
-  /* line 517, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+  /* line 525, site/wp-content/themes/catapult/sass/_catapult-common.scss */
   0% {
     opacity: 1;
   }
 
-  /* line 520, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+  /* line 528, site/wp-content/themes/catapult/sass/_catapult-common.scss */
   100% {
     opacity: 0;
   }
 }
 
-/* line 525, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 533, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .close-button {
   display: block;
   position: absolute;
   z-index: 10;
-  top: 20px;
-  right: 20px;
+  top: 10px;
+  right: 10px;
   width: 36px;
   height: 37px;
   background: url(../img/homepage/overlay-close-button.png) top left no-repeat;
 }
 
-/* line 536, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 544, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .overlay {
   width: 100%;
   height: 100%;
@@ -1294,22 +2192,22 @@ section {
   transition: all 0.3s ease-in-out;
 }
 @media only screen and (max-width: 442px) {
-  /* line 536, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+  /* line 544, site/wp-content/themes/catapult/sass/_catapult-common.scss */
   .overlay {
     padding-top: 0;
   }
 }
-/* line 549, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 557, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .overlay.show {
   -webkit-animation: show 0.3s ease-out;
   display: block;
   background: rgba(0, 0, 0, 0.7);
 }
-/* line 554, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 562, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .overlay.hide {
   display: none;
 }
-/* line 558, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 566, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .overlay .overlay-bg {
   position: absolute;
   top: 0;
@@ -1318,7 +2216,7 @@ section {
   height: 100%;
   background: rgba(255, 255, 255, 0.5);
 }
-/* line 567, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 575, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .overlay .overlay-inner {
   margin: 8% auto;
   width: 70%;
@@ -1334,7 +2232,7 @@ section {
   box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.5);
 }
 @media only screen and (max-width: 1024px) {
-  /* line 567, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+  /* line 575, site/wp-content/themes/catapult/sass/_catapult-common.scss */
   .overlay .overlay-inner {
     margin-top: 20px;
     height: 500px;
@@ -1342,13 +2240,13 @@ section {
   }
 }
 @media only screen and (max-width: 768px) {
-  /* line 567, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+  /* line 575, site/wp-content/themes/catapult/sass/_catapult-common.scss */
   .overlay .overlay-inner {
     height: 700px;
   }
 }
 @media only screen and (max-width: 442px) {
-  /* line 567, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+  /* line 575, site/wp-content/themes/catapult/sass/_catapult-common.scss */
   .overlay .overlay-inner {
     width: 92%;
     height: 92%;
@@ -1357,7 +2255,7 @@ section {
   }
 }
 @media only screen and (max-width: 442px) {
-  /* line 594, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+  /* line 602, site/wp-content/themes/catapult/sass/_catapult-common.scss */
   .overlay .overlay-inner .close-button {
     width: 26px;
     height: 26px;
@@ -1366,15 +2264,15 @@ section {
     right: 10px;
   }
 }
-/* line 604, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 612, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .overlay .overlay-inner.show {
   -webkit-animation: shrink 0.4s ease-out;
 }
-/* line 608, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 616, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .overlay .overlay-inner p {
   color: #29272a;
 }
-/* line 612, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 620, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .overlay .overlay-inner .overlay-name {
   color: #f2ad4b;
   font-size: 4em;
@@ -1384,18 +2282,18 @@ section {
   padding: 0;
 }
 @media only screen and (max-width: 442px) {
-  /* line 612, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+  /* line 620, site/wp-content/themes/catapult/sass/_catapult-common.scss */
   .overlay .overlay-inner .overlay-name {
     font-size: 1.7em;
   }
 }
 @media only screen and (max-width: 442px) {
-  /* line 624, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+  /* line 632, site/wp-content/themes/catapult/sass/_catapult-common.scss */
   .overlay .overlay-inner .overlay-title {
     font-size: 0.9em;
   }
 }
-/* line 631, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 639, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .overlay .overlay-inner .overlay-title,
 .overlay .overlay-inner .overlay-company,
 .overlay .overlay-inner .overlay-twitter {
@@ -1404,12 +2302,12 @@ section {
   padding: 0;
   line-height: 1em;
 }
-/* line 637, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 645, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .overlay .overlay-inner .overlay-body {
   color: #545353;
   margin: 0.5em 0 0 0;
 }
-/* line 641, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 649, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .overlay .overlay-inner .overlay-headshot {
   float: right;
   margin: 10px;
@@ -1417,18 +2315,18 @@ section {
   width: 40%;
   max-width: 162px;
 }
-/* line 648, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 656, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .overlay .overlay-inner .overlay-twitter {
   padding-top: 10px;
 }
 @media only screen and (max-width: 442px) {
-  /* line 648, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+  /* line 656, site/wp-content/themes/catapult/sass/_catapult-common.scss */
   .overlay .overlay-inner .overlay-twitter {
     font-size: 1em;
   }
 }
 
-/* line 658, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 666, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .callout {
   background: white;
   padding: 10px;
@@ -1439,15 +2337,15 @@ section {
   z-index: 200;
   box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
 }
-/* line 669, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 677, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .callout.hide {
   opacity: 0;
 }
-/* line 672, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 680, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .callout.show {
   opacity: 1;
 }
-/* line 676, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 684, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .callout h2 {
   display: inline-block;
   color: #29272a;
@@ -1455,7 +2353,7 @@ section {
   padding: 0;
   margin: 0;
 }
-/* line 685, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 693, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .callout:before {
   content: "";
   position: absolute;
@@ -1473,7 +2371,7 @@ section {
   width: 24px;
   height: 24px;
 }
-/* line 703, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 711, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .callout .callout__close {
   position: absolute;
   top: 5px;
@@ -1490,7 +2388,7 @@ section {
   text-decoration: none;
   text-shadow: 1px 1px rgba(255, 255, 255, 0.9);
 }
-/* line 720, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 728, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .callout .callout__close:hover {
   background: #f2ad4b;
 }
@@ -1498,7 +2396,7 @@ section {
 /*
 --------- SWIPE ----------
 */
-/* line 730, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 738, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .swipe {
   padding-bottom: 20px;
   position: relative;
@@ -1507,7 +2405,7 @@ section {
   -webkit-backface-visibility: hidden;
 }
 
-/* line 738, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 746, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .swipe li div, .swipe div div div {
   margin: 0 10px;
   padding: 50px 10px;
@@ -1521,12 +2419,12 @@ section {
 /*
 --------- PARSLEY ERRORS ----------
 */
-/* line 752, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 760, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .parsley-error-list {
   margin: 5px 0 0 0;
   padding: 0;
 }
-/* line 756, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 764, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .parsley-error-list li {
   list-style: none;
   margin: 0;
@@ -1535,19 +2433,19 @@ section {
   color: white;
 }
 
-/* line 765, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 773, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .youtube-player {
   width: 100%;
   height: 570px;
 }
 
-/* line 770, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 778, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 .fullwidth-image {
   width: 100%;
   height: auto;
 }
 
-/* line 775, site/wp-content/themes/catapult/sass/_catapult-common.scss */
+/* line 783, site/wp-content/themes/catapult/sass/_catapult-common.scss */
 #wpstats {
   display: none;
 }
@@ -1624,15 +2522,15 @@ section {
 }
 /* line 56, site/wp-content/themes/catapult/sass/_catapult-floater.scss */
 .social .social-button.contact-button--twitter .hover {
-  width: 136px;
+  width: 146px;
 }
 /* line 59, site/wp-content/themes/catapult/sass/_catapult-floater.scss */
 .social .social-button.contact-button--facebook .hover {
-  width: 109px;
+  width: 119px;
 }
 /* line 62, site/wp-content/themes/catapult/sass/_catapult-floater.scss */
 .social .social-button.contact-button--rss .hover {
-  width: 81px;
+  width: 131px;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1678,7 +2576,7 @@ section {
     position: absolute;
   }
 }
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 750px) {
   /* line 11, site/wp-content/themes/catapult/sass/_catapult-header.scss */
   #header-drawer {
     display: none;
@@ -1862,7 +2760,7 @@ html.no-svg .header .logo .logo-img {
 /* line 202, site/wp-content/themes/catapult/sass/_catapult-header.scss */
 .header .logo {
   display: inline-block;
-  padding: 10px 0 10px 50px;
+  padding: 10px 0 5px 30px;
 }
 /* line 206, site/wp-content/themes/catapult/sass/_catapult-header.scss */
 .header .logo:focus {
@@ -1873,13 +2771,13 @@ html.no-svg .header .logo .logo-img {
   filter: brightness(-80%);
   outline: none;
 }
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 750px) {
   /* line 202, site/wp-content/themes/catapult/sass/_catapult-header.scss */
   .header .logo {
     padding-left: 10px;
   }
 }
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 750px) {
   /* line 216, site/wp-content/themes/catapult/sass/_catapult-header.scss */
   .header .logo .logo--full {
     display: none;
@@ -1942,15 +2840,11 @@ html.no-svg .header .logo .logo-img {
   background: url(../img/homepage/divider-vert.png) top right no-repeat;
   padding: 25px 0 0 0;
 }
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 750px) {
   /* line 259, site/wp-content/themes/catapult/sass/_catapult-header.scss */
   .mainnav {
     padding-top: 16px;
   }
-}
-/* line 270, site/wp-content/themes/catapult/sass/_catapult-header.scss */
-.mainnav.compact {
-  padding-top: 13px;
 }
 /* line 274, site/wp-content/themes/catapult/sass/_catapult-header.scss */
 .mainnav ul {
@@ -1961,45 +2855,45 @@ html.no-svg .header .logo .logo-img {
 /* line 280, site/wp-content/themes/catapult/sass/_catapult-header.scss */
 .mainnav .mainnav-item {
   float: left;
-  padding: 0 35px 0 0;
+  padding: 0 20px 0 0;
   vertical-align: top;
 }
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 750px) {
   /* line 280, site/wp-content/themes/catapult/sass/_catapult-header.scss */
   .mainnav .mainnav-item {
     padding-right: 10px;
   }
 }
 /* line 289, site/wp-content/themes/catapult/sass/_catapult-header.scss */
+.mainnav .mainnav-item:last-of-type {
+  padding-left: 20px;
+  padding-right: 28px;
+  border-left: 1px solid #ef971b;
+}
+@media only screen and (max-width: 750px) {
+  /* line 289, site/wp-content/themes/catapult/sass/_catapult-header.scss */
+  .mainnav .mainnav-item:last-of-type {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+/* line 299, site/wp-content/themes/catapult/sass/_catapult-header.scss */
 .mainnav .mainnav-item .mainnav-item-link {
   font-size: 1.6em;
   color: #b05f01;
 }
-@media only screen and (max-width: 720px) {
-  /* line 289, site/wp-content/themes/catapult/sass/_catapult-header.scss */
+@media only screen and (max-width: 750px) {
+  /* line 299, site/wp-content/themes/catapult/sass/_catapult-header.scss */
   .mainnav .mainnav-item .mainnav-item-link {
     font-size: 0.9em;
     color: #995e0b;
   }
 }
-/* line 300, site/wp-content/themes/catapult/sass/_catapult-header.scss */
+/* line 310, site/wp-content/themes/catapult/sass/_catapult-header.scss */
 .mainnav .mainnav-item .mainnav-item-link:hover, .mainnav .mainnav-item .mainnav-item-link.active, .mainnav .mainnav-item .mainnav-item-link:focus {
   outline: none;
   color: white;
   text-shadow: -1px -1px 0px rgba(0, 0, 0, 0.3);
-}
-/* line 307, site/wp-content/themes/catapult/sass/_catapult-header.scss */
-.mainnav .mainnav-item:last-of-type {
-  padding-left: 35px;
-  padding-right: 28px;
-  border-left: 1px solid #ef971b;
-}
-@media only screen and (max-width: 720px) {
-  /* line 307, site/wp-content/themes/catapult/sass/_catapult-header.scss */
-  .mainnav .mainnav-item:last-of-type {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
 }
 
 /* --------------------------------
@@ -2017,14 +2911,18 @@ html.no-svg .header .logo .logo-img {
 }
 /* line 7, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
 .intro #slides {
-  display: none;
   position: relative;
+  width: 100%;
 }
 /* line 13, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
+.intro .royalSlider > .slideshow-item {
+  opacity: 0;
+}
+/* line 19, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
 .intro .container {
   margin: 0 auto;
 }
-/* line 17, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
+/* line 23, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
 .intro .slidesjs-navigation {
   -webkit-transform: translate3d(0, 0, 0);
   -webkit-transition: all 100ms ease-in-out;
@@ -2046,51 +2944,51 @@ html.no-svg .header .logo .logo-img {
   text-indent: -10000px;
 }
 @media only screen and (max-width: 350px) {
-  /* line 17, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
+  /* line 23, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
   .intro .slidesjs-navigation {
     display: none;
   }
 }
-/* line 38, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
+/* line 44, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
 .intro .slidesjs-navigation:hover {
   -webkit-transform: scale(0.9);
   -moz-transform: scale(0.9);
   -ms-transform: scale(0.9);
   transform: scale(0.9);
 }
-/* line 46, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
+/* line 52, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
 .intro .slidesjs-previous {
   left: 20px;
   background-image: url(../img/homepage/intro/arrow-left.png);
 }
-/* line 51, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
+/* line 57, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
 .intro .slidesjs-next {
   right: 20px;
   background-image: url(../img/homepage/intro/arrow-right.png);
 }
-/* line 57, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
+/* line 63, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
 .intro .slidesjs-pagination {
   padding: 0;
   overflow: hidden;
 }
 @media only screen and (max-width: 320px) {
-  /* line 57, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
+  /* line 63, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
   .intro .slidesjs-pagination {
     margin: 0;
   }
 }
-/* line 66, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
+/* line 72, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
 .intro .slidesjs-pagination .active {
   background-position: 0 -16px;
 }
-/* line 70, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
+/* line 76, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
 .intro .slidesjs-pagination-item {
   list-style-type: none;
   display: block;
   margin-right: 10px;
   float: left;
 }
-/* line 77, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
+/* line 83, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
 .intro .slidesjs-pagination-item a {
   display: block;
   text-indent: -10000px;
@@ -2100,11 +2998,11 @@ html.no-svg .header .logo .logo-img {
   background-repeat: no-repeat;
   background-position: 0 0;
 }
-/* line 87, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
+/* line 93, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
 .intro .slideshow-image {
   width: 100%;
 }
-/* line 91, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
+/* line 97, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
 .intro .slideshow-caption {
   position: absolute;
   z-index: 10;
@@ -2118,45 +3016,45 @@ html.no-svg .header .logo .logo-img {
   width: 100%;
 }
 @media (max-width: 767px) {
-  /* line 108, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
+  /* line 114, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
   .intro body {
     padding-left: 10px;
     padding-right: 10px;
   }
-  /* line 112, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
+  /* line 118, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
   .intro .container {
     width: auto;
   }
 }
 @media (max-width: 480px) {
-  /* line 119, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
+  /* line 125, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
   .intro .container {
     width: auto;
   }
 }
 @media (min-width: 768px) and (max-width: 979px) {
-  /* line 126, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
+  /* line 132, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
   .intro .container {
     width: 724px;
   }
 }
 @media (min-width: 1200px) {
-  /* line 133, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
+  /* line 139, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
   .intro .container {
     width: 1170px;
   }
 }
-/* line 142, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
+/* line 148, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
 .intro .caption {
   overflow: hidden;
 }
-/* line 145, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
+/* line 151, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
 .intro .caption .intro-desc {
   float: left;
   width: 786px;
   padding: 0 30px 0 0;
 }
-/* line 150, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
+/* line 156, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
 .intro .caption .what-we-do {
   display: block;
   background: url(../img/homepage/what-we-do.png) top left no-repeat;
@@ -2165,7 +3063,7 @@ html.no-svg .header .logo .logo-img {
   float: left;
   text-indent: -10000px;
 }
-/* line 160, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
+/* line 166, site/wp-content/themes/catapult/sass/_catapult-intro.scss */
 .intro .divider {
   padding-top: 50px;
   background-position: bottom;
@@ -2619,39 +3517,47 @@ html.no-touch .team-member-details.hover {
   .contact .contact__item {
     width: 50%;
   }
+  /* line 29, site/wp-content/themes/catapult/sass/_catapult-contact.scss */
+  .contact .contact__item:nth-child(3) {
+    margin-top: 40px;
+  }
+  /* line 32, site/wp-content/themes/catapult/sass/_catapult-contact.scss */
+  .contact .contact__item:nth-child(4) {
+    margin-top: 40px;
+  }
 }
-/* line 32, site/wp-content/themes/catapult/sass/_catapult-contact.scss */
+/* line 38, site/wp-content/themes/catapult/sass/_catapult-contact.scss */
 .contact .contact__buttons {
   padding-top: 30px;
 }
-/* line 35, site/wp-content/themes/catapult/sass/_catapult-contact.scss */
+/* line 41, site/wp-content/themes/catapult/sass/_catapult-contact.scss */
 .contact .contact__buttons .contact-button {
   margin-bottom: 1em;
 }
-/* line 40, site/wp-content/themes/catapult/sass/_catapult-contact.scss */
+/* line 46, site/wp-content/themes/catapult/sass/_catapult-contact.scss */
 .contact .contact__subtitle {
   padding-left: 40px;
 }
-/* line 44, site/wp-content/themes/catapult/sass/_catapult-contact.scss */
+/* line 50, site/wp-content/themes/catapult/sass/_catapult-contact.scss */
 .contact .contact-section {
   margin-bottom: 3em;
 }
-/* line 47, site/wp-content/themes/catapult/sass/_catapult-contact.scss */
+/* line 53, site/wp-content/themes/catapult/sass/_catapult-contact.scss */
 .contact .contact-section p {
   margin: 0;
   padding-top: 0;
   padding-bottom: 0;
 }
-/* line 54, site/wp-content/themes/catapult/sass/_catapult-contact.scss */
+/* line 60, site/wp-content/themes/catapult/sass/_catapult-contact.scss */
 .contact .map {
   width: 100%;
   position: relative;
 }
-/* line 58, site/wp-content/themes/catapult/sass/_catapult-contact.scss */
+/* line 64, site/wp-content/themes/catapult/sass/_catapult-contact.scss */
 .contact .map img {
   width: 100%;
 }
-/* line 62, site/wp-content/themes/catapult/sass/_catapult-contact.scss */
+/* line 68, site/wp-content/themes/catapult/sass/_catapult-contact.scss */
 .contact .map::before {
   content: "";
   position: absolute;
@@ -2663,11 +3569,11 @@ html.no-touch .team-member-details.hover {
   -moz-box-shadow: inset 8px 8px 15px 0px rgba(0, 0, 0, 0.3);
   box-shadow: inset 8px 8px 15px 0px rgba(0, 0, 0, 0.3);
 }
-/* line 73, site/wp-content/themes/catapult/sass/_catapult-contact.scss */
+/* line 79, site/wp-content/themes/catapult/sass/_catapult-contact.scss */
 .contact .locations {
   margin-bottom: 40px;
 }
-/* line 77, site/wp-content/themes/catapult/sass/_catapult-contact.scss */
+/* line 83, site/wp-content/themes/catapult/sass/_catapult-contact.scss */
 .contact .contact-location {
   text-indent: -10000px;
   display: block;
@@ -2677,15 +3583,15 @@ html.no-touch .team-member-details.hover {
   background: url(../img/homepage/locations-icons.png) 0 0 no-repeat;
   margin: 0 auto 20px auto;
 }
-/* line 86, site/wp-content/themes/catapult/sass/_catapult-contact.scss */
+/* line 92, site/wp-content/themes/catapult/sass/_catapult-contact.scss */
 .contact .contact-location.sf {
   background-position: 0 -97px;
 }
-/* line 89, site/wp-content/themes/catapult/sass/_catapult-contact.scss */
+/* line 95, site/wp-content/themes/catapult/sass/_catapult-contact.scss */
 .contact .contact-location.ny {
   background-position: 0 -194px;
 }
-/* line 92, site/wp-content/themes/catapult/sass/_catapult-contact.scss */
+/* line 98, site/wp-content/themes/catapult/sass/_catapult-contact.scss */
 .contact .contact-location.co {
   background-position: 0 -291px;
 }
@@ -3049,24 +3955,28 @@ html.no-touch .team-member-details.hover {
 -------------------- */
 /* line 137, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .tags {
+  margin-top: 10px;
+}
+
+/* line 146, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+.categories {
   overflow: hidden;
   margin: 0;
   padding: 0;
-  float: left;
 }
-/* line 143, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
-.tags .tag {
+/* line 151, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+.categories .category {
   list-style: none;
   float: left;
   margin: 0;
   padding-right: 5px;
 }
-/* line 149, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
-.tags .tag:last-of-type {
+/* line 157, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+.categories .category:last-of-type {
   padding-right: 0;
 }
 
-/* line 154, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 162, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .category-item {
   display: inline-block;
   text-decoration: none;
@@ -3080,38 +3990,47 @@ html.no-touch .team-member-details.hover {
   -moz-border-radius: 1px;
   border-radius: 1px;
 }
-/* line 165, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 173, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .category-item:hover {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
-/* line 169, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 177, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .category-item.mobility {
   background: #29272a;
 }
-/* line 173, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 181, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .category-item.enterprise {
   background: #f2ca0d;
   color: #666;
 }
-/* line 178, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 186, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .category-item.health-agriculture {
   background: #ec5062;
   color: #e3dcd8;
 }
-/* line 183, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 191, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .category-item.energy {
   background: #f2ad4b;
   color: #666;
 }
-/* line 188, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 196, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .category-item.water-sanitation {
   background: #84b6b4;
+}
+
+/* line 201, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+.post-image {
+  max-width: 100%;
+}
+/* line 204, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+.post-image.pad-top {
+  padding-top: 20px;
 }
 
 /* -------------------
   POST SUMMARY BOX (BLOG HOMEPAGE)
 -------------------- */
-/* line 199, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 215, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .post-box {
   display: block;
   overflow: hidden;
@@ -3119,84 +4038,80 @@ html.no-touch .team-member-details.hover {
   padding: 20px;
   position: relative;
 }
-/* line 206, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 222, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .post-box.with-bg {
   background: #515052;
 }
-/* line 210, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 226, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .post-box:first-of-type {
   margin-top: 0;
 }
-/* line 214, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 230, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .post-box:last-of-type {
   margin-bottom: 40px;
 }
-/* line 218, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 234, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .post-box figure {
   float: left;
   width: 30%;
   margin-right: 5%;
 }
-/* line 224, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
-.post-box .tags {
-  margin-top: 20px;
+/* line 240, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+.post-box .categories {
+  margin-top: 10px;
 }
-/* line 228, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 244, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .post-box .post-main-link {
   display: block;
   overflow: hidden;
 }
-/* line 233, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
-.post-box .post-image {
-  max-width: 100%;
-}
-/* line 240, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 252, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .post-box .post-top {
   padding: 0;
   float: left;
   width: 65%;
 }
-/* line 245, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 257, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .post-box .post-top.full-width {
   width: 100%;
 }
-/* line 249, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 261, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .post-box .post-top.twitter {
   padding-bottom: 20px;
 }
-/* line 253, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 265, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .post-box .post-top p {
   margin: 0;
 }
-/* line 258, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 270, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .post-box .post-title {
   margin: -4px 0 0 0;
   padding: 0 0 11px 0;
   text-shadow: -1px -1px 0px rgba(0, 0, 0, 0.5);
 }
-/* line 263, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 275, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .post-box .post-title a:hover {
   color: #f2ad4b;
 }
-/* line 268, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 280, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .post-box .post-subtitle {
   margin: 0;
   padding: 0;
 }
-/* line 273, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 285, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .post-box .post-tweet {
   padding: 0;
   margin: 0;
   margin-bottom: 20px;
 }
-/* line 280, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 292, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .post-box .post-tweetlink,
 .post-box .post-tweetdate {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   text-decoration: none;
   color: #e3dcd8;
 }
-/* line 286, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 298, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .post-box .post-meta {
   display: block;
   padding: 0 0 10px 0;
@@ -3207,7 +4122,7 @@ html.no-touch .team-member-details.hover {
 /* -------------------
   SEARCH BOX
 -------------------- */
-/* line 304, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 316, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .search-box form {
   overflow: hidden;
   padding-bottom: 5px;
@@ -3215,18 +4130,25 @@ html.no-touch .team-member-details.hover {
   width: 31.25%;
 }
 @media only screen and (max-width: 350px) {
-  /* line 304, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+  /* line 316, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
   .search-box form {
     display: none;
   }
 }
-/* line 314, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+@media only screen and (max-width: 720px) {
+  /* line 316, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+  .search-box form {
+    float: none;
+    width: 100%;
+  }
+}
+/* line 331, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .search-box form input[type="text"] {
   float: left;
   width: 80%;
   height: 31px;
 }
-/* line 320, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 337, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .search-box form input[type="submit"] {
   float: left;
   width: 16%;
@@ -3236,7 +4158,7 @@ html.no-touch .team-member-details.hover {
   height: 51px;
   margin-top: -20px;
 }
-/* line 331, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 348, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .search-box .filters {
   margin: 0;
   padding: 0;
@@ -3245,12 +4167,19 @@ html.no-touch .team-member-details.hover {
   width: 68.75%;
 }
 @media only screen and (max-width: 350px) {
-  /* line 331, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+  /* line 348, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
   .search-box .filters {
     width: 100%;
   }
 }
-/* line 342, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+@media only screen and (max-width: 720px) {
+  /* line 348, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+  .search-box .filters {
+    float: none;
+    width: 100%;
+  }
+}
+/* line 364, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .search-box .filters li {
   list-style: none;
   float: left;
@@ -3260,34 +4189,34 @@ html.no-touch .team-member-details.hover {
   padding: 0 19px 0 0;
 }
 @media only screen and (max-width: 615px) {
-  /* line 342, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+  /* line 364, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
   .search-box .filters li {
     padding-right: 10px;
   }
 }
-/* line 354, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 376, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .search-box .filters li:last-of-type {
   padding: 0;
 }
-/* line 358, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 380, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .search-box .filters li a {
   font-size: 1.6em;
   letter-spacing: 1px;
   text-decoration: none;
   color: #e0dad8;
 }
-/* line 365, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 387, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .search-box .filters li a:hover, .search-box .filters li a.active {
   color: #f2ad4b;
 }
 @media only screen and (max-width: 490px) {
-  /* line 358, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+  /* line 380, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
   .search-box .filters li a {
     font-size: 1.3em;
   }
 }
 
-/* line 377, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 399, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .clicky-button--search {
   padding: 5px 2%;
   font-size: 1.1em;
@@ -3297,26 +4226,26 @@ html.no-touch .team-member-details.hover {
 /* -------------------
   SINGLE BLOG POST
 -------------------- */
-/* line 388, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 410, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .post {
   background: #515052;
   padding: 20px;
   margin-bottom: 40px;
 }
-/* line 396, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 418, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .post .post-border .post-figure {
   display: block;
   position: relative;
   z-index: 1;
 }
-/* line 401, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 423, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .post .post-border .post-figure .post-image {
   z-index: -1;
   display: block;
   max-width: 100%;
   position: relative;
 }
-/* line 409, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 431, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .post .post-border .post-figure::before {
   display: block;
   content: '';
@@ -3327,29 +4256,29 @@ html.no-touch .team-member-details.hover {
   -moz-box-shadow: inset 1px 5px 5px 0px rgba(0, 0, 0, 0.5);
   box-shadow: inset 1px 5px 5px 0px rgba(0, 0, 0, 0.5);
 }
-/* line 419, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 441, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .post .post-title {
   font-size: 2.8em;
   text-align: left;
   margin: 0 0 20px 0;
 }
-/* line 425, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 447, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .post .post-meta {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   padding-bottom: 12px;
 }
-/* line 430, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 452, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .post .post-author {
   color: #e3dcd8;
   font-size: 1em;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   color: #e3dcd8;
 }
-/* line 438, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 460, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .post .post-map small {
   display: none;
 }
-/* line 443, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 465, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .post #locations-map {
   width: 100%;
   height: 400px;
@@ -3358,11 +4287,11 @@ html.no-touch .team-member-details.hover {
 /* -------------------
   POST COMMENTS
 -------------------- */
-/* line 455, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 477, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 #commentform h2 {
   font-size: 1.7em;
 }
-/* line 460, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 482, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 #commentform input[type="text"],
 #commentform textarea {
   width: 100%;
@@ -3370,45 +4299,45 @@ html.no-touch .team-member-details.hover {
   background: #e3dcd8;
   color: #29272a;
 }
-/* line 471, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 493, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 #commentform textarea {
   resize: none;
   padding: 15px;
 }
 
-/* line 477, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 499, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .commentlist {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-/* line 482, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 504, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .commentlist h2 {
   font-size: 1.6em;
 }
-/* line 486, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 508, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .commentlist .comment {
   margin: 0 0 20px 0;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
-/* line 498, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 520, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .commentlist .comment p {
   margin: 0;
   padding: 0;
 }
 
-/* line 505, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 527, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .related-header {
   margin: 10px 0 0 0;
   padding: 0;
 }
 
-/* line 510, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 532, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .related-articles {
   margin: 0;
   padding: 0;
 }
-/* line 514, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 536, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .related-articles .related-article {
   margin: 15px 0;
   padding: 0;
@@ -3416,12 +4345,12 @@ html.no-touch .team-member-details.hover {
   line-height: 1.2em;
   font-size: 1.3em;
 }
-/* line 521, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 543, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .related-articles .related-article a {
   color: #e3dcd8;
   text-decoration: none;
 }
-/* line 525, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 547, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .related-articles .related-article a:hover {
   color: #f2ad4b;
 }
@@ -3429,12 +4358,12 @@ html.no-touch .team-member-details.hover {
 /* -------------------
   FLICKR GALLERY (MASONRY)
 -------------------- */
-/* line 538, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 560, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 .flickr-gallery .figure {
   margin-bottom: 10px;
 }
 
-/* line 547, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
+/* line 569, site/wp-content/themes/catapult/sass/_catapult-blog.scss */
 img.pe2-photo.picasa-image {
   padding: 0;
   border: none;

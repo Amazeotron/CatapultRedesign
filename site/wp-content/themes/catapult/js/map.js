@@ -101,14 +101,23 @@ var map = {
 
     // Filter project data by category
     function filterCasestudies(data, category) {
-      return _.filter(data, function(post) {
-        return post.categories[0].slug == category;
+      // Loop through the data, and find ones that have the proper category.
+      // Double loop--first one goes through all projects, second one goes through all categories for that project.
+      var inCatItems = [];
+      _.each(data, function(project) {
+        _.each(project.categories, function(cat) {
+          if (cat.slug == category) {
+            inCatItems.push(project);
+          }
+        })
       });
+      return inCatItems;
     }
 
     function redrawMarkersWithFilter(filter) {
       var filteredData = filter === 'all' ? _projectsData : filterCasestudies(_projectsData, filter);
       console.log('filter: ' + filter);
+      
       if ($('.leaflet-marker-icon').length > 0) {
         $('.leaflet-marker-icon, .leaflet-marker-shadow').transition({opacity: 0}, 300, function() {
           redrawMarkerDone(filteredData);

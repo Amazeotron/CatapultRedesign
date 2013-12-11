@@ -27,12 +27,12 @@
   <section class="intro page-top row">
     
     <a href="<? echo get_page_link(4363); ?>" class="header-link"><h1>At Catapult Design, we <span class="header-title level-one">EXPLORE</span>, <span class="header-title level-two">PROTOTYPE</span>, <span class="header-title level-three">REALIZE</span> &amp; <span class="header-title level-four">EDUCATE</span> to close the gap in equality &raquo;</h1></a>
-    <div id="slides">
+    <div id="slides" class="royalSlider rsDefault">
       <?php
       $index = 0;
       $the_query = new WP_Query(array('post_type' => 'homepageslideshow', 'posts_per_page' => '-1'));
       while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-        <div class="slideshow-item">
+        <div class="slideshow-item rsContent rsSlide">
           <?
           $url = get_field('link');
           if (get_field('external_link')) {
@@ -40,8 +40,8 @@
           }
           ?>
           <a href="<?php echo $url; ?>">
-            <img src="<?php the_field('image'); ?>" alt="" class="slideshow-image" />
-            <h3 class="slideshow-caption"><?php the_field('caption'); ?></h3>
+            <img src="<?php the_field('image'); ?>" alt="<?php the_field('caption'); ?>" class="slideshow-image rsImg" />
+            <? if (get_field('caption')) : ?><h3 class="slideshow-caption"><?php the_field('caption'); ?></h3><? endif; ?>
           </a>
         </div>
         <?php $index++; ?>
@@ -107,7 +107,7 @@
 
   <section class="contact" id="contact">
     <div class="row">
-      <h1><span class="header-title level-one">FOLLOW</span>, <span class="header-title level-two">LIKE</span> &amp; <span class="header-title level-three">CONTACT</span> Us.</h1>
+      <h1><a href="https://twitter.com/Catapult_Design" target="_blank" class="header-title level-one">FOLLOW</a>, <a href="https://www.facebook.com/CatapultDesign" target="_blank" class="header-title level-two">LIKE</a> &amp; <a href="mailto:info@catapultdesign.org" target="_blank" class="header-title level-three">CONTACT</a> Us.</h1>
       <div class="col-wrap contact-locations clearfix">
         <div class="contact__item float-left">
           <div class="contact-location">Contact Us</div>

@@ -26,6 +26,12 @@
     
     @media only screen and (max-width: 750px) {
       width: 50%;
+      &:nth-child(3) {
+        margin-top: 40px;
+      }
+      &:nth-child(4) {
+        margin-top: 40px;
+      }
     }
   }
 

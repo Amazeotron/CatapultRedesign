@@ -155,7 +155,7 @@ var donations = {
           });
         }
 
-      }).listen();
+      });
     }
 
   },

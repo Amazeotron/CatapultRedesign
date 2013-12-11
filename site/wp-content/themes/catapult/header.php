@@ -72,16 +72,16 @@
     </div><!-- end floater -->
     <header class="header">
       <a href="<?php echo home_url('/'); ?>" class="logo" tabindex="1">
-        <img class="logo--full" src="<?php bloginfo('template_url'); ?>/img/catapult-logo.svg" alt="Catapult Design" />
-        <img class="logo--partial" src="<?php bloginfo('template_url'); ?>/img/cog-partial.png" alt="Catapult Design" />
+        <img class="logo--full show" src="<?php bloginfo('template_url'); ?>/img/catapult-logo.svg" alt="Catapult Design" />
+        <img class="logo--partial hide" src="<?php bloginfo('template_url'); ?>/img/cog-partial.png" alt="Catapult Design" />
       </a>
       <nav class="mainnav">
         <ul>
           <li class="mainnav-item" id="mainnav-projects"><a tabindex="2" class="header-title fancy mainnav-item-link" href="<?php echo home_url('/#projects'); ?>">PROJECTS</a></li>
-          <li class="mainnav-item" id="mainnav-learninglabs"><a tabindex="3" class="header-title fancy mainnav-item-link" href="<? echo get_page_link(4371); ?>">LEARNING LABS</a></li>
           <li class="mainnav-item" id="mainnav-team"><a tabindex="4" class="header-title fancy mainnav-item-link" href="<?php echo home_url('/#team'); ?>">TEAM</a></li>
           <li class="mainnav-item" id="mainnav-contact"><a tabindex="5" class="header-title fancy mainnav-item-link" href="<?php echo home_url('/#contact'); ?>">CONTACT</a></li>
           <li class="mainnav-item" id="mainnav-donate"><a tabindex="6" class="header-title fancy mainnav-item-link" href="<?php echo home_url('/#donate'); ?>">DONATE</a></li>
+          <li class="mainnav-item" id="mainnav-learninglabs"><a tabindex="3" class="header-title fancy mainnav-item-link" href="<? echo get_page_link(4371); ?>">LEARNING LABS</a></li>
           <li class="mainnav-item blog" id="mainnav-blog"><a tabindex="7" class="header-title fancy mainnav-item-link" href="<?php echo home_url('/news'); ?>">NEWS</a></li>
         </ul>
       </nav>

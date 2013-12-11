@@ -1,6 +1,7 @@
 /*
  * These are common methods for all pages (home, blog landing, single blog, etc).
  */
+
 $(document).ready(function () {
 
   var _shouldShowBigLogo = true,
@@ -35,19 +36,12 @@ $(document).ready(function () {
   // Check for which logo is showing 
   if (typeof(enquire) != 'undefined') {
     enquire.register("screen and (max-width: 720px)", {
-
       match: function () {
         _shouldShowBigLogo = false;
-        $(".logo .logo--full").removeClass("show").addClass("hide");
-        $(".logo .logo--partial").removeClass("hide").addClass("show");
       },
-
       unmatch: function () {
         _shouldShowBigLogo = true;
-        $(".logo .logo--full").removeClass("hide").addClass("show");
-        $(".logo .logo--partial").removeClass("show").addClass("hide");
       }
-
     });
   }
 
@@ -58,22 +52,50 @@ $(document).ready(function () {
     $('.mainnav-item').find('a').removeClass('active');
     $('#mainnav-' + $(this).attr('id')).find('a').addClass('active');
   });
-  
+
 
 
   // -------------------------------------------------------------------------
   // INTRO SLIDESHOW
   // -------------------------------------------------------------------------
 
-  $('#slides').slidesjs({
-    width: 900,
-    height: 506
+//  $('#slides').slidesjs({
+//    width: 900,
+//    height: 506
+//  });
+
+  //http://dimsemenov.com/plugins/royal-slider/documentation/
+  $('#slides').royalSlider({
+    imgWidth: 900,
+    imgHeight: 506,
+    autoScaleSlider: true,
+    autoScaleSliderWidth: 900,
+    autoScaleSliderHeight: 506,
+    imageScaleMode: 'fit',
+    imageAlignCenter: true,
+    imageScalePadding: 0,
+    controlNavigation: 'none',
+    arrowsNavHideOnTouch: true,
+    slidesSpacing: 0,
+    loop: true,
+    usePreloader: true,
+    transitionType: 'move',
+    transitionSpeed: 600,
+    easeInOut: 'easeInOutSine',
+    sliderDrag: true,
+    sliderTouch: true,
+    keyboardNavEnabled: true,
+    allowCSS3: true,
+    autoHeight: false,
+    controlsInside: false,
+    fadeInLoadedSlide: false,
+    autoPlay: {
+      enabled: true,
+      stopAtAction: true,
+      pauseOnHover: true,
+      delay: 3000
+    }
   });
-
-
-  // -------------------------------------------------------------------------
-  // LOCATIONS MAP
-  // -------------------------------------------------------------------------
 
   map.init();
 

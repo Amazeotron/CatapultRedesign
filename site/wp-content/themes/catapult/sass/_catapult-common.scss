@@ -237,6 +237,14 @@ section:first-of-type {
 
 section {
   padding-top: 70px; // matches height of header main nav
+  
+  @media only screen and (max-width: 768px) {
+    padding-top: 50px;
+  }
+
+  @media only screen and (max-width: 320px) {
+    padding-top: 30px;
+  }
 }
 
 .level-one {
@@ -526,8 +534,8 @@ section {
   display: block;
   position: absolute;
   z-index: 10;
-  top: 20px;
-  right: 20px;
+  top: 10px;
+  right: 10px;
   width: 36px;
   height: 37px;
   background: url(../img/homepage/overlay-close-button.png) top left no-repeat;

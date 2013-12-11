@@ -4,10 +4,6 @@
   Template Name: Events Landing Page
 */
 
-/*
-This page shows a list of recent events.
-*/
-
 ?>
 <?php get_header(); ?>
 
@@ -31,6 +27,5 @@ This page shows a list of recent events.
     <!-- end main-section -->
     <?php get_sidebar(); ?>
   </div><!-- end page-wrap -->
-
 
 <?php get_footer(); ?>

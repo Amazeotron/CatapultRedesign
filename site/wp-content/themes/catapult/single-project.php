@@ -12,6 +12,12 @@ the_post(); ?>
           </header>
 
           <? if (get_field('locations')) : ?>
+            <? 
+            $locations = get_field('locations'); 
+            $firstAddress = $locations[0]['location']['address'];
+            ?>
+            
+            <h3>Project Location: <? echo $firstAddress; ?></h3>
             <div class="post-map"></div>
             <div id="locations-map"></div>
 
@@ -19,7 +25,6 @@ the_post(); ?>
               $(document).ready(function() {
                 var coordinates = [];
                 <? 
-                $locations = get_field('locations');
                 foreach ($locations as $location) : ?>
                 coordinates.push("<?php echo $location['location']['coordinates']; ?>");
                 <? endforeach; ?>
@@ -60,6 +65,15 @@ the_post(); ?>
                 
               });
             </script>
+          <? endif; ?>
+
+          <? if (get_field('image')) : ?>
+            <div class="post-image pad-top">
+              <?
+              $image_obj = get_field('image');
+              ?>
+              <img src="<? echo $image_obj['sizes']['medium'] ?>" alt="<? echo $image_obj['alt'] ?>" title="<? echo $image_obj['title'] ?>"/>
+            </div>
           <? endif; ?>
           
           <div class="post-body">

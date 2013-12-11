@@ -44,20 +44,29 @@
         </div>
 
         <p class="post-excerpt"><? if (get_field('slug')) {the_field('slug');} else {the_excerpt();} ?></p>
-        <ul class="tags">
-          <?php
-          $categories = (array)get_the_category();
+        <?php
+        $categories = (array)get_the_category();
+        if ($categories) {
+          echo '<ul class="categories clearfix">';
           foreach ($categories as $cat) {
-            echo '<li class="tag header-title"><a class="category-item ' . $cat->category_nicename . '" href="' . get_category_link($cat->term_id) . '">' . $cat->category_nicename . '</a></li>';
+            echo '<li class="category header-title"><a class="category-item ' . $cat->category_nicename . '" href="' . get_category_link($cat->term_id) . '">' . $cat->category_nicename . '</a></li>';
           }
-          $posttags = get_the_tags();
-          if ($posttags) {
-            foreach($posttags as $tag) {
-              echo '<li class="tag header-title"><a class="category-item" href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a></li>';
-            }
+          echo '</ul>';
+        } ?>
+
+        <?
+        $posttags = get_the_tags();
+        if ($posttags) {
+          echo '<div class="tags">';
+          $count = 0;
+          echo '<span class="header-title">Tags: <span></span>';
+          foreach($posttags as $tag) {
+            echo '<a class="tag" href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>' . ($count < count($posttags)-1 ? ', ' : '');
+            $count++;
           }
-          ?>
-        </ul>
+          echo '</div>';
+        }
+        ?>
       </header>
       <!-- end post-top -->
     </article>
