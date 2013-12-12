@@ -1,5 +1,5 @@
 /*
- * These are common methods for all pages (home, blog landing, single blog, etc).
+ * These are methods for the homepage.
  */
 
 $(document).ready(function () {
