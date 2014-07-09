@@ -3,4 +3,4 @@
 node_modules
 .ftpauth
 .idea
-
+site/wp-content/themes/catapult/wp-config.php
